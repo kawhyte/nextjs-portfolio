@@ -3,7 +3,8 @@ import React from "react"
 
 const Button = ({ children, href, buttonColor, ...params }) => {
   const className =
-    "mr-12 text-white hover:bg-gray-500 text-white font-semibold font-Montserrat hover:text-white py-3 px-5 border border-gray-500  hover:border-transparent rounded transition duration-150 ease-in-out " + buttonColor
+    "flex mx-auto mt-16 mr-5 border-0 text-white hover:bg-gray-500 text-white font-semibold focus:outline-none rounded text-lg     font-Montserrat hover:text-white py-2 px-8 border border-gray-500  hover:border-transparent rounded transition duration-150 ease-in-out " + buttonColor
+
 
   if (href) {
     return (

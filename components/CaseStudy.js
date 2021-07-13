@@ -15,7 +15,7 @@ function CaseStudy({ problem, approach, result, problem2, approach2, result2  })
   //     </Link>
   //   </div>
   // )
-
+ console.log(approach)
 
   // let imgs = data
   
@@ -24,15 +24,15 @@ function CaseStudy({ problem, approach, result, problem2, approach2, result2  })
   
       <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
-    <div class="text-center mb-20">
+    <div class="text-center mb-10">
       <h4 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">Learn how I developed this project</h4>
       <div class="flex mt-6 justify-center">
         <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
       </div>
     </div>
-    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+    <div class="flex flex-col  justify-center">
 
-      <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+      <div class="p-4 mb-20  flex flex-col text-center items-center">
         <div class="w-28 w- h-28 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-10 flex-shrink-0">
         <Image
         src="/boy.png" alt="me" width="170" height="241"
@@ -43,11 +43,11 @@ function CaseStudy({ problem, approach, result, problem2, approach2, result2  })
         <div class="flex-grow">
           <h3 class="text-gray-900 text-lg title-font font-medium mb-3">Step 1 - Planning Phase</h3>
           <h2 class="text-gray-900 text-base title-font font-normal italic mb-3"> What problem was I trying to solve</h2>
-          <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
+          <p class="leading-relaxed text-base text-left">{problem}</p>
    
         </div>
       </div>
-      <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+      <div class="p-4 mb-20  flex flex-col text-center items-center">
         <div class="w-28 w- h-28 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-10 flex-shrink-0">
         <Image
         src="/girl_sitting.png" alt="me" width="170" height="241"
@@ -58,11 +58,11 @@ function CaseStudy({ problem, approach, result, problem2, approach2, result2  })
         <div class="flex-grow">
           <h3 class="text-gray-900 text-lg title-font font-medium mb-3">Step 2 - Project Requirement Phase</h3>
           <h2 class="text-gray-900 text-base title-font font-normal italic mb-3"> Project Requirements</h2>
-          <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
+          <p class="leading-relaxed text-base text-left">{approach}</p>
    
         </div>
       </div>
-      <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+      <div class="p-4 mb-20  flex flex-col text-center items-center">
         <div class="w-28 w- h-28 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-10 flex-shrink-0">
         <Image
         src="/girl.png" alt="me" width="170" height="241"
@@ -73,7 +73,7 @@ function CaseStudy({ problem, approach, result, problem2, approach2, result2  })
         <div class="flex-grow">
           <h3 class="text-gray-900 text-lg title-font font-medium mb-3">Step 3 - Software selection & Result</h3>
           <h2 class="text-gray-900 text-base title-font font-normal italic mb-3"> What technology was used</h2>
-          <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
+          <p class="leading-relaxed text-base text- text-left">{result}</p>
       
         </div>
       </div>

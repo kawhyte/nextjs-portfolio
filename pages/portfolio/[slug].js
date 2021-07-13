@@ -40,7 +40,7 @@ export const getStaticProps = async ({ params }) => {
 
 
 export default function PortfolioDetails({portfolio}) {
-  // console.log("SLUG ",portfolio)
+  console.log("SLUG ",portfolio)
 
   const {
     description,
@@ -153,9 +153,9 @@ export default function PortfolioDetails({portfolio}) {
           //  problem={richTextProblem.raw}
           //  approach={richTextApproach.raw}
           //  result={richTextResult.raw}
-           problem2={problem.problem}
-           approach2={approach.approach}
-           result2={result.result}
+           problem={problem}
+           approach={approach}
+           result={result}
          />
 
       </div>
