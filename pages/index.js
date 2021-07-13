@@ -19,7 +19,6 @@ export async function getStaticProps() {
 
 export default function Recipes({portfolio}) {
 
-  console.log(portfolio)
   return (
     <div className="recipe-list">
   

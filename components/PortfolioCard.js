@@ -2,18 +2,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Card = ({ portfolio }) => {
-	console.log(portfolio);
+
 	const { name, slug, summary, thumbnail } = portfolio.fields;
 
 	return (
 		<>
 			<div className='h-full max-w-sm bg-gray-100  border shadow-lg rounded overflow-hidden group '>
 				<div className='group-hover:opacity-75  transition duration-150 ease-in-out '>
-					<Link href={`/${slug}`}>
+					<Link href={`/portfolio/${slug}`}>
 						<Image
 							src={`https:${thumbnail.fields.file.url}`}
-							width='354'
-							height='250'
+							width={thumbnail.fields.file.details.image.width}
+							height={thumbnail.fields.file.details.image.height}
 						/>
 					</Link>
 				</div>
