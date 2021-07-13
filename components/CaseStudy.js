@@ -27,15 +27,15 @@ function CaseStudy({
 						</div>
 					</div>
 					<div class='flex flex-col  justify-center'>
-						<div class='p-4 px-8  flex flex-col md:flex-row text-center items-center bg-yellow-50 '>
-							<div class='w-40 h-40 pt-20 mr-20 ml-8 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-20 flex-shrink-0'>
+						<div class='p-12 px-8  flex flex-col md:flex-row text-center items-center bg-yellow-50 '>
+							<div class='w-40 h-40 pt-20  mr-20 ml-8 mb-28  md:mb-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500  flex-shrink-0'>
 								<Image
 									src='/boy.png'
 									alt='me'
 									width='170'
 									height='296'
 									alt='boy running'
-									className='w-48 m-2 mt-6 sm:w-48 md:my-8 md:w-56 lg:mx-20'
+									className='w-48  m-2 mt-6 sm:w-48 md:my-8 md:w-56 lg:mx-20'
 								/>
 							</div>
 							<div class='flex-grow'>
@@ -50,8 +50,8 @@ function CaseStudy({
 								<p class='leading-relaxed text-base text-gray-900 text-left'>{documentToReactComponents( richTextProblem)}</p>
 							</div>
 						</div>
-						<div class='p-4 flex flex-col md:flex-row text-center items-center bg-green-50'>
-							<div class='w-40 h-40 pt-20 mr-20 ml-8 inline-flex items-center justify-center rounded-full bg-yellow-100 text-indigo-500 mb-10 flex-shrink-0'>
+						<div class='p-12 flex flex-col md:flex-row text-center items-center bg-green-50'>
+							<div class='w-40 h-40 pt-20 mr-20 ml-8 mb-20  md:mb-20  inline-flex items-center justify-center rounded-full bg-yellow-100 text-indigo-500  flex-shrink-0'>
 								<Image
 									src='/girl_sitting.png'
 									alt='me'
@@ -73,8 +73,8 @@ function CaseStudy({
 								<p class='leading-relaxed text-base text-gray-900  text-left'>{documentToReactComponents(richTextApproach)}</p>
 							</div>
 						</div>
-						<div class='p-4   flex flex-col md:flex-row  text-center items-center bg-indigo-50'>
-							<div class='w-40 h-40 pt-20 mr-20 ml-8 inline-flex items-center justify-center rounded-full bg-green-100 text-indigo-500 mb-10 flex-shrink-0'>
+						<div class='p-12   flex flex-col md:flex-row  text-center items-center bg-indigo-50'>
+							<div class='w-40 h-40 pt-20 mr-20 ml-8 mb-24  md:mb-20  inline-flex items-center justify-center rounded-full bg-green-100 text-indigo-500 flex-shrink-0'>
 								<Image
 									src='/girl.png'
 									alt='me'
@@ -86,7 +86,7 @@ function CaseStudy({
 							</div>
 							<div class='flex-grow'>
 								<h3 class='text-indigo-500 text-lg title-font font-medium mb-3'>
-									Step 3 - Software selection & Result
+									Step 3 - Software Selection & Result
 								</h3>
 								<h2 class='text-gray-900 text-base title-font font-normal italic mb-3'>
 									{" "}
