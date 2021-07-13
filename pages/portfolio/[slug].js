@@ -123,9 +123,9 @@ export default function PortfolioDetails({portfolio}) {
                 </div>
               </div>
 
-              <div className="flex flex-row lg:justify-center lg:py-2">
+              <div className="flex flex-row lg:py-2">
                 {url && (
-                  <div className="mt-8 ">
+                  <div className=" ">
                     <Button
                       href={url}
                       buttonColor={" bg-indigo-700 text-white"}
@@ -135,7 +135,7 @@ export default function PortfolioDetails({portfolio}) {
                   </div>
                 )}
                 {demoUrl && (
-                  <div className="mt-8">
+                  <div className="">
                     <Button
                       href={demoUrl}
                       buttonColor={" bg-white text-indigo-700"}
