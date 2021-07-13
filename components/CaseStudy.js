@@ -1,12 +1,13 @@
 import Image from "next/image";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 function CaseStudy({
 	problem,
 	approach,
 	result,
-	problem2,
-	approach2,
-	result2,
+  richTextProblem,
+	richTextApproach,
+	richTextResult,
 }) {
 	// const CustomComponent = ({ imgs, slug, name }) => (
 	//   <div className="w-64 my-8 overflow-hidden bg-white rounded-lg shadow-lg image">
@@ -16,7 +17,7 @@ function CaseStudy({
 	//     </Link>
 	//   </div>
 	// )
-	console.log(approach);
+	console.log( richTextProblem);
 
 	// let imgs = data
 
@@ -52,7 +53,8 @@ function CaseStudy({
 									{" "}
 									What problem was I trying to solve
 								</h2>
-								<p class='leading-relaxed text-base text-left'>{problem}</p>
+							
+								<p class='leading-relaxed text-base text-left'>{documentToReactComponents( richTextProblem)}</p>
 							</div>
 						</div>
 						<div class='p-4 mb-20  flex flex-col text-center items-center'>
@@ -74,7 +76,8 @@ function CaseStudy({
 									{" "}
 									Project Requirements
 								</h2>
-								<p class='leading-relaxed text-base text-left'>{approach}</p>
+								
+								<p class='leading-relaxed text-base text-left'>{documentToReactComponents(richTextApproach)}</p>
 							</div>
 						</div>
 						<div class='p-4 mb-20  flex flex-col text-center items-center'>
@@ -96,9 +99,9 @@ function CaseStudy({
 									{" "}
 									What technology was used
 								</h2>
-								<p class='leading-relaxed text-base text- text-left'>
-									{result}
-								</p>
+							
+                <p class='leading-relaxed text-base text-left'>{documentToReactComponents(richTextResult)}</p>
+								
 							</div>
 						</div>
 					</div>

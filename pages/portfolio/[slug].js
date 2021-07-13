@@ -150,9 +150,9 @@ export default function PortfolioDetails({portfolio}) {
         </div>
     
  <CaseStudy
-          //  problem={richTextProblem.raw}
-          //  approach={richTextApproach.raw}
-          //  result={richTextResult.raw}
+ richTextProblem={richTextProblem}
+            richTextApproach={richTextApproach}
+            richTextResult={richTextResult}
            problem={problem}
            approach={approach}
            result={result}
