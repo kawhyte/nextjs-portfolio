@@ -27,8 +27,8 @@ function CaseStudy({
 						</div>
 					</div>
 					<div class='flex flex-col  justify-center'>
-						<div class='p-4 px-8  flex flex-col text-center items-center bg-yellow-100 '>
-							<div class='w-28 h-28 pt-20  inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-20 flex-shrink-0'>
+						<div class='p-4 px-8  flex flex-col md:flex-row text-center items-center bg-yellow-50 '>
+							<div class='w-40 h-40 pt-20 mr-20 ml-8 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-20 flex-shrink-0'>
 								<Image
 									src='/boy.png'
 									alt='me'
@@ -42,16 +42,16 @@ function CaseStudy({
 								<h3 class='text-yellow-500 text-lg title-font font-medium mb-3'>
 									Step 1 - Planning Phase
 								</h3>
-								<h2 class='text-yellow-700 text-base title-font font-normal italic mb-3'>
+								<h2 class='text-gray-900 text-base title-font font-normal italic mb-3'>
 									{" "}
 									What problem was I trying to solve
 								</h2>
 							
-								<p class='leading-relaxed text-base text-yellow-800 text-left'>{documentToReactComponents( richTextProblem)}</p>
+								<p class='leading-relaxed text-base text-gray-900 text-left'>{documentToReactComponents( richTextProblem)}</p>
 							</div>
 						</div>
-						<div class='p-4   flex flex-col text-center items-center bg-green-100'>
-							<div class='w-28 pt-16 h-28 inline-flex items-center justify-center rounded-full bg-yellow-100 text-indigo-500 mb-10 flex-shrink-0'>
+						<div class='p-4 flex flex-col md:flex-row text-center items-center bg-green-50'>
+							<div class='w-40 h-40 pt-20 mr-20 ml-8 inline-flex items-center justify-center rounded-full bg-yellow-100 text-indigo-500 mb-10 flex-shrink-0'>
 								<Image
 									src='/girl_sitting.png'
 									alt='me'
@@ -65,16 +65,16 @@ function CaseStudy({
 								<h3 class='text-green-500 text-lg title-font font-medium mb-3'>
 									Step 2 - Project Requirement Phase
 								</h3>
-								<h2 class='text-green-700 text-base title-font font-normal italic mb-3'>
+								<h2 class='text-gray-900 text-base title-font font-normal italic mb-3'>
 									{" "}
 									Project Requirements
 								</h2>
 								
-								<p class='leading-relaxed text-base text-green-800  text-left'>{documentToReactComponents(richTextApproach)}</p>
+								<p class='leading-relaxed text-base text-gray-900  text-left'>{documentToReactComponents(richTextApproach)}</p>
 							</div>
 						</div>
-						<div class='p-4   flex flex-col text-center items-center bg-indigo-100'>
-							<div class='w-28 h-28 pt-16 pb-8 inline-flex items-center justify-center rounded-full bg-green-100 text-indigo-500 mb-10 flex-shrink-0'>
+						<div class='p-4   flex flex-col md:flex-row  text-center items-center bg-indigo-50'>
+							<div class='w-40 h-40 pt-20 mr-20 ml-8 inline-flex items-center justify-center rounded-full bg-green-100 text-indigo-500 mb-10 flex-shrink-0'>
 								<Image
 									src='/girl.png'
 									alt='me'
@@ -88,12 +88,12 @@ function CaseStudy({
 								<h3 class='text-indigo-500 text-lg title-font font-medium mb-3'>
 									Step 3 - Software selection & Result
 								</h3>
-								<h2 class='text-indigo-700 text-base title-font font-normal italic mb-3'>
+								<h2 class='text-gray-900 text-base title-font font-normal italic mb-3'>
 									{" "}
 									What technology was used
 								</h2>
 							
-                <p class='leading-relaxed text-base text-indigo-800  text-left'>{documentToReactComponents(richTextResult)}</p>
+                <p class='leading-relaxed text-base text-gray-900 text-left'>{documentToReactComponents(richTextResult)}</p>
 								
 							</div>
 						</div>

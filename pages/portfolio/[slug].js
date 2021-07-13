@@ -62,7 +62,7 @@ export default function PortfolioDetails({portfolio}) {
   return (
     <div>
   
-      <div className="pt-12 lg:pt-16 ">
+      <div className="pt-12 lg:pt-16 container mx-auto">
         <div className="container">
           <div className="flex flex-wrap justify-center">
             <div className="w-full pb-8 md:w-2/3 md:pr-4 ">
