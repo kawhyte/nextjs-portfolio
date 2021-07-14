@@ -1,5 +1,7 @@
 import { createClient } from 'contentful'
 import PortfolioCards from '../components/PortfolioCards'
+import Hero from '../components/Hero'
+import Section from '../components/Section'
 
 export async function getStaticProps() {
 
@@ -9,7 +11,7 @@ export async function getStaticProps() {
   })
 
   const res = await client.getEntries({ content_type: "portfolio" })
-
+  console.log("res ",res.items)
   return {
     props: {
       portfolio: res.items,
@@ -18,11 +20,12 @@ export async function getStaticProps() {
 }
 
 export default function Recipes({portfolio}) {
-
+console.log("HEY ",portfolio)
   return (
-    <div className="recipe-list">
+    <div className="">
   
-
+<Hero />
+<Section />
   
         <PortfolioCards  items={portfolio}  />
     

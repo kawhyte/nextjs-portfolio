@@ -69,9 +69,11 @@ export default function PortfolioDetails({portfolio}) {
               {gallery && gallery.length === 1 && (
                 <a href={demoUrl}  target="_blank" rel="noopener noreferrer">
                   <Image
-                  src={`https:${thumbnail.fields.file.url}`}
-                  width={thumbnail.fields.file.details.image.width}
-                  height={thumbnail.fields.file.details.image.height}
+                  blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+									placeholder="blur" 
+                  src={`https:${gallery[0].fields.file.url}`}
+                  width={gallery[0].fields.file.details.image.width}
+                  height={gallery[0].fields.file.details.image.height}
                   />
                 </a>
               )}
