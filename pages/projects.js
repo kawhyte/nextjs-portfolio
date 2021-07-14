@@ -10,7 +10,7 @@ export async function getStaticProps() {
 		accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 	});
 
-	const res = await client.getEntries({ content_type: "portfolio" });
+	const res = await client.getEntries({ content_type: "portfolio", order: 'fields.sortByNumber' });
 	
 	return {
 		props: {
