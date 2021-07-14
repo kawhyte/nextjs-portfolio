@@ -8,7 +8,7 @@ function Section() {
       <section className="max-w-6xl min-w-0 mx-auto mb-8 ">
         <div className="grid grid-cols-1 py-12 mx-8 sm:mx-20 md:mx-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
           <section className="my-4 overflow-hidden bg-white border rounded-lg shadow-lg md:mx-4">
-            <p className="py-2 text-lg font-extrabold text-center bg-orange-200 sm:py-4 md:text-md font-Montserrat ">
+            <p className="py-2 text-lg font-extrabold text-center bg-yellow-50 sm:py-4 md:text-md font-Montserrat ">
               Software Engineer{" "}
             </p>
 
@@ -23,7 +23,7 @@ function Section() {
             </div>
           </section>
           <section className="my-4 overflow-hidden bg-white border rounded-lg shadow-lg md:mx-4">
-            <p className="py-2 text-lg font-extrabold text-center bg-orange-200 sm:py-4 md:text-md font-Montserrat">
+            <p className="py-2 text-lg font-extrabold text-center bg-yellow-50 sm:py-4 md:text-md font-Montserrat">
               Observational Astronomer
             </p>
 
@@ -41,7 +41,7 @@ function Section() {
             </div>
           </section>
           <section className="my-4 overflow-hidden bg-white border rounded-lg shadow-lg md:mx-4">
-            <p className="py-2 text-lg font-extrabold text-center bg-orange-200 sm:py-4 md:text-md font-Montserrat">
+            <p className="py-2 text-lg font-extrabold text-center bg-yellow-50 sm:py-4 md:text-md font-Montserrat">
               Nintendo Enthusiast
             </p>
 

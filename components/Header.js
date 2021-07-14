@@ -11,7 +11,7 @@ function Header() {
       <div className="flex flex-wrap items-center justify-between max-w-6xl p-4 mx-auto md:p-8">
         <Link href="/">
           <h1 className="flex items-center text-black no-underline">
-            <span className="text-xl font-semibold tracking-tight">
+            <span className="text-xl cursor-pointer font-semibold tracking-tight">
               Kenny Whyte
             </span>
           </h1>
@@ -60,7 +60,7 @@ function Header() {
           ].map(link =>
             link.type === "internal" ? (
               <Link
-                className="font-Montserrat block mt-4 text-black no-underline md:inline-block md:mt-0 md:ml-6 hover:text-gray-500 px-2"
+                className="font-Montserrat cursor-pointer block mt-4 text-black no-underline md:inline-block md:mt-0 md:ml-6 hover:text-gray-500 px-2"
                 key={link.title}
                 href={link.route}
               >
