@@ -8,7 +8,7 @@ function Header() {
 
   return (
     <header className="bg-green-100 ">
-      <div className="flex flex-wrap items-center justify-between max-w-6xl p-4 mx-auto md:p-8">
+      <div className="flex flex-wrap  items-center justify-between max-w-6xl p-4 container mx-auto md:p-8">
         <Link href="/">
           <h1 className="flex items-center text-black no-underline">
             <span className="text-xl cursor-pointer font-semibold tracking-tight">

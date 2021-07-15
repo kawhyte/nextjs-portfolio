@@ -1,5 +1,5 @@
-import classNames from "classnames"
 import PropTypes from "prop-types"
+import classNames from "classnames"
 import React from "react"
 import BlogCard from "./BlogCard"
 

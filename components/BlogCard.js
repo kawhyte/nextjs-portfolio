@@ -7,14 +7,14 @@ const Card = ({ blog }) => {
 	console.log("blog.fields", blog.fields);
 
 	return (
-		<>
+		<div className="bg-yellow-50 p-4 rounded-xl">
 			<Link href={`/blog/${slug}`}>
-				<h2 class='sm:text-2xl cursor-pointer text-xl title-font font-medium text-gray-900 mt-4 mb-4'>
+				<h2 class='sm:text-2xl  cursor-pointer text-xl title-font font-medium text-gray-900 mt-4 mb-4'>
 					{title}
 				</h2>
 			</Link>
 			<p class='leading-relaxed mb-8 clamp-3'>{summary}</p>
-			<div class='flex items-center flex-wrap pb-4 mb-4  mt-auto w-full'>
+			<div class='flex items-center flex-wrap mb-4  mt-auto w-full'>
 				<Link href={`/blog/${slug}`}>
 					<a class='text-indigo-500 inline-flex items-center'>
 						Read More
@@ -32,7 +32,7 @@ const Card = ({ blog }) => {
 					</a>
 				</Link>
 			</div>
-		</>
+		</div>
 	);
 };
 

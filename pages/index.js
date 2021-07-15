@@ -23,8 +23,7 @@ export async function getStaticProps() {
 }
 
 export default function Recipes({ portfolio, blog }) {
-	console.log("HEY ", portfolio);
-	console.log("HEY blog", blog);
+
 	return (
 		<div className=''>
 			<Hero />
@@ -53,7 +52,7 @@ export default function Recipes({ portfolio, blog }) {
         <h2 className='font-extrabold leading-tight tracking-tight text-gray-900 sm:text-2xl md:text-3xl'>
           Recent Blog Posts
         </h2>
-        <Link className='flex flex-row cursor-pointer' href={`projects`}>
+        <Link className='flex flex-row cursor-pointer' href={`blogs`}>
           <p className='pb-1 mb-6 text-sm text-blue-600 md:text-lg sm:text cursor-pointer'>
             View All Blog Posts
           </p>
