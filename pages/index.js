@@ -13,7 +13,7 @@ export async function getStaticProps() {
 
 	const res = await client.getEntries({ content_type: "portfolio" , order: 'fields.sortByNumber'}); 
 	const res2 = await client.getEntries({ content_type: "blogPost" }); 
-	console.log("res ", res2.items);
+	
 	return {
 		props: {
 			portfolio: res.items,

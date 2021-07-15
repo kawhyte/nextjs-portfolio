@@ -40,8 +40,7 @@ export const getStaticProps = async ({ params }) => {
 
 
 export default function PortfolioDetails({portfolio}) {
-  console.log("SLUG ",portfolio)
-
+  
   const {
     description,
     gallery,
@@ -59,6 +58,7 @@ export default function PortfolioDetails({portfolio}) {
     richTextApproach,
     richTextResult,
   } = portfolio.fields
+
   return (
     <div>
   

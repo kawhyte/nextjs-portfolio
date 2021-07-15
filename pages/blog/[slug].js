@@ -43,7 +43,7 @@ export const getStaticProps = async ({ params }) => {
 
 
 export default function PortfolioDetails({ blog }) {
-	console.log("SLUG ", blog);
+	
 
 	const {
 		description,
