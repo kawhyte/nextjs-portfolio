@@ -61,7 +61,7 @@ export default function Recipes({ portfolio, blog }) {
       </div>
 
         {blog && blog.length > 0 ? (
-				<BlogCards items={blog.slice(0, 6)} />
+				<BlogCards items={blog.slice(0, 4)} />
         ) : (
           <div className="container">No blog found.</div>
         )}
