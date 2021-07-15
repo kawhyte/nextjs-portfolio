@@ -4,7 +4,7 @@ import Image from "next/image";
 const Card = ({ blog }) => {
 	const { title, slug, summary, thumbnail } = blog.fields;
 
-	console.log("blog.fields", blog.fields);
+	;
 
 	return (
 		<div className="bg-yellow-50 p-4 rounded-xl">

@@ -1,18 +1,21 @@
 import Image from "next/image";
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+//import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { renderOptions } from '../util/rich-text-types'
+
 
 function CaseStudy({
 	problem,
 	approach,
 	result,
-  richTextProblem,
+	richTextProblem,
 	richTextApproach,
 	richTextResult,
 }) {
 
-	console.log( richTextProblem);
 
 
+	
 
 	return (
 		<div className='flex flex-col justify-center '>
@@ -31,73 +34,75 @@ function CaseStudy({
 							<div className='w-40 h-40 pt-20  mr-20 ml-8 mb-28  md:mb-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500  flex-shrink-0'>
 								<Image
 									src='/boy.png'
-									blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-									placeholder="blur" 
+									blurDataURL='data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=='
+									placeholder='blur'
 									width='170'
 									height='296'
 									alt='boy running'
 									className='w-48  m-2 mt-6 sm:w-48 md:my-8 md:w-56 lg:mx-20'
 								/>
 							</div>
-							<div className='flex-grow'>
-								<h3 className='text-yellow-500 text-lg title-font font-medium mb-3'>
-									Step 1 - Planning Phase
+							<div className='flex-grow text-left'>
+								<h3 className='text-yellow-500 text-xl title-font font-medium mb-3'>
+									Step 1 - Planning Phase{" "}
+									<span className='text-gray-900 text-base title-font font-normal italic mb-3'>
+										(What problem was I trying to solve){" "}
+									</span>
 								</h3>
-								<h2 className='text-gray-900 text-base title-font font-normal italic mb-3'>
-									{" "}
-									What problem was I trying to solve
-								</h2>
-							
-								<p className='leading-relaxed text-base text-gray-900 text-left'>{documentToReactComponents( richTextProblem)}</p>
+
+								<p className='leading-relaxed text-base text-gray-900 text-left'>
+									{documentToReactComponents(richTextProblem, renderOptions)}
+								</p>
 							</div>
 						</div>
 						<div className='p-12 flex flex-col md:flex-row text-center items-center bg-green-50'>
 							<div className='w-40 h-40 pt-20 mr-20 ml-8 mb-20  md:mb-20  inline-flex items-center justify-center rounded-full bg-yellow-100 text-indigo-500  flex-shrink-0'>
 								<Image
 									src='/girl_sitting.png'
-									placeholder="blur" 
+									blurDataURL='data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=='
+									placeholder='blur'
 									width='170'
 									height='241'
 									alt='girl sitting'
 									className='w-48 m-2 mt-6 sm:w-48 md:my-8 md:w-56 lg:mx-20'
 								/>
 							</div>
-							<div className='flex-grow'>
-								<h3 className='text-green-500 text-lg title-font font-medium mb-3'>
-									Step 2 - Project Requirement Phase
+							<div className='flex-grow text-left'>
+								<h3 className='text-green-500 text-xl title-font font-medium mb-3'>
+									Step 2 - Project Requirement Phase{" "}
+									<span className='text-gray-900 text-base title-font font-normal italic mb-3'>
+										(Project Requirements){" "}
+									</span>
 								</h3>
-								<h2 className='text-gray-900 text-base title-font font-normal italic mb-3'>
-									{" "}
-									Project Requirements
-								</h2>
-								
-								<p className='leading-relaxed text-base text-gray-900  text-left'>{documentToReactComponents(richTextApproach)}</p>
+
+								<p className='leading-relaxed text-base text-gray-900  text-left'>
+									{documentToReactComponents(richTextApproach, renderOptions)}
+								</p>
 							</div>
 						</div>
 						<div className='p-12   flex flex-col md:flex-row  text-center items-center bg-indigo-50'>
 							<div className='w-40 h-40 pt-20 mr-20 ml-8 mb-24  md:mb-20  inline-flex items-center justify-center rounded-full bg-green-100 text-indigo-500 flex-shrink-0'>
 								<Image
 									src='/girl.png'
-                  blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-									placeholder="blur" 
-								
+									blurDataURL='data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=='
+									placeholder='blur'
 									width='170'
 									height='241'
 									alt='girl'
 									className='w-48 m-2 mt-6 sm:w-48 md:my-8 md:w-56 lg:mx-20'
 								/>
 							</div>
-							<div className='flex-grow'>
-								<h3 className='text-indigo-500 text-lg title-font font-medium mb-3'>
-									Step 3 - Software Selection & Result
+							<div className='flex-grow text-left'>
+								<h3 className='text-indigo-500 text-xl title-font font-medium mb-3'>
+									Step 3 - Software Selection & Result{" "}
+									<span className='text-gray-900 text-base title-font font-normal italic mb-3'>
+										(What technology was used){" "}
+									</span>
 								</h3>
-								<h2 className='text-gray-900 text-base title-font font-normal italic mb-3'>
-									{" "}
-									What technology was used
-								</h2>
-							
-                <p className='leading-relaxed text-base text-gray-900 text-left'>{documentToReactComponents(richTextResult)}</p>
-								
+
+								<p className='leading-relaxed text-base text-gray-900 text-left'>
+									{documentToReactComponents(richTextResult, renderOptions)}
+								</p>
 							</div>
 						</div>
 					</div>

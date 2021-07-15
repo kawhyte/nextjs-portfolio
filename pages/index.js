@@ -22,10 +22,10 @@ export async function getStaticProps() {
 	};
 }
 
-export default function Recipes({ portfolio, blog }) {
+export default function Index({ portfolio, blog }) {
 
 	return (
-		<div className=''>
+		<div className='mb-24'>
 			<Hero />
 			<Section />
 
