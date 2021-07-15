@@ -27,9 +27,17 @@ module.exports = {
 			"12xl": "12rem",
 			"15xl": "15rem",
 		},
+
+    lineClamp: {
+    1: 1,
+    2: 2,
+    3: 3
+  },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  
+
+  plugins: [require('tailwindcss-line-clamp')],
 }

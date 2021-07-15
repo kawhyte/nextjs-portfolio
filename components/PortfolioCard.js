@@ -20,7 +20,7 @@ const Card = ({ portfolio }) => {
 			<h4 className='sm:text-lg text-gray-800 text-lg font-semibold  leading-tight tracking-tight'>
 				{name}
 			</h4>
-			<p className='text-sm sm:text-base text-gray-700'>{summary}</p>
+			<p className='text-sm sm:text-base text-gray-700 clamp-2'>{summary}</p>
 		</div>
 	</div>
 		</>
@@ -39,20 +39,4 @@ const Card = ({ portfolio }) => {
 // height={thumbnail.fields.file.details.image.height}
 
 export default Card;
-// <div className='h-full max-w-sm bg-gray-50  border shadow-lg rounded overflow-hidden group '>
-// 		<div className='group-hover:opacity-75  transition duration-150 ease-in-out '>
-// 			<Link href={`/portfolio/${slug}`}>
-// 				<Image
-// 					src={`https:${thumbnail.fields.file.url}`}
-// 					width={444}
-// 					height={342}
-// 				/>
-// 			</Link>
-// 		</div>
-// 		<div className='p-4 sm:p-5 border-t'>
-// 			<h4 className='sm:text-lg text-gray-800 text-lg font-semibold  leading-tight tracking-tight'>
-// 				{name}
-// 			</h4>
-// 			<p className='text-sm sm:text-base text-gray-700'>{summary}</p>
-// 		</div>
-// 	</div>
+
