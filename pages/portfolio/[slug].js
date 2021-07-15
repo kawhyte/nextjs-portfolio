@@ -65,7 +65,7 @@ export default function PortfolioDetails({portfolio}) {
       <div className="pt-12 lg:pt-16 container mx-auto">
         <div className="container">
           <div className="flex flex-wrap justify-center">
-            <div className="w-full pb-8 md:w-2/3 md:pr-4 ">
+            <div className="w-full pb-8 md:w-3/6 md:pr-4 ">
               {gallery && gallery.length === 1 && (
                 <a href={demoUrl}  target="_blank" rel="noopener noreferrer">
                   <Image
