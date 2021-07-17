@@ -4,7 +4,7 @@ import Button from "../../components/Button";
 import CaseStudy from "../../components/CaseStudy";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 //import { BLOCKS, INLINES } from "@contentful/rich-text-types";
-import { renderOptions } from '../../util/rich-text-types'
+import { renderOptions } from "../../util/rich-text-types";
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID,
@@ -39,12 +39,7 @@ export const getStaticProps = async ({ params }) => {
 	};
 };
 
-
-
-
 export default function PortfolioDetails({ blog }) {
-	
-
 	const {
 		description,
 		gallery,
@@ -53,7 +48,7 @@ export default function PortfolioDetails({ blog }) {
 		related,
 		summary,
 		thumbnail,
-        photoCredit,
+		photoCredit,
 		url,
 		demoUrl,
 		technology,
@@ -66,70 +61,55 @@ export default function PortfolioDetails({ blog }) {
 		richTextResult,
 	} = blog.fields;
 	return (
+		<main class='mt-20'>
+			<div
+				class='mb-8  w-full max-w-screen-lg mx-auto '
+				>
+				<div className='   '>
+					<Image
+						blurDataURL='data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=='
+						placeholder='blur'
+						src={`https:${thumbnail.fields.file.url}`}
+						width={1024}
+						height={384}
+						class=' w-full h-full  object-cover  '
+						alt={title}
+					/>
+				</div>
+				<div class=' '>
+					<h2 class='text-4xl max-w-screen-md p-3 bg-black font-semibold text-gray-100 leading-tight'>
+						{title}
+					</h2>
+					<a
+						href='#'
+						class='px-4 py-1 bg-black text-gray-200 text-xs inline-flex items-center justify-center'>
+						Photo credit: {photoCredit}
+					</a>
+				</div>
+			</div>
 
-
-
-        <main class="mt-20">
-
-        <div class="mb-4 md:mb-0 w-full max-w-screen-lg mx-auto relative" style={{height: '384px'}}>
-        <div class="absolute left-0 bottom-0 w-full h-full z-10 bg-black opacity-40"
-        ></div>
-<div className="   ">
-          <Image
-          blurDataURL='data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=='
-          placeholder='blur'
-          src={`https:${thumbnail.fields.file.url}`}
-          width={1024}
-          height={384}
-          class="absolute left-0 top-0 w-full h-full z-0 object-cover  "
-		  alt={title}
-      />
-</div>
-          <div class="p-4 absolute bottom-0 left-0 z-20">
-          <h2 class="text-4xl max-w-screen-md p-3 bg-black font-semibold text-gray-100 leading-tight">
-          {title}
-          </h2>
-          <a href="#"
-            class="px-4 py-1 bg-black text-gray-200 text-xs inline-flex items-center justify-center mb-2">Photo credit: {photoCredit}</a>
-       
-          </div>
-        </div>
-  
-        <div class="px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-lg mx-auto text-lg leading-relaxed">
-          
-        
-        <p class="pb-6">{documentToReactComponents(richText,renderOptions)} </p>
-        
-        
-  
-        </div>
-      </main>
-
-
-
-
-
-
-
-
-
-		
+			<div class='px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-lg mx-auto text-lg leading-relaxed'>
+				<p class='pb-6'>
+					{documentToReactComponents(richText, renderOptions)}{" "}
+				</p>
+			</div>
+		</main>
 	);
 }
 
-
-
-	{/*<CaseStudy
+{
+	/*<CaseStudy
 					richTextProblem={richTextProblem}
 					richTextApproach={richTextApproach}
 					richTextResult={richTextResult}
 					problem={problem}
 					approach={approach}
 					result={result}
-                />*/}
+                />*/
+}
 
-
-                {/*<div>
+{
+	/*<div>
 			<div className='pt-12 lg:pt-16 container mx-auto'>
 				<div className='container'>
 					<div className=' bg-red-200'>
@@ -187,4 +167,5 @@ export default function PortfolioDetails({ blog }) {
 
 			
 			
-                            </div>*/}
+                            </div>*/
+}
