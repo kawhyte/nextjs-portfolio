@@ -9,7 +9,7 @@ const Cards = ({ items, hideLastItemOnMobile = false }) => {
    
   return (
     <div className="container mx-auto max-w-7xl">
-      <div className="flex flex-wrap  mx-3 lg:-mx-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
         {items.map(item => (
           <motion.div
           whileHover={{
@@ -19,7 +19,7 @@ zIndex:1,
               duration:.2
             }
           }}
-            className={classNames("w-full sm:w-1/2 lg:w-1/3 p-3 md:p-6 cursor-pointer", {
+            className={classNames("w-full  p-3 md:p-6 cursor-pointer", {
               "last:hidden lg:last:block": hideLastItemOnMobile,
             })}
             key={item.sys.id}
