@@ -41,7 +41,7 @@ function Header() {
             }
           }}
           
-          className="flex items-center text-white bg-black hover:text-indigo-500 px-5  pt-1 pb-2 rounded-lg no-underline">
+          className="flex items-center text-white bg-gray-800 hover:text-green-100 px-5  pt-1 pb-2 rounded-lg no-underline">
             <h1 className="text-xl cursor-pointer font-extrabold pt-2 tracking-tight">
               Kenny Whyte
             </h1>
@@ -106,7 +106,7 @@ function Header() {
                 key={link.title}
                 href={link.route}
               >
-               <a className="font-Montserrat font-extrabold text-lg block mt-4  text-black no-underline md:inline-block md:mt-0 md:ml-6 hover:text-blue-600 px-2"> 
+               <a className="font-Montserrat font-extrabold text-lg block mt-4  text-gray-800 no-underline md:inline-block md:mt-0 md:ml-6 hover:text-blue-600 px-2"> 
                 {link.title}</a>
               </Link>
             ) : (
@@ -129,7 +129,7 @@ const FooterLink = ({ href, label, icon: Icon }) => {
         href={href}
         target="_blank"
         rel="noreferrer noopener"
-        className="text-black hover:text-blue-600 transition duration-150 ease-in-out"
+        className="bg-gray-800 hover:text-blue-600 transition duration-150 ease-in-out"
       >
         <span className="sr-only">{label}</span>
         <Icon className="w-7 h-7 fill-current" />
