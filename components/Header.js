@@ -7,12 +7,14 @@ function Header() {
 
 
   return (
+
+
     <header className="bg-green-100 ">
-      <div className="flex flex-wrap  items-center justify-between max-w-6xl p-4 container mx-auto md:p-8">
+      <div className="flex flex-wrap   justify-between max-w-7xl   p-4  mx-auto md:p-8">
         <Link href="/">
-          <h1 className="flex items-center text-black no-underline">
-            <span className="text-xl cursor-pointer font-semibold tracking-tight">
-              Kenny Whyte
+          <h1 className="flex items-center text-white bg-black px-5  pt-1 pb-2 rounded-lg no-underline">
+            <span className="text-xl cursor-pointer font-extrabold pt-2 tracking-tight">
+              KW
             </span>
           </h1>
         </Link>
@@ -70,7 +72,7 @@ function Header() {
                 key={link.title}
                 href={link.route}
               >
-               <a className="font-Montserrat font-normal block mt-4  text-black no-underline md:inline-block md:mt-0 md:ml-6 hover:text-gray-500 px-2"> 
+               <a className="font-Montserrat font-extrabold text-lg block mt-4  text-black no-underline md:inline-block md:mt-0 md:ml-6 hover:text-gray-500 px-2"> 
                 {link.title}</a>
               </Link>
             ) : (
@@ -79,7 +81,7 @@ function Header() {
                 href={link.route}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-Montserrat font-normal block mt-4 text-black no-underline md:inline-block md:mt-0 md:ml-6 hover:text-gray-500 px-2"
+                className="font-Montserrat font-extrabold text-lg block mt-4 text-black no-underline md:inline-block md:mt-0 md:ml-6 hover:text-gray-500 px-2"
               >
                 {link.title}
               </a>

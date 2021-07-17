@@ -4,9 +4,9 @@ const Hero = () => {
 	return (
 		<div>
 			<div className='pt-3 bg-green-100 '>
-				<div className='container flex flex-col flex-wrap items-center justify-center px-3 mx-auto md:flex-row'>
+				<div className='container max-w-7xl flex flex-col flex-wrap items-center justify-center px-3 mx-auto md:flex-row '>
 					<div className='flex flex-col items-center justify-center w-full lg:w-2/5 '>
-						<h2 className='pt-32 pb-10 px-10  md:pl-0  text-8.5xl tracking-tight leading-10 font-extrabold text-white sm:text-10xl lg:text-12xl xl:text-15xl lg:pl-20   sm:pb-16 text-pop-up-top '>
+						<h2 className='pt-32 pb-10 px-10  md:pl-0  text-8.5xl tracking-tight leading-10 font-extrabold text-white sm:text-10xl lg:text-12xl xl:text-14xl lg:pl-20   sm:pb-16 text-pop-up-top '>
 							Hello.
 						</h2>
 
