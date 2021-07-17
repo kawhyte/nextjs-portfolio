@@ -82,10 +82,11 @@ export default function PortfolioDetails({ blog }) {
           width={1024}
           height={384}
           class="absolute left-0 top-0 w-full h-full z-0 object-cover  "
+		  alt={title}
       />
 </div>
           <div class="p-4 absolute bottom-0 left-0 z-20">
-          <h2 class="text-4xl max-w-screen-md pb-3  font-semibold text-gray-100 leading-tight">
+          <h2 class="text-4xl max-w-screen-md p-3 bg-black font-semibold text-gray-100 leading-tight">
           {title}
           </h2>
           <a href="#"

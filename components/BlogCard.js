@@ -16,7 +16,7 @@ const Card = ({ blog }) => {
 			<p class='leading-relaxed mb-8 clamp-3'>{summary}</p>
 			<div class='flex items-center flex-wrap mb-4  mt-auto w-full'>
 				<Link href={`/blog/${slug}`}>
-					<a class='text-indigo-500 inline-flex items-center'>
+					<a class='text-blue-900 inline-flex items-center'>
 						Read More
 						<svg
 							class='w-4 h-4 ml-2'
