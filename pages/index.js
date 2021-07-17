@@ -29,7 +29,7 @@ export default function Index({ portfolio, blog }) {
 			<Hero />
 			<Section />
 
-			<div className='container mx-auto flex flex-col justify-between px-4 py-2'>
+			<div id="projects" className='container mx-auto flex flex-col justify-between px-4 py-2'>
 				<div className='flex flex-row justify-between py-2 container max-w-7xl mx-auto'>
 					<h2 className='font-extrabold leading-tight tracking-tight text-gray-900 sm:text-2xl md:text-3xl'>
 						Featured Projects
