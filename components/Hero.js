@@ -10,7 +10,7 @@ const Hero = () => {
 							Hello.
 						</h2>
 
-						<p className='text-3xl font-extrabold leading-10 tracking-tight text-center text-indigo-700 lg:py-6 lg:text-4xl'>
+						<p className='text-3xl font-extrabold leading-10 tracking-tight text-center text-black lg:py-6 lg:text-4xl'>
 							Kon&apos;nichiwa. Bonjour. Salut!
 						</p>
 

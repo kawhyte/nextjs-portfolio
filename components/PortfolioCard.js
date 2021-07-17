@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion"
 
 const Card = ({ portfolio }) => {
 	const { name, slug, summary, thumbnail } = portfolio.fields;
