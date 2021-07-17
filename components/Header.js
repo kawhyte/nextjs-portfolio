@@ -43,6 +43,11 @@ function Header() {
               type: `internal`,
             },
             {
+              route: `/blogs`,
+              title: `Blog`,
+              type: `internal`,
+            },
+            {
               route: `https://dev.to/kawhyte`,
               title: `Dev.to`,
               type: `external`,
@@ -52,6 +57,7 @@ function Header() {
               title: `CodePen`,
               type: `external`,
             },
+         
             {
               route: `https://www.linkedin.com/in/kawhyte/`,
               title: `LinkedIn`,
@@ -60,11 +66,12 @@ function Header() {
           ].map(link =>
             link.type === "internal" ? (
               <Link
-                className="font-Montserrat cursor-pointer block mt-4 text-black no-underline md:inline-block md:mt-0 md:ml-6 hover:text-gray-500 px-2"
+                className=""
                 key={link.title}
                 href={link.route}
               >
-                {link.title}
+               <a className="font-Montserrat font-normal block mt-4  text-black no-underline md:inline-block md:mt-0 md:ml-6 hover:text-gray-500 px-2"> 
+                {link.title}</a>
               </Link>
             ) : (
               <a
