@@ -19,6 +19,7 @@ export async function getStaticProps() {
 			portfolio: res.items,
 			blog: res2.items,
 		},
+		revalidate: 1
 	};
 }
 
