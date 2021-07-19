@@ -2,6 +2,7 @@ import { createClient } from 'contentful'
 import Image from "next/image";
 import Button from "../../components/Button"
 import CaseStudy from '../../components/CaseStudy';
+import Skeleton from '../../components/Skeleton';
 
 
 const client = createClient({
@@ -22,7 +23,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false
+    fallback: true
   }
 }
 
@@ -41,6 +42,7 @@ export const getStaticProps = async ({ params }) => {
 
 
 export default function PortfolioDetails({portfolio}) {
+  if (!portfolio) return <Skeleton /> 
   
   const {
     description,
