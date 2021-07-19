@@ -33,6 +33,18 @@ export const getStaticProps = async ({ params }) => {
 		content_type: "blogPost",
 		"fields.slug": params.slug,
 	});
+	
+	if(!items.length){
+
+		return{
+		  redirect:{
+			destination: '/',
+			permanent: false
+	
+		  }
+		}
+	  }
+	  
 
 	return {
 		props: { blog: items[0] },
