@@ -14,11 +14,11 @@ export default function Skeleton() {
                 <h1 className="mb-1 bg-green-50 text-2xl font-medium leading-tight tracking-tight text-left text-gray-900 md:text-3xl sm:text-4xl       ">
                   
                 </h1>
-                {description && (
+                
                   <div className="my-4 bg-yellow-50  text-base font-light text-left text-gray-700 whitespace-pre-line text-md font-Montserrat">
                   
                   </div>
-                )}
+               
                 <div className="pt-2 bg-gray-100 mt-4 text-xl font-semibold leading-tight tracking-tight text-gray-700 sm:text-xl">
                   
                 </div>
