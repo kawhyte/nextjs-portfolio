@@ -4,7 +4,7 @@ export default function Skeleton() {
     return (
         <div>
   
-        <div className="pt-12 lg:pt-16 container mx-auto">
+        <div className="pt-12 lg:pt-16 container mx-auto max-h-screen">
           <div className="container">
             <div className="flex flex-wrap sm:flex-nowrap justify-center">
               <div className="w-full bg-gray-50 pb-8 md:w-3/6 md:pr-4 ">

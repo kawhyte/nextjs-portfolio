@@ -14,7 +14,7 @@ const Cards = ({ items, hideLastItemOnMobile = false }) => {
           <motion.div
           whileHover={{
 zIndex:1,
-            scale:[1, 1.3, 1.2],
+            scale:[1, 1.2, 1.1],
             transition:{
               duration:.2
             }
