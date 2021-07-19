@@ -41,6 +41,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export default function PortfolioDetails({ blog }) {
+	if (!blog) return <Skeleton /> 
 	const {
 		description,
 		gallery,

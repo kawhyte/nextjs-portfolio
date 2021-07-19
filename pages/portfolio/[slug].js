@@ -32,6 +32,17 @@ export const getStaticProps = async ({ params }) => {
     content_type: 'portfolio',
     'fields.slug': params.slug
   })
+
+  if(!items.length){
+
+    return{
+      redirect:{
+        destination: '/',
+        permanent: false
+
+      }
+    }
+  }
   
   return {
     props: { portfolio: items[0] },
@@ -43,7 +54,7 @@ export const getStaticProps = async ({ params }) => {
 
 export default function PortfolioDetails({portfolio}) {
   if (!portfolio) return <Skeleton /> 
-  
+
   const {
     description,
     gallery,
