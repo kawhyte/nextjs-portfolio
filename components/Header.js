@@ -106,12 +106,12 @@ function Header() {
                 key={link.title}
                 href={link.route}
               >
-               <a className="font-Montserrat font-extrabold text-lg block mt-4  text-gray-800 no-underline md:inline-block md:mt-0 md:ml-6 hover:text-blue-600 px-2"> 
+               <a key={link.route} className="font-Montserrat font-extrabold text-lg block mt-4  text-gray-800 no-underline md:inline-block md:mt-0 md:ml-6 hover:text-blue-600 px-2"> 
                 {link.title}</a>
               </Link>
             ) : (
         
-                <FooterLink href={link.route} icon={link.icon} label="Twitter" />
+                <FooterLink key={link.route}  href={link.route} icon={link.icon} label="Twitter" />
             )
           )}
         </nav>

@@ -9,23 +9,23 @@ const Card = ({ blog }) => {
 	return (
 		<div className="bg-yellow-50 p-4 rounded-xl">
 			<Link href={`/blog/${slug}`}>
-				<h2 class='sm:text-2xl  cursor-pointer text-xl title-font font-medium text-gray-900 mt-4 mb-4'>
+				<h2 className='sm:text-2xl  cursor-pointer text-xl title-font font-medium text-gray-900 mt-4 mb-4'>
 					{title}
 				</h2>
 			</Link>
-			<p class='leading-relaxed mb-8 clamp-3'>{summary}</p>
-			<div class='flex items-center flex-wrap mb-4  mt-auto w-full'>
+			<p className='leading-relaxed mb-8 clamp-3'>{summary}</p>
+			<div className='flex items-center flex-wrap mb-4  mt-auto w-full'>
 				<Link href={`/blog/${slug}`}>
-					<a class='text-blue-900 inline-flex items-center'>
+					<a className='text-blue-900 inline-flex items-center'>
 						Read More
 						<svg
-							class='w-4 h-4 ml-2'
+							className='w-4 h-4 ml-2'
 							viewBox='0 0 24 24'
 							stroke='currentColor'
-							stroke-width='2'
+							strokeWidth='2'
 							fill='none'
-							stroke-linecap='round'
-							stroke-linejoin='round'>
+							strokeLinecap='round'
+							strokeLinejoin='round'>
 							<path d='M5 12h14'></path>
 							<path d='M12 5l7 7-7 7'></path>
 						</svg>
