@@ -5,6 +5,7 @@ import CaseStudy from "../../components/CaseStudy";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 //import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { renderOptions } from "../../util/rich-text-types";
+import Skeleton from '../../components/Skeleton';
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID,
@@ -75,9 +76,9 @@ export default function PortfolioDetails({ blog }) {
 		richTextResult,
 	} = blog.fields;
 	return (
-		<main class='mt-20'>
+		<main className='mt-20'>
 			<div
-				class='mb-8  w-full max-w-screen-lg mx-auto '
+				className='mb-8  w-full max-w-screen-lg mx-auto '
 				>
 				<div className='   '>
 					<Image
@@ -86,24 +87,24 @@ export default function PortfolioDetails({ blog }) {
 						src={`https:${thumbnail.fields.file.url}`}
 						width={1024}
 						height={384}
-						class=' w-full h-full  object-cover  '
+						className=' w-full h-full  object-cover  '
 						alt={title}
 					/>
 				</div>
-				<div class=' '>
-					<h2 class='text-4xl max-w-screen-md p-3 bg-black font-semibold text-gray-100 leading-tight'>
+				<div className=' '>
+					<h2 className='text-4xl max-w-screen-md p-3 bg-black font-semibold text-gray-100 leading-tight'>
 						{title}
 					</h2>
 					<a
 						href='#'
-						class='px-4 py-1 bg-black text-gray-200 text-xs inline-flex items-center justify-center'>
+						className='px-4 py-1 bg-black text-gray-200 text-xs inline-flex items-center justify-center'>
 						Photo credit: {photoCredit}
 					</a>
 				</div>
 			</div>
 
-			<div class='px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-lg mx-auto text-lg leading-relaxed'>
-				<p class='pb-6'>
+			<div className='px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-lg mx-auto text-lg leading-relaxed'>
+				<p className='pb-6'>
 					{documentToReactComponents(richText, renderOptions)}{" "}
 				</p>
 			</div>

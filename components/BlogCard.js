@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const Card = ({ blog }) => {
 	const { title, slug, summary, thumbnail } = blog.fields;

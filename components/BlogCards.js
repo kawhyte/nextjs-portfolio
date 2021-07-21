@@ -7,7 +7,7 @@ const Cards = ({ items, hideLastItemOnMobile = false }) => {
 
    
   return (
-    <div className="container max-w-7xl mx-auto">
+    <div className="container max-w-7xl mx-auto ">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {items.map(item => (
           <div
