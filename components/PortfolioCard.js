@@ -10,11 +10,13 @@ const Card = ({ portfolio }) => {
 		<div className='h-full max-w-sm bg-gray-50  border shadow-lg rounded overflow-hidden group '>
 		<div className='group-hover:opacity-75  transition duration-150 ease-in-out '>
 			<Link href={`/portfolio/${slug}`}>
+			<a>
 				<Image
 					src={`https:${thumbnail.fields.file.url}`}
 					width={444}
 					height={342}
 				/>
+				</a>
 			</Link>
 		</div>
 		<div className='p-4 sm:p-5 border-t'>

@@ -8,9 +8,10 @@ const Card = ({ blog }) => {
 	return (
 		<div className="bg-yellow-50 p-4 rounded-xl">
 			<Link href={`/blog/${slug}`}>
+			<a>
 				<h2 className='sm:text-2xl  cursor-pointer text-xl title-font font-medium text-gray-900 mt-4 mb-4'>
 					{title}
-				</h2>
+				</h2></a>
 			</Link>
 			<p className='leading-relaxed mb-8 clamp-3'>{summary}</p>
 			<div className='flex items-center flex-wrap mb-4  mt-auto w-full'>
