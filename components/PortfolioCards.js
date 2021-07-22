@@ -6,7 +6,7 @@ import { motion, transform } from "framer-motion";
 
 const Cards = ({ items, hideLastItemOnMobile = false }) => {
 	return (
-		<div className='container mx-auto max-w-7xl bg-red-200'>
+		<div className='container mx-auto max-w-7xl'>
 			<div className='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 '>
 				{items.map((item) => (
 					<motion.div
