@@ -33,16 +33,18 @@ const Hero = () => {
 					</div>
 
 					<div className='flex justify-center w-full px-6 py-6 text-center md:w-3/5 md:justify-end'>
-						<Image
+					
+					<div>
+					<Image
 							src='/person-on-computer.png'
-							blurDataURL='data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=='
+							blurDataURL='https://res.cloudinary.com/babyhulk/image/upload/e_blur:1058,q_10/v1627169850/hero-image/person-on-computer.webp'
 							placeholder='blur'
 							width='545'
 							height='471'
 							alt='boy running'
 							className='w-48  m-2 mt-6 sm:w-48 md:my-8 md:w-56 lg:mx-20'
 						/>
-					</div>
+					</div></div>
 				</div>
 			</div>
 		</div>
