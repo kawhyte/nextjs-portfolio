@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion"
+
 
 const Card = ({ portfolio }) => {
 	const { name, slug, summary, thumbnail } = portfolio.fields;
@@ -13,6 +13,8 @@ const Card = ({ portfolio }) => {
 			<a>
 				<Image
 					src={`https:${thumbnail.fields.file.url}`}
+					blurDataURL={`https:${thumbnail.fields.file.url}`}
+							placeholder='blur'
 					width={444}
 					height={342}
 				/>
