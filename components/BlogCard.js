@@ -9,14 +9,14 @@ const Card = ({ blog }) => {
 		<div className="bg-yellow-50 p-4 rounded-xl">
 			<Link href={`/blog/${slug}`}>
 			<a>
-				<h2 className='sm:text-2xl  cursor-pointer text-xl title-font font-medium text-gray-900 mt-4 mb-4'>
+				<h2 className='sm:text-2xl hover:text-blue-500  cursor-pointer text-xl title-font font-medium text-gray-900 mt-4 mb-4'>
 					{title}
 				</h2></a>
 			</Link>
 			<p className='leading-relaxed mb-8 clamp-3'>{summary}</p>
 			<div className='flex items-center flex-wrap mb-4  mt-auto w-full'>
 				<Link href={`/blog/${slug}`}>
-					<a className='text-blue-900 inline-flex items-center'>
+					<a className='text-blue-900 hover:text-blue-500  inline-flex items-center'>
 						Read More
 						<svg
 							className='w-4 h-4 ml-2'
