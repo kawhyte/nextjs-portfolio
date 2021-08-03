@@ -4,6 +4,8 @@ import BlogCards from "../components/BlogCards";
 import Hero from "../components/Hero";
 import Section from "../components/Section";
 import Link from "next/link";
+import Head from 'next/head'
+import PortfolioDetails from './portfolio/[slug]';
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -26,7 +28,14 @@ export async function getStaticProps() {
 export default function Index({ portfolio, blog }) {
 
 	return (
+
+		
 		<div className='mb-24 '>
+		<Head>
+		<title>Home | Kenny Portfolio</title>
+		<meta></meta>
+		<link rel="icon" href="/favicon.ico"></link>
+		</Head>
 			<Hero />
 			<Section />
 
