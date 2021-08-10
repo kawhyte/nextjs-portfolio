@@ -3,11 +3,49 @@ import Link from "next/link";
 const Card = ({ blog }) => {
 	const { title, slug, summary, thumbnail } = blog.fields;
 
-	;
-
 	return (
-		<div className="bg-yellow-50 p-4 rounded-xl">
-			<Link href={`/blog/${slug}`}>
+		<div className=' p-4 rounded-xl'>
+			<div class='flex max-w-xl mx-auto  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800'>
+				<div
+					class='w-1/3 bg-cover'
+					style={{
+						backgroundImage: `url(${`https:${thumbnail.fields.file.url}`})`,
+					}}></div>
+
+				<div class='w-2/3 p-4 md:p-4'>
+					<Link href={`/blog/${slug}`}>
+						<a className='text-blue-900 hover:text-blue-500  inline-flex items-center'>
+							<h1 class='text-2xl font-bold text-gray-800 hover:text-blue-500 dark:text-white clamp-4'>
+								{title}
+							</h1>
+						</a>
+					</Link>
+					<p class='mt-2 text-sm text-gray-600 dark:text-gray-400 clamp-3'>
+						{summary}
+					</p>
+
+					<div class='flex justify-between mt-6 item-center'>
+						<Link href={`/blog/${slug}`}>
+							<a className='text-blue-900 hover:text-blue-500  inline-flex items-center'>
+								Read More
+								<svg
+									className='w-4 h-4 ml-2'
+									viewBox='0 0 24 24'
+									stroke='currentColor'
+									strokeWidth='2'
+									fill='none'
+									strokeLinecap='round'
+									strokeLinejoin='round'>
+									<path d='M5 12h14'></path>
+									<path d='M12 5l7 7-7 7'></path>
+								</svg>
+							</a>
+						</Link>{" "}
+					</div>
+				</div>
+			</div>
+
+			{/*<Link href={`/blog/${slug}`}>
 			<a>
 				<h2 className='sm:text-2xl hover:text-blue-500  cursor-pointer text-xl title-font font-medium text-gray-900 mt-4 mb-4'>
 					{title}
@@ -31,7 +69,7 @@ const Card = ({ blog }) => {
 						</svg>
 					</a>
 				</Link>
-			</div>
+	</div>*/}
 		</div>
 	);
 };
