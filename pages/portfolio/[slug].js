@@ -1,5 +1,6 @@
 import { createClient } from 'contentful'
 import Image from "next/image";
+import Head from "next/head";
 import Button from "../../components/Button"
 import CaseStudy from '../../components/CaseStudy';
 import Skeleton from '../../components/Skeleton';
@@ -75,7 +76,11 @@ export default function PortfolioDetails({portfolio}) {
 
   return (
     <div>
-  
+  	<Head>
+		<title>{name} | Kenny Portfolio</title>
+		<meta></meta>
+		<link rel="icon" href="/favicon.ico"></link>
+		</Head>
       <div className="pt-12 lg:pt-16 container mx-auto">
         <div className="container">
           <div className="flex flex-wrap sm:flex-nowrap justify-center">

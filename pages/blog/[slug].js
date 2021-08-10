@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import Image from "next/image";
+import Head from "next/head";
 import Button from "../../components/Button";
 import CaseStudy from "../../components/CaseStudy";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -77,6 +78,11 @@ export default function PortfolioDetails({ blog }) {
 	} = blog.fields;
 	return (
 		<main className='mt-20'>
+		<Head>
+		<title>{title} | Kenny Portfolio</title>
+		<meta></meta>
+		<link rel="icon" href="/favicon.ico"></link>
+		</Head>
 			<div
 				className='mb-8  w-full max-w-screen-lg mx-auto '
 				>
