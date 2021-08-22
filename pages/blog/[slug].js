@@ -111,7 +111,7 @@ export default function PortfolioDetails({ blog }) {
 
 			<div className='px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-lg mx-auto text-lg leading-relaxed'>
 				<p className='pb-6'>
-					{documentToReactComponents(richText, renderOptions)}{" "}
+					{documentToReactComponents(richText, renderOptions)}
 				</p>
 			</div>
 		</main>
