@@ -88,7 +88,7 @@ export default function PortfolioDetails({ blog }) {
 				>
 				<div className='   '>
 					<Image
-						blurDataURL={`https:${thumbnail.fields.file.url}`}
+						blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp`}
 						placeholder='blur'
 						src={`https:${thumbnail.fields.file.url}?fm=webp`}
 						width={1024}

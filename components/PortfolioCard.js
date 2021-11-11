@@ -12,7 +12,7 @@ const Card = ({ portfolio }) => {
 			<Link href={`/portfolio/${slug}`}>
 			<a>
 				<Image
-					src={`https:${thumbnail.fields.file.url}`}
+					src={`https:${thumbnail.fields.file.url}?fm=webp`}
 					blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp`}
 							placeholder='blur'
 					width={444}

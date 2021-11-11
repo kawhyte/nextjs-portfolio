@@ -121,7 +121,7 @@ export default function PortfolioDetails({portfolio}) {
                         >
                     
                           <Image
-                          src={`https:${tech.fields.file.url}`}
+                          src={`https:${tech.fields.file.url}?fm=webp`}
                           width="45"
                           height="45"
                           alt="technology icon"
