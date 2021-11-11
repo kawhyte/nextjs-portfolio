@@ -90,7 +90,7 @@ export default function PortfolioDetails({ blog }) {
 					<Image
 						blurDataURL={`https:${thumbnail.fields.file.url}`}
 						placeholder='blur'
-						src={`https:${thumbnail.fields.file.url}`}
+						src={`https:${thumbnail.fields.file.url}?fm=webp`}
 						width={1024}
 						height={384}
 						className=' w-full h-full  object-cover  '

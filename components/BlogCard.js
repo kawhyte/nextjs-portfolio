@@ -5,11 +5,11 @@ const Card = ({ blog }) => {
 
 	return (
 		<div className=' p-4 rounded-xl'>
-			<div class='flex max-w-xl mx-auto  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800'>
+			<div className='flex max-w-xl mx-auto  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800'>
 				<div
 					class='w-1/3 bg-cover'
 					style={{
-						backgroundImage: `url(${`https:${thumbnail.fields.file.url}`})`,
+						backgroundImage: `url(${`https:${thumbnail.fields.file.url}?fm=webp`})`,
 					}}></div>
 
 				<div class='w-2/3 p-4 md:p-4'>
