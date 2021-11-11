@@ -1,20 +1,25 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Card = ({ blog }) => {
 	const { title, slug, summary, thumbnail } = blog.fields;
 
 	return (
 		<div className=' p-4 rounded-xl'>
-			<div className='flex max-w-xl mx-auto  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800'>
-				<div
-					class='w-1/3 bg-cover'
-					style={{
-						width:460,
-						height:295,
-						backgroundImage: `url(${`https:${thumbnail.fields.file.url}?fm=webp`})`,
-					}}></div>
+			<div className='flex flex-col mx-auto  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800'>
+				
+					<Image
+						blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp`}
+						placeholder='blur'
+						src={`https:${thumbnail.fields.file.url}?fm=webp`}
+						width={460}
+						height={400}
+						className=' object-cover '
+						alt={title}
+					/>
+				
 
-				<div class='w-2/3 p-4 md:p-4'>
+				<div class='w-full p-4 md:p-4'>
 					<Link href={`/blog/${slug}`}>
 						<a className='text-blue-900 hover:text-blue-500  inline-flex items-center'>
 							<h1 class='text-2xl font-bold text-gray-800 hover:text-blue-500 dark:text-white clamp-3'>
@@ -22,7 +27,7 @@ const Card = ({ blog }) => {
 							</h1>
 						</a>
 					</Link>
-					<p class='mt-2 text-sm text-gray-600 dark:text-gray-400 clamp-3'>
+					<p class='mt-2 text-sm md:text-base text-gray-600 dark:text-gray-400 clamp-2'>
 						{summary}
 					</p>
 
