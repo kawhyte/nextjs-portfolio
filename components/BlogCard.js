@@ -9,13 +9,15 @@ const Card = ({ blog }) => {
 				<div
 					class='w-1/3 bg-cover'
 					style={{
+						width:460,
+						height:295,
 						backgroundImage: `url(${`https:${thumbnail.fields.file.url}?fm=webp`})`,
 					}}></div>
 
 				<div class='w-2/3 p-4 md:p-4'>
 					<Link href={`/blog/${slug}`}>
 						<a className='text-blue-900 hover:text-blue-500  inline-flex items-center'>
-							<h1 class='text-2xl font-bold text-gray-800 hover:text-blue-500 dark:text-white clamp-4'>
+							<h1 class='text-2xl font-bold text-gray-800 hover:text-blue-500 dark:text-white clamp-3'>
 								{title}
 							</h1>
 						</a>
