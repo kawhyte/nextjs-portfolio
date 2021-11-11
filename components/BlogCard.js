@@ -6,8 +6,8 @@ const Card = ({ blog }) => {
 
 	return (
 		<div className=' p-4 rounded-xl'>
-			<div className='flex flex-col mx-auto  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800'>
-				
+			<div className='flex flex-col mx-auto cursor-pointer  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800'>
+				<Link href={`/blog/${slug}`}>
 					<Image
 						blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp`}
 						placeholder='blur'
@@ -17,8 +17,7 @@ const Card = ({ blog }) => {
 						className=' object-cover '
 						alt={title}
 					/>
-				
-
+				</Link>
 				<div class='w-full p-4 md:p-4'>
 					<Link href={`/blog/${slug}`}>
 						<a className='text-blue-900 hover:text-blue-500  inline-flex items-center'>
@@ -27,7 +26,7 @@ const Card = ({ blog }) => {
 							</h1>
 						</a>
 					</Link>
-					<p class='mt-2 text-sm md:text-base text-gray-600 dark:text-gray-400 clamp-2'>
+					<p className='mt-2 text-sm md:text-base text-gray-600 dark:text-gray-400 clamp-2'>
 						{summary}
 					</p>
 
