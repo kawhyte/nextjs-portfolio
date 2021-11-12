@@ -6,7 +6,7 @@ import CaseStudy from "../../components/CaseStudy";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 //import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { renderOptions } from "../../util/rich-text-types";
-import Skeleton from '../../components/Skeleton';
+import Skeleton from "../../components/Skeleton";
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID,
@@ -35,27 +35,24 @@ export const getStaticProps = async ({ params }) => {
 		content_type: "blogPost",
 		"fields.slug": params.slug,
 	});
-	
-	if(!items.length){
 
-		return{
-		  redirect:{
-			destination: '/',
-			permanent: false
-	
-		  }
-		}
-	  }
-	  
+	if (!items.length) {
+		return {
+			redirect: {
+				destination: "/",
+				permanent: false,
+			},
+		};
+	}
 
 	return {
 		props: { blog: items[0] },
-		revalidate: 1
+		revalidate: 1,
 	};
 };
 
 export default function PortfolioDetails({ blog }) {
-	if (!blog) return <Skeleton /> 
+	if (!blog) return <Skeleton />;
 	const {
 		description,
 		gallery,
@@ -78,14 +75,22 @@ export default function PortfolioDetails({ blog }) {
 	} = blog.fields;
 	return (
 		<main className='mt-20'>
-		<Head>
-		<title>{title} | Kenny Portfolio</title>
-		<meta></meta>
-		<link rel="icon" href="/favicon.ico"></link>
-		</Head>
-			<div
-				className='mb-8  w-full max-w-screen-lg mx-auto '
-				>
+			<Head>
+				<title>{title} | Kenny Portfolio</title>
+				<meta></meta>
+				<link rel='icon' href='/favicon.ico'></link>
+			</Head>
+			<div className='mb-8  w-full max-w-screen-lg mx-auto '>
+				<div className=' '>
+					<h2 className='text-5xl font-semibold md:font-bold text-black leading-tight'>
+						{title}
+					</h2>
+					<a
+						href='#'
+						className='px-2 py-2 mb-8  text-black text-base inline-flex items-center justify-center'>
+						Photo credit: {photoCredit}
+					</a>
+				</div>
 				<div className='   '>
 					<Image
 						blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp`}
@@ -93,19 +98,9 @@ export default function PortfolioDetails({ blog }) {
 						src={`https:${thumbnail.fields.file.url}?fm=webp`}
 						width={1024}
 						height={384}
-						className=' w-full h-full  object-cover  '
+						className=' w-full h-full  object-cover rounded-lg'
 						alt={title}
 					/>
-				</div>
-				<div className=' '>
-					<h2 className='text-4xl max-w-screen-md p-3 bg-black font-semibold text-gray-100 leading-tight'>
-						{title}
-					</h2>
-					<a
-						href='#'
-						className='px-4 py-1 bg-black text-gray-200 text-xs inline-flex items-center justify-center'>
-						Photo credit: {photoCredit}
-					</a>
 				</div>
 			</div>
 
