@@ -7,7 +7,7 @@
   </a>
 </p>
 <h1 align="center">
-Personal portfolio and Blog 
+Personal Portfolio and Blog 
 
 </h1>
 
@@ -35,10 +35,3 @@ https://www.kennywhyte.com/
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
-
-
-
-
-
-
-
