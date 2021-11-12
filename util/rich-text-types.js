@@ -1,7 +1,8 @@
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 import Image from "next/image";
 
 export const renderOptions = {
+ 
 	renderNode: {
 		[INLINES.EMBEDDED_ENTRY]: (node, children) => {
 			// target the contentType of the EMBEDDED_ENTRY to display as you need
@@ -14,8 +15,13 @@ export const renderOptions = {
 				);
 			}
 		},
+ 
+
+
+    
 		[BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
 			// target the contentType of the EMBEDDED_ENTRY to display as you need
+      
 			if (node.data.target.sys.contentType.sys.id === "codeBlock") {
 				return (
 					<pre>
@@ -23,6 +29,7 @@ export const renderOptions = {
 					</pre>
 				);
 			}
+	
 
 			if (node.data.target.sys.contentType.sys.id === "videoEmbed") {
 				return (
@@ -38,7 +45,8 @@ export const renderOptions = {
 				);
 			}
 		},
-		[BLOCKS.PARAGRAPH]: (node, children) => <p className=' pb-6'>{children}</p>,
+		[BLOCKS.PARAGRAPH]: (node, children) => <p className=' pb-6 tracking-wider leading-relaxed '>{children}</p>,
+		
 
 		[BLOCKS.EMBEDDED_ASSET]: (node, children) => {
 			// render the EMBEDDED_ASSET as you need

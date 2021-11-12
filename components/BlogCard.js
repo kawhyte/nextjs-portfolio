@@ -20,10 +20,10 @@ const Card = ({ blog }) => {
 						alt={title}
 					/>
 				</Link>
-				<div class='w-full p-4 md:p-4'>
+				<div className='w-full p-4 md:p-4'>
 					<Link href={`/blog/${slug}`}>
 						<a className='text-blue-900 hover:text-blue-500  inline-flex items-center'>
-							<h1 class='text-2xl font-bold text-gray-800 hover:text-blue-500 dark:text-white clamp-3'>
+							<h1 className='text-2xl font-bold text-gray-800 hover:text-blue-500 dark:text-white clamp-3'>
 								{title}
 							</h1>
 						</a>
@@ -32,7 +32,7 @@ const Card = ({ blog }) => {
 						{summary}
 					</p>
 
-					<div class='flex justify-between mt-6 item-center'>
+					<div className='flex justify-between mt-6 item-center'>
 						<Link href={`/blog/${slug}`}>
 							<a className='text-blue-900 hover:text-blue-500  inline-flex items-center'>
 								Read More
