@@ -96,7 +96,7 @@ export default function PortfolioDetails({portfolio}) {
                   />
                 </a>
               )}
-              {gallery && gallery.length > 1 && <Carousel images={gallery} />}
+              {/*gallery && gallery.length > 1 && <Carousel images={gallery} />*/}
             </div>
             <div className="w-full mb-12 md:w-1/3 lg:pl-8 xl:pl-12 mx-6">
               <h1 className="mb-1 text-2xl font-medium leading-tight tracking-tight text-left text-gray-900 md:text-3xl sm:text-4xl       ">
@@ -112,6 +112,7 @@ export default function PortfolioDetails({portfolio}) {
                 <div className="flex justify-start leading-none md:px-1 ">
                   <div className="flex flex-wrap justify-between my-4 ">
                     {technology.map((tech, i) => {
+                      console.log("TECH " ,tech)
                       return (
                         <div
                         key={tech.sys.id}
