@@ -112,7 +112,7 @@ export default function PortfolioDetails({portfolio}) {
                 <div className="flex justify-start leading-none md:px-1 ">
                   <div className="flex flex-wrap justify-between my-4 ">
                     {technology.map((tech, i) => {
-                      console.log("TECH " ,tech)
+                      //console.log("TECH " ,tech)
                       return (
                         <div
                         key={tech.sys.id}
