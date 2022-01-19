@@ -45,9 +45,9 @@ function CaseStudy({
 							<div className='flex-grow text-left'>
 								<h3 className='text-yellow-500 text-xl title-font font-medium mb-3'>
 									Step 1 - Planning Phase{" "}
-									<span className='text-gray-900 text-base title-font font-normal italic mb-3'>
+									{/*<span className='text-gray-900 text-base title-font font-normal italic mb-3'>
 										(What problem was I trying to solve){" "}
-									</span>
+	</span>*/}
 								</h3>
 
 								<p className='leading-relaxed text-base text-gray-900 text-left'>
@@ -70,9 +70,9 @@ function CaseStudy({
 							<div className='flex-grow text-left'>
 								<h3 className='text-green-500 text-xl title-font font-medium mb-3'>
 									Step 2 - Project Requirement Phase{" "}
-									<span className='text-gray-900 text-base title-font font-normal italic mb-3'>
+									{/*<span className='text-gray-900 text-base title-font font-normal italic mb-3'>
 										(Project Requirements){" "}
-									</span>
+</span>*/}
 								</h3>
 
 								<p className='leading-relaxed text-base text-gray-900  text-left'>
@@ -95,9 +95,9 @@ function CaseStudy({
 							<div className='flex-grow text-left'>
 								<h3 className='text-indigo-500 text-xl title-font font-medium mb-3'>
 									Step 3 - Software Selection & Result{" "}
-									<span className='text-gray-900 text-base title-font font-normal italic mb-3'>
+									{/*<span className='text-gray-900 text-base title-font font-normal italic mb-3'>
 										(What technology was used){" "}
-									</span>
+</span>*/}
 								</h3>
 
 								<p className='leading-relaxed text-base text-gray-900 text-left'>
