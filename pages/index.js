@@ -27,9 +27,9 @@ export async function getStaticProps() {
 
 export default function Index({ portfolio, blog }) {
 
-	console.log("portfolio ", portfolio)
+	//console.log("portfolio ", portfolio)
 
-	portfolio = portfolio.filter(word => word.fields.featured === true).sort((a,b)=>a.sortByNumber - b.sortByNumber);
+	portfolio = portfolio.filter(item => item.fields.featured === true).sort((a,b)=>a.sortByNumber - b.sortByNumber);
 	
 	console.log("new portfolio ", portfolio)
 	return (
