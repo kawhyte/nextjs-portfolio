@@ -8,7 +8,7 @@ function Header() {
 
 	return (
 		<header className='bg-green-100 '>
-			<nav className='flex flex-wrap   justify-between max-w-7xl    p-4  mx-auto md:p-8'>
+			<nav className='flex flex-wrap   justify-between max-w-7xl    p-4  mx-auto md:p-5'>
 				<Link href='/'>
 					<motion.div
 						whileHover={{
@@ -19,8 +19,8 @@ function Header() {
 								duration: 0.2,
 							},
 						}}
-						className='flex items-center text-white bg-gray-800 hover:text-green-100 px-5  pt-1 pb-2 rounded-lg no-underline'>
-						<h1 className='text-xl cursor-pointer font-extrabold pt-2 tracking-tight'>
+						className='flex items-center text-white bg-gray-800 hover:text-green-100 px-4  pt-1 pb-1 rounded-lg no-underline'>
+						<h1 className='text-xl cursor-pointer font-extrabold tracking-tight'>
 							Kenny Whyte
 						</h1>
 					</motion.div>
