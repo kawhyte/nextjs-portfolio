@@ -101,12 +101,13 @@ function Header() {
             },
           ].map(link =>
             link.type === "internal" ? (
+              
               <Link
                 className=""
                 key={link.title}
                 href={link.route}
               >
-               <a key={link.route} className="font-Montserrat font-extrabold text-lg block mt-4  text-gray-800 no-underline md:inline-block md:mt-0 md:ml-6 hover:text-blue-600 px-2"> 
+               <a key={link.route} className="font-Montserrat font-extrabold text-lg block mt-4  text-gray-800 no-underline md:inline-block md:mt-0 md:ml-6 hover:text-blue-600 md:px-2"> 
                 {link.title}</a>
               </Link>
             ) : (
@@ -124,7 +125,7 @@ function Header() {
 }
 const FooterLink = ({ href, label, icon: Icon }) => {
   return (
-    <li className="inline-block pl-8">
+    <p className="inline-block md:pl-8 pr-3 py-6">
       <a
         href={href}
         target="_blank"
@@ -134,7 +135,7 @@ const FooterLink = ({ href, label, icon: Icon }) => {
         <span className="sr-only">{label}</span>
         <Icon className="w-7 h-7 fill-current" />
       </a>
-    </li>
+    </p>
   )
 }
 export default Header
