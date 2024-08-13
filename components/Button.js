@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import React from "react"
 
 const Button = ({ children, href, buttonColor, ...params }) => {
@@ -26,10 +26,10 @@ const Button = ({ children, href, buttonColor, ...params }) => {
   }
 }
 
-Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  href: PropTypes.string,
-}
+// Button.propTypes = {
+//   children: PropTypes.node.isRequired,
+//   href: PropTypes.string,
+// }
 
 Button.defaultProps = {
   href: null,

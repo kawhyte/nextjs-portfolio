@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import React from "react";
 import PortfolioCard from "./PortfolioCard";
 import { motion, transform } from "framer-motion";
