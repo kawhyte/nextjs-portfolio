@@ -1,6 +1,16 @@
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+	content: [
+		'./components/**/*.{js,ts,jsx,tsx}',
+		'./ui/**/*.{js,ts,jsx,tsx}',
+		'./components/**/*.{js,ts,jsx,tsx}',
+		'./src/**/*.{js,ts,jsx,tsx,mdx}',
+		'./intro-template/**/*.{js,ts,jsx,tsx}',
+		'./pages/**/*.{js,ts,jsx,tsx}',
+		'./plugins/**/*.{js,ts,jsx,tsx}',
+		'./public/**/*.html',
+	  ],
+//   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+//   darkMode: false, // or 'media' or 'class'
   theme: {
 
     extend: {},
@@ -29,11 +39,11 @@ module.exports = {
 			"15xl": "15rem",
 		},
 
-    lineClamp: {
-    1: 1,
-    2: 2,
-    3: 3
-  },
+//     lineClamp: {
+//     1: 1,
+//     2: 2,
+//     3: 3
+//   },
   },
   variants: {
     extend: {},

@@ -33,9 +33,7 @@ export default function Index({ portfolio, blog }) {
 	
 	console.log("new portfolio ", portfolio)
 	return (
-
-		
-		<div className='mb-24 '>
+        <div className='mb-24 '>
 		<Head>
 		<title>Home | Kenny Portfolio</title>
 		<meta></meta>
@@ -49,7 +47,7 @@ export default function Index({ portfolio, blog }) {
 					<h2 className='font-extrabold leading-tight tracking-tight text-gray-900 sm:text-2xl md:text-3xl'>
 						Featured Projects
 					</h2>
-					<Link className='flex flex-row cursor-pointer' href={`projects`}>
+					<Link className='flex flex-row cursor-pointer' href={`projects`} legacyBehavior>
 						<p className='pb-1 mb-6 text-sm text-blue-600 md:text-lg sm:text cursor-pointer'>
 							View All Projects
 						</p>
@@ -67,7 +65,7 @@ export default function Index({ portfolio, blog }) {
         <h2 className='font-extrabold leading-tight tracking-tight text-gray-900 sm:text-2xl md:text-3xl'>
           Recent Blog Posts
         </h2>
-        <Link className='flex flex-row cursor-pointer' href={`blogs`}>
+        <Link className='flex flex-row cursor-pointer' href={`blogs`} legacyBehavior>
           <p className='pb-1 mb-6 text-sm text-blue-600 md:text-lg sm:text cursor-pointer'>
             View All Blog Posts
           </p>
@@ -81,5 +79,5 @@ export default function Index({ portfolio, blog }) {
         )}
 			</div>
 		</div>
-	);
+    );
 }
