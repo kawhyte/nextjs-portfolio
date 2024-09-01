@@ -7,21 +7,21 @@ function Header() {
 	const [isExpanded, toggleExpansion] = useState(false);
 
 	return (
-		<header className='bg-green-100 '>
+        <header className='bg-green-100 '>
 			<nav className='flex flex-wrap   justify-between max-w-7xl    p-4  mx-auto md:p-5'>
-				<Link href='/'>
+				<Link href='/' legacyBehavior>
 					<motion.div
 						whileHover={{
-							scale: 1.2,
+							scale: 1.1,
 							rotate: [0, 10, -10, 0],
 
 							transition: {
 								duration: 0.2,
 							},
 						}}
-						className='flex items-center text-white bg-gray-800 hover:text-green-100 px-4  pt-1 pb-1 rounded-lg no-underline'>
-						<h1 className='text-xl cursor-pointer font-extrabold tracking-tight'>
-							Kenny Whyte
+						className='flex items-center text-white my-3 bg-gray-800 hover:text-white px-4   rounded-lg no-underline'>
+						<h1 className='text-xl  text-green-100 cursor-pointer font-extrabold tracking-tight'>
+							KW.
 						</h1>
 					</motion.div>
 				</Link>
@@ -50,44 +50,42 @@ function Header() {
 						},
 						{
 							route: `/blogs`,
-							title: `Blog`,
+							title: `Micro Blog`,
 							type: `internal`,
 							icon: FaCodepen,
 						},
-						{
-							route: `https://dev.to/kawhyte`,
-							title: `Dev.to`,
-							type: `external`,
-							icon: FaDev,
-						},
-						{
-							route: `https://codepen.io/kawhyte`,
-							title: `CodePen`,
-							type: `external`,
-							icon: FaCodepen,
-						},
-						{
-							route: `https://twitter.com/IAmKennyWhyte`,
-							title: `CodePen`,
-							type: `external`,
-							icon: FaTwitter,
-						},
+						// {
+						// 	route: `https://dev.to/kawhyte`,
+						// 	title: `Dev.to`,
+						// 	type: `external`,
+						// 	icon: FaDev,
+						// },
+						// {
+						// 	route: `https://codepen.io/kawhyte`,
+						// 	title: `CodePen`,
+						// 	type: `external`,
+						// 	icon: FaCodepen,
+						// },
+						// {
+						// 	route: `https://twitter.com/IAmKennyWhyte`,
+						// 	title: `CodePen`,
+						// 	type: `external`,
+						// 	icon: FaTwitter,
+						// },
 
-						{
-							route: `https://www.linkedin.com/in/kawhyte/`,
-							title: `LinkedIn`,
-							type: `external`,
-							icon: FaLinkedin,
-						},
+						// {
+						// 	route: `https://www.linkedin.com/in/kawhyte/`,
+						// 	title: `LinkedIn`,
+						// 	type: `external`,
+						// 	icon: FaLinkedin,
+						// },
 					].map((link) =>
 						link.type === "internal" ? (
-							<Link className='' key={link.title} href={link.route}>
-								<a
-									key={link.route}
-									className='font-Montserrat font-extrabold text-lg block mt-4  text-gray-800 no-underline md:inline-block md:mt-0 md:ml-6 hover:text-blue-600 md:px-2'>
-									{link.title}
-								</a>
-							</Link>
+							(<Link className='flex justify-between pr-6 hover:underline decoration-indigo-500 decoration-wavy text-xl font-bold my-2 py-2 ' key={link.title} href={link.route}>
+
+                                {link.title}
+
+                            </Link>)
 						) : (
 							<FooterLink
 								key={link.route}
@@ -100,7 +98,7 @@ function Header() {
 				</div>
 			</nav>
 		</header>
-	);
+    );
 }
 const FooterLink = ({ href, label, icon: Icon }) => {
 	return (

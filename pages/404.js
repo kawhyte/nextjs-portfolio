@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function NotFound() {
 	return (
-		<div>
+        <div>
 			<main className='bg-white  overflow-hidden h-screen relative'>
 				<header className='absolute top-0 left-0 right-0 z-20'>
 					<nav className='container mx-auto px-6 md:px-12 py-4'>
@@ -35,10 +35,12 @@ export default function NotFound() {
 							<h1 className='font-thin text-center text-6xl text-gray-800'>
 								YOU MUST BE LOST...
 							</h1>
-							<Link href='/'>
-								<a className='px-3 py-2 w-32 font-light transition ease-in duration-200 uppercase hover:bg-yellow-100 hover:text-black border-b text-lg border-yellow-600 focus:outline-none'>
+							<Link
+                                href='/'
+                                className='px-3 py-2 w-32 font-light transition ease-in duration-200 uppercase hover:bg-yellow-100 hover:text-black border-b text-lg border-yellow-600 focus:outline-none'>
+								
 									Take me Home
-								</a>
+								
 							</Link>
 						</div>
 						<div className='block w-full mx-auto mt-6 md:mt-0 relative'>
@@ -267,5 +269,5 @@ export default function NotFound() {
 				</div>
 			</main>
 		</div>
-	);
+    );
 }
