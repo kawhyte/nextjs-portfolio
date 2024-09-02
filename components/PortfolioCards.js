@@ -7,14 +7,14 @@ import { motion, transform } from "framer-motion";
 const Cards = ({ items, hideLastItemOnMobile = false }) => {
 	return (
 		<div className='container flex justify-center mx-auto max-w-7xl'>
-			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 '>
+			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 '>
 				{items.map((item) => (
 					<motion.div
 						whileHover={{
 							zIndex: 1,
-							scale: [1, 1.2, 1.1],
+							scale: [1, 1.07, 1],
 							transition: {
-								duration: 0.2,
+								duration: 0.15,
 							},
 						}}
 						className={classNames("w-full  p-3 md:p-6 cursor-pointer", {

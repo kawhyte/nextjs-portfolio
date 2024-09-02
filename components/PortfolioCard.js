@@ -6,8 +6,8 @@ const Card = ({ portfolio }) => {
 	const { name, slug, summary, thumbnail } = portfolio.fields;
 
 	return <>
-    <div className='h-full max-w-sm bg-gray-50  border shadow-lg rounded overflow-hidden group '>
-    <div className='group-hover:opacity-75  transition duration-150 ease-in-out '>
+    <div className=' max-w-sm bg-gray-50 hover:border-orange-300    overflow-hidden  border-black border-solid border-4 rounded-lg shadow-[14px_14px_0_-4px_#45f298,_14px_14px_0_0_#1f1f1f]  flex h-[420px] w-[420px]  flex-col bg-white/50  md:ml-auto '>
+    <div className=' transition duration-150 ease-in-out '>
         <Link href={`/portfolio/${slug}`}>
 
             <Image
@@ -16,6 +16,7 @@ const Card = ({ portfolio }) => {
                         placeholder='blur'
                 width={444}
                 height={342}
+                className="w-full h-72"
             />
 
         </Link>
@@ -27,6 +28,10 @@ const Card = ({ portfolio }) => {
         <p className='text-sm sm:text-base text-gray-700 clamp-2'>{summary}</p>
     </div>
 </div>
+
+
+
+
     </>;
 };
 
