@@ -50,7 +50,7 @@ function Header() {
 						},
 						{
 							route: `/blogs`,
-							title: `Micro Blog`,
+							title: `Blog`,
 							type: `internal`,
 							icon: FaCodepen,
 						},

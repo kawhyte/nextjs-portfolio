@@ -8,7 +8,7 @@ const Cards = ({ items, hideLastItemOnMobile = false }) => {
    
   return (
     <div className="container max-w-7xl mx-auto ">
-      <div className="grid grid-cols-1  2xl:grid-cols-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  ">
         {items.map(item => (
           <div
             className={classNames("w-full   p-3 md:p-6", {

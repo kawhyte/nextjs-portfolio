@@ -6,7 +6,7 @@ const Card = ({ blog }) => {
 
 	return (
 		<div className=' '>
-			<div className='flex flex-row mx-auto cursor-pointer overflow-hidden bg-white border shadow-sm rounded-lg '>
+			<div className='flex flex-col mx-auto cursor-pointer max-w-xs overflow-hidden bg-white  shadow-sm  border-black border-solid border-4 rounded-lg h-[360px] w-[360px] bg-white/50 hover:border-orange-500 transition-transform duration-300 scale-95 hover:scale-100 focus:scale-100  '>
 				<Link href={`/blog/${slug}`} legacyBehavior>
 					<Image
 						blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp`}
@@ -14,7 +14,7 @@ const Card = ({ blog }) => {
 						src={`https:${thumbnail.fields.file.url}?fm=webp`}
 						width={460}
 						height={400}
-						className=' object-cover h-44  w-52'
+						className=' object-cover h-44  w-80'
 						alt={title}
 					/>
 				</Link>

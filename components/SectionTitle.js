@@ -1,0 +1,22 @@
+import React from 'react'
+
+function SectionTitle({ header, description }) {
+  return (
+    <div className=" container mx-auto  flex w-full flex-col justify-between px-5 pb-4   ">
+      <h1
+        className={`font-extrabold leading-tight tracking-tight text-gray-900 sm:text-2xl md:text-4xl  title-font mb-3 font-heading text-3xl    `}
+      >
+        {header}
+      </h1>
+      <div className="h-1 w-20 rounded bg-orange-500"></div>
+
+      <p
+        className={`  font-secondary mt-4 text-sm text-gray-500 leading-relaxed md:text-base  lg:text-base max-w-3xl `}
+      >
+        {description}
+      </p>
+    </div>
+  )
+}
+
+export default SectionTitle
