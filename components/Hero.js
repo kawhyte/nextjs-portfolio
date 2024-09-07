@@ -1,18 +1,23 @@
 import Image from "next/image";
+import TechStack from "./TechStack";
 
 const Hero = () => {
 	return (
 		<div>
 			<div className='pt-3 bg-green-100 '>
-				<div className='container max-w-7xl flex flex-col  items-center justify-center px-3 mx-auto lg:flex-row '>
-					<div className='flex flex-col  items-center justify-center w-full  lg:w-2/5 '>
-						<div>
-							<h2 className='pt-32 pb-10 px-10  md:pl-0  text-8xl tracking-tight leading-10 font-extrabold text-white sm:text-10xl lg:text-12xl xl:text-14xl lg:pl-20   sm:pb-16 text-pop-up-top '>
+				<div className='container  flex flex-col  items-center justify-between px-3 mx-auto lg:flex-row mb-12 '>
+					<div className='flex flex-col  items-center justify-center w-full   '>
+						<div className='flex flex-col items-center'>
+							<h2 className='pt-32  pb-8  md:pl-0  text-9xl tracking-tight leading-10 font-extrabold text-white sm:text-10xl lg:text-12xl xl:text-14xl   sm:pb-16 text-pop-up-top '>
 								Hello.
 							</h2>
 
-							<p className='text-3xl font-extrabold leading-10 tracking-tight text-center text-black lg:py-6 lg:text-4xl'>
-								Kon&apos;nichiwa. Bonjour. Salut!
+							<p className='text-3xl text-center font-bold tracking-tight  text-black lg:pb-6 lg:text-4xl'>
+								Kon&apos;nichiwa | Bonjour | Salut!
+							</p>
+							<p className="text-center mt-6 ">
+								I'm a Software Engineer currently, focused on developing web
+								applications with C#, .NET Core, Node.js, and React/NextJS.
 							</p>
 						</div>
 						<div className='arrow bounce md:hidden'>
@@ -34,7 +39,7 @@ const Hero = () => {
 						</div>
 					</div>
 
-					<div className='flex justify-center w-full px-6 py-6 text-center  '>
+					<div className='flex justify-center w-full  text-center  '>
 						<div>
 							<Image
 								src='/person-on-computer.png'
@@ -43,11 +48,12 @@ const Hero = () => {
 								width='545'
 								height='471'
 								alt='boy running'
-								className='w-96  m-2 mt-6  md:my-8 md:w-96 lg:mx-20'
+								className='w-full  mt-   md: lg:'
 							/>
 						</div>
 					</div>
 				</div>
+				<TechStack />
 			</div>
 		</div>
 	);

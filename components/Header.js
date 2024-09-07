@@ -8,7 +8,7 @@ function Header() {
 
 	return (
         <header className='bg-green-100 '>
-			<nav className='flex flex-wrap   justify-between max-w-7xl    p-4  mx-auto md:p-5'>
+			<nav className='flex flex-wrap   justify-between max-w-[81rem]  p-4  mx-auto md:p-5'>
 				<Link href='/' legacyBehavior>
 					<motion.div
 						whileHover={{
@@ -54,31 +54,31 @@ function Header() {
 							type: `internal`,
 							icon: FaCodepen,
 						},
-						// {
-						// 	route: `https://dev.to/kawhyte`,
-						// 	title: `Dev.to`,
-						// 	type: `external`,
-						// 	icon: FaDev,
-						// },
-						// {
-						// 	route: `https://codepen.io/kawhyte`,
-						// 	title: `CodePen`,
-						// 	type: `external`,
-						// 	icon: FaCodepen,
-						// },
-						// {
-						// 	route: `https://twitter.com/IAmKennyWhyte`,
-						// 	title: `CodePen`,
-						// 	type: `external`,
-						// 	icon: FaTwitter,
-						// },
+						{
+							route: `https://dev.to/kawhyte`,
+							title: `Dev.to`,
+							type: `external`,
+							icon: FaDev,
+						},
+						{
+							route: `https://codepen.io/kawhyte`,
+							title: `CodePen`,
+							type: `external`,
+							icon: FaCodepen,
+						},
+						{
+							route: `https://twitter.com/IAmKennyWhyte`,
+							title: `CodePen`,
+							type: `external`,
+							icon: FaTwitter,
+						},
 
-						// {
-						// 	route: `https://www.linkedin.com/in/kawhyte/`,
-						// 	title: `LinkedIn`,
-						// 	type: `external`,
-						// 	icon: FaLinkedin,
-						// },
+						{
+							route: `https://www.linkedin.com/in/kawhyte/`,
+							title: `LinkedIn`,
+							type: `external`,
+							icon: FaLinkedin,
+						},
 					].map((link) =>
 						link.type === "internal" ? (
 							(<Link className='flex justify-between pr-6 hover:underline decoration-indigo-500 decoration-wavy text-xl font-bold my-2 py-2 ' key={link.title} href={link.route}>
