@@ -20,7 +20,7 @@ function Header() {
 							},
 						}}
 						className='flex items-center text-white my-3 bg-gray-800 hover:text-white px-4   rounded-lg no-underline'>
-						<h1 className='text-xl  text-green-100 cursor-pointer font-extrabold tracking-tight'>
+						<h1 className='text-xl  text-orange-300 cursor-pointer font-extrabold tracking-tight'>
 							KW.
 						</h1>
 					</motion.div>
@@ -81,7 +81,7 @@ function Header() {
 						},
 					].map((link) =>
 						link.type === "internal" ? (
-							(<Link className='flex justify-between pr-6 hover:underline decoration-indigo-500 decoration-wavy text-xl font-bold my-2 py-2 ' key={link.title} href={link.route}>
+							(<Link className='flex justify-between pr-6 hover:underline decoration-orange-500 decoration-wavy text-xl font-bold my-2 py-2 ' key={link.title} href={link.route}>
 
                                 {link.title}
 
@@ -107,7 +107,7 @@ const FooterLink = ({ href, label, icon: Icon }) => {
 				href={href}
 				target='_blank'
 				rel='noreferrer noopener'
-				className='bg-gray-800 hover:text-blue-600 transition duration-150 ease-in-out'>
+				className='bg-gray-800 hover:text-orange-500 transition duration-150 ease-in-out'>
 				<span className='sr-only'>{label}</span>
 				<Icon className='w-7 h-7 fill-current' />
 			</a>

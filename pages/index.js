@@ -9,6 +9,7 @@ import Head from "next/head";
 import PortfolioDetails from "./portfolio/[slug]";
 import SectionTitle from "../components/SectionTitle";
 import Button from "../ui/Button";
+import Quote from "../components/Quote";
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -48,6 +49,8 @@ export default function Index({ portfolio, blog }) {
 			</Head>
 			<Hero />
 			<Section />
+			<TechStack/>
+		
 
 			<div className=' '>
 				<div className='my-20'>
@@ -70,7 +73,8 @@ export default function Index({ portfolio, blog }) {
 						</div>
 					</div>
 				</div>
-
+				<Quote/>
+				
 				<div className='my-20'>
 					<SectionTitle
 						header={"Recent Blog Posts"}
@@ -91,6 +95,8 @@ export default function Index({ portfolio, blog }) {
 						</div>
 					</div>
 				</div>
+			
+			
 			</div>
 		</div>
 	);

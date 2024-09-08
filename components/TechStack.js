@@ -6,64 +6,65 @@ import { SiCsharp,SiJavascript } from "react-icons/si";
 import { BiLogoGraphql } from "react-icons/bi";
 import { IoLogoCss3 } from "react-icons/io";
 
-
+const  imageSize='h-10 w-10'
 
 
 const languages = [
   {
     name: "C#",
-    logo: <SiCsharp className='h-8 w-8' />,
+    logo: <SiCsharp className={imageSize} />,
   },
 	{
 		name: "HTML 5",
-		logo: <FaHtml5 className='h-8 w-8' />,
+		logo: <FaHtml5 className={imageSize} />,
 	},
 	{
 		name: "NodeJS",
-		logo: <FaNodeJs className='h-8 w-8' />,
+		logo: <FaNodeJs className={imageSize}  />,
 	},
 	// {
 	// 	name: "Tailwind",
 	// 	logo: <RiTailwindCssFill className='h-8 w-8' />,
 	// },
-	// {
-	// 	name: "GraphQL",
-	// 	logo: <BiLogoGraphql className='h-8 w-8' />,
-	// },
-	// {
-	// 	name: "NextJS",
-	// 	logo: <RiNextjsFill className='h-8 w-8' />,
-	// },
+	{
+		name: "GraphQL",
+		logo: <BiLogoGraphql className={imageSize}  />,
+	},
+	{
+		name: "NextJS",
+		logo: <RiNextjsFill className={imageSize} />,
+	},
 	{
 		name: "CSS",
-		logo: <IoLogoCss3 className='h-8 w-8' />,
+		logo: <IoLogoCss3 className={imageSize}  />,
 	},
 	{
 		name: "JavaScript",
-		logo: <SiJavascript className='h-8 w-8' />,
+		logo: <SiJavascript className={imageSize}  />,
 	},
 	{
 		name: "React",
-		logo: <FaReact className='h-8 w-8' />,
+		logo: <FaReact className={imageSize}  />,
 	},
 
 ];
 
 function TechStack() {
 	return (
-		<div className='flex flex-row container mx-auto align-middle items-center '>
-			<h2 className=' w-28 mr-4 text-lg font-extrabold text-center'>
+
+		<div className='flex flex-row container mx-auto align-middle items-center border-white rounded-2xl bg-yellow-50  w-full px-5 py-4 max-w-7xl '>
+			<h2 className=' md:w-44 mr-4  font-extrabold leading-tight text-center text-3xl'>
 				Tech Stack
 			</h2>
 
-			<div class='h-[35px] my-3  bg-orange-300 w-[4px] '></div>
+			<div class='h-[35px] my-3  bg-orange-500 w-[4px] '></div>
 
-			<div className='grid grid-cols-3 md:grid-cols-6 gap-x-10  gap-y-5  mx-6'>
+			<div className='grid grid-cols-4 md:grid-cols-8 gap-x-10  gap-y-5  mx-6'>
 			
 				{languages.map((item) => (
 					<div className='flex flex-col items-center'>
 						{item.logo}
-            <p className='font-light text-gray-700 break-words text-sm font-Montserrat'>
+            <p className='font-light text-gray-700 break-words text-nowrap text-sm font-Montserrat'>
 
             {item.name}</p>
 					</div>
@@ -72,7 +73,7 @@ function TechStack() {
 				
 			</div>
 
-      <p>View More...</p>
+  
 		</div>
 	);
 }

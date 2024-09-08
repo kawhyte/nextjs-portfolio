@@ -5,7 +5,7 @@ const Hero = () => {
 	return (
 		<div>
 			<div className='pt-3 bg-green-100 '>
-				<div className='container  flex flex-col  items-center justify-between px-3 mx-auto lg:flex-row mb-12 '>
+				<div className='container  flex flex-col  items-center justify-between px-3 mx-auto lg:flex-row '>
 					<div className='flex flex-col  items-center justify-center w-full   '>
 						<div className='flex flex-col items-center'>
 							<h2 className='pt-32  pb-8  md:pl-0  text-9xl tracking-tight leading-10 font-extrabold text-white sm:text-10xl lg:text-12xl xl:text-14xl   sm:pb-16 text-pop-up-top '>
@@ -53,7 +53,7 @@ const Hero = () => {
 						</div>
 					</div>
 				</div>
-				<TechStack />
+			
 			</div>
 		</div>
 	);
