@@ -3,6 +3,7 @@ import PortfolioCards from "../components/PortfolioCards";
 import Hero from "../components/Hero";
 import Section from "../components/Section";
 import Link from "next/link";
+import SectionTitle from "../components/SectionTitle";
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -23,9 +24,8 @@ export default function Recipes({ portfolio }) {
 	return (
 		<div className='container mx-auto my-20'>
 			<div className='container mx-auto flex justify-between py-2'>
-				<h2 className='font-extrabold leading-tight tracking-tight text-gray-900 sm:text-2xl md:text-3xl'>
-					Featured Projects
-				</h2>
+			
+				<SectionTitle header={"All Projects"} description={""} />
 			</div>
 
 			<PortfolioCards items={portfolio} />

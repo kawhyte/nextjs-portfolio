@@ -48,17 +48,15 @@ export default function Index({ portfolio, blog }) {
 				<link rel='icon' href='/favicon.ico'></link>
 			</Head>
 			<Hero />
-			<Section />
-			<TechStack/>
-		
+			<TechStack />
+			
+			
 
 			<div className=' '>
 				<div className='my-20'>
 					<SectionTitle
 						header={"Featured Projects"}
-						description={`We are traveling near and far to every state/country to visit all
-				the NBA and WNBA arenas across the US and Canada. Follow us on
-				this journey.`}
+						description={``}
 					/>
 
 					{portfolio && portfolio.length > 0 ? (
@@ -73,14 +71,12 @@ export default function Index({ portfolio, blog }) {
 						</div>
 					</div>
 				</div>
-				<Quote/>
-				
+				<Quote />
+				{/* <Section />*/}
 				<div className='my-20'>
 					<SectionTitle
 						header={"Recent Blog Posts"}
-						description={`We are traveling near and far to every state/country to visit all
-				the NBA and WNBA arenas across the US and Canada. Follow us on
-				this journey.`}
+						description={``}
 					/>
 
 					{blog && blog.length > 0 ? (
@@ -95,8 +91,7 @@ export default function Index({ portfolio, blog }) {
 						</div>
 					</div>
 				</div>
-			
-			
+				
 			</div>
 		</div>
 	);

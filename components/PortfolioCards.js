@@ -7,7 +7,7 @@ import { motion, transform } from "framer-motion";
 const Cards = ({ items, hideLastItemOnMobile = false }) => {
 	return (
 
-			<div className='container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols- gap-y-8  place-items-center   '>
+			<div className='container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols- gap-y-8  place-items-center mt-5  '>
 				{items.map((item) => (
 					<div
 					

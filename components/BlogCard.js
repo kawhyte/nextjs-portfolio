@@ -22,15 +22,15 @@ const Card = ({ blog }) => {
 					<Link
 						href={`/blog/${slug}`}
 						className='text-blue-900 hover:text-blue-500  inline-flex items-center'>
-						<h1 className='text-xl font-bold text-gray-800 hover:text-blue-500  line-clamp-2'>
+						<h1 className='text-2xl font-bold text-gray-800 hover:text-blue-500  line-clamp-2'>
 							{title}
 						</h1>
 					</Link>
-					<p className='mt-3 text-sm md:text-base text-gray-600 dark:text-gray-400 clamp-2'>
+					<p className='mt-3 text-base md:text-base text-gray-600 dark:text-gray-400 clamp-2'>
 						{summary}
 					</p>
 
-					<div className='flex justify-between mt-4 item-center'>
+					<div className='flex justify-between mt-1 item-center'>
 						<Link
 							href={`/blog/${slug}`}
 							className='text-blue-900 hover:text-blue-500  inline-flex items-center'>

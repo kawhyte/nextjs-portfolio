@@ -8,7 +8,7 @@ function Header() {
 
 	return (
         <header className='bg-green-100 '>
-			<nav className='flex flex-wrap   justify-between max-w-[81rem]  p-4  mx-auto md:p-5'>
+			<nav className='flex flex-wrap   justify-between max-w-[102rem]  p-4  mx-auto md:p-5'>
 				<Link href='/' legacyBehavior>
 					<motion.div
 						whileHover={{
@@ -19,8 +19,8 @@ function Header() {
 								duration: 0.2,
 							},
 						}}
-						className='flex items-center text-white my-3 bg-gray-800 hover:text-white px-4   rounded-lg no-underline'>
-						<h1 className='text-xl  text-orange-300 cursor-pointer font-extrabold tracking-tight'>
+						className='flex items-center text-white my-3 bg-gray-800 hover:bg-orange-500 hover:text-white px-4   rounded-lg no-underline'>
+						<h1 className='text-xl  text-green-100 cursor-pointer font-extrabold tracking-tight'>
 							KW.
 						</h1>
 					</motion.div>
@@ -43,6 +43,11 @@ function Header() {
 						isExpanded ? `block` : `hidden`
 					}  md:flex md:items-center w-full md:w-auto`}>
 					{[
+						{
+							route: `/`,
+							title: `Home`,
+							type: `internal`,
+						},
 						{
 							route: `/projects`,
 							title: `Projects`,

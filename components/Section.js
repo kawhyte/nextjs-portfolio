@@ -6,13 +6,6 @@ import { IoGameController } from "react-icons/io5";
 
 const about = [
 	{
-		title: "Observational Astronomer",
-		detail: `I'm a Software Developer by day and an amateur astronomery night.`,
-		quote:
-			"The good thing about science is that it&apos;s true whether or not you believe in it. ~ Neil deGrasse Tyson",
-			icon:`✨`
-	},
-	{
 		title: "Software Engineer",
 		detail: `Currently, I&apos;m focused on developing web applications with C#, .NET Core, Node.js, and React/NextJS/Gatsby.`,
 		quote:
@@ -20,6 +13,15 @@ const about = [
 		before crossing a one-way street. ~ Doug Linder`,
 		icon:`🚀`
 	},
+
+	{
+		title: "Observational Astronomer",
+		detail: `I'm a Software Developer by day and an amateur astronomery night.`,
+		quote:
+			"The good thing about science is that it&apos;s true whether or not you believe in it. ~ Neil deGrasse Tyson",
+			icon:`✨`
+	},
+	
 	{
 		title: "Retro Nintendo Enthusiast",
 		detail: `Games with Mario, Zelda or Metriod... Nintendo all the way!`,

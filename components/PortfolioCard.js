@@ -7,13 +7,13 @@ const Card = ({ portfolio }) => {
 	return (
 		<>
 			<div
-				className=' max-w-sm sm:max-w-xs bg-gray-50 hover:border-orange-500 transition-transform
+				className='  max-w-sm sm:max-w-xs bg-gray-50 hover:border-orange-500 transition-transform
 						duration-300 		scale-95 
 					
  
 				
 						 hover:scale-100
-						 focus:scale-100    overflow-hidden  border-black border-solid border-4 rounded-lg md:shadow-[14px_14px_0_-4px_#fed7aa,_14px_14px_0_0_#1f1f1f]  flex h-[420px] w-[420px] xl:max-w-sm  flex-col bg-white/50    '>
+						 focus:scale-100    overflow-hidden  border-black border-solid border-4 rounded-lg md:shadow-[14px_14px_0_-4px_#fed7aa,_14px_14px_0_0_#1f1f1f]  flex h-[420px] w-[340px] xl:max-w-sm  flex-col bg-white/50    '>
 				<div className=' transition duration-150 ease-in-out '>
 					<Link href={`/portfolio/${slug}`}>
 						<Image
@@ -27,10 +27,10 @@ const Card = ({ portfolio }) => {
 					</Link>
 				</div>
 				<div className='p-4 sm:p-5 border-t'>
-					<h4 className='sm:text-lg text-gray-800 text-lg font-semibold  leading-tight tracking-tight'>
+					<h4 className='text-2xl text-gray-800 font-semibold  leading-tight tracking-tight'>
 						{name}
 					</h4>
-					<p className='text-sm sm:text-base text-gray-700 clamp-2'>
+					<p className=' text-lg text-gray-700 clamp-2'>
 						{summary}
 					</p>
 				</div>
