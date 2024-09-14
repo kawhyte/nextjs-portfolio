@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 //import { BLOCKS, INLINES } from "@contentful/rich-text-types";
-import { renderOptions } from '../util/rich-text-types'
+import { renderOptions } from "../util/rich-text-types";
+import SectionTitle from "./SectionTitle";
 
 
 function CaseStudy({
@@ -13,26 +14,43 @@ function CaseStudy({
 	richTextResult,
 }) {
 
-
-
+	const casestudy = [
+		{
+			image: "/boy.png",
+			section:"Planning Phase",
+			bgColor:"bg-yellow-50",
+			accentColor:"bg-yellow-500",
+			richText:richTextProblem
+		},
+		{
+			image: "/girl_sitting.png",
+			section:"Project Requirement Phase",
+			bgColor:"bg-green-50",
+			accentColor:"bg-green-500",
+			richText:richTextApproach
+		},
+		{
+			image: "/girl.png",
+			section:"Software Selection & Result",
+			bgColor:"bg-indigo-50",
+			accentColor:"bg-indigo-500 ",
+			richText:richTextResult
+		},
+	];
 	
-
 	return (
-		<div className='flex flex-col justify-center '>
+		<div className='flex flex-col justify-center mt-12'>
 			<section className='text-gray-600 '>
 				<div className=' py-10 mx-auto'>
-					<div className='text-center mb-16'>
-						<h4 className='sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4'>
-							Learn how I developed this project
-						</h4>
-						<div className='flex mt-6 justify-center'>
-							<div className='w-16 h-1 rounded-full bg-indigo-500 inline-flex'></div>
-						</div>
-					</div>
+					<SectionTitle
+						header={"Case Study"}
+						description={"Learn how I developed this project"}
+					/>
+
 					<div className='flex flex-col  justify-center'>
-						<div className='p-12 px-8  flex flex-col md:flex-row text-center items-center bg-yellow-50 '>
-							<div className='w-40 h-40 pt-20  mr-20 ml-8 mb-28  md:mb-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500  flex-shrink-0'>
-								<Image
+						{casestudy.map((item,index) => (
+							<div className={`py-6 container px-8  flex flex-col md:flex-row text-center items-center ${item.bgColor}`}>
+								{/*<Image
 									src='/boy.png'
 									blurDataURL='/boy.png'
 									placeholder='blur'
@@ -40,71 +58,28 @@ function CaseStudy({
 									height='296'
 									alt='boy running'
 									className='w-48  m-2 mt-6 sm:w-48 md:my-8 md:w-56 lg:mx-20'
-								/>
-							</div>
-							<div className='flex-grow text-left'>
-								<h3 className='text-yellow-500 text-xl title-font font-medium mb-3'>
-									Step 1 - Planning Phase{" "}
-									{/*<span className='text-gray-900 text-base title-font font-normal italic mb-3'>
+								/>*/}
+								<div className=' text-left w-full'>
+									<div className='pt-2 pb-6 flex  items-baseline  text-xl font-semibold leading-tight tracking-tight text-gray-700 sm:text-xl '>
+										<h2 class={`w-12 h-12 text-4xl px-3  mr-4  rounded-full text-white ${item.accentColor}`}>
+											{index + 1}
+										</h2>
+
+										<span> {item.section} </span>
+										{/*<span className='text-gray-900 text-base title-font font-normal italic mb-3'>
 										(What problem was I trying to solve){" "}
 	</span>*/}
-								</h3>
+									</div>
 
-								<p className='leading-relaxed text-base text-gray-900 text-left'>
-									{documentToReactComponents(richTextProblem, renderOptions)}
-								</p>
+									<p className='leading-relaxed text-base text-gray-900 text-left max-w-6xl'>
+										{documentToReactComponents(item.richText, renderOptions)}
+									</p>
+								</div>
 							</div>
-						</div>
-						<div className='p-12 flex flex-col md:flex-row text-center items-center bg-green-50'>
-							<div className='w-40 h-40 pt-20 mr-20 ml-8 mb-20  md:mb-20  inline-flex items-center justify-center rounded-full bg-yellow-100 text-indigo-500  flex-shrink-0'>
-								<Image
-									src='/girl_sitting.png'
-									blurDataURL='/girl_sitting.png'
-									placeholder='blur'
-									width='170'
-									height='241'
-									alt='girl sitting'
-									className='w-48 m-2 mt-6 sm:w-48 md:my-8 md:w-56 lg:mx-20'
-								/>
-							</div>
-							<div className='flex-grow text-left'>
-								<h3 className='text-green-500 text-xl title-font font-medium mb-3'>
-									Step 2 - Project Requirement Phase{" "}
-									{/*<span className='text-gray-900 text-base title-font font-normal italic mb-3'>
-										(Project Requirements){" "}
-</span>*/}
-								</h3>
+						))}
 
-								<p className='leading-relaxed text-base text-gray-900  text-left'>
-									{documentToReactComponents(richTextApproach, renderOptions)}
-								</p>
-							</div>
-						</div>
-						<div className='p-12   flex flex-col md:flex-row  text-center items-center bg-indigo-50'>
-							<div className='w-40 h-40 pt-20 mr-20 ml-8 mb-24  md:mb-20  inline-flex items-center justify-center rounded-full bg-green-100 text-indigo-500 flex-shrink-0'>
-								<Image
-									src='/girl.png'
-									blurDataURL='/girl.png'
-									placeholder='blur'
-									width='170'
-									height='241'
-									alt='girl'
-									className='w-48 m-2 mt-6 sm:w-48 md:my-8 md:w-56 lg:mx-20'
-								/>
-							</div>
-							<div className='flex-grow text-left'>
-								<h3 className='text-indigo-500 text-xl title-font font-medium mb-3'>
-									Step 3 - Software Selection & Result{" "}
-									{/*<span className='text-gray-900 text-base title-font font-normal italic mb-3'>
-										(What technology was used){" "}
-</span>*/}
-								</h3>
-
-								<p className='leading-relaxed text-base text-gray-900 text-left'>
-									{documentToReactComponents(richTextResult, renderOptions)}
-								</p>
-							</div>
-						</div>
+						
+						
 					</div>
 				</div>
 			</section>

@@ -11,7 +11,7 @@ function SectionTitle({ header, description }) {
       <div className="h-1 w-20 rounded bg-orange-500"></div>
 
       <p
-        className={`  font-secondary mt-4 text-sm text-gray-500 leading-relaxed md:text-base  lg:text-base max-w-3xl `}
+        className={`  my-4 text-base font-light text-left text-gray-700 whitespace-pre-line text-md font-Montserrat `}
       >
         {description}
       </p>

@@ -9,10 +9,8 @@ import React from 'react'
 //   link: string
 //   text?: string
 // }
-export default function Button({ text, link, children }) {
+export default function ExternalButton({ text, link, children }) {
   //if (!preview) return null
-
-
 
   return (
     <Link href={link} passHref legacyBehavior>

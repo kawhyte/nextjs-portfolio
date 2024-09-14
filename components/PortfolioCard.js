@@ -30,9 +30,7 @@ const Card = ({ portfolio }) => {
 					<h4 className='text-2xl text-gray-800 font-semibold  leading-tight tracking-tight'>
 						{name}
 					</h4>
-					<p className=' text-lg text-gray-700 clamp-2'>
-						{summary}
-					</p>
+					<p className=' text-lg text-gray-700 clamp-2'>{summary}</p>
 				</div>
 			</div>
 		</>

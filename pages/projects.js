@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import Section from "../components/Section";
 import Link from "next/link";
 import SectionTitle from "../components/SectionTitle";
+import ProjectDetailHeader from "../components/ProjectDetailHeader";
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -27,6 +28,7 @@ export default function Recipes({ portfolio }) {
 			
 				<SectionTitle header={"All Projects"} description={""} />
 			</div>
+			<ProjectDetailHeader />
 
 			<PortfolioCards items={portfolio} />
 		</div>

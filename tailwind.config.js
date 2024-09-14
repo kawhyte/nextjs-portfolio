@@ -37,7 +37,9 @@ module.exports = {
 			"11xl": "11rem",
 			"12xl": "12rem",
 			"15xl": "15rem",
+			
 		},
+		
 
 //     lineClamp: {
 //     1: 1,
