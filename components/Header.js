@@ -7,7 +7,7 @@ function Header() {
 	const [isExpanded, toggleExpansion] = useState(false);
 
 	return (
-        <header className='bg-green-100 '>
+        <header className='bg-green-100/80 '>
 			<nav className='flex flex-wrap   justify-between max-w-[102rem]  p-4  mx-auto md:p-5'>
 				<Link href='/' legacyBehavior>
 					<motion.div

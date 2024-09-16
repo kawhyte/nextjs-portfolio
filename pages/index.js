@@ -48,11 +48,11 @@ export default function Index({ portfolio, blog }) {
 				<link rel='icon' href='/favicon.ico'></link>
 			</Head>
 			<Hero />
-			<TechStack />
+			{/*<TechStack />*/}
 			
 			
 
-			<div className=' '>
+			<div className=''>
 				<div className='my-20'>
 					<SectionTitle
 						header={"Featured Projects"}

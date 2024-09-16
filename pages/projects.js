@@ -28,7 +28,7 @@ export default function Recipes({ portfolio }) {
 			
 				<SectionTitle header={"All Projects"} description={""} />
 			</div>
-			<ProjectDetailHeader />
+			
 
 			<PortfolioCards items={portfolio} />
 		</div>

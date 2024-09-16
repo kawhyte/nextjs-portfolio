@@ -18,15 +18,15 @@ const Card = ({ blog }) => {
 						alt={title}
 					/>
 				</Link>
-				<div className='ml-4 mt-2'>
+				<div className=' p-3'>
 					<Link
 						href={`/blog/${slug}`}
 						className='text-blue-900 hover:text-blue-500  inline-flex items-center'>
-						<h1 className='text-2xl font-bold text-gray-800 hover:text-blue-500  line-clamp-2'>
+						<h1 className='text-lg font-bold text-gray-800 hover:text-blue-500  line-clamp-2'>
 							{title}
 						</h1>
 					</Link>
-					<p className='mt-3 text-base md:text-base text-gray-600 dark:text-gray-400 clamp-2'>
+					<p className='mt-3 text-base md:text-sm text-gray-600 dark:text-gray-400 clamp-2'>
 						{summary}
 					</p>
 

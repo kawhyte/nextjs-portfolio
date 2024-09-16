@@ -80,8 +80,8 @@ export default function PortfolioDetails({ portfolio }) {
 			</Head>
 			<div className='pt-12 lg:pt-16 container mx-auto'>
 				<div className='container'>
-					<div className='flex flex-col md:flex-row   w-full'>
-						<div className='w-full  md:w-3/6 md:mr-4  '>
+					<div className='flex flex-col lg:flex-row   w-full'>
+						<div className='w-full  lg:w-3/6 md:mr-4  '>
 							{gallery && gallery.length === 1 && (
 								<a href={demoUrl} target='_blank' rel='noopener noreferrer'>
 									<Image
@@ -90,16 +90,16 @@ export default function PortfolioDetails({ portfolio }) {
 										src={`https:${gallery[0].fields.file.url}?fm=webp`}
 										width={gallery[0].fields.file.details.image.width}
 										height={gallery[0].fields.file.details.image.height}
-										className='shadow-sm  md:border-black md:border-solid md:border-4 md:rounded-lg'
+										className='shadow-sm  lg:border-black lg:border-solid lg:border-4 md:rounded-lg'
 									/>
 								</a>
 							)}
 
 							{/*gallery && gallery.length > 1 && <Carousel images={gallery} />*/}
 						</div>
-						<div className=' mb-12 md:w-1/3 lg:pl-8 xl:pl-12 mx-6'>
+						<div className=' mb-12 lg:w-1/3 lg:pl-8 xl:pl-12 mx-6'>
 							<div className='flex flex-col'>
-								<div className='mb-5'>
+								<div className='mb-5 md:mt-8 lg:mt-0'>
 									<h1 className='mt-8 md:mt-0 text-4xl   text-left  md:text-3xl sm:text-3xl  tracking-tight  text-black  lg:text-4xl font-extrabold leading-tight     '>
 										{name}
 									</h1>

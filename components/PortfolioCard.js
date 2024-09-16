@@ -22,16 +22,17 @@ const Card = ({ portfolio }) => {
 							placeholder='blur'
 							height={300}
 							width={224}
-							className=' h-42  md:block  w-full object-cover object-center   '
+							className='h-48  md:block  w-full object-cover object-center   '
 						/>
 					</Link>
 				</div>
-				<div className='p-4 sm:p-5 border-t'>
-					<h4 className='text-2xl text-gray-800 font-semibold  leading-tight tracking-tight'>
+				<div className='p-4 sm:p-5 '>
+					<h4 className='text-xl text-gray-800 font-semibold  leading-tight tracking-tight'>
 						{name}
 					</h4>
-					<p className=' text-lg text-gray-700 clamp-2'>{summary}</p>
+					<p className='mt-2 text-base text-gray-700 clamp-2'>{summary}</p>
 				</div>
+			
 			</div>
 		</>
 	);

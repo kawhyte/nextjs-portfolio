@@ -6,7 +6,7 @@ import { SiCsharp, SiJavascript } from "react-icons/si";
 import { BiLogoGraphql } from "react-icons/bi";
 import { IoLogoCss3 } from "react-icons/io";
 
-const imageSize = "h-10 w-10 ";
+const imageSize = "h-7 w-7 ";
 
 const languages = [
 	{
@@ -49,9 +49,9 @@ const languages = [
 
 function TechStack() {
 	return (
-		<div className='flex flex-col md:flex-row container mx-auto align-middle items-center border-white rounded-2xl bg-green-100/80  w-full px-5 py-10  mb-36 max-w-12xl '>
-			<h2 className=' md:w-72 text-3xl mb-9 md:mb-0  mr-4  font-extrabold leading-tight text-center md:text-4xl'>
-				My Tech Stack
+		<div className='flex flex-col md:flex-row container mx-auto align-middle items-center border-white rounded-2xl  w-full py-10  mb-36 max-w-12xl '>
+			<h2 className=' md:w-28 text-xl mb-9 md:mb-0  mr-4  font-bold leading-tight text-center md:text-xl'>
+				Tech Stack
 			</h2>
 
 			<div class='h-[35px] my-3  bg-orange-500 w-[4px] hidden '></div>
@@ -60,7 +60,7 @@ function TechStack() {
 				{languages.map((item) => (
 					<div className='flex flex-col items-center'>
 						{item.logo}
-						<p className='font-light text-gray-700 break-words text-nowrap text-md font-Montserrat mt-2'>
+						<p className='font-light text-gray-700 break-words text-nowrap text-sm font-Montserrat mt-2'>
 							{item.name}
 						</p>
 					</div>

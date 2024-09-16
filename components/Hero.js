@@ -4,22 +4,25 @@ import TechStack from "./TechStack";
 const Hero = () => {
 	return (
 		<div>
-			<div className='pt-3 bg-green-100  bg-gradient md:h-screen '>
+			<div className='pt-3 bg-green-100  bg-gradient  '>
 				<div className='container  flex flex-col  items-center justify-between px-3 mx-auto lg:flex-row mt-20 '>
 					<div className='flex flex-col  items-center justify-center w-full   '>
 						<div className='flex flex-col md:items-start'>
-							<h2 className='pt-6 md:pt-32  pb-8   text-[8.5rem] tracking-tight leading-10  font-extrabold text-white sm:text-10xl lg:text-12xl xl:text-14xl xl:text-[17rem]   sm:pb-20 text-pop-up-top '>
+							<h2 className='pt-6 md:pt-32  pb-8   text-[8.5rem] tracking-tight leading-10  font-extrabold text-white sm:text-10xl lg:text-12xl xl:text-14xl xl:text-[14rem]   sm:pb-20 text-pop-up-top '>
 								Hello.
 							</h2>
 
-							<p className='   tracking-tight  text-black lg:py-6 lg:text-4xl font-extrabold leading-tight text-4xl'>
+							<p className='   tracking-tight  text-black lg:py-6 lg:text-2xl font-extrabold leading-tight text-2xl'>
 							I'm a Full Stack Software Engineer
 							</p>
-							<p className=" mt-6 text-lg ">
+							<p className=" mt-6 text-base ">
 								Currently focused on developing web
 								applications with C#, .NET Core, Node.js, and React/NextJS.
 							</p>
+
+						
 						</div>
+					
 						<div className='arrow bounce md:hidden'>
 							<a href='#projects'>
 								<svg
@@ -48,12 +51,13 @@ const Hero = () => {
 								width='545'
 								height='471'
 								alt='boy on computer'
-								className='w-full  mt-   md: lg:'
+								className='w-full'
 							/>
 						</div>
 					</div>
+					
 				</div>
-			
+			<TechStack/>
 			</div>
 		</div>
 	);
