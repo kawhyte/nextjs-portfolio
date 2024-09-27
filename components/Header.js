@@ -7,8 +7,8 @@ function Header() {
 	const [isExpanded, toggleExpansion] = useState(false);
 
 	return (
-        <header className='bg-green-100/80 '>
-			<nav className='flex flex-wrap   justify-between max-w-[102rem]  p-4  mx-auto md:p-5'>
+		<header className='bg-green-100/80 flex  justify-center items-center z-50  '>
+			<nav className='flex  justify-center items-center fixed top-5  border-4 border-gray-900/70 container mx-auto rounded-full max-w-[23rem] bg-white/40 backdrop-blur'>
 				<Link href='/' legacyBehavior>
 					<motion.div
 						whileHover={{
@@ -19,14 +19,14 @@ function Header() {
 								duration: 0.2,
 							},
 						}}
-						className='flex items-center text-white my-3 bg-gray-800 hover:bg-orange-500 hover:text-white px-4   rounded-lg no-underline'>
+						className='flex items-center text-white my-3 bg-gray-900 hover:bg-orange-500 hover:text-white px-4   rounded-lg no-underline'>
 						<h1 className='text-xl  text-green-100 cursor-pointer font-extrabold tracking-tight'>
 							KW.
 						</h1>
 					</motion.div>
 				</Link>
 
-				<button
+				{/*<button
 					className='items-center block px-3 py-2 text-black border border-white rounded md:hidden'
 					onClick={() => toggleExpansion(!isExpanded)}>
 					<svg
@@ -36,12 +36,12 @@ function Header() {
 						<title>Menu</title>
 						<path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z' />
 					</svg>
-				</button>
+				</button>*/}
 
 				<div
 					className={`${
-						isExpanded ? `block` : `hidden`
-					}  md:flex md:items-center w-full md:w-auto`}>
+						isExpanded ? `block` : `block`
+					}  flex items-center  w-auto`}>
 					{[
 						{
 							route: `/`,
@@ -59,38 +59,39 @@ function Header() {
 							type: `internal`,
 							icon: FaCodepen,
 						},
-						{
-							route: `https://dev.to/kawhyte`,
-							title: `Dev.to`,
-							type: `external`,
-							icon: FaDev,
-						},
-						{
-							route: `https://codepen.io/kawhyte`,
-							title: `CodePen`,
-							type: `external`,
-							icon: FaCodepen,
-						},
-						{
-							route: `https://twitter.com/IAmKennyWhyte`,
-							title: `CodePen`,
-							type: `external`,
-							icon: FaTwitter,
-						},
+						// {
+						// 	route: `https://dev.to/kawhyte`,
+						// 	title: `Dev.to`,
+						// 	type: `external`,
+						// 	icon: FaDev,
+						// },
+						// {
+						// 	route: `https://codepen.io/kawhyte`,
+						// 	title: `CodePen`,
+						// 	type: `external`,
+						// 	icon: FaCodepen,
+						// },
+						// {
+						// 	route: `https://twitter.com/IAmKennyWhyte`,
+						// 	title: `CodePen`,
+						// 	type: `external`,
+						// 	icon: FaTwitter,
+						// },
 
-						{
-							route: `https://www.linkedin.com/in/kawhyte/`,
-							title: `LinkedIn`,
-							type: `external`,
-							icon: FaLinkedin,
-						},
+						// {
+						// 	route: `https://www.linkedin.com/in/kawhyte/`,
+						// 	title: `LinkedIn`,
+						// 	type: `external`,
+						// 	icon: FaLinkedin,
+						// },
 					].map((link) =>
 						link.type === "internal" ? (
-							(<Link className='flex justify-between pr-6 hover:underline decoration-orange-500 decoration-wavy text-xl font-bold my-2 py-2 ' key={link.title} href={link.route}>
-
-                                {link.title}
-
-                            </Link>)
+							<Link
+								className=' px-4 flex gap-1 p-0.5  hover:underline hover:decoration-orange-500 transition duration-300  decoration-wavy    py-1.5 rounded-full text-gray-900 text-sm font-semibold'
+								key={link.title}
+								href={link.route}>
+								{link.title}
+							</Link>
 						) : (
 							<FooterLink
 								key={link.route}
@@ -103,7 +104,7 @@ function Header() {
 				</div>
 			</nav>
 		</header>
-    );
+	);
 }
 const FooterLink = ({ href, label, icon: Icon }) => {
 	return (

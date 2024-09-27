@@ -2,6 +2,7 @@ module.exports = {
 	content: [
 		'./components/**/*.{js,ts,jsx,tsx}',
 		'./ui/**/*.{js,ts,jsx,tsx}',
+		'./assets/**/*.{js,ts,jsx,tsx,png,svg}',
 		'./components/**/*.{js,ts,jsx,tsx}',
 		'./src/**/*.{js,ts,jsx,tsx,mdx}',
 		'./intro-template/**/*.{js,ts,jsx,tsx}',
@@ -13,10 +14,28 @@ module.exports = {
 //   darkMode: false, // or 'media' or 'class'
   theme: {
 
-    extend: {},
+	screens:{
+		sm:"375px",
+		md:"768px",
+		lg:"1200px",
+			},
+			container: {
+				center: true,
+				padding: {
+				  DEFAULT: "1rem",
+				  md: "2rem",
+				},
+			  },
+    extend: {
+
+		fontFamily:{
+			sans: 'var(--font-sans)',
+			serif: 'var(--font-serif)',
+		}
+	},
     fontSize: {
 			xs: ".75rem",
-			sm: ".875rem",
+			// sm: ".875rem",
 			tiny: ".875rem",
 			base: "1rem",
 			lg: "1.125rem",

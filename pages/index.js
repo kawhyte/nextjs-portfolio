@@ -33,7 +33,7 @@ export async function getStaticProps() {
 }
 
 export default function Index({ portfolio, blog }) {
-	//console.log("portfolio ", portfolio)
+	console.log("portfolio ", portfolio)
 
 	portfolio = portfolio
 		.filter((item) => item.fields.featured === true)

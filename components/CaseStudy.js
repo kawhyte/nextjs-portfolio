@@ -44,7 +44,7 @@ function CaseStudy({
 				<div className=' py-10 mx-auto'>
 					<SectionTitle
 						header={"Case Study"}
-						description={"Learn how I developed this project"}
+						description={""}
 					/>
 
 					<div className='flex flex-col  justify-center'>
