@@ -2,14 +2,20 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaTwitter, FaLinkedin, FaCodepen, FaDev } from "react-icons/fa";
+import { BiArrowBack } from "react-icons/bi";
+import { AiFillProject } from "react-icons/ai";
+import { GrHomeOption } from "react-icons/gr";
+import { SiMicrodotblog } from "react-icons/si";
+
+
 
 function Header() {
 	const [isExpanded, toggleExpansion] = useState(false);
 
 	return (
-		<header className='bg-green-100/80 flex  justify-center items-center z-50  '>
-			<nav className='flex  justify-center items-center fixed top-5  border-4 border-gray-900/70 container mx-auto rounded-full max-w-[23rem] bg-white/40 backdrop-blur'>
-				<Link href='/' legacyBehavior>
+		<header className=' flex  justify-center items-center z-50 absolute container mx-auto lg:inset-28 '>
+			<nav className='flex   justify-center items-center fixed top-5  border-4 border-gray-900/70 container mx-auto rounded-full max-w-[23rem] lg:max-w-lg bg-white/40 backdrop-blur'>
+				{/*<Link href='/' legacyBehavior>
 					<motion.div
 						whileHover={{
 							scale: 1.1,
@@ -26,7 +32,7 @@ function Header() {
 					</motion.div>
 				</Link>
 
-				{/*<button
+				<button
 					className='items-center block px-3 py-2 text-black border border-white rounded md:hidden'
 					onClick={() => toggleExpansion(!isExpanded)}>
 					<svg
@@ -47,18 +53,26 @@ function Header() {
 							route: `/`,
 							title: `Home`,
 							type: `internal`,
+							icon: GrHomeOption ,
 						},
 						{
 							route: `/projects`,
 							title: `Projects`,
 							type: `internal`,
+							icon: AiFillProject,
 						},
 						{
 							route: `/blogs`,
 							title: `Blog`,
 							type: `internal`,
-							icon: FaCodepen,
+							icon: SiMicrodotblog,
 						},
+						// {
+						// 	route: `https://dev.to/kawhyte`,
+						// 	title: `Dev.to`,
+						// 	type: `external`,
+						// 	icon: FaDev,
+						// },
 						// {
 						// 	route: `https://dev.to/kawhyte`,
 						// 	title: `Dev.to`,
@@ -86,12 +100,15 @@ function Header() {
 						// },
 					].map((link) =>
 						link.type === "internal" ? (
-							<Link
-								className=' px-4 flex gap-1 p-0.5  hover:underline hover:decoration-orange-500 transition duration-300  decoration-wavy    py-1.5 rounded-full text-gray-900 text-sm font-semibold'
-								key={link.title}
-								href={link.route}>
-								{link.title}
-							</Link>
+							<>
+								<Link
+									className=' group px-4 flex gap-1 p-0.5 hover:text-orange-500  ease-in-out  hover:underline hover:decoration-orange-500 transition duration-300  decoration-wavy    py-1.5 rounded-full text-gray-900 text-sm font-semibold'
+									key={link.title}
+									href={link.route}>
+									<link.icon className='w-5 h-5 fill-current hidden lg:flex mr-1 hover:text-orange-500 ' />
+									<p> {link.title}</p>
+								</Link>
+							</>
 						) : (
 							<FooterLink
 								key={link.route}
@@ -102,6 +119,8 @@ function Header() {
 						)
 					)}
 				</div>
+
+		
 			</nav>
 		</header>
 	);

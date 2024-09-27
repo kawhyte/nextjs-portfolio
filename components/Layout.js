@@ -17,8 +17,10 @@ export default function Layout({ children }) {
 			className={twMerge(
 				inter.variable,
 				calistoga.variable,
-				"antialiased font-sans"
+				"antialiased font-sans "
 			)}>
+
+
 			<Header />
 
 			<div className=''>{children}</div>

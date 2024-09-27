@@ -6,7 +6,14 @@ import { BiArrowBack, BiDownArrow } from "react-icons/bi";
 const Hero = () => {
 	return (
 		<div>
-			<div className=' py-12 md:py-20 bg-green-100  bg-gradient  '>
+			<div className=' py-12 md:py-20 bg-green-100  bg-gradient relative z-0 '>
+
+			<div className="absolute inset-0 -z-30 opacity-5" style={{
+
+				backgroundImage:`url(${'/assets/images/grain.jpg'})`
+			}}>
+			
+			</div>
 				<div className='container  flex flex-col  items-center px-3 mx-auto  mt-20 '>
 					<Image
 						src={"/assets/images/memoji-computer.png"}
@@ -20,22 +27,22 @@ const Hero = () => {
 
 					<div className='container mx-auto flex flex-col justify-center items-center w-full '>
 						<div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center text-white gap-2 rounded-xl'>
-							<div className='bg-green-400 size-2.5 rounded-full'></div>
+							<div className='bg-orange-400 size-2.5 rounded-full'></div>
 							<div className='text-sm font-medium'>
 								I'm a Full Stack Software Engineer
 							</div>
 						</div>
-						<div className='max-w-lg'>
-							<h1 className=' font-serif text-3xl md:text-5xl text-center mt-8 leading-normal'>
+						<div className='max-w-lg lg:max-w-4xl'>
+							<h1 className=' font-serif text-3xl md:text-5xl lg:text-7xl text-center mt-8 leading-tight'>
 								Creating Extraordinary User Friendly Software
 							</h1>
-							<p className='mt-4 text-center text-gray-900 md:text-lg'>
+							<p className='mt-4 text-center text-gray-900 md:text-lg lg:text-2xl'>
 								Currently focused on developing web applications with C#, .NET
 								Core, Node.js, and React/NextJS.
 							</p>
 						</div>
 
-						<div className='flex flex-col item-center mt-8 gap-4'>
+						<div className='flex flex-col md:flex-row item-center mt-8 gap-4'>
 							<button className='inline-flex items-center gap-2 border border-white text-white bg-gray-900 px-6 h-12 rounded-xl'>
 								<span className='font-semibold'>Check out my Projects</span>
 
@@ -48,7 +55,7 @@ const Hero = () => {
 							</button>
 						</div>
 					</div>
-					<div className='flex flex-col  items-center justify-center w-full   '>
+					{/*<div className='flex flex-col  items-center justify-center w-full   '>
 						<div className='flex flex-col md:items-start'>
 							<h2 className='pt-6 md:pt-32  pb-8   text-[8.5rem] tracking-tight leading-10  font-extrabold text-white sm:text-10xl lg:text-12xl xl:text-14xl xl:text-[14rem]   sm:pb-20  '>
 								Hello.
@@ -94,9 +101,9 @@ const Hero = () => {
 								className='w-full'
 							/>
 						</div>
-					</div>
+					</div>*/}
 				</div>
-				<TechStack />
+				 {/*<TechStack />*/}
 			</div>
 		</div>
 	);
