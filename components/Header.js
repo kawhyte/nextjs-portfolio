@@ -13,7 +13,7 @@ function Header() {
 	const [isExpanded, toggleExpansion] = useState(false);
 
 	return (
-		<header className=' flex  justify-center items-center z-50 absolute container mx-auto lg:inset-28 '>
+		<header className=' flex  justify-center items-center z-50 absolute container mx-auto inset-1 lg:inset-28 '>
 			<nav className='flex   justify-center items-center fixed top-5  border-4 border-gray-900/70 container mx-auto rounded-full max-w-[23rem] lg:max-w-lg bg-white/40 backdrop-blur'>
 				{/*<Link href='/' legacyBehavior>
 					<motion.div
@@ -47,7 +47,7 @@ function Header() {
 				<div
 					className={`${
 						isExpanded ? `block` : `block`
-					}  flex items-center  w-auto`}>
+					}  flex items-center  w-auto lg:py-2`}>
 					{[
 						{
 							route: `/`,
@@ -105,8 +105,8 @@ function Header() {
 									className=' group px-4 flex gap-1 p-0.5 hover:text-orange-500  ease-in-out  hover:underline hover:decoration-orange-500 transition duration-300  decoration-wavy    py-1.5 rounded-full text-gray-900 text-sm font-semibold'
 									key={link.title}
 									href={link.route}>
-									<link.icon className='w-5 h-5 fill-current hidden lg:flex mr-1 hover:text-orange-500 ' />
-									<p> {link.title}</p>
+									<link.icon className='w-6 h-6 fill-current hidden lg:flex mr-1 hover:text-orange-500 ' />
+									<p className="lg:text-lg"> {link.title}</p>
 								</Link>
 							</>
 						) : (

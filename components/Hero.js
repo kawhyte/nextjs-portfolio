@@ -12,6 +12,12 @@ const Hero = () => {
 
 				backgroundImage:`url(${'/assets/images/grain.jpg'})`
 			}}>
+
+			<div className=" size-[620px] hero-ring  "></div>
+			<div className=" size-[820px] hero-ring  "></div>
+			<div className=" size-[1020px] hero-ring  "></div>
+			<div className=" size-[1220px] hero-ring  "></div>
+			<div className=" size-[1420px] hero-ring  "></div>
 			
 			</div>
 				<div className='container  flex flex-col  items-center px-3 mx-auto  mt-20 '>
