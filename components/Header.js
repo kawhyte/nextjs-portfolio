@@ -14,7 +14,7 @@ function Header() {
 
 	return (
 		<header className=' flex  justify-center items-center z-50 absolute container mx-auto inset-1 lg:inset-28 '>
-			<nav className='flex   justify-center items-center fixed top-5  border-4 border-gray-900/70 container mx-auto rounded-full max-w-[23rem] lg:max-w-lg bg-white/40 backdrop-blur'>
+			<nav className='flex   justify-center items-center fixed top-5  border-2 border-gray-300/70 container mx-auto rounded-full max-w-[23rem] lg:max-w-lg bg-white/40 backdrop-blur'>
 				{/*<Link href='/' legacyBehavior>
 					<motion.div
 						whileHover={{
@@ -67,6 +67,12 @@ function Header() {
 							type: `internal`,
 							icon: SiMicrodotblog,
 						},
+						{
+							route: `/blogs`,
+							title: `Uses`,
+							type: `internal`,
+							icon: SiMicrodotblog,
+						},
 						// {
 						// 	route: `https://dev.to/kawhyte`,
 						// 	title: `Dev.to`,
@@ -105,7 +111,7 @@ function Header() {
 									className=' group px-4 flex gap-1 p-0.5 hover:text-orange-500  ease-in-out  hover:underline hover:decoration-orange-500 transition duration-300  decoration-wavy    py-1.5 rounded-full text-gray-900 text-sm font-semibold'
 									key={link.title}
 									href={link.route}>
-									<link.icon className='w-6 h-6 fill-current hidden lg:flex mr-1 hover:text-orange-500 ' />
+									<link.icon className='w-6 h-6 hidden fill-current lg:flex mr-1 hover:text-orange-500 ' />
 									<p className="lg:text-lg"> {link.title}</p>
 								</Link>
 							</>

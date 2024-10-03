@@ -1,25 +1,63 @@
 import Image from "next/image";
 import TechStack from "./TechStack";
 import { BiArrowBack, BiDownArrow } from "react-icons/bi";
+import StarIcon from "/public/assets/icons/star.svg";
+import SparkleIcon from "/public/assets/icons/sparkle.svg";
+import { HeroOrbit } from "./HeroOrbit";
 // import memojiImage from '@/assets/images/memoji-avatar-1.png'
 
 const Hero = () => {
 	return (
 		<div>
 			<div className=' py-12 md:py-20 bg-green-100  bg-gradient relative z-0 '>
-
-			<div className="absolute inset-0 -z-30 opacity-5" style={{
-
-				backgroundImage:`url(${'/assets/images/grain.jpg'})`
-			}}>
-
-			<div className=" size-[620px] hero-ring  "></div>
-			<div className=" size-[820px] hero-ring  "></div>
-			<div className=" size-[1020px] hero-ring  "></div>
-			<div className=" size-[1220px] hero-ring  "></div>
-			<div className=" size-[1420px] hero-ring  "></div>
+				
+			<div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]"> 
 			
-			</div>
+			<div
+					className='absolute inset-0 -z-30 opacity-5'
+					style={{
+						backgroundImage: `url(${"/assets/images/grain.jpg"})`,
+					}}>
+					<div className=' size-[620px] hero-ring  '></div>
+					<div className=' size-[820px] hero-ring  '></div>
+					<div className=' size-[1020px] hero-ring  '></div>
+					<div className=' size-[1220px] hero-ring  '></div>
+					<div className=' size-[1420px] hero-ring  '></div>
+				</div>
+
+				<HeroOrbit size={800} rotation={-72}>
+					<StarIcon className='size-28 text-green-300 ' />
+				</HeroOrbit>
+				<HeroOrbit size={550} rotation={10}>
+					<StarIcon className='size-12 text-green-300 ' />
+				</HeroOrbit>
+				<HeroOrbit size={600} rotation={109}>
+					<StarIcon className='size-8 text-green-300 ' />
+				</HeroOrbit>
+				<HeroOrbit size={430} rotation={-14}>
+					<SparkleIcon className='size-8 text-orange-300/70 ' />
+				</HeroOrbit>
+				<HeroOrbit size={440} rotation={90}>
+					<SparkleIcon className='size-5 text-orange-300/70 ' />
+				</HeroOrbit>
+				<HeroOrbit size={530} rotation={178}>
+					<SparkleIcon className='size-10 text-orange-300/70 ' />
+				</HeroOrbit>
+				<HeroOrbit size={710} rotation={140}>
+					<SparkleIcon className='size-14 text-orange-300/70 ' />
+				</HeroOrbit>
+				<HeroOrbit size={710} rotation={90}>
+					<div className="size-3 rounded-full bg-emerald-300/20"></div>
+				</HeroOrbit>
+				<HeroOrbit size={520} rotation={-41}>
+					<div className="size-2 rounded-full bg-emerald-300/20"></div>
+				</HeroOrbit>
+				<HeroOrbit size={620} rotation={-5}>
+					<div className="size-2 rounded-full bg-emerald-300/20"></div>
+				</HeroOrbit>
+
+				</div>
+				
 				<div className='container  flex flex-col  items-center px-3 mx-auto  mt-20 '>
 					<Image
 						src={"/assets/images/memoji-computer.png"}
@@ -109,7 +147,7 @@ const Hero = () => {
 						</div>
 					</div>*/}
 				</div>
-				 {/*<TechStack />*/}
+				{/*<TechStack />*/}
 			</div>
 		</div>
 	);
