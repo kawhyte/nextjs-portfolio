@@ -6,6 +6,32 @@ const Card = ({ portfolio }) => {
 
 	return (
 		<>
+
+
+		<div>
+		
+		<span>Company name</span>
+		<span>Year 2000</span>
+
+<h3>Project Title</h3>
+<ul>
+<li>1</li>
+<li>1</li>
+<li>1</li>
+</ul>
+<Link href={`/portfolio/${slug}`}>
+<button>View Project Details</button>
+		</Link>
+
+		<Image
+		src={`https:${thumbnail.fields.file.url}?fm=webp`}
+		blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp`}
+		placeholder='blur'
+		height={300}
+		width={224}
+		className='h-48  md:block  w-full object-cover object-center   '
+	/>
+		</div>
 			<div
 				className='  max-w-sm sm:max-w-xs bg-gray-50 hover:border-orange-500 transition-transform
 						duration-300 		scale-95 

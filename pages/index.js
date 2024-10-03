@@ -54,11 +54,7 @@ export default function Index({ portfolio, blog }) {
 
 			<div className=''>
 				<div className='my-20'>
-					<SectionTitle
-						header={"Featured Projects"}
-						description={``}
-					/>
-
+				
 					{portfolio && portfolio.length > 0 ? (
 						<PortfolioCards items={portfolio.slice(0, 6)} />
 					) : (
