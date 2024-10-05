@@ -3,9 +3,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaTwitter, FaLinkedin, FaCodepen, FaDev } from "react-icons/fa";
 import { BiArrowBack } from "react-icons/bi";
-import { AiFillProject } from "react-icons/ai";
+import { AiFillProject,AiFillHome } from "react-icons/ai";
 import { GrHomeOption } from "react-icons/gr";
 import { SiMicrodotblog } from "react-icons/si";
+import { FaComputerMouse } from "react-icons/fa6";
+
 
 
 
@@ -14,7 +16,7 @@ function Header() {
 
 	return (
 		<header className=' flex  justify-center items-center z-50 absolute container mx-auto inset-1 lg:inset-28 '>
-			<nav className='flex   justify-center items-center fixed top-5  border-2 border-gray-300/70 container mx-auto rounded-full max-w-[23rem] lg:max-w-lg bg-white/40 backdrop-blur'>
+			<nav className='flex   justify-center items-center fixed top-5 border-2 border-gray-300/40 container mx-auto rounded-full max-w-[23rem] lg:max-w-lg bg-white/40 backdrop-blur'>
 				{/*<Link href='/' legacyBehavior>
 					<motion.div
 						whileHover={{
@@ -53,7 +55,7 @@ function Header() {
 							route: `/`,
 							title: `Home`,
 							type: `internal`,
-							icon: GrHomeOption ,
+							icon: AiFillHome ,
 						},
 						{
 							route: `/projects`,
@@ -71,7 +73,7 @@ function Header() {
 							route: `/blogs`,
 							title: `Uses`,
 							type: `internal`,
-							icon: SiMicrodotblog,
+							icon: FaComputerMouse,
 						},
 						// {
 						// 	route: `https://dev.to/kawhyte`,

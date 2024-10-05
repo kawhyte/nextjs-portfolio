@@ -1,6 +1,6 @@
 import Image from "next/image";
 import TechStack from "./TechStack";
-import { BiArrowBack, BiDownArrow } from "react-icons/bi";
+import { BiArrowBack, BiRightArrow } from "react-icons/bi";
 import StarIcon from "/public/assets/icons/star.svg";
 import SparkleIcon from "/public/assets/icons/sparkle.svg";
 import { HeroOrbit } from "./HeroOrbit";
@@ -47,33 +47,33 @@ const Hero = () => {
 					<SparkleIcon className='size-14 text-orange-300/70 ' />
 				</HeroOrbit>
 				<HeroOrbit size={710} rotation={90}>
-					<div className="size-3 rounded-full bg-emerald-300/20"></div>
+					<div className="size-3 rounded-full bg-green-300/50"></div>
 				</HeroOrbit>
 				<HeroOrbit size={520} rotation={-41}>
-					<div className="size-2 rounded-full bg-emerald-300/20"></div>
+					<div className="size-2 rounded-full bg-green-300/50"></div>
 				</HeroOrbit>
 				<HeroOrbit size={620} rotation={-5}>
-					<div className="size-2 rounded-full bg-emerald-300/20"></div>
+					<div className="size-2 rounded-full bg-green-300/50"></div>
 				</HeroOrbit>
 
 				</div>
 				
 				<div className='container  flex flex-col  items-center px-3 mx-auto  mt-20 '>
 					<Image
-						src={"/assets/images/memoji-computer.png"}
+						src={"/assets/images/portrait.png"}
 						blurDataURL='https://res.cloudinary.com/babyhulk/image/upload/e_blur:1058,q_10/v1627169850/hero-image/person-on-computer.webp'
 						placeholder='blur'
-						width='170'
-						height='300'
+						width='370'
+						height='500'
 						alt='man on computer'
-						className=''
+						className=' pr-7'
 					/>
 
 					<div className='container mx-auto flex flex-col justify-center items-center w-full '>
 						<div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center text-white gap-2 rounded-xl'>
-							<div className='bg-orange-400 size-2.5 rounded-full'></div>
+							<div className='hidden md:block rounded-full'>👋🏽</div>
 							<div className='text-sm font-medium'>
-								I'm a Full Stack Software Engineer
+							I'm a Full Stack Software Engineer
 							</div>
 						</div>
 						<div className='max-w-lg lg:max-w-4xl'>
@@ -89,13 +89,14 @@ const Hero = () => {
 						<div className='flex flex-col md:flex-row item-center mt-8 gap-4'>
 							<button className='inline-flex items-center gap-2 border border-white text-white bg-gray-900 px-6 h-12 rounded-xl'>
 								<span className='font-semibold'>Check out my Projects</span>
-
-								<BiDownArrow />
+								<span>🚀</span>
+ {/**/}
+								
 							</button>
-							<button className='flex justify-center items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl'>
+							<button className='flex justify-center items-center gap-2 border border-gray-800 bg-white border-gray-300/70 px-6 h-12 rounded-xl'>
 								<span className='font-semibold'>Lets Connect</span>
-
-								<span>👋🏽</span>
+								<BiRightArrow />
+								 {/*<span>👋🏽</span>*/}
 							</button>
 						</div>
 					</div>
