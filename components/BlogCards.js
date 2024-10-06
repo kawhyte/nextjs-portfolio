@@ -7,13 +7,11 @@ const Cards = ({ items, hideLastItemOnMobile = false }) => {
 
    
   return (
-    <div className="container max-w-7xl mx-auto ">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  ">
+    <div className=" pt-6 ">
+      <div className="">
         {items.map(item => (
           <div
-            className={classNames("w-full   p-3 md:p-6", {
-              "last:hidden lg:last:block": hideLastItemOnMobile,
-            })}
+            className=""
             key={item.sys.id}
           >
             <BlogCard blog={item} />

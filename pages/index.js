@@ -74,6 +74,7 @@ export default function Index({ portfolio, blog }) {
 						header={"Recent Blog Posts"}
 						description={`Explores my journey as a software developer, diving into technical challenges, coding insights, and the latest technologies.`}
 					sectionHeadtext={`spilling coffee on my keyboard`}
+					className=""
 						/>
 
 					{blog && blog.length > 0 ? (
