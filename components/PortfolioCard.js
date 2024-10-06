@@ -8,11 +8,7 @@ const Card = ({ portfolio }) => {
 
 	return (
 		<>
-			<div
-				className='absolute inset-0 -z-10 opacity-5'
-				style={{
-					backgroundImage: `url(${"/assets/images/grain.jpg"})`,
-				}}></div>
+			
 
 			<div className='lg:grid lg:grid-cols-2 lg:gap-16'>
 				<div className='lg:pb-16'>
@@ -104,3 +100,11 @@ export default Card;
 // 				</div>
 
 // 			</div>
+
+
+
+// <div
+// 				className='absolute inset-0 -z-10 opacity-5'
+// 				style={{
+// 					backgroundImage: `url(${"/assets/images/grain.jpg"})`,
+// 				}}></div>

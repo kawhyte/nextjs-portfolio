@@ -2,13 +2,13 @@ import React from 'react'
 
 function Quote() {
   return (
-    <div className=" container mx-auto border border-white rounded-2xl  flex w-full flex-col justify-between px-5 pb-4 bg-yellow-50 my-32  ">
+    <div className=" container mx-auto border border-white rounded-2xl  flex w-full flex-col justify-between px-2 bg-yellow-50 my-32  ">
     <h1
-      className={`font-extrabold leading-tight p-9 tracking-tight text-gray-900 sm:text-2xl md:text-4xl  title-font mb-3 font-heading text-3xl    `}
+      className={`font-serif text-3xl md:text-4xl lg:text-5xl text-center mt-6`}
     >
     "The heights by great men reached and kept were not attained by sudden flight, but they while their companions slept, were toiling upward in the night."
      <span
-      className={` pl-5 font-secondary mt-2 text-sm text-gray-500 leading-relaxed md:text-base  lg:text-base max-w-3xl `}
+      className={`text-center text-lg md:text-xl lg:text-3xl text-gray-900/80 mt-4 max-w-md mx-auto`}
     >
      ~ Henry Wadsworth Longfellow
     </span></h1>

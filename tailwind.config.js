@@ -27,6 +27,9 @@ module.exports = {
 				},
 			  },
     extend: {
+		linearGradientColors: {
+        'icon-gradient': ['#FF0000', '#0000FF'],
+      },
 
 		fontFamily:{
 			sans: 'var(--font-sans)',

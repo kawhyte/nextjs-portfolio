@@ -3,20 +3,17 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaTwitter, FaLinkedin, FaCodepen, FaDev } from "react-icons/fa";
 import { BiArrowBack } from "react-icons/bi";
-import { AiFillProject,AiFillHome } from "react-icons/ai";
+import { AiFillProject, AiFillHome } from "react-icons/ai";
 import { GrHomeOption } from "react-icons/gr";
 import { SiMicrodotblog } from "react-icons/si";
 import { FaComputerMouse } from "react-icons/fa6";
-
-
-
 
 function Header() {
 	const [isExpanded, toggleExpansion] = useState(false);
 
 	return (
 		<header className=' flex  justify-center items-center z-50 absolute container mx-auto inset-1 lg:inset-28 '>
-			<nav className='flex   justify-center items-center fixed top-5 border-2 border-gray-300/40 container mx-auto rounded-full max-w-[23rem] lg:max-w-lg bg-white/40 backdrop-blur'>
+			<nav className='flex   justify-center items-center fixed top-5 border-2 border-gray-100/90 container mx-auto rounded-full max-w-[23rem] lg:max-w-lg bg-white/40 backdrop-blur'>
 				{/*<Link href='/' legacyBehavior>
 					<motion.div
 						whileHover={{
@@ -55,7 +52,7 @@ function Header() {
 							route: `/`,
 							title: `Home`,
 							type: `internal`,
-							icon: AiFillHome ,
+							icon: AiFillHome,
 						},
 						{
 							route: `/projects`,
@@ -114,7 +111,7 @@ function Header() {
 									key={link.title}
 									href={link.route}>
 									<link.icon className='w-6 h-6 hidden fill-current lg:flex mr-1 hover:text-orange-500 ' />
-									<p className="lg:text-lg"> {link.title}</p>
+									<p className='lg:text-lg'> {link.title}</p>
 								</Link>
 							</>
 						) : (
@@ -127,8 +124,6 @@ function Header() {
 						)
 					)}
 				</div>
-
-		
 			</nav>
 		</header>
 	);

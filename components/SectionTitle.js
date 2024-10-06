@@ -1,22 +1,22 @@
-import React from 'react'
+import React from "react";
 
-function SectionTitle({ header, description }) {
-  return (
-    <div className=" container mx-auto  flex w-full flex-col justify-between px-5    ">
-      <h1
-        className={`tracking-tight  text-black lg:text-2xl font-extrabold leading-tight text-2xl'   `}
-      >
-        {header}
-      </h1>
-      <div className="h-1 mt-2 w-20 rounded bg-orange-500"></div>
+function SectionTitle({ header, description, sectionHeadtext }) {
+	return (
+		<div className=' container mx-auto  flex w-full flex-col justify-between px-5    '>
+			<div className='flex justify-center'>
+				<p className='uppercase font-semibold tracking-widest bg-gradient-to-r from-green-500 to-orange-500 text-center  text-transparent bg-clip-text'>
+					{sectionHeadtext}
+				</p>
+			</div>
+			<h2 className=' font-serif text-3xl md:text-5xl text-center mt-6'>
+				{header}
+			</h2>
 
-      <p
-        className={`  my-4 text-base font-light text-left text-gray-700 whitespace-pre-line text-md font-Montserrat `}
-      >
-        {description}
-      </p>
-    </div>
-  )
+			<p className=' text-center md:text-lg lg:text-xl text-gray-900/80 mt-4 max-w-md mx-auto'>
+				{description}
+			</p>
+		</div>
+	);
 }
 
-export default SectionTitle
+export default SectionTitle;

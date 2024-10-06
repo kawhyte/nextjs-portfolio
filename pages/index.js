@@ -2,7 +2,7 @@ import { createClient } from "contentful";
 import PortfolioCards from "../components/PortfolioCards";
 import BlogCards from "../components/BlogCards";
 import Hero from "../components/Hero";
-import Section from "../components/Section";
+import AboutSection from "../components/AboutSection";
 import TechStack from "../components/TechStack";
 import Link from "next/link";
 import Head from "next/head";
@@ -68,12 +68,13 @@ export default function Index({ portfolio, blog }) {
 					</div>
 				</div>
 				<Quote />
-				{/* <Section />*/}
+				<AboutSection />
 				<div className='my-20'>
 					<SectionTitle
 						header={"Recent Blog Posts"}
-						description={``}
-					/>
+						description={`Explores my journey as a software developer, diving into technical challenges, coding insights, and the latest technologies.`}
+					sectionHeadtext={`spilling coffee on my keyboard`}
+						/>
 
 					{blog && blog.length > 0 ? (
 						<BlogCards items={blog.slice(0, 4)} />
