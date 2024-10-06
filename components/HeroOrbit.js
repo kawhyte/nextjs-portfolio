@@ -1,19 +1,44 @@
+import { twMerge } from "tailwind-merge";
 import StarIcon from "/public/assets/icons/star.svg";
 
-export const HeroOrbit = ({ children, size, rotation }) => {
+export const HeroOrbit = ({
+	children,
+	size,
+	rotation,
+	orbitDuration,
+	shouldSpin =false,
+	spinDuration,
+	shouldOrbit = false,
+}) => {
 	return (
 		<div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2    '>
 			<div
-				className=' flex  items-start justify-star'
+				className={twMerge(
+					shouldOrbit === true && "animate-spin"
+				)}
 				style={{
-                    transform:`rotate(${rotation}deg)`,
-					height: `${size}px`,
-					width: `${size}px`,
+					animationDuration: orbitDuration,
 				}}>
-				<div className='inline-flex  ' style={{
+				<div
+					className=' flex  items-start justify-start  '
+					style={{
+						transform: `rotate(${rotation}deg)`,
+						height: `${size}px`,
+						width: `${size}px`,
+					}}>
 
-                    transform:`rotate(${rotation * -1}deg)`
-                }}>{children}</div>
+					<div className={twMerge(shouldSpin ===true && "animate-spin")} style={{
+animationDuration: spinDuration,
+
+					}}> 
+					<div
+						className='inline-flex  '
+						style={{
+							transform: `rotate(${rotation * -1}deg)`,
+						}}>
+						{children}
+					</div></div>
+				</div>
 			</div>
 		</div>
 	);

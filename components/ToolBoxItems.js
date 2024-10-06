@@ -20,7 +20,7 @@ const ToolBoxItems = ({ languages, className, itemsWrapperClass }) => {
 						className='inline-flex items-center gap-4 py-2 px-3 outline outline-2 outline-gray-500 rounded-lg'>
 						<span>
 							<div>
-								<svg className='size-0 absolute bg-orange-200'>
+								<svg className='size-0 absolute bg-green-300 bg-orange-200'>
 									<defs>
 										<linearGradient id='icon-gradient'>
 											<stop offset='0%' stopColor='rgb(134 239 172)  ' />

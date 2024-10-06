@@ -10,54 +10,99 @@ const Hero = () => {
 	return (
 		<div>
 			<div className=' py-12 md:py-20 bg-green-100  bg-gradient relative z-0 '>
-				
-			<div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]"> 
-			
-			<div
-					className='absolute inset-0 -z-30 opacity-5'
-					style={{
-						backgroundImage: `url(${"/assets/images/grain.jpg"})`,
-					}}>
-					<div className=' size-[620px] hero-ring  '></div>
-					<div className=' size-[820px] hero-ring  '></div>
-					<div className=' size-[1020px] hero-ring  '></div>
-					<div className=' size-[1220px] hero-ring  '></div>
-					<div className=' size-[1420px] hero-ring  '></div>
+				<div className='absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]'>
+					<div
+						className='absolute inset-0 -z-30 opacity-5'
+						style={{
+							backgroundImage: `url(${"/assets/images/grain.jpg"})`,
+						}}>
+						<div className=' size-[620px] hero-ring  '></div>
+						<div className=' size-[820px] hero-ring  '></div>
+						<div className=' size-[1020px] hero-ring  '></div>
+						<div className=' size-[1220px] hero-ring  '></div>
+						<div className=' size-[1420px] hero-ring  '></div>
+					</div>
+
+					<HeroOrbit
+						size={430}
+						rotation={-14}
+						shouldOrbit
+						orbitDuration={"30s"}
+						shouldSpin
+						spinDuration={"3s"}>
+						<SparkleIcon className='size-8 text-orange-300/70 ' />
+					</HeroOrbit>
+					<HeroOrbit
+						size={440}
+						rotation={90}
+						shouldOrbit
+						orbitDuration={"32s"}
+						shouldSpin
+						spinDuration={"3s"}>
+						<SparkleIcon className='size-5 text-orange-300/70 ' />
+					</HeroOrbit>
+					<HeroOrbit
+						size={520}
+						rotation={-41}
+						shouldOrbit
+						orbitDuration={"34s"}
+						shouldSpin
+						spinDuration={"6s"}>
+						<div className='size-2 rounded-full bg-green-300/50'></div>
+					</HeroOrbit>
+					<HeroOrbit
+						size={530}
+						rotation={178}
+						shouldOrbit
+						orbitDuration={"36s"}
+						shouldSpin
+						spinDuration={"3s"}>
+						<SparkleIcon className='size-10 text-orange-300/70 ' />
+					</HeroOrbit>
+					<HeroOrbit
+						size={550}
+						rotation={10}
+						shouldOrbit
+						orbitDuration={"38s"}
+						shouldSpin
+						spinDuration={"6s"}>
+						<StarIcon className='size-12 text-green-300 ' />
+					</HeroOrbit>
+					<HeroOrbit
+						size={600}
+						rotation={109}
+						shouldOrbit
+						orbitDuration={"40s"}
+						shouldSpin
+						spinDuration={"6s"}>
+						<StarIcon className='size-8 text-green-300 ' />
+					</HeroOrbit>
+					<HeroOrbit size={620} rotation={-5} shouldOrbit orbitDuration={"42s"}>
+						<div className='size-2 rounded-full bg-green-300/50'></div>
+					</HeroOrbit>
+					<HeroOrbit
+						size={710}
+						rotation={140}
+						shouldOrbit
+						orbitDuration={"44s"}
+						shouldSpin
+						spinDuration={"3s"}>
+						<SparkleIcon className='size-14 text-orange-300/70 ' />
+					</HeroOrbit>
+					<HeroOrbit size={710} rotation={90} shouldOrbit orbitDuration={"46s"}>
+						<div className='size-3 rounded-full bg-green-300/50'></div>
+					</HeroOrbit>
+					<HeroOrbit
+						size={800}
+						rotation={-72}
+						shouldOrbit
+						orbitDuration={"48s"}
+						shouldSpin
+						spinDuration={"6s"}>
+						<StarIcon className='size-28 text-green-300 ' />
+					</HeroOrbit>
 				</div>
 
-				<HeroOrbit size={800} rotation={-72}>
-					<StarIcon className='size-28 text-green-300 ' />
-				</HeroOrbit>
-				<HeroOrbit size={550} rotation={10}>
-					<StarIcon className='size-12 text-green-300 ' />
-				</HeroOrbit>
-				<HeroOrbit size={600} rotation={109}>
-					<StarIcon className='size-8 text-green-300 ' />
-				</HeroOrbit>
-				<HeroOrbit size={430} rotation={-14}>
-					<SparkleIcon className='size-8 text-orange-300/70 ' />
-				</HeroOrbit>
-				<HeroOrbit size={440} rotation={90}>
-					<SparkleIcon className='size-5 text-orange-300/70 ' />
-				</HeroOrbit>
-				<HeroOrbit size={530} rotation={178}>
-					<SparkleIcon className='size-10 text-orange-300/70 ' />
-				</HeroOrbit>
-				<HeroOrbit size={710} rotation={140}>
-					<SparkleIcon className='size-14 text-orange-300/70 ' />
-				</HeroOrbit>
-				<HeroOrbit size={710} rotation={90}>
-					<div className="size-3 rounded-full bg-green-300/50"></div>
-				</HeroOrbit>
-				<HeroOrbit size={520} rotation={-41}>
-					<div className="size-2 rounded-full bg-green-300/50"></div>
-				</HeroOrbit>
-				<HeroOrbit size={620} rotation={-5}>
-					<div className="size-2 rounded-full bg-green-300/50"></div>
-				</HeroOrbit>
-
-				</div>
-				
 				<div className='container  flex flex-col  items-center px-3 mx-auto  mt-20 '>
 					<Image
 						src={"/assets/images/portrait.png"}
@@ -71,9 +116,11 @@ const Hero = () => {
 
 					<div className='container mx-auto flex flex-col justify-center items-center w-full '>
 						<div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center text-white gap-4 rounded-xl'>
-							<div className='hidden md:block rounded-full text-2xl lg:text-3xl animate-wave'>👋🏽</div>
+							<div className='hidden md:block rounded-full text-2xl lg:text-3xl animate-wave'>
+								👋🏽
+							</div>
 							<div className='text-sm font-medium'>
-							I'm a Full Stack Software Engineer
+								I'm a Full Stack Software Engineer
 							</div>
 						</div>
 						<div className='max-w-lg lg:max-w-4xl'>
@@ -90,13 +137,12 @@ const Hero = () => {
 							<button className='inline-flex items-center gap-2 border border-white text-white bg-gray-900 px-6 h-12 rounded-xl'>
 								<span className='font-semibold'>Check out my Projects</span>
 								<span>🚀</span>
- {/**/}
-								
+								{/**/}
 							</button>
 							<button className='flex justify-center items-center gap-2 border border-gray-800 bg-white border-gray-300/70 px-6 h-12 rounded-xl'>
 								<span className='font-semibold'>Lets Connect</span>
 								<BiRightArrow />
-								 {/*<span>👋🏽</span>*/}
+								{/*<span>👋🏽</span>*/}
 							</button>
 						</div>
 					</div>

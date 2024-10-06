@@ -9,7 +9,7 @@ const BlogCard = ({ blog }) => {
 
 	return (
 		<div className=' flex flex-col max-w-6xl lg:mx-auto mt-10  '>
-			<Card className='flex flex-col lg:h-[280px] lg:flex-row bg-green-50'>
+			<Card className='flex flex-col lg:h-[280px] lg:flex-row bg-green-50/70 '>
 				<Image
 					blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp`}
 					placeholder='blur'

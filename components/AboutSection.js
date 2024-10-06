@@ -185,7 +185,7 @@ function AboutSection() {
 						</Card>
 						<Card className='h-[320px] md:col-span-3 lg:col-span-2 '>
 							<CardHeader
-								title={"My Toolbox"}
+								title={"My Tech Stack"}
 								description={"The tech and tool that Ive been using"}
 								className=''
 							/>
@@ -202,7 +202,7 @@ function AboutSection() {
 					<div className='grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3 md:gap-1'>
 						<Card className='h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2'>
 							<CardHeader
-								title={"Beyond the code"}
+								title={"Other things I like"}
 								description={"Explore my other hobbies outside"}
 								className='px-6 py-6'
 							/>
