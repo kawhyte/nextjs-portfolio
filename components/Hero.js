@@ -70,8 +70,8 @@ const Hero = () => {
 					/>
 
 					<div className='container mx-auto flex flex-col justify-center items-center w-full '>
-						<div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center text-white gap-2 rounded-xl'>
-							<div className='hidden md:block rounded-full'>👋🏽</div>
+						<div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center text-white gap-4 rounded-xl'>
+							<div className='hidden md:block rounded-full text-2xl lg:text-3xl animate-wave'>👋🏽</div>
 							<div className='text-sm font-medium'>
 							I'm a Full Stack Software Engineer
 							</div>
