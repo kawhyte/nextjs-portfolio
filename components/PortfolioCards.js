@@ -24,7 +24,7 @@ const Cards = ({ items, hideLastItemOnMobile = false }) => {
 					See how I transform concepts in to amazing digital experiences.{" "}
 				</p>
 
-				<div className=' flex flex-col mt-10 md:mt-20 gap-20 mx-auto container '>
+				<div className=' flex flex-col mt-10 md:mt-20 gap-20 mx-auto  '>
 					{items.map((item) => (
 						<div
 							className="bg-yellow-50 max-w-6xl mx-3 md:mx-9 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0  after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-gray-700/20 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 after:pointer-events-none"
