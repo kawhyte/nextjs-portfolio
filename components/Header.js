@@ -12,7 +12,7 @@ function Header() {
 	const [isExpanded, toggleExpansion] = useState(false);
 
 	return (
-		<header className=' flex  justify-center items-center z-50 absolute container mx-auto inset-1 lg:inset-28 '>
+		<header className=' flex  justify-center items-center z-50 absolute container mx-auto inset-1 lg:inset-28 h-2 '>
 			<nav className='flex   justify-center items-center fixed top-5 border-2 border-gray-100/90 container mx-auto rounded-full max-w-[23rem] lg:max-w-lg bg-white/40 backdrop-blur'>
 				{/*<Link href='/' legacyBehavior>
 					<motion.div

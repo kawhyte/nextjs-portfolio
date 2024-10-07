@@ -4,6 +4,7 @@ import { BiArrowBack, BiRightArrow } from "react-icons/bi";
 import StarIcon from "/public/assets/icons/star.svg";
 import SparkleIcon from "/public/assets/icons/sparkle.svg";
 import { HeroOrbit } from "./HeroOrbit";
+import Button from "../ui/Button"
 // import memojiImage from '@/assets/images/memoji-avatar-1.png'
 
 const Hero = () => {
@@ -114,7 +115,7 @@ const Hero = () => {
 						className=' pr-7'
 					/>
 
-					<div className='container mx-auto flex flex-col justify-center items-center w-full '>
+					<div className='container mx-auto flex flex-col justify-center items-center w-full z-50 '>
 						<div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center text-white gap-4 rounded-xl'>
 							<div className='hidden md:block rounded-full text-2xl lg:text-3xl animate-wave'>
 								👋🏽
@@ -133,17 +134,21 @@ const Hero = () => {
 							</p>
 						</div>
 
-						<div className='flex flex-col md:flex-row item-center mt-8 gap-4'>
-							<button className='inline-flex items-center gap-2 border border-white text-white bg-gray-900 px-6 h-12 rounded-xl'>
+						<div className='flex flex-col md:flex-row item-center gap-4 z-10'>
+							
+					<Button text={'Check out my Projects'} link={"/projects"} icon={"🚀"} />
+					<Button className="bg-white text-black z-30" text={'Lets Connect'} link={"/"} icon={<BiRightArrow />} />
+						
+						{/*<button className='inline-flex items-center gap-2 border border-white text-white bg-gray-900 px-6 h-12 rounded-xl'>
 								<span className='font-semibold'>Check out my Projects</span>
 								<span>🚀</span>
-								{/**/}
+								
 							</button>
 							<button className='flex justify-center items-center gap-2 border border-gray-800 bg-white border-gray-300/70 px-6 h-12 rounded-xl'>
 								<span className='font-semibold'>Lets Connect</span>
 								<BiRightArrow />
-								{/*<span>👋🏽</span>*/}
-							</button>
+								
+							</button>*/}
 						</div>
 					</div>
 					{/*<div className='flex flex-col  items-center justify-center w-full   '>
@@ -194,8 +199,10 @@ const Hero = () => {
 						</div>
 					</div>*/}
 				</div>
-				{/*<TechStack />*/}
+				
+			
 			</div>
+			
 		</div>
 	);
 };

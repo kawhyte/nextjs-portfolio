@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link";
+import React from "react";
+import { twMerge } from "tailwind-merge";
 // import { ReactNode } from 'react'
 
 // type ButtonProps = {
@@ -9,51 +10,22 @@ import React from 'react'
 //   link: string
 //   text?: string
 // }
-export default function Button({ text, link, children }) {
-  //if (!preview) return null
+export default function Button({ text, link, icon, className, children }) {
+	//if (!preview) return null
 
+	return (
+		<Link href={link} passHref legacyBehavior>
+			<button
+				className={twMerge(
+					"bg-gray-900 border-gray-300/70 border border-gray-800  hover:text-orange-400 text-gray-200 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8",
+					className
+				)}>
+				{/* <span> {children} </span> */}
 
-
-  return (
-    <Link href={link} passHref legacyBehavior>
-      <a
-        className="
-                    
-                  
-                     
-                     
-                  
-                     
-                       relative
-                       z-10
-                       inline-block
-                       w-full
-                       scale-95
-                       overflow-hidden
-                       whitespace-nowrap
-                       rounded-xl
-                       border-4
-                       border-[#1f1f1f]
-                       bg-white
-                       px-7 py-[18px]
-                        text-center
-                        text-[0.9375rem]
-                        font-medium
-                        
-                       capitalize
-                        leading-6
-                        
-                        tracking-tight
-                    
-                        transition-transform
-
-                        duration-300
-                        
-                        hover:scale-100 hover:bg-orange-200 hover:before:opacity-100 after:hover:[animation-fill-mode:forwards] focus:scale-100 focus:before:opacity-100 motion-reduce:hover:scale-95 motion-reduce:after:hover:animate-none motion-reduce:focus:scale-95 sm:text-xl md:leading-none"
-      >
-        {text}
-        {children}
-      </a>
-    </Link>
-  )
+				<span> {text}</span>
+				<span> {icon}</span>
+				
+			</button>
+		</Link>
+	);
 }

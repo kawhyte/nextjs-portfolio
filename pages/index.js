@@ -10,6 +10,7 @@ import PortfolioDetails from "./portfolio/[slug]";
 import SectionTitle from "../components/SectionTitle";
 import Button from "../ui/Button";
 import Quote from "../components/Quote";
+import { ImArrowUpRight2 } from "react-icons/im";
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -33,7 +34,7 @@ export async function getStaticProps() {
 }
 
 export default function Index({ portfolio, blog }) {
-	console.log("portfolio ", portfolio)
+	console.log("portfolio ", portfolio);
 
 	portfolio = portfolio
 		.filter((item) => item.fields.featured === true)
@@ -49,12 +50,9 @@ export default function Index({ portfolio, blog }) {
 			</Head>
 			<Hero />
 			{/*<TechStack />*/}
-			
-			
 
 			<div className=''>
 				<div className='my-20'>
-				
 					{portfolio && portfolio.length > 0 ? (
 						<PortfolioCards items={portfolio.slice(0, 6)} />
 					) : (
@@ -63,7 +61,14 @@ export default function Index({ portfolio, blog }) {
 
 					<div className='lg:mt-0 lg:flex-shrink-0 flex justify-center '>
 						<div className='mt-6 inline-flex '>
-							<Button link={"/projects"}>View All Projects</Button>
+							<Button
+								className={"bg-white text-black"}
+								text={"View All Projects"}
+								link={"/projects"}
+								icon={<ImArrowUpRight2 />}
+							/>
+
+							{/*<Button link={"/projects"}>View All Projects</Button>*/}
 						</div>
 					</div>
 				</div>
@@ -73,9 +78,9 @@ export default function Index({ portfolio, blog }) {
 					<SectionTitle
 						header={"Recent Blog Posts"}
 						description={`Explores my journey as a software developer, diving into technical challenges, coding insights, and the latest technologies.`}
-					sectionHeadtext={`spilling coffee on my keyboard`}
-					className=""
-						/>
+						sectionHeadtext={`spilling coffee on my keyboard`}
+						className=''
+					/>
 
 					{blog && blog.length > 0 ? (
 						<BlogCards items={blog.slice(0, 4)} />
@@ -89,7 +94,6 @@ export default function Index({ portfolio, blog }) {
 						</div>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	);

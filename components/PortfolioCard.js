@@ -2,15 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { BiArrowFromLeft, BiCheckCircle } from "react-icons/bi";
 import { ImArrowUpRight2 } from "react-icons/im";
+import Button from "../ui/Button";
 
 const Card = ({ portfolio }) => {
 	const { name, slug, summary, thumbnail } = portfolio.fields;
 
 	return (
-		<>
+		<div className="sticky top-0">
 			
 
-			<div className='lg:grid lg:grid-cols-2 lg:gap-16'>
+			<div className='lg:grid lg:grid-cols-2 lg:gap-16 sticky top-0'>
 				<div className='lg:pb-16'>
 					<div className='bg-gradient-to-r gap-2 from-green-500 to-orange-500 inline-flex font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text'>
 						<span>Company name</span>
@@ -36,12 +37,14 @@ const Card = ({ portfolio }) => {
 							<span>How to create a process improvement plan</span>
 						</li>
 					</ul>
-					<Link href={`/portfolio/${slug}`}>
+
+					<Button className={""} icon={<ImArrowUpRight2 />} text={'View Project Details'} link={`/portfolio/${slug}`}/>
+					{/*<Link href={`/portfolio/${slug}`}>
 						<button className='bg-black text-gray-200 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8'>
 							<span>View Project Details </span>
 							<ImArrowUpRight2 className='w-4 h-4' />
 						</button>
-					</Link>
+					</Link>*/}
 				</div>
 
 				<div>
@@ -57,7 +60,7 @@ const Card = ({ portfolio }) => {
 					/>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
