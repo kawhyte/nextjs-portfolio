@@ -1,7 +1,7 @@
 import { createClient } from "contentful";
 import BlogCards from "../components/BlogCards";
 import Hero from "../components/Hero";
-import Section from "../components/Section";
+// import Section from "../components/Section";
 import Link from "next/link";
 
 export async function getStaticProps() {

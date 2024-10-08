@@ -13,6 +13,8 @@ import { twMerge } from "tailwind-merge";
 export default function Button({ text, link, icon, className, children }) {
 	//if (!preview) return null
 
+  console.log("***link****", link)
+
 	return (
 		<Link href={link} passHref legacyBehavior>
 			<button

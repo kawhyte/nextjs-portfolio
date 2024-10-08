@@ -34,7 +34,7 @@ export async function getStaticProps() {
 }
 
 export default function Index({ portfolio, blog }) {
-	console.log("portfolio ", portfolio);
+
 
 	portfolio = portfolio
 		.filter((item) => item.fields.featured === true)
@@ -90,7 +90,7 @@ export default function Index({ portfolio, blog }) {
 
 					<div className='lg:mt-0 lg:flex-shrink-0 flex justify-center '>
 						<div className='mt-6 inline-flex '>
-							<Button link={"/blogs"}>View All Blog Posts</Button>
+							<Button className={"bg-white text-black"} icon={<ImArrowUpRight2/>} text={"View All Blog Posts"} link={"/blogs"} />
 						</div>
 					</div>
 				</div>

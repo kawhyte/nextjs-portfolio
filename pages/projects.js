@@ -1,7 +1,7 @@
 import { createClient } from "contentful";
 import PortfolioCards from "../components/PortfolioCards";
 import Hero from "../components/Hero";
-import Section from "../components/Section";
+// import Section from "../components/Section";
 import Link from "next/link";
 import SectionTitle from "../components/SectionTitle";
 import ProjectDetailHeader from "../components/ProjectDetailHeader";

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Card from "./Card";
 import CardHeader from "./CardHeader";
 import { ImArrowUpRight2 } from "react-icons/im";
+import Button from "../ui/Button";
 
 const BlogCard = ({ blog }) => {
 	const { title, slug, summary, thumbnail } = blog.fields;
@@ -28,13 +29,17 @@ const BlogCard = ({ blog }) => {
 					</p>
 				</div>
 
-				<div className='flex flex-col md:flex-row item-start mb-6 ml-6 gap-4'>
-					<Link href={`/blog/${slug}`}>
+				<div className='flex flex-col md:flex-row item-start align-top  mb-10 pb-10 ml-6 gap-4'>
+
+				<Button className={"mt-2"}  icon={<ImArrowUpRight2/>} text={"Read More"} link={`/blog/${slug}`} />
+
+
+					{/*<Link href={`/blog/${slug}`}>
 						<button className='inline-flex items-center gap-2 border border-white text-white bg-gray-900 px-6 h-12 rounded-xl'>
 							<span>Read More</span>
 							<ImArrowUpRight2 className='w-4 h-4' />
 						</button>
-					</Link>
+					</Link>*/}
 				</div>
 				</div>
 			</Card>
