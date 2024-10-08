@@ -49,18 +49,18 @@ export default function Index({ portfolio, blog }) {
 				<link rel='icon' href='/favicon.ico'></link>
 			</Head>
 			<Hero />
-			{/*<TechStack />*/}
+			<TechStack />
 
 			<div className=''>
 				<div className='my-20'>
 					{portfolio && portfolio.length > 0 ? (
-						<PortfolioCards items={portfolio.slice(0, 6)} />
+						<PortfolioCards items={portfolio.slice(0, 4)} />
 					) : (
 						<div className='container'>No projects found.</div>
 					)}
 
 					<div className='lg:mt-0 lg:flex-shrink-0 flex justify-center '>
-						<div className='mt-6 inline-flex '>
+						<div className=' inline-flex '>
 							<Button
 								className={"bg-white text-black"}
 								text={"View All Projects"}
@@ -89,7 +89,7 @@ export default function Index({ portfolio, blog }) {
 					)}
 
 					<div className='lg:mt-0 lg:flex-shrink-0 flex justify-center '>
-						<div className='mt-6 inline-flex '>
+						<div className=' inline-flex '>
 							<Button className={"bg-white text-black"} icon={<ImArrowUpRight2/>} text={"View All Blog Posts"} link={"/blogs"} />
 						</div>
 					</div>

@@ -29,7 +29,7 @@ const BlogCard = ({ blog }) => {
 					</p>
 				</div>
 
-				<div className='flex flex-col md:flex-row item-start align-top  mb-10 pb-10 ml-6 gap-4'>
+				<div className='flex lg:justify-center flex-col md:flex-row item-start align-top  mb-10 pb-10 ml-6 gap-4  w-44 md:w-52'>
 
 				<Button className={"mt-2"}  icon={<ImArrowUpRight2/>} text={"Read More"} link={`/blog/${slug}`} />
 

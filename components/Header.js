@@ -66,12 +66,12 @@ function Header() {
 							type: `internal`,
 							icon: SiMicrodotblog,
 						},
-						{
-							route: `/blogs`,
-							title: `Uses`,
-							type: `internal`,
-							icon: FaComputerMouse,
-						},
+						// {
+						// 	route: `/blogs`,
+						// 	title: `Uses`,
+						// 	type: `internal`,
+						// 	icon: FaComputerMouse,
+						// },
 						// {
 						// 	route: `https://dev.to/kawhyte`,
 						// 	title: `Dev.to`,
@@ -110,7 +110,7 @@ function Header() {
 									className=' group px-4 flex gap-1 p-0.5 hover:text-orange-500  ease-in-out  hover:underline hover:decoration-orange-500 transition duration-300  decoration-wavy    py-1.5 rounded-full text-gray-900 text-sm font-semibold'
 									key={link.title}
 									href={link.route}>
-									<link.icon className='w-6 h-6 hidden fill-current lg:flex mr-1 hover:text-orange-500 ' />
+									<link.icon className='w-6 h-6  fill-current lg:flex mr-1 hover:text-orange-500 ' />
 									<p className='lg:text-lg'> {link.title}</p>
 								</Link>
 							</>

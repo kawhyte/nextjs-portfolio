@@ -81,7 +81,7 @@ export default function PortfolioDetails({ portfolio }) {
 				<link rel='icon' href='/favicon.ico'></link>
 			</Head>
 
-			<div className=' flex flex-col mt-24 md:mt-28 gap-20  '>
+			<div className=' flex flex-col mt-24 md:mt-28   '>
 				<div className=" max-w-[200rem]  mx-3 md:mx-9  relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0  after:outline-2 after:border-b-4 after:-outline-offset-2  after:outline-gray-700/20 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20   after:pointer-events-none ">
 					<div className='lg:grid lg:grid-cols-2 lg:gap-16 '>
 						<div className='lg:pb-16'>
@@ -91,7 +91,7 @@ export default function PortfolioDetails({ portfolio }) {
 								<span>Year 2000</span>
 							</div>
 
-							<h3 className='font-serif text-2xl mt-2 md:mt-5 md:text-4xl'>
+							<h3 className='font-serif text-3xl mt-2 md:mt-5 md:text-5xl'>
 								{name}
 							</h3>
 
@@ -101,6 +101,45 @@ export default function PortfolioDetails({ portfolio }) {
 								</div>
 							)}
 
+
+							<div className='flex gap-2 text-sm md:text-base border-gray-900/5 text-gray-700/60 mb-4 mt-8 '>
+							<BiCheckCircle className='w-5 h-6 md:w-6 md:h-7 ' />
+							<span> Tech used:</span>
+						</div>
+
+						<div className='grid grid-cols-2 md:grid-cols-4'>
+							{technology.map((tech, i) => {
+								return (
+									<div
+										key={tech.sys.id}
+										className={
+											"inline-flex items-center gap-4 py-2"
+										}>
+										<Image
+											src={`https:${tech.fields.file.url}?fm=webp`}
+											width='45'
+											height='45'
+											alt='technology icon'
+											className='w-7 '
+										/>
+
+										<span
+											target='_blank'
+											rel='noopener noreferrer'
+											className={"text-gray-700/60 text-xs md:text-sm uppercase"}>
+											{tech.fields.title}
+										</span>
+									</div>
+								);
+							})}
+							</div>
+
+
+							
+
+							<hr className='border-t-2 border-gray-900/5 mt-4 md:mt-5' />
+
+							
 							<div className='flex  lg:flex-row  items-start justify-start md:gap-16 gap-x-3  text-sm md:text-base'>
 									<Button
 										className={"bg-white text-black"}
@@ -113,42 +152,7 @@ export default function PortfolioDetails({ portfolio }) {
 										link={url}
 										icon={<BiRightArrow />}
 									/>
-								</div>
-
-							<hr className='border-t-2 border-gray-900/5 mt-4 md:mt-5' />
-
-							<div className='flex gap-2 text-sm md:text-base border-gray-900/5 text-gray-700/60 mb-4 mt-8 '>
-								<BiCheckCircle className='w-5 h-6 md:w-6 md:h-7 ' />
-								<span> Tech used:</span>
-							</div>
-
-							<div className='grid grid-cols-2 md:grid-cols-4'>
-								{technology.map((tech, i) => {
-									return (
-										<div
-											key={tech.sys.id}
-											className={
-												" inline-flex items-center gap-4 py-2"
-											}>
-											<Image
-												src={`https:${tech.fields.file.url}?fm=webp`}
-												width='45'
-												height='45'
-												alt='technology icon'
-												className='w-7 '
-											/>
-
-											<span
-												target='_blank'
-												rel='noopener noreferrer'
-												className={"text-gray-700/60 text-xs md:text-sm uppercase"}>
-												{tech.fields.title}
-											</span>
-										</div>
-									);
-								})}
-								</div>
-								
+								</div>	
 							
 					
 						</div>
@@ -161,13 +165,31 @@ export default function PortfolioDetails({ portfolio }) {
 								height={1000}
 								width={1000}
 								quality={100}
-								className='w-full rounded-t-2xl border-2  mt-8 -mb-7 md:-mb-0 lg:mt-0 lg:absolute md:w-[] lg:w-[45rem] '
+								className='w-full rounded-t-2xl   mt-8 -mb-7 md:-mb-0 lg:mt-0 lg:absolute md:w-[] lg:w-[45rem] '
 								alt=''
 							/>
 						</div>
 					</div>
 				</div>
+
+
+
+
+				<CaseStudy
+					richTextProblem={richTextProblem}
+ 					richTextApproach={richTextApproach}
+ 					richTextResult={richTextResult}
+ 					problem={problem}
+ 					approach={approach}
+ 					result={result}
+ 				/>
 			</div>
+
+			
+
+
+
+
 		</div>
 	);
 }

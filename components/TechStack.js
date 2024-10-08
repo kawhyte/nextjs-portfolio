@@ -5,8 +5,9 @@ import { FaNodeJs, FaReact } from "react-icons/fa";
 import { SiCsharp, SiJavascript } from "react-icons/si";
 import { BiLogoGraphql } from "react-icons/bi";
 import { IoLogoCss3 } from "react-icons/io";
+import SectionTitle from "./SectionTitle";
 
-const imageSize = "h-7 w-7 ";
+const imageSize = "h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-10 ";
 
 const languages = [
 	{
@@ -48,24 +49,27 @@ const languages = [
 ];
 
 function TechStack() {
-	return (
-		<div className='flex flex-col md:flex-row container mx-auto align-middle items-center border-white rounded-2xl  w-full py-10  mb-36 max-w-12xl '>
-			<h2 className=' md:w-28 text-xl mb-9 md:mb-0  mr-4  font-bold leading-tight text-center md:text-xl'>
-				Tech Stack
-			</h2>
 
+
+	return (
+<div className=" pt-24 lg:pt-28">
+		<SectionTitle sectionHeadtext={"Sortware List "} description={"A few of the technology and tools that I've been using "} header={"My Tech Stack"}/>
+		<div className='flex flex-col justify-center items-center md:flex-row container mx-auto align-middle border-white rounded-2xl  w-full py-10  mb-36 '>
+		
 			<div class='h-[35px] my-3  bg-orange-500 w-[4px] hidden '></div>
 
 			<div className='grid grid-cols-4 md:grid-cols-8 md:gap-x-10 gap-x-20  gap-y-10 md:gap-y-5  mx-6'>
 				{languages.map((item) => (
 					<div className='flex flex-col items-center'>
-						{item.logo}
-						<p className='font-light text-gray-700 break-words text-nowrap text-sm font-Montserrat mt-2'>
+					<span>{item.logo} </span>	
+						<p className=' text-gray-700 break-words text-nowrap text-sm font-Montserrat mt-2 md:text-base lg:text-lg'>
 							{item.name}
 						</p>
 					</div>
 				))}
 			</div>
+		</div> 
+		
 		</div>
 	);
 }
