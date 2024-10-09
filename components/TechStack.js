@@ -53,7 +53,7 @@ function TechStack() {
 
 	return (
 <div className=" pt-24 lg:pt-28">
-		<SectionTitle sectionHeadtext={"Sortware List "} description={"A few of the technology and tools that I've been using "} header={"My Tech Stack"}/>
+		<SectionTitle sectionHeadtext={"Technology Stack"} description={"Here are a few of the technologies and tools I've been working with lately: "} header={"My Tech Stack"}/>
 		<div className='flex flex-col justify-center items-center md:flex-row container mx-auto align-middle border-white rounded-2xl  w-full py-10  mb-36 '>
 		
 			<div class='h-[35px] my-3  bg-orange-500 w-[4px] hidden '></div>

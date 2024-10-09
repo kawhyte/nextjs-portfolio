@@ -7,7 +7,7 @@ import SectionTitle from "./SectionTitle";
 
 const Cards = ({ items, hideLastItemOnMobile = false }) => {
 	return (
-		<section className='pb-16 lg:py-24'>
+		<section className='pb-10 lg:pt-24'>
 			<div className='contatiner'>
 				<div className='flex justify-center'>
 					<p className='uppercase font-semibold tracking-widest bg-gradient-to-r from-green-500 to-orange-500 text-center  text-transparent bg-clip-text'>
@@ -21,7 +21,7 @@ const Cards = ({ items, hideLastItemOnMobile = false }) => {
 
 				<p className=' text-center md:text-lg lg:text-xl text-gray-900/80 mt-4 max-w-md mx-auto'>
 					{" "}
-					See how I transform concepts in to amazing digital experiences.{" "}
+					Take a look at some of the stuff I've built!{" "}
 				</p>
 
 				<div className=' flex flex-col mt-10 md:mt-20 gap-20 mx-auto container  '>

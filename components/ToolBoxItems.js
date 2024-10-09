@@ -31,7 +31,7 @@ const ToolBoxItems = ({ languages, className, itemsWrapperClass }) => {
 								</svg>
 							</div>
 
-							{item.icon}
+						<span className="text-3xl"> {item.icon}</span>	
 						</span>
 						<span className='font-semibold text-lg'>{item.title}</span>
 					</div>

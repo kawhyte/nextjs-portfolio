@@ -172,7 +172,7 @@ export default function PortfolioDetails({ portfolio }) {
 					</div>
 				</div>
 
-
+<div> 
 
 
 				<CaseStudy
@@ -182,7 +182,7 @@ export default function PortfolioDetails({ portfolio }) {
  					problem={problem}
  					approach={approach}
  					result={result}
- 				/>
+ 				/></div>
 			</div>
 
 			

@@ -45,7 +45,55 @@ const about = [
 	},
 ];
 
-const imageSize = "size-11 ";
+const imageSize = "size-12 ";
+
+const places = [
+	{
+		title: "Negril, Jamaica",
+		icon: "🇯🇲",
+	},
+	{
+		title: "Washington D.C., USA",
+		icon: "🇺🇸",
+	},
+	{
+		title: "San Juan, Puerto Rico",
+		icon: "🇺🇸",
+	},
+	{
+		title: "Copenhagen, Denmark",
+		icon: "🇩🇰",
+	},
+	{
+		title: "Hawaii, USA",
+		icon: "🇺🇸",
+	},
+	{
+		title: "Malmö, Sweden",
+		icon: "🇸🇪",
+	},
+	{
+		title: "Jakata, Indonesia",
+		icon: "🇮🇩",
+	},
+	{
+		title: "Paris, France",
+		icon: "🇫🇷",
+	},
+	{
+		title: "London, England",
+		icon: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+	},
+
+	{
+		title: "Tokyo, Japan",
+		icon: "🇯🇵",
+	},
+	{
+		title: "Toronto, Canada",
+		icon: "🇨🇦",
+	},
+];
 
 const languages = [
 	{
@@ -146,7 +194,7 @@ const hobbies = [
 		top: "50%",
 	},
 	{
-		title: "Bad Movies",
+		title: "Watching Bad Movies",
 		emoji: "🍿",
 		left: "5%",
 		top: "65%",
@@ -154,6 +202,12 @@ const hobbies = [
 	{
 		title: "Music",
 		emoji: "🎵",
+		left: "60%",
+		top: "70%",
+	},
+	{
+		title: "Sneakers",
+		emoji: "👟",
 		left: "60%",
 		top: "70%",
 	},
@@ -165,9 +219,11 @@ function AboutSection() {
 			<div className='py-20 lg:py-24'>
 				<div className='container'>
 					<SectionTitle
-						sectionHeadtext={`About me`}
-						header={"Just a Liitle Info About Me"}
-						description={"Learn more about who I am "}
+						sectionHeadtext={`Get to know me better`}
+						header={"A Little More About Me"}
+						description={
+							"Beyond the code, there's a whole lot more to discover.  Come take a peek behind the curtain!"
+						}
 					/>
 				</div>
 
@@ -175,8 +231,8 @@ function AboutSection() {
 					<div className='grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3 md:gap-1'>
 						<Card className='h-[320px] md:col-span-2 lg:col-span-1 '>
 							<CardHeader
-								title={"My Reads"}
-								description={"Book that Ive read in the last 24 months."}
+								title={"Bookworm Corner"}
+								description={"Books that challenged my thinking:"}
 							/>
 
 							<div className='w-40 mx-auto '>
@@ -185,14 +241,16 @@ function AboutSection() {
 						</Card>
 						<Card className='h-[320px] md:col-span-3 lg:col-span-2 '>
 							<CardHeader
-								title={"My Tech Stack"}
-								description={"The tech and tool that Ive been using"}
+								title={"Places ive been"}
+								description={
+									"I've been fortunate enough to wander some incredible corners of the world:"
+								}
 								className=''
 							/>
 
-							<ToolBoxItems languages={languages} className='' />
+							<ToolBoxItems languages={places} className='' />
 							<ToolBoxItems
-								languages={languages}
+								languages={places}
 								className='mt-6 '
 								itemsWrapperClass='-translate-x-1/2'
 							/>
@@ -202,8 +260,10 @@ function AboutSection() {
 					<div className='grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3 md:gap-1'>
 						<Card className='h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2'>
 							<CardHeader
-								title={"Other things I like"}
-								description={"Explore my other hobbies outside"}
+								title={"Other things I like:"}
+								description={
+									"Beyond the screen, I have a life filled with other passions. "
+								}
 								className='px-6 py-6'
 							/>
 

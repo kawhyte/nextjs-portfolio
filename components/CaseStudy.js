@@ -16,14 +16,14 @@ function CaseStudy({
 		{
 			image: "/boy.png",
 			section: "The Challenge",
-			bgColor: "bg-yellow-50",
+			bgColor: "bg-white",
 			accentColor: "bg-yellow-500",
 			richText: richTextProblem,
 		},
 		{
 			image: "/girl_sitting.png",
 			section: "Project Requirement & Solution",
-			bgColor: "bg-green-50",
+			bgColor: "bg-white",
 			accentColor: "bg-green-500",
 			richText: richTextApproach,
 		},
@@ -35,6 +35,8 @@ function CaseStudy({
 			richText: richTextResult,
 		},
 	];
+	// console.log("$$$ Case Study richTextApproach content", richTextApproach.content[0])
+	// console.log("^^^^^ Case Study richTextResult", richTextResult)
 
 	return (
 		<div className='flex flex-col justify-center mt-'>
@@ -42,7 +44,7 @@ function CaseStudy({
 				<div className='mt-8'>
 					<SectionTitle header={"Case Study"} description={""} />
 
-					<div className='flex flex-col  '>
+				<div className=" max-w-[200rem]  mx-3 md:mx-9  relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0    after:pointer-events-none ">
 						{casestudy.map((item, index) => (
 							<div
 								className={`py-6  px-8  flex flex-col md:flex-row text-center items-center ${item.bgColor}`}>
