@@ -10,7 +10,7 @@ const CardHeader = ({ title, description,className }) => {
 
 					<h3 className='font-serif text-3xl '>{title}</h3>
 				</div>
-				<p className='text-sm lg:text-base max-w-xs text-gray-500/90 mt-2'>{description}</p>
+				<p className='text-sm lg:text-base max-w-base text-gray-500/90 mt-2'>{description}</p>
 			</div>
 		</div>
 	);

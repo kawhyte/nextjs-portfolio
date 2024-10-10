@@ -17,7 +17,7 @@ const ToolBoxItems = ({ languages, className, itemsWrapperClass }) => {
 				{languages.map((item) => (
 					<div
 						key={item.title}
-						className='inline-flex items-center gap-4 py-2 px-3 outline outline-2 outline-gray-500 rounded-lg'>
+						className='inline-flex items-center align-middle justify-between  gap-4 py-2 px-3 outline outline-2 outline-gray-500 rounded-lg'>
 						<span>
 							<div>
 								<svg className='size-0 absolute'>
@@ -33,7 +33,7 @@ const ToolBoxItems = ({ languages, className, itemsWrapperClass }) => {
 
 						<span className="text-3xl"> {item.icon}</span>	
 						</span>
-						<span className='font-semibold text-lg'>{item.title}</span>
+						<span className='font-semibold text-base'>{item.title}</span>
 					</div>
 				))}
 			</div>

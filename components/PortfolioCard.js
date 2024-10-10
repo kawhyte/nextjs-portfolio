@@ -8,10 +8,10 @@ const Card = ({ portfolio }) => {
 	const { name, slug, summary, thumbnail } = portfolio.fields;
 
 	return (
-		<div className="sticky top-0">
+		<div className="">
 			
 
-			<div className='lg:grid lg:grid-cols-2 lg:gap-16 sticky top-0'>
+			<div className='lg:grid lg:grid-cols-2 lg:gap-16 '>
 				<div className='lg:pb-16'>
 					<div className='bg-gradient-to-r gap-2 from-green-500 to-orange-500 inline-flex font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text'>
 						<span>Company name</span>
@@ -55,7 +55,7 @@ const Card = ({ portfolio }) => {
 						height={1000}
 						width={1000}
 						quality={100}
-						className='md:w-full rounded-t-2xl border-2  mt-8 -mb-7 md:-mb-0 lg:mt-0 lg:absolute lg:w-[45rem] '
+						className='md:w-full rounded-t-2xl border-2  mt-8 -mb-7 md:-mb-0 lg:mt-0 lg:absolute lg:w-[45rem] overflow-hidden '
 						alt=''
 					/>
 				</div>

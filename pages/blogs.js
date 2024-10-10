@@ -3,6 +3,7 @@ import BlogCards from "../components/BlogCards";
 import Hero from "../components/Hero";
 // import Section from "../components/Section";
 import Link from "next/link";
+import SectionHero from "../components/SectionHero";
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -21,14 +22,12 @@ export async function getStaticProps() {
 
 export default function Recipes({ blogs }) {
 	return (
+		<> 
+		<SectionHero title={"All Blog Posts"} description={"Explores my journey as a software developer, diving into technical challenges, coding insights, and the latest technologies."}/>
 		<div className='container mx-auto my-20'>
-			<div className='container mx-auto flex justify-between py-2'>
-				<h2 className='font-extrabold leading-tight tracking-tight text-gray-900 sm:text-2xl md:text-3xl'>
-					Blog Posts
-				</h2>
-			</div>
+		
 
 			<BlogCards items={blogs} />
-		</div>
+		</div></>
 	);
 }

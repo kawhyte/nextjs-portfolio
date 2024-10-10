@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 import Link from "next/link";
 import SectionTitle from "../components/SectionTitle";
 import ProjectDetailHeader from "../components/ProjectDetailHeader";
+import SectionHero from "../components/SectionHero";
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -23,14 +24,16 @@ export async function getStaticProps() {
 
 export default function Recipes({ portfolio }) {
 	return (
-		<div className='container mx-auto my-20'>
+		<> 
+		<SectionHero title={"All Projects"} description={"Take a look at some of the stuff I've built!"}/>
+		<div className='lg:container lg:mx-auto my-20'>
 			<div className='container mx-auto flex justify-between py-2'>
 			
-				<SectionTitle header={"All Projects"} description={""} />
+			
 			</div>
 			
 
 			<PortfolioCards items={portfolio} />
-		</div>
+		</div></>
 	);
 }

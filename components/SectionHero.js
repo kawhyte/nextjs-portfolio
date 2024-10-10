@@ -4,10 +4,10 @@ import { BiArrowBack, BiRightArrow } from "react-icons/bi";
 import StarIcon from "/public/assets/icons/star.svg";
 import SparkleIcon from "/public/assets/icons/sparkle.svg";
 import { HeroOrbit } from "./HeroOrbit";
-import Button from "../ui/Button"
+import Button from "../ui/Button";
 // import memojiImage from '@/assets/images/memoji-avatar-1.png'
 
-const Hero = () => {
+const SectionHero = ({ title, description }) => {
 	return (
 		<div>
 			<div className=' py-12 md:py-20 bg-green-100  bg-gradient relative z-0 '>
@@ -21,7 +21,7 @@ const Hero = () => {
 						<div className=' size-[820px] hero-ring  '></div>
 						<div className=' size-[1020px] hero-ring  '></div>
 						<div className=' size-[1220px] hero-ring  '></div>
-						<div className=' size-[1420px] hero-ring  '></div>{/**/}
+						<div className=' size-[1420px] hero-ring  '></div>
 					</div>
 
 					<HeroOrbit
@@ -52,7 +52,7 @@ const Hero = () => {
 						<div className='size-2 rounded-full bg-green-300/50'></div>
 					</HeroOrbit>
 					<HeroOrbit
-						size={540}
+						size={530}
 						rotation={178}
 						shouldOrbit
 						orbitDuration={"36s"}
@@ -101,11 +101,11 @@ const Hero = () => {
 						shouldSpin
 						spinDuration={"6s"}>
 						<StarIcon className='size-28 text-green-300 ' />
-					</HeroOrbit>{/**/}
+					</HeroOrbit>
 				</div>
 
 				<div className='container  flex flex-col  items-center px-3 mx-auto  mt-20 '>
-					<Image
+					{/*<Image
 						src={"/assets/images/portrait.png"}
 						blurDataURL='https://res.cloudinary.com/babyhulk/image/upload/e_blur:1058,q_10/v1627169850/hero-image/person-on-computer.webp'
 						placeholder='blur'
@@ -113,33 +113,30 @@ const Hero = () => {
 						height='500'
 						alt='man on computer'
 						className=' pr-7'
-					/>
-
-					<div className='container mx-auto flex flex-col justify-center items-center w-full z-50 '>
-						<div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center text-white gap-4 rounded-xl'>
+					/><div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center text-white gap-4 rounded-xl'>
 							<div className='hidden md:block rounded-full text-2xl lg:text-3xl animate-wave'>
 								👋🏽
 							</div>
 							<div className='text-sm font-medium'>
 								I'm a Full Stack Software Engineer
 							</div>
-						</div>
+						</div>*/}
+
+					<div className='container mx-auto flex flex-col justify-center items-center w-full z-50 '>
 						<div className='max-w-lg lg:max-w-4xl'>
-							<h1 className=' font-serif text-3xl md:text-5xl lg:text-7xl text-center mt-8 leading-tight'>
-								Creating Extraordinary User Friendly Software
+							<h1 className=' font-serif text-2xl md:text-4xl lg:text-6xl text-center mt-8 leading-tight'>
+								{title}
 							</h1>
-							<p className='mt-4 text-center text-gray-900 md:text-lg lg:text-2xl'>
-								Currently focused on developing web applications with C#, .NET
-								Core, Node.js, and React/NextJS.
+							<p className='mt-4 text-center text-gray-900 md:text-lg lg:text-xl'>
+								{description}
 							</p>
 						</div>
 
 						<div className='flex flex-col md:flex-row item-center gap-4 z-10'>
-							
-					<Button text={'Check out my Projects'} link={"/projects"} icon={"🚀"} />
+							{/*<Button text={'Check out my Projects'} link={"/projects"} icon={"🚀"} />
 					<Button className="bg-white text-black z-30" text={'Lets Connect'} link={"/"} icon={<BiRightArrow />} />
 						
-						{/*<button className='inline-flex items-center gap-2 border border-white text-white bg-gray-900 px-6 h-12 rounded-xl'>
+						<button className='inline-flex items-center gap-2 border border-white text-white bg-gray-900 px-6 h-12 rounded-xl'>
 								<span className='font-semibold'>Check out my Projects</span>
 								<span>🚀</span>
 								
@@ -199,15 +196,12 @@ const Hero = () => {
 						</div>
 					</div>*/}
 				</div>
-				
-			
 			</div>
-			
 		</div>
 	);
 };
 
-export default Hero;
+export default SectionHero;
 
 // text-pop-up-top
 

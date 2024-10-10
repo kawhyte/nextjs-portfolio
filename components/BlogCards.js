@@ -8,6 +8,7 @@ const Cards = ({ items, hideLastItemOnMobile = false }) => {
    
   return (
     <div className=" pt-6 ">
+    
       <div className="">
         {items.map(item => (
           <div

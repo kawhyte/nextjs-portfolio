@@ -48,11 +48,13 @@ export default function Index({ portfolio, blog }) {
 				<meta></meta>
 				<link rel='icon' href='/favicon.ico'></link>
 			</Head>
-			<Hero />
+			{/**/}<Hero />
 			<TechStack />
 
 			<div className=''>
-				<div className='my-20'>
+			<SectionTitle sectionHeadtext={"Real-world Results"} header={"Featured Projects"} description={"Take a look at some of the stuff I've built!"}/>
+
+				<div className='my-20      '>
 					{portfolio && portfolio.length > 0 ? (
 						<PortfolioCards items={portfolio.slice(0, 4)} />
 					) : (
@@ -89,7 +91,7 @@ export default function Index({ portfolio, blog }) {
 					)}
 
 					<div className='lg:mt-0 lg:flex-shrink-0 flex justify-center '>
-						<div className=' inline-flex '>
+						<div className=' inline-flex mt-10 '>
 							<Button className={"bg-white text-black"} icon={<ImArrowUpRight2/>} text={"View All Blog Posts"} link={"/blogs"} />
 						</div>
 					</div>

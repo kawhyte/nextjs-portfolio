@@ -56,10 +56,7 @@ const places = [
 		title: "Washington D.C., USA",
 		icon: "🇺🇸",
 	},
-	{
-		title: "San Juan, Puerto Rico",
-		icon: "🇺🇸",
-	},
+
 	{
 		title: "Copenhagen, Denmark",
 		icon: "🇩🇰",
@@ -92,6 +89,10 @@ const places = [
 	{
 		title: "Toronto, Canada",
 		icon: "🇨🇦",
+	},
+	{
+		title: "San Juan, Puerto Rico",
+		icon: "🇺🇸",
 	},
 ];
 
@@ -170,7 +171,7 @@ const hobbies = [
 		top: "5%",
 	},
 	{
-		title: "Retro Games",
+		title: "Retro Nintendo Games",
 		emoji: "🎮",
 		left: "50%",
 		top: "5%",
@@ -188,7 +189,7 @@ const hobbies = [
 		top: "30%",
 	},
 	{
-		title: "Travel",
+		title: "Traveling",
 		emoji: "✈️",
 		left: "40%",
 		top: "50%",
@@ -215,8 +216,8 @@ const hobbies = [
 
 function AboutSection() {
 	return (
-		<>
-			<div className='py-20 lg:py-24'>
+		<div className=" container">
+			<div className='py-20 lg:py-24 max-w-7xl '>
 				<div className='container'>
 					<SectionTitle
 						sectionHeadtext={`Get to know me better`}
@@ -232,7 +233,7 @@ function AboutSection() {
 						<Card className='h-[320px] md:col-span-2 lg:col-span-1 '>
 							<CardHeader
 								title={"Bookworm Corner"}
-								description={"Books that challenged my thinking:"}
+								description={"A book that challenged my thinking:"}
 							/>
 
 							<div className='w-40 mx-auto '>
@@ -241,7 +242,7 @@ function AboutSection() {
 						</Card>
 						<Card className='h-[320px] md:col-span-3 lg:col-span-2 '>
 							<CardHeader
-								title={"Places ive been"}
+								title={"Places I've been"}
 								description={
 									"I've been fortunate enough to wander some incredible corners of the world:"
 								}
@@ -299,7 +300,7 @@ function AboutSection() {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 
