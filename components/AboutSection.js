@@ -216,7 +216,7 @@ const hobbies = [
 
 function AboutSection() {
 	return (
-		<div className=" container">
+		<div className=" lg:container">
 			<div className='py-20 lg:py-24 max-w-7xl '>
 				<div className='container'>
 					<SectionTitle

@@ -128,7 +128,7 @@ const Hero = () => {
 							<h1 className=' font-serif text-3xl md:text-5xl lg:text-7xl text-center mt-8 leading-tight'>
 								Creating Extraordinary User Friendly Software
 							</h1>
-							<p className='mt-4 text-center text-gray-900 md:text-lg lg:text-2xl'>
+							<p className='mt-4 text-center text-gray-900 md:text-lg lg:text-xl'>
 								Currently focused on developing web applications with C#, .NET
 								Core, Node.js, and React/NextJS.
 							</p>

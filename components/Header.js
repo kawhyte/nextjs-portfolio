@@ -13,8 +13,10 @@ function Header() {
 
 	return (
 		<header className=' flex  justify-center items-center z-50 absolute container mx-auto inset-1 lg:inset-28 h-2 '>
-			<nav className='flex   justify-center items-center fixed top-5 border-2 border-gray-100/90 container mx-auto rounded-full max-w-[23rem] lg:max-w-lg bg-white/40 backdrop-blur'>
-				{/*<Link href='/' legacyBehavior>
+			
+		
+		<nav className='flex   justify-between items-center fixed top-5 border-2 border-gray-100/90 container mx-auto rounded-full max-w-[23rem] lg:max-w-lg bg-white/40 backdrop-blur'>
+				<Link href='/' legacyBehavior>
 					<motion.div
 						whileHover={{
 							scale: 1.1,
@@ -31,7 +33,7 @@ function Header() {
 					</motion.div>
 				</Link>
 
-				<button
+				{/*<button
 					className='items-center block px-3 py-2 text-black border border-white rounded md:hidden'
 					onClick={() => toggleExpansion(!isExpanded)}>
 					<svg
@@ -43,17 +45,19 @@ function Header() {
 					</svg>
 				</button>*/}
 
+				
+
 				<div
 					className={`${
 						isExpanded ? `block` : `block`
 					}  flex items-center  w-auto lg:py-2`}>
 					{[
-						{
-							route: `/`,
-							title: `Home`,
-							type: `internal`,
-							icon: AiFillHome,
-						},
+						// {
+						// 	route: `/`,
+						// 	title: `Home`,
+						// 	type: `internal`,
+						// 	icon: AiFillHome,
+						// },
 						{
 							route: `/projects`,
 							title: `Projects`,
