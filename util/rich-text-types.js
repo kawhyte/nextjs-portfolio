@@ -49,11 +49,11 @@ export const renderOptions = {
 				);
 			}
 		},
-		[BLOCKS.PARAGRAPH]: (node, children) => <p className='md:text-lg lg:text-xl text-gray-900/80 mt-4 max-w-5xl'>{children}</p>,
+		[BLOCKS.PARAGRAPH]: (node, children) => <p className=' text-base md:text-lg lg:text-xl text-black max-w-5xl'>{children}</p>,
 		// [BLOCKS.LIST_ITEM]: (node, children) => <p className='list-disc list-inside my-4 text-lg'>{children}</p>,
 		// [BLOCKS.UL_LIST]: (node, children) => <ul className='list-disc w-1 h-2 list-inside my-4 text-lg'>{children}</ul>,
 		// [BLOCKS.OL_LIST]: (node, children) => <p className='list list-decimal list-item'>{children}</p>,
-		[BLOCKS.HEADING_2]: (node, children) => <p className=' text-2xl font-bold mt-6'>{children}</p>,
+		[BLOCKS.HEADING_2]: (node, children) => <p className=' text-base  mb-3'>{children}</p>,
     [INLINES.HYPERLINK]: (node) => {
       return <a className="text-blue-500" href={node.data.uri} target={`${node.data.uri.startsWith(website_url) ? '_self' : '_blank'}`} rel={`${node.data.uri.startsWith(website_url) ? '' : 'noopener noreferrer'}`}>{node.content[0].value}</a>;
     },
@@ -67,11 +67,11 @@ export const renderOptions = {
 			// render the EMBEDDED_ASSET as you need
 		
 			return (
-        <div className=" grid grid-cols-2 gap-4 my-8">
+        <div className=" mt-8 mb-10">
 
 				<img
 					src={`https://${node.data.target.fields.file.url}`}
-					className={" w-60 mt-8 mb-5 "}
+					className={" w-full mt-8 mb-5 max-w-2xl "}
 					height={node.data.target.fields.file.details.image.height}
 					width={node.data.target.fields.file.details.image.width}
 					alt={node.data.target.fields.description}

@@ -6,6 +6,8 @@ import { motion, transform } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 
 const Cards = ({ items, hideLastItemOnMobile = false }) => {
+
+	
 	return (
 		<section className='pb-10 lg:p md:container md:mx-auto  '>
 			<div className=''>

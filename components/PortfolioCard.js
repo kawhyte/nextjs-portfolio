@@ -5,7 +5,10 @@ import { ImArrowUpRight2 } from "react-icons/im";
 import Button from "../ui/Button";
 
 const Card = ({ portfolio }) => {
-	const { name, slug, summary, thumbnail } = portfolio.fields;
+	const { name, slug, summary, thumbnail, portfolioHighlights } = portfolio.fields;
+
+	console.log("**portfolio.fields2 ", portfolio.fields)
+	// console.log("**K ", portfolio?.fields?.portfolioHighlights[0])
 
 	return (
 		<div className="">
@@ -24,18 +27,19 @@ const Card = ({ portfolio }) => {
 					</h3>
 					<hr className='border-t-2 border-gray-900/5 mt-4 md:mt-5' />
 					<ul className=' text-gray-700/60 flex flex-col gap-4 mt-4 md:mt-5'>
+						
+					
+					{portfolioHighlights.slice(0,3).map(item => (
+
 						<li className='flex gap-2 text-sm md:text-base border-gray-900/5'>
-							<BiCheckCircle className='w-5 h-6 md:w-6 md:h-7 ' />
-							<span>What is a process improvement project?</span>
-						</li>
-						<li className='flex gap-2 text-sm md:text-base border-gray-900/5'>
-							<BiCheckCircle className='w-5 h-6 md:w-6 md:h-7 ' />
-							<span>Benefits of using a process improvement plan</span>
-						</li>
-						<li className='flex gap-2 text-sm md:text-base border-gray-900/5'>
-							<BiCheckCircle className='w-5 h-6 md:w-6 md:h-7 ' />
-							<span>How to create a process improvement plan</span>
-						</li>
+						<BiCheckCircle className='w-5 h-6 md:w-6 md:h-7 ' />
+						<span>{item}</span>
+					</li>
+
+					))}
+					
+					
+					
 					</ul>
 
 					<Button className={""} icon={<ImArrowUpRight2 />} text={'View Project Details'} link={`/portfolio/${slug}`}/>
