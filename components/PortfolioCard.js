@@ -5,9 +5,9 @@ import { ImArrowUpRight2 } from "react-icons/im";
 import Button from "../ui/Button";
 
 const Card = ({ portfolio }) => {
-	const { name, slug, summary, thumbnail, portfolioHighlights } = portfolio.fields;
+	const { name, slug, summary, thumbnail, portfolioHighlights, technology } = portfolio.fields;
 
-	console.log("**portfolio.fields2 ", portfolio.fields)
+	console.log("**portfolio.fields4 ", portfolio.fields)
 	// console.log("**K ", portfolio?.fields?.portfolioHighlights[0])
 
 	return (
@@ -16,11 +16,23 @@ const Card = ({ portfolio }) => {
 
 			<div className='lg:grid lg:grid-cols-2 lg:gap-16 '>
 				<div className='lg:pb-16'>
-					<div className='bg-gradient-to-r gap-2 from-green-500 to-orange-500 inline-flex font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text'>
-						<span>Company name</span>
-						<span>&bull;</span>
-						<span>Year 2000</span>
-					</div>
+					
+
+
+
+					<div className=' flex  justify-between w-full mt-2'>
+					{technology?.slice(0,4).map((item) => (
+						<div key={item.sys.id} className='flex flex-col items-center'>
+						
+
+							<div className='bg-gradient-to-r rounded-xl flex-nowrap gap-2 border px-2 py-1 from-green-500 to-orange-500 inline-flex font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text'>
+							{item.fields.title}
+							</div>
+						</div>
+					))} 
+				</div>
+
+
 
 					<h3 className='font-serif text-2xl mt-2 md:mt-5 md:text-4xl'>
 						{name}
@@ -115,3 +127,12 @@ export default Card;
 // 				style={{
 // 					backgroundImage: `url(${"/assets/images/grain.jpg"})`,
 // 				}}></div>
+
+
+
+
+// <div className='bg-gradient-to-r gap-2 from-green-500 to-orange-500 inline-flex font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text'>
+// 						<span>Company name</span>
+// 						<span>&bull;</span>
+// 						<span>Year 2000</span>
+// 					</div>
