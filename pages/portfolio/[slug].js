@@ -78,7 +78,7 @@ export default function PortfolioDetails({ portfolio }) {
 		richTextResult,
 	} = portfolio.fields;
 
-	console.log("!!", technology);
+	// console.log("!!", technology);
 
 	return (
 		<div>

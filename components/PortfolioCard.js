@@ -8,7 +8,7 @@ const Card = ({ portfolio }) => {
 	const { name, slug, summary, thumbnail, portfolioHighlights, technology } =
 		portfolio.fields;
 
-	console.log("**portfolio.fields8 ", technology[0]);
+	// console.log("**portfolio.fields8 ", technology[0]);
 	//  console.log("**K ", portfolio?.fields?.portfolioHighlights[0])
 
 	return (

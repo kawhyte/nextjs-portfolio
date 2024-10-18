@@ -68,7 +68,7 @@ export const renderOptions = {
 			);
 		},
 		[BLOCKS.QUOTE]: (node, children) => {
-			console.log("Ken", node.data);
+			// console.log("Ken", node.data);
 			//console.log("Ken children",children)
 			return (
 				<blockquote className='text-xl italic font-semibold text-gray-900 dark:text-white'>
@@ -87,7 +87,7 @@ export const renderOptions = {
 		[BLOCKS.HR]: (node, children) => <hr className='  my-8 ' />,
 
 		[BLOCKS.EMBEDDED_ASSET]: (node, children) => {
-			console.log("TEST ", node.data.target.fields.title);
+			// console.log("TEST ", node.data.target.fields.title);
 			// render the EMBEDDED_ASSET as you need
 			return (
 				<div className='inline-flex justify-between flex-row '>
