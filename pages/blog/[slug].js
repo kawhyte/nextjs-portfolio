@@ -84,36 +84,38 @@ export default function PortfolioDetails({ blog }) {
 				<meta></meta>
 				<link rel='icon' href='/favicon.ico'></link>
 			</Head>
-			<div className='mb-8  w-full max-w-screen-lg mx-auto '>
-				<div className=' '>
-					<h2 className='text-5xl font-semibold md:font-bold text-black leading-tight'>
+			<div className='mb-8  w-full max-w-screen-lg mx-auto text-gray-900/90 '>
+				<div className='pt-12 pb-10 mx-4 '>
+					<h3 className='font-serif text-2xl mt-6 md:mt-5 md:text-4xl text-gray-700'>
 						{title}
-					</h2>
-					<a
-						href='#'
-						className='px-2 py-2 mb-8  text-black text-base inline-flex items-center justify-center'>
-						Photo credit: {photoCredit}
-					</a>
+					</h3>
+		
 				</div>
-				<div className='   '>
+
+				<div className='text-gray-700/60   '>
 					<Image
 						blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp`}
 						placeholder='blur'
 						src={`https:${thumbnail.fields.file.url}?fm=webp`}
 						width={1024}
 						height={384}
-						className=' w-full h-full  object-cover rounded-lg'
+						className=' w-full h-full  object-cover lg:rounded-lg'
 						alt={title}
 					/>
+					<a
+						href='#'
+						className='px-2 pt-4    text-base inline-flex items-center justify-center'>
+						Photo credit: {photoCredit}
+					</a>
 				</div>
 
-				<ShareButtons shareURL={shareURL} />
+				 {/*<ShareButtons shareURL={shareURL} />*/}
 			</div>
 
 			<div className='px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-lg mx-auto text-lg leading-relaxed'>
-				<p className='pb-6'>
+				<div className='pb-6'>
 					{documentToReactComponents(richText, renderOptions)}
-				</p>
+				</div>
 			</div>
 		</main>
 	);

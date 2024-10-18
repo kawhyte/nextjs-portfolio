@@ -10,7 +10,7 @@ const BlogCard = ({ blog }) => {
 
 	return (
 		<div className=' flex flex-col max-w-6xl lg:mx-auto mt-10  '>
-			<Card className='flex flex-col lg:h-[280px] lg:flex-row bg-green-50/70  '>
+			<Card className='flex flex-col lg:h-[280px] lg:flex-row  '>
 				<Image
 					blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp`}
 					placeholder='blur'
@@ -23,7 +23,8 @@ const BlogCard = ({ blog }) => {
 
 				<div className=""> 
 				<div className='p-6'>
-					<h2 className=' font-serif text-2xl md:text-3xl  clamp-2'> {title}</h2>
+		
+					<h2 className='font-serif text-2xl md:text-3xl  clamp-2 '> {title}</h2>
 					<p className=' clamp-3 text-base md:text-lg lg:text-base max-w-xs md:max-w-2xl text-gray-500/90 mt-2'>
 						{summary}
 					</p>

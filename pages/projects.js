@@ -13,8 +13,11 @@ export async function getStaticProps() {
 		accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 	});
 
-	const res = await client.getEntries({ content_type: "portfolio", order: 'fields.sortByNumber' });
-	
+	const res = await client.getEntries({
+		content_type: "portfolio",
+		order: "fields.sortByNumber",
+	});
+
 	return {
 		props: {
 			portfolio: res.items,
@@ -24,16 +27,16 @@ export async function getStaticProps() {
 
 export default function Recipes({ portfolio }) {
 	return (
-		<> 
-		<SectionHero title={"All Projects"} description={"Take a look at some of the stuff I've built!"}/>
-		<div className='lg:container lg:mx-auto my-20'>
-			<div className='container mx-auto flex justify-between py-2'>
-			
-			
-			</div>
+		<>
+			<SectionHero
+				title={"All Projects"}
+				description={"Take a look at some of the stuff I've built!"}
+			/>
+			<div className='lg:container lg:mx-auto my-20'>
 			
 
-			<PortfolioCards items={portfolio} />
-		</div></>
+				<PortfolioCards items={portfolio} />
+			</div>
+		</>
 	);
 }

@@ -18,7 +18,7 @@ const iconCSS = "text-gray-600 h-8 w-7 hover:text-blue-600 fill-current";
 const buttonCSS = "mr-5 bg-red-200 p-10 ";
 function shareButtons({ shareURL }) {
 	return (
-		<div className='flex flex-col mt-6 border-b-2 '>
+		<div className='flex flex-col border-b-2 '>
 			<p className='uppercase text-gray-500 text-sm'>SHARE THIS POST</p>
 
 			<div className='my-3 pb-3  flex align-middle justify-start'>
