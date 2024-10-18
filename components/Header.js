@@ -26,7 +26,7 @@ function Header() {
 								duration: 0.2,
 							},
 						}}
-						className='flex items-center text-white my-3 bg-gray-900 hover:bg-orange-500 hover:text-white px-4   rounded-lg no-underline'>
+						className='flex items-center text-white my-3 bg-gray-900/80 hover:bg-orange-500 hover:text-white px-4   rounded-lg no-underline'>
 						<h1 className='text-xl  text-green-100 cursor-pointer font-extrabold tracking-tight'>
 							KW.
 						</h1>
@@ -111,7 +111,7 @@ function Header() {
 						link.type === "internal" ? (
 							<>
 								<Link
-									className=' group px-4 flex gap-1 p-0.5 hover:text-orange-500  ease-in-out  hover:underline hover:decoration-orange-500 transition duration-300  decoration-wavy    py-1.5 rounded-full text-gray-900 text-sm font-semibold'
+									className=' group px-4 flex gap-1 p-0.5 hover:text-orange-500  ease-in-out  hover:underline hover:decoration-orange-500 transition duration-300  decoration-wavy    py-1.5 rounded-full text-gray-900/90  text-sm font-semibold'
 									key={link.title}
 									href={link.route}>
 									<link.icon className='w-6 h-6  fill-current lg:flex mr-1 hover:text-orange-500 ' />

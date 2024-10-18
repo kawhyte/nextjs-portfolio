@@ -7,8 +7,8 @@ import Button from "../ui/Button";
 const Card = ({ portfolio }) => {
 	const { name, slug, summary, thumbnail, portfolioHighlights, technology } = portfolio.fields;
 
-	console.log("**portfolio.fields4 ", portfolio.fields)
-	// console.log("**K ", portfolio?.fields?.portfolioHighlights[0])
+	console.log("**portfolio.fields8 ", technology[0])
+	//  console.log("**K ", portfolio?.fields?.portfolioHighlights[0])
 
 	return (
 		<div className="">
@@ -23,9 +23,10 @@ const Card = ({ portfolio }) => {
 					<div className=' flex  justify-between w-full mt-2'>
 					{technology?.slice(0,4).map((item) => (
 						<div key={item.sys.id} className='flex flex-col items-center'>
-						
+					
 
 							<div className='bg-gradient-to-r rounded-xl flex-nowrap gap-2 border px-2 py-1 from-green-500 to-orange-500 inline-flex font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text'>
+						
 							{item.fields.title}
 							</div>
 						</div>
@@ -37,6 +38,7 @@ const Card = ({ portfolio }) => {
 					<h3 className='font-serif text-2xl mt-2 md:mt-5 md:text-4xl'>
 						{name}
 					</h3>
+					<p className="text-gray-700/60 text-sm md:text-base">{summary}</p>
 					<hr className='border-t-2 border-gray-900/5 mt-4 md:mt-5' />
 					<ul className=' text-gray-700/60 flex flex-col gap-4 mt-4 md:mt-5'>
 						

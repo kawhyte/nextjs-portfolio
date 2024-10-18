@@ -9,6 +9,10 @@ import CaseStudy from "../../components/CaseStudy";
 import Skeleton from "../../components/Skeleton";
 import Button from "../../ui/Button";
 import SectionTitle from "../../components/SectionTitle";
+import { HeroOrbit } from "../../components/HeroOrbit";
+import SparkleIcon from "/public/assets/icons/sparkle.svg";
+import StarIcon from "/public/assets/icons/star.svg";
+import AboutSection from "../../components/AboutSection";
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID,
@@ -74,7 +78,7 @@ export default function PortfolioDetails({ portfolio }) {
 		richTextResult,
 	} = portfolio.fields;
 
-	console.log("!!", technology)
+	console.log("!!", technology);
 
 	return (
 		<div>
@@ -84,9 +88,113 @@ export default function PortfolioDetails({ portfolio }) {
 				<link rel='icon' href='/favicon.ico'></link>
 			</Head>
 
-			<section class='text-gray-600 mt-6  md:mt-12'>
+			<section class='text-gray-600 bg-gradient  '>
+				<div className='absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]'>
+					<div
+						className='absolute hidden md:block  inset-0 -z-30 opacity-5 '
+						style={{
+							backgroundImage: `url(${"/assets/images/grain.jpg"})`,
+						}}>
+						<div className=' size-[620px] hero-ring  '></div>
+						<div className=' size-[820px] hero-ring  '></div>
+						<div className=' size-[1020px] hero-ring  '></div>
+						<div className=' size-[1220px] hero-ring  '></div>
+						<div className=' size-[1420px] hero-ring  '></div>
+						{/**/}
+					</div>
+
+					<div className='hidden md:block'>
+						<HeroOrbit
+							size={430}
+							rotation={-14}
+							shouldOrbit
+							orbitDuration={"30s"}
+							shouldSpin
+							spinDuration={"3s"}>
+							<SparkleIcon className='size-8 text-orange-300/70 ' />
+						</HeroOrbit>
+						<HeroOrbit
+							size={440}
+							rotation={90}
+							shouldOrbit
+							orbitDuration={"32s"}
+							shouldSpin
+							spinDuration={"3s"}>
+							<SparkleIcon className='size-5 text-orange-300/70 ' />
+						</HeroOrbit>
+						<HeroOrbit
+							size={520}
+							rotation={-41}
+							shouldOrbit
+							orbitDuration={"34s"}
+							shouldSpin
+							spinDuration={"6s"}>
+							<div className='size-2 rounded-full bg-green-300/50'></div>
+						</HeroOrbit>
+						<HeroOrbit
+							size={540}
+							rotation={178}
+							shouldOrbit
+							orbitDuration={"36s"}
+							shouldSpin
+							spinDuration={"3s"}>
+							<SparkleIcon className='size-10 text-orange-300/70 ' />
+						</HeroOrbit>
+						<HeroOrbit
+							size={550}
+							rotation={10}
+							shouldOrbit
+							orbitDuration={"38s"}
+							shouldSpin
+							spinDuration={"6s"}>
+							<StarIcon className='size-12 text-green-300 ' />
+						</HeroOrbit>
+						<HeroOrbit
+							size={600}
+							rotation={109}
+							shouldOrbit
+							orbitDuration={"40s"}
+							shouldSpin
+							spinDuration={"6s"}>
+							<StarIcon className='size-8 text-green-300 ' />
+						</HeroOrbit>
+						<HeroOrbit
+							size={620}
+							rotation={-5}
+							shouldOrbit
+							orbitDuration={"42s"}>
+							<div className='size-2 rounded-full bg-green-300/50'></div>
+						</HeroOrbit>
+						<HeroOrbit
+							size={710}
+							rotation={140}
+							shouldOrbit
+							orbitDuration={"44s"}
+							shouldSpin
+							spinDuration={"3s"}>
+							<SparkleIcon className='size-14 text-orange-300/70 ' />
+						</HeroOrbit>
+						<HeroOrbit
+							size={710}
+							rotation={90}
+							shouldOrbit
+							orbitDuration={"46s"}>
+							<div className='size-3 rounded-full bg-green-300/50'></div>
+						</HeroOrbit>
+						<HeroOrbit
+							size={800}
+							rotation={-72}
+							shouldOrbit
+							orbitDuration={"48s"}
+							shouldSpin
+							spinDuration={"6s"}>
+							<StarIcon className='size-28 text-green-300 ' />
+						</HeroOrbit>
+					</div>
+				</div>
+
 				<div class='md:container md:mx-auto flex flex-col px-5 pt-24 justify-center items-center'>
-					<h1 class=' font-serif title-font text-4xl md:text-5xl font-medium text-gray-900 md:mb-8'>
+					<h1 class=' font-serif title-font text-4xl md:text-5xl font-medium text-gray-500/90 md:my-8'>
 						{name}
 					</h1>
 					<Image
@@ -100,12 +208,9 @@ export default function PortfolioDetails({ portfolio }) {
 						alt=''
 					/>
 
-					<div class='w-full md:w-2/3 flex flex-col my-8 items-center text-center '>
-						{/*<div class='flex flex-col w-full  justify-center items-center'>
-							<SectionTitle
-								sectionHeadtext={"Tech used"}
-								header={"Created with"}
-							/>
+					<div class='w-full md:w-2/3 flex flex-col mt-12 lg:mt-0 my-8 items-center text-center '>
+					{/*	<div class='flex flex-col w-full  justify-center items-center'>
+							<SectionTitle sectionHeadtext={"Created with:"} header={""} />
 							<div className=' flex  justify-between w-full  mx-6 mt-2'>
 								{technology.map((item) => (
 									<div key={item.sys.id} className='flex flex-col items-center'>
@@ -125,7 +230,7 @@ export default function PortfolioDetails({ portfolio }) {
 							</div>
 						</div>*/}
 
-						<div class='flex flex-col justify-center md:flex-row md:w-full w-60 lg:mt-12 '>
+						<div class='flex flex-col justify-center md:flex-row md:w-full w-48  lg:mt-12 z-30 '>
 							<Button
 								className={"bg-white text-black mr-20"}
 								text={"Live Demo"}
@@ -136,7 +241,7 @@ export default function PortfolioDetails({ portfolio }) {
 						</div>
 					</div>
 				</div>
-				<hr className='border-t-2 border-gray-900/5 ' />
+
 				<div>
 					<CaseStudy
 						richTextProblem={richTextProblem}
