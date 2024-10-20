@@ -216,7 +216,7 @@ const hobbies = [
 
 function AboutSection() {
 	return (
-		<div className=" lg:container">
+		<div className=' lg:container'>
 			<div className='py-20 lg:py-24 max-w-7xl '>
 				<div className='container'>
 					<SectionTitle
@@ -267,7 +267,6 @@ function AboutSection() {
 								}
 								className='px-6 py-6'
 							/>
-
 							<div className='relative flex-1'>
 								{hobbies.map((hobby) => (
 									<div
