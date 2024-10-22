@@ -15,10 +15,10 @@ const Card = ({ portfolio }) => {
 		<div className=''>
 			<div className='lg:grid lg:grid-cols-2 lg:gap-16 '>
 				<div className='lg:pb-16'>
-					<div className=' flex  justify-between w-full mt-2'>
+					<div className=' flex flex-wrap  justify-between w-full mt-2'>
 						{technology?.slice(0, 4).map((item) => (
 							<div key={item.sys.id} className='flex flex-col items-center'>
-								<div className='bg-gradient-to-r rounded-xl flex-nowrap gap-2 border px-2 py-1 from-green-500 to-orange-500 inline-flex font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text'>
+								<div className='bg-gradient-to-r rounded-xl md:flex-nowrap gap-2 border mb-2  px-2 py-1 from-green-500 to-orange-500 md:inline-flex flex flex-wrap font-bold uppercase tracking-widest text-xs md:text-sm text-transparent bg-clip-text'>
 									{item.fields.title}
 								</div>
 							</div>

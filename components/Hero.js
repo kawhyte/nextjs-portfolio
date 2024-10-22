@@ -6,27 +6,27 @@ import SparkleIcon from "/public/assets/icons/sparkle.svg";
 import { HeroOrbit } from "./HeroOrbit";
 import Button from "../ui/Button"
 // import memojiImage from '@/assets/images/memoji-avatar-1.png'
-
+ 
 const Hero = () => {
 	return (
 		<div>
 			<div className=' py-12 md:py-20 bg-green-100  bg-gradient relative z-0 '>
 				<div className='absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]'>
 					<div
-						className='absolute hidden md:block  inset-0 -z-30 opacity-5 '
+						className='absolute   inset-0 -z-30 opacity-5  '
 						style={{
 							backgroundImage: `url(${"/assets/images/grain.jpg"})`,
 						}}>
-						<div className=' size-[620px] hero-ring  '></div>
-						<div className=' size-[820px] hero-ring  '></div>
-						<div className=' size-[1020px] hero-ring  '></div>
-						<div className=' size-[1220px] hero-ring  '></div>
-						<div className=' size-[1420px] hero-ring  '></div>{/**/}
+						{/**/}<div className='hidden md:block  md:size-[20px]  lg:size-[120px] hero-ring  '></div>
+						<div className='hidden md:block  md:size-[120px] lg:size-[320px] hero-ring  '></div>
+						<div className='hidden md:block  md:size-[220px] lg:size-[520px] hero-ring  '></div>
+						<div className='hidden md:block  md:size-[420px]  lg:size-[720px] hero-ring  '></div>
+						<div className='hidden md:block  md:size-[620px] lg:size-[920px] hero-ring  '></div>
 					</div>
 
-					<div className="hidden md:block">
+					<div className="hidden lg:block ">
 
-					<HeroOrbit
+					{/**/}<HeroOrbit
 						size={430}
 						rotation={-14}
 						shouldOrbit
@@ -60,7 +60,7 @@ const Hero = () => {
 						orbitDuration={"36s"}
 						shouldSpin
 						spinDuration={"3s"}>
-						<SparkleIcon className='size-10 text-orange-300/70 ' />
+						<SparkleIcon className='size-5 text-orange-300/70 ' />
 					</HeroOrbit>
 					<HeroOrbit
 						size={550}
@@ -101,9 +101,9 @@ const Hero = () => {
 						shouldOrbit
 						orbitDuration={"48s"}
 						shouldSpin
-						spinDuration={"6s"}>
+						spinDuration={"6s"} >
 						<StarIcon className='size-28 text-green-300 ' />
-					</HeroOrbit>{/**/}
+					</HeroOrbit>
 					</div>
 				</div>
 
