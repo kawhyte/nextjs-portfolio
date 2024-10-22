@@ -90,20 +90,19 @@ export default function PortfolioDetails({ portfolio }) {
 
 			<section class='text-gray-600 bg-gradient  '>
 				<div className='absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]'>
-					<div
-						className='absolute hidden md:block  inset-0 -z-30 opacity-5 '
-						style={{
-							backgroundImage: `url(${"/assets/images/grain.jpg"})`,
-						}}>
-						<div className=' size-[620px] hero-ring  '></div>
-						<div className=' size-[820px] hero-ring  '></div>
-						<div className=' size-[1020px] hero-ring  '></div>
-						<div className=' size-[1220px] hero-ring  '></div>
-						<div className=' size-[1420px] hero-ring  '></div>
-						{/**/}
-					</div>
+				<div
+				className='absolute   inset-0 -z-30 opacity-5  '
+				style={{
+					backgroundImage: `url(${"/assets/images/grain.jpg"})`,
+				}}>
+				{/**/}<div className='hidden md:block  md:size-[20px]  lg:size-[120px] hero-ring  '></div>
+				<div className='hidden md:block  md:size-[120px] lg:size-[320px] hero-ring  '></div>
+				<div className='hidden md:block  md:size-[220px] lg:size-[520px] hero-ring  '></div>
+				<div className='hidden md:block  md:size-[420px]  lg:size-[720px] hero-ring  '></div>
+				<div className='hidden md:block  md:size-[620px] lg:size-[920px] hero-ring  '></div>
+			</div>
 
-					<div className='hidden md:block'>
+					<div className='hidden lg:block'>
 						<HeroOrbit
 							size={430}
 							rotation={-14}
