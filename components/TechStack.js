@@ -56,10 +56,10 @@ const TechStack = ({languages, sectionHeadtext,description, header}) => {
 		
 			<div class='h-[35px] my-3  bg-orange-500 w-[4px] hidden '></div>
 
-			<div className='flex  align-middle items-center gap-x-11 gap-y-8 flex-wrap border'>
+			<div className='flex  align-middle items-center gap-x-3 md:gap-x-11 gap-y-8 flex-wrap border'>
 				{languages.map((item, index) => (
-					<div className='flex flex-col items-center align-middle w-20 bg-blue-100'>
-					<span className="h-12">{techIcons[item].logo} </span>	
+					<div className='flex flex-col items-center align-middle w-16 bg-blue-100'>
+					<span className="h-9">{techIcons[item].logo} </span>	
 					<span>{item.logo} </span>	
 						<p className=' text-gray-700 break-words text-nowrap text-sm font-Montserrat mt-2 md:text-base lg:text-lg'>
 							{techIcons[item].name}

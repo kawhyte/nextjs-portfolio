@@ -246,9 +246,19 @@ export default function PortfolioDetails({ portfolio }) {
 				</div>
 
 				<div class='md:container md:mx-auto flex flex-col px-5 pt-24 justify-center items-center'>
-					<h1 class=' font-serif title-font text-4xl md:text-5xl font-medium text-gray-500/90 md:my-8'>
+					<h1 class=' font-serif title-font text-4xl md:text-5xl font-medium  md:my-8'>
 						{name}
 					</h1>
+					<Image
+						src={`https:${thumbnail.fields.file.url}?fm=webp`}
+						blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp`}
+						placeholder='blur'
+						height={1000}
+						width={1000}
+						quality={100}
+						className='w-full rounded-t-2xl   mt-8 -mb-7 md:-mb-0 lg:mt-0  md:w-[] lg:w-[55rem] '
+						alt=''
+					/>
 					<Image
 						src={`https:${thumbnail.fields.file.url}?fm=webp`}
 						blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp`}

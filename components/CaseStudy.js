@@ -22,7 +22,7 @@ function CaseStudy({
 			bgColor: "",
 			accentColor: "bg-yellow-400",
 			richText: richTextProblem,
-			technology: [],
+			
 		},
 		{
 			image: "/girl_sitting.png",
@@ -30,7 +30,7 @@ function CaseStudy({
 			bgColor: "",
 			accentColor: "bg-green-400",
 			richText: richTextApproach,
-			technology: technology,
+			
 		},
 		{
 			image: "/girl.png",
@@ -38,14 +38,14 @@ function CaseStudy({
 			bgColor: "",
 			accentColor: "bg-indigo-400 ",
 			richText: richTextResult,
-			technology: [],
+			
 		},
 	];
 	// console.log("$$$ Case Study richTextApproach content", richTextApproach.content[0])
 	//  console.log("^^^^^Tech", technology)
 
 	return (
-		<div className='my-20 flex flex-col gap-8 mx-auto container'>
+		<div className='my-20 flex flex-col gap-8 md:mx-auto md:container'>
 			<div className='grid grid-cols-1  gap-8 '>
 				<Card className=' pb-8 bg-gray-100/60   '>
 					<CardHeader
