@@ -13,6 +13,57 @@ import { HeroOrbit } from "../../components/HeroOrbit";
 import SparkleIcon from "/public/assets/icons/sparkle.svg";
 import StarIcon from "/public/assets/icons/star.svg";
 import AboutSection from "../../components/AboutSection";
+import TechStack from "../../components/TechStack";
+
+import { FaHtml5 } from "react-icons/fa6";
+import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
+import { FaNodeJs, FaReact } from "react-icons/fa";
+import { SiCsharp, SiJavascript } from "react-icons/si";
+import { BiLogoGraphql } from "react-icons/bi";
+import { IoLogoCss3 } from "react-icons/io";
+import techIcons from "../../util/techIcons";
+const imageSize = "h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-10 ";
+
+
+
+const languages = [
+	{
+		name: "C#",
+		logo: <SiCsharp className={imageSize} />,
+	},
+	{
+		name: "HTML 5",
+		logo: <FaHtml5 className={imageSize} />,
+	},
+	{
+		name: "NodeJS",
+		logo: <FaNodeJs className={imageSize} />,
+	},
+	// {
+	// 	name: "Tailwind",
+	// 	logo: <RiTailwindCssFill className='h-8 w-8' />,
+	// },
+	{
+		name: "GraphQL",
+		logo: <BiLogoGraphql className={imageSize} />,
+	},
+	{
+		name: "NextJS",
+		logo: <RiNextjsFill className={imageSize} />,
+	},
+	{
+		name: "CSS",
+		logo: <IoLogoCss3 className={imageSize} />,
+	},
+	{
+		name: "JavaScript",
+		logo: <SiJavascript className={imageSize} />,
+	},
+	{
+		name: "React",
+		logo: <FaReact className={imageSize} />,
+	},
+];
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID,
@@ -70,6 +121,7 @@ export default function PortfolioDetails({ portfolio }) {
 		url,
 		demoUrl,
 		technology,
+		tech,
 		approach,
 		problem,
 		result,
@@ -78,7 +130,7 @@ export default function PortfolioDetails({ portfolio }) {
 		richTextResult,
 	} = portfolio.fields;
 
-	// console.log("!!", technology);
+	 console.log("portfolio.fields!!", portfolio.fields);
 
 	return (
 		<div>
@@ -90,17 +142,18 @@ export default function PortfolioDetails({ portfolio }) {
 
 			<section class='text-gray-600 bg-gradient  '>
 				<div className='absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]'>
-				<div
-				className='absolute   inset-0 -z-30 opacity-5  '
-				style={{
-					backgroundImage: `url(${"/assets/images/grain.jpg"})`,
-				}}>
-				{/**/}<div className='hidden md:block  md:size-[20px]  lg:size-[120px] hero-ring  '></div>
-				<div className='hidden md:block  md:size-[120px] lg:size-[320px] hero-ring  '></div>
-				<div className='hidden md:block  md:size-[220px] lg:size-[520px] hero-ring  '></div>
-				<div className='hidden md:block  md:size-[420px]  lg:size-[720px] hero-ring  '></div>
-				<div className='hidden md:block  md:size-[620px] lg:size-[920px] hero-ring  '></div>
-			</div>
+					<div
+						className='absolute   inset-0 -z-30 opacity-5  '
+						style={{
+							backgroundImage: `url(${"/assets/images/grain.jpg"})`,
+						}}>
+						{/**/}
+						<div className='hidden md:block  md:size-[20px]  lg:size-[120px] hero-ring  '></div>
+						<div className='hidden md:block  md:size-[120px] lg:size-[320px] hero-ring  '></div>
+						<div className='hidden md:block  md:size-[220px] lg:size-[520px] hero-ring  '></div>
+						<div className='hidden md:block  md:size-[420px]  lg:size-[720px] hero-ring  '></div>
+						<div className='hidden md:block  md:size-[620px] lg:size-[920px] hero-ring  '></div>
+					</div>
 
 					<div className='hidden lg:block'>
 						<HeroOrbit
@@ -208,7 +261,7 @@ export default function PortfolioDetails({ portfolio }) {
 					/>
 
 					<div class='w-full md:w-2/3 flex flex-col mt-12 lg:mt-0 my-8 items-center text-center '>
-					{/*	<div class='flex flex-col w-full  justify-center items-center'>
+						{/*	<div class='flex flex-col w-full  justify-center items-center'>
 							<SectionTitle sectionHeadtext={"Created with:"} header={""} />
 							<div className=' flex  justify-between w-full  mx-6 mt-2'>
 								{technology.map((item) => (
@@ -240,7 +293,8 @@ export default function PortfolioDetails({ portfolio }) {
 						</div>
 					</div>
 				</div>
-
+				<TechStack languages={tech} sectionHeadtext={"Technology Stack"} description={"Tech used to create this project"} header={"Software/Framework"}/>
+				
 				<div>
 					<CaseStudy
 						richTextProblem={richTextProblem}
