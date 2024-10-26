@@ -32,7 +32,7 @@ const Card = ({ portfolio }) => {
 					<hr className='border-t-2 border-gray-900/5 mt-4 md:mt-5' />
 					<ul className=' text-gray-700/60 flex flex-col gap-4 mt-4 md:mt-5'>
 						{portfolioHighlights.slice(0, 3).map((item) => (
-							<li className='flex gap-2 text-sm md:text-base border-gray-900/5'>
+							<li key={item} className='flex gap-2 text-sm md:text-base border-gray-900/5'>
 								<BiCheckCircle className='w-5 h-6 md:w-6 md:h-7 ' />
 								<span>{item}</span>
 							</li>

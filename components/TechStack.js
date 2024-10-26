@@ -47,7 +47,7 @@ const imageSize = "h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-10 ";
 // ];
 
 const TechStack = ({languages, sectionHeadtext,description, header}) => {
-//  console.log("techIcons HI ",languages)
+ console.log("techIcons HI ",languages)
 
 	return (
 <div className=" pt-24 lg:pt-28">
@@ -58,11 +58,11 @@ const TechStack = ({languages, sectionHeadtext,description, header}) => {
 
 			<div className='flex  align-middle items-center gap-x-3 md:gap-x-11 gap-y-8 flex-wrap border'>
 				{languages.map((item, index) => (
-					<div className='flex flex-col items-center align-middle w-16 bg-blue-100'>
-					<span className="h-9">{techIcons[item].logo} </span>	
+					<div key={techIcons[item]?.name || index} className='flex flex-col items-center align-middle w-16 bg-blue-100'>
+					<span className="h-9">{techIcons[item]?.logo || <IoLogoCss3 className={imageSize} />} </span>	
 					<span>{item.logo} </span>	
 						<p className=' text-gray-700 break-words text-nowrap text-sm font-Montserrat mt-2 md:text-base lg:text-lg'>
-							{techIcons[item].name}
+							{techIcons[item]?.name || "Error"}
 							{item.name}
 						</p>
 					</div>

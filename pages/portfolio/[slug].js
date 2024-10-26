@@ -249,14 +249,15 @@ export default function PortfolioDetails({ portfolio }) {
 					<h1 class=' font-serif title-font text-4xl md:text-5xl font-medium  md:my-8'>
 						{name}
 					</h1>
+				
 					<Image
-						src={`https:${thumbnail.fields.file.url}?fm=webp`}
+						src={`/tablet.png`}
 						blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp`}
 						placeholder='blur'
 						height={1000}
 						width={1000}
 						quality={100}
-						className='w-full rounded-t-2xl   mt-8 -mb-7 md:-mb-0 lg:mt-0  md:w-[] lg:w-[55rem] '
+						className=' rounded-t-2xl w-96   mt-8 -mb-7 md:-mb-0 lg:mt-0  md:w-[] lg:w-[39rem] '
 						alt=''
 					/>
 					<Image
@@ -303,7 +304,7 @@ export default function PortfolioDetails({ portfolio }) {
 						</div>
 					</div>
 				</div>
-				<TechStack languages={tech} sectionHeadtext={"Technology Stack"} description={"Tech used to create this project"} header={"Software/Framework"}/>
+				<TechStack languages={tech} sectionHeadtext={"Technology Stack"} description={"Tech used to create this project"} header={"Languages/Frameworks"}/>
 				
 				<div>
 					<CaseStudy
