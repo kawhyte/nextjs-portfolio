@@ -10,7 +10,15 @@ import { twMerge } from "tailwind-merge";
 //   link: string
 //   text?: string
 // }
-export default function Button({ text, link, icon, className, children }) {
+
+interface ButtonProps {
+	text: string;
+	link: string;
+	icon?: React.ReactNode; // Use React.ReactNode for flexibility, make optional if needed
+	className?: string;     // Make className optional
+	children?: React.ReactNode; // Make children optional (though it's not currently rendered)
+  }
+const Button: React.FC<ButtonProps> = ({ text, link, icon, className, children }) => {
 	//if (!preview) return null
 
 //   console.log("***link****", link)
@@ -31,3 +39,5 @@ export default function Button({ text, link, icon, className, children }) {
 		</Link>
 	);
 }
+
+export default Button; 

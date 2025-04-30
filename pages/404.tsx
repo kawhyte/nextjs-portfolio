@@ -1,9 +1,15 @@
 import React from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function NotFound() {
 	return (
         <div>
+			 <Head>
+                <title>404 - Page Not Found | Kenny Portfolio</title>
+                <meta name="description" content="The page you were looking for could not be found." />
+                <link rel='icon' href='/favicon.ico'></link>
+            </Head>
 			<main className='bg-white  overflow-hidden h-screen relative'>
 				<header className='absolute top-0 left-0 right-0 z-20'>
 					<nav className='container mx-auto px-6 md:px-12 py-4'>

@@ -47,14 +47,14 @@ const imageSize = "h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-10 ";
 // ];
 
 const TechStack = ({languages, sectionHeadtext,description, header}) => {
- console.log("techIcons HI ",languages)
+//  console.log("techIcons HI ",languages)
 
 	return (
 <div className=" pt-24 lg:pt-28">
 		<SectionTitle sectionHeadtext={sectionHeadtext} description={description} header={header}/>
 		<div className='flex flex-col justify-center items-center md:flex-row container mx-auto align-middle border-white rounded-2xl  w-full py-10  mb-36 '>
 		
-			<div class='h-[35px] my-3  bg-orange-500 w-[4px] hidden '></div>
+			<div className='h-[35px] my-3  bg-orange-500 w-[4px] hidden '></div>
 
 			<div className='flex  align-middle items-center gap-x-3 md:gap-x-11 gap-y-8 flex-wrap border'>
 				{languages.map((item, index) => (

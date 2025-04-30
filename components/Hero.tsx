@@ -1,13 +1,17 @@
+import React from 'react';
 import Image from "next/image";
 import TechStack from "./TechStack";
 import { BiArrowBack, BiRightArrow } from "react-icons/bi";
 import StarIcon from "/public/assets/icons/star.svg";
 import SparkleIcon from "/public/assets/icons/sparkle.svg";
-import { HeroOrbit } from "./HeroOrbit";
+import HeroOrbit from "./HeroOrbit";
 import Button from "../ui/Button"
+import { Eclipse, CircleDotDashed } from 'lucide-react';
+
+
 // import memojiImage from '@/assets/images/memoji-avatar-1.png'
  
-const Hero = () => {
+const Hero = ()  => {
 	return (
 		<div>
 			<div className=' py-12 md:py-20 bg-green-100  bg-gradient relative z-0 '>
@@ -33,7 +37,9 @@ const Hero = () => {
 						orbitDuration={"30s"}
 						shouldSpin
 						spinDuration={"3s"}>
-						<SparkleIcon className='size-8 text-orange-300/70 ' />
+
+							<Eclipse className='size-8 text-orange-300/70 ' />
+						{/* <SparkleIcon className='size-8 text-orange-300/70 ' /> */}
 					</HeroOrbit>
 					<HeroOrbit
 						size={440}
@@ -42,7 +48,7 @@ const Hero = () => {
 						orbitDuration={"32s"}
 						shouldSpin
 						spinDuration={"3s"}>
-						<SparkleIcon className='size-5 text-orange-300/70 ' />
+						<Eclipse className='size-5 text-orange-300/70 ' />
 					</HeroOrbit>
 					<HeroOrbit
 						size={520}
@@ -60,7 +66,7 @@ const Hero = () => {
 						orbitDuration={"36s"}
 						shouldSpin
 						spinDuration={"3s"}>
-						<SparkleIcon className='size-5 text-orange-300/70 ' />
+						<Eclipse className='size-5 text-orange-300/70 ' />
 					</HeroOrbit>
 					<HeroOrbit
 						size={550}
@@ -69,7 +75,7 @@ const Hero = () => {
 						orbitDuration={"38s"}
 						shouldSpin
 						spinDuration={"6s"}>
-						<StarIcon className='size-12 text-green-300 ' />
+						<CircleDotDashed className='size-12 text-green-300 ' />
 					</HeroOrbit>
 					<HeroOrbit
 						size={600}
@@ -78,7 +84,7 @@ const Hero = () => {
 						orbitDuration={"40s"}
 						shouldSpin
 						spinDuration={"6s"}>
-						<StarIcon className='size-8 text-green-300 ' />
+						<CircleDotDashed className='size-8 text-green-300 ' />
 					</HeroOrbit>
 					<HeroOrbit size={620} rotation={-5} shouldOrbit orbitDuration={"42s"}>
 						<div className='size-2 rounded-full bg-green-300/50'></div>
@@ -90,7 +96,7 @@ const Hero = () => {
 						orbitDuration={"44s"}
 						shouldSpin
 						spinDuration={"3s"}>
-						<SparkleIcon className='size-14 text-orange-300/70 ' />
+						<Eclipse className='size-14 text-orange-300/70 ' />
 					</HeroOrbit>
 					<HeroOrbit size={710} rotation={90} shouldOrbit orbitDuration={"46s"}>
 						<div className='size-3 rounded-full bg-green-300/50'></div>
@@ -102,7 +108,7 @@ const Hero = () => {
 						orbitDuration={"48s"}
 						shouldSpin
 						spinDuration={"6s"} >
-						<StarIcon className='size-28 text-green-300 ' />
+						<CircleDotDashed className='size-28 text-green-300 ' />
 					</HeroOrbit>
 					</div>
 				</div>

@@ -1,3 +1,5 @@
+import React from "react"; // Import React
+
 import { createClient } from "contentful";
 import PortfolioCards from "../components/PortfolioCards";
 import BlogCards from "../components/BlogCards";
@@ -6,7 +8,6 @@ import AboutSection from "../components/AboutSection";
 import TechStack from "../components/TechStack";
 import Link from "next/link";
 import Head from "next/head";
-import PortfolioDetails from "./portfolio/[slug]";
 import SectionTitle from "../components/SectionTitle";
 import Button from "../ui/Button";
 import Quote from "../components/Quote";
@@ -18,39 +19,109 @@ import { SiCsharp, SiJavascript } from "react-icons/si";
 import { BiLogoGraphql } from "react-icons/bi";
 import { IoLogoCss3 } from "react-icons/io";
 import techIcons from "../util/techIcons";
+import { GetStaticProps, NextPage } from "next";
 
-export async function getStaticProps() {
+import type {
+	PortfolioItem,
+	BlogPost,
+	IndexPageProps,
+} from "../types/contentful";
+
+// (Optional but recommended) Define interfaces for your Contentful data structures
+// You might need to adjust these based on your actual Contentful models
+
+// interface ContentfulImage {
+// 	fields: {
+// 		title: string;
+// 		description?: string;
+// 		file: {
+// 			url: string;
+// 			details: {
+// 				size: number;
+// 				image?: {
+// 					width: number;
+// 					height: number;
+// 				};
+// 			};
+// 			fileName: string;
+// 			contentType: string;
+// 		};
+// 	};
+// 	sys: any; // Or import Contentful Sys type
+// }
+
+// interface PortfolioItemFields {
+// 	title: string;
+// 	slug: string;
+// 	thumbnail: ContentfulImage; // Assuming thumbnail is an Asset
+// 	featured: boolean;
+// 	sortByNumber: number;
+// 	// Add other fields from your 'portfolio' content type;
+// }
+
+// // Use Contentful's Entry type if you have the SDK types installed, otherwise define manually
+// interface PortfolioItem {
+// 	// Replace with import { Entry } from 'contentful'; if using SDK types
+// 	sys: any; // Or Contentful Sys type
+// 	fields: PortfolioItemFields;
+// }
+
+// interface BlogPostFields {
+// 	title: string;
+// 	slug: string;
+// }
+
+// interface BlogPost {
+// 	// Replace with import { Entry } from 'contentful'; if using SDK types
+// 	sys: any; // Or Contentful Sys type
+// 	fields: BlogPostFields;
+// }
+
+// // Interface for the props passed to the Index page component
+// interface IndexPageProps {
+// 	portfolio: PortfolioItem[];
+// 	blog: BlogPost[];
+// }
+
+export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
 	const client = createClient({
-		space: process.env.CONTENTFUL_SPACE_ID,
-		accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+		space: process.env.CONTENTFUL_SPACE_ID || "",
+		accessToken: process.env.CONTENTFUL_ACCESS_KEY || "",
 	});
 
+	// Fetch entries using the Contentful SDK generics
 	const res = await client.getEntries({
 		content_type: "portfolio",
-		order: "fields.sortByNumber",
+		order: ["fields.sortByNumber"],
 	});
 	const res2 = await client.getEntries({ content_type: "blogPost" });
 
+	// Safely handle potential undefined items and cast to your custom types
+	const portfolioItems = res.items
+		? (res.items as unknown as PortfolioItem[])
+		: [];
+	const blogItems = res2.items ? (res2.items as unknown as BlogPost[]) : [];
+
 	return {
 		props: {
-			portfolio: res.items,
-			blog: res2.items,
+			portfolio: portfolioItems,
+			blog: blogItems,
 		},
 		revalidate: 1,
 	};
-}
+};
 
 const imageSize = "h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-10 ";
 
 const languages = [
 	"CSharp",
-	 "HTML",
-	 "NodeJS",
-	'GraphQL',
-	'NextJS',
+	"HTML",
+	"NodeJS",
+	"GraphQL",
+	"NextJS",
 	"CSS",
 	"JavaScript",
-	"React"
+	"React",
 ];
 
 export default function Index({ portfolio, blog }) {
@@ -68,7 +139,14 @@ export default function Index({ portfolio, blog }) {
 			</Head>
 			{/**/}
 			<Hero />
-			<TechStack languages={languages} sectionHeadtext={"Technology Stack"} description={"Here are a few of the technologies and tools I've been working with lately: "} header={"My Tech Stack"} />
+			<TechStack
+				languages={languages}
+				sectionHeadtext={"Technology Stack"}
+				description={
+					"Here are a few of the technologies and tools I've been working with lately: "
+				}
+				header={"My Tech Stack"}
+			/>
 
 			<div className=''>
 				<SectionTitle
@@ -104,7 +182,6 @@ export default function Index({ portfolio, blog }) {
 						header={"Recent Blog Posts"}
 						description={`Explores my journey as a software developer, diving into technical challenges, coding insights, and the latest technologies.`}
 						sectionHeadtext={`spilling coffee on my keyboard`}
-						className=''
 					/>
 
 					{blog && blog.length > 0 ? (

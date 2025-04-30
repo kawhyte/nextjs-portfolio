@@ -4,18 +4,28 @@ import Hero from "../components/Hero";
 // import Section from "../components/Section";
 import Link from "next/link";
 import SectionHero from "../components/SectionHero";
+import { GetStaticProps, NextPage } from "next";
 
-export async function getStaticProps() {
+import type {
+	BlogPost,
+	BlogsPageProps,
+} from "../types/contentful";
+
+
+
+export const getStaticProps: GetStaticProps<BlogsPageProps> = async () => {
 	const client = createClient({
-		space: process.env.CONTENTFUL_SPACE_ID,
-		accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+		space: process.env.CONTENTFUL_SPACE_ID || "",
+		accessToken: process.env.CONTENTFUL_ACCESS_KEY || "",
 	});
 
 	const res = await client.getEntries({ content_type: "blogPost" });
+	const blogItems = res.items ? (res.items as unknown as BlogPost[]) : [];
+
 	
 	return {
 		props: {
-			blogs: res.items,
+			blogs: blogItems,
 		},
 	};
 }

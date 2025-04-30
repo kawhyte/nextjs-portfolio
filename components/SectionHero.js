@@ -3,7 +3,7 @@ import TechStack from "./TechStack";
 import { BiArrowBack, BiRightArrow } from "react-icons/bi";
 import StarIcon from "/public/assets/icons/star.svg";
 import SparkleIcon from "/public/assets/icons/sparkle.svg";
-import { HeroOrbit } from "./HeroOrbit";
+import  HeroOrbit from "./HeroOrbit";
 import Button from "../ui/Button";
 // import memojiImage from '@/assets/images/memoji-avatar-1.png'
 

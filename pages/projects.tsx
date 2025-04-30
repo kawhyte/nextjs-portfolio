@@ -6,21 +6,34 @@ import Link from "next/link";
 import SectionTitle from "../components/SectionTitle";
 import ProjectDetailHeader from "../components/ProjectDetailHeader";
 import SectionHero from "../components/SectionHero";
+import { GetStaticProps, NextPage } from "next";
 
-export async function getStaticProps() {
+
+import type {
+	PortfolioItem,
+	BlogPost,
+	PortfolioPageProps,
+} from "../types/contentful";
+
+
+export const getStaticProps: GetStaticProps<PortfolioPageProps> = async () => {
 	const client = createClient({
-		space: process.env.CONTENTFUL_SPACE_ID,
-		accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+		space: process.env.CONTENTFUL_SPACE_ID || "",
+		accessToken: process.env.CONTENTFUL_ACCESS_KEY || "",
 	});
 
 	const res = await client.getEntries({
 		content_type: "portfolio",
-		order: "fields.sortByNumber",
+		order: ["fields.sortByNumber"],
 	});
+
+	const portfolioItems = res.items
+		? (res.items as unknown as PortfolioItem[])
+		: [];
 
 	return {
 		props: {
-			portfolio: res.items,
+			portfolio: portfolioItems,
 		},
 	};
 }
