@@ -74,6 +74,42 @@ export interface PortfolioItemFields {
 }
 
 
+// Describes the structure within thumbnail.fields
+interface ThumbnailFile {
+  url: string;
+}
+
+// Describes the structure within thumbnail
+interface ThumbnailFields {
+  file: ThumbnailFile;
+  // Add other potential fields from thumbnail.fields if needed, e.g., title, description
+}
+
+// Describes the thumbnail object itself
+interface Thumbnail {
+  fields: ThumbnailFields;
+  // Add other potential top-level fields from thumbnail if needed, e.g., sys.id
+}
+
+// Describes the structure within blog.fields
+interface BlogFields {
+  title: string;
+  slug: string;
+  summary: string;
+  thumbnail: Thumbnail; // Use the nested Thumbnail interface
+}
+
+// Describes the main blog object prop
+interface Blog {
+  fields: BlogFields;
+  // Add other potential top-level fields from blog if needed, e.g., sys.id, metadata
+}
+
+// Describes the props expected by the BlogCard component
+export interface BlogCardProps {
+  blog: Blog;
+}
+
 
 // Interface for a Portfolio Item entry
 // export interface PortfolioItem {
