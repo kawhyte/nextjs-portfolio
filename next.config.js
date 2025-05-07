@@ -66,6 +66,7 @@ module.exports = {
     return config;
   },
   images: {
+    
           domains: ['images.ctfassets.net', 'res.cloudinary.com'],
         },
 };

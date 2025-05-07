@@ -132,41 +132,51 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog, }) => {
 				<meta name="description" content={`Read the blog post: ${title || 'Untitled'}`} />
 				<link rel='icon' href='/favicon.ico'></link>
 			</Head>
-			<div className='mb-8 w-full max-w-screen-lg mx-auto text-gray-900/90 '>
-				<div className='pt-12 pb-10 mx-4 '>
-					<h3 className='font-serif text-2xl mt-6 md:mt-5 md:text-4xl text-gray-700'>
-						{title ?? 'Untitled Blog Post'} {/* Provide fallback title */}
-					</h3>
-				</div>
+			<div className='mb-12 w-full'> {/* Removed max-w-screen-lg for a potentially wider, more modern feel. Added more bottom margin. */}
+    <div className='relative'> {/* Added relative positioning for potential absolute positioned elements later (e.g., overlay, parallax effects) */}
 
-				{/* Render Image only if thumbnailUrl exists */}
-				{thumbnailUrl && (
-					<div className='text-gray-700/60'>
-						<Image
-							// Use optional chaining/nullish coalescing for blurDataURL
-							blurDataURL={thumbnailUrl ? `https:${thumbnailUrl}?fm=webp&q=1&w=10` : undefined} // Lower quality/width for blur
-							placeholder={thumbnailUrl ? 'blur' : 'empty'} // Use blur only if URL exists
-							src={`https:${thumbnailUrl}?fm=webp&w=1024&q=75`} // Request specific width/quality
-							// Provide valid numbers for width/height or use layout="fill"
-                            width={imageWidth || 1024} // Use fetched width or fallback
-                            height={imageHeight || 384} // Use fetched height or fallback
-                            // layout="responsive" // Consider responsive layout if dimensions vary
-							className='w-full h-auto lg:rounded-lg object-cover' // Adjust height to auto if using width/height props
-							alt={imageTitle || title || 'Blog post thumbnail'} // Alt text fallback
-						/>
-						{/* Render photo credit only if it exists */}
-						{photoCredit && (
-							<span // Changed <a> to <span> as href="#" is not ideal
-                                className='px-2 pt-4 text-base inline-flex items-center justify-center'>
-								Photo credit: {photoCredit}
-							</span>
-						)}
-					</div>
-				)}
+        {/* Render Image only if thumbnailUrl exists */}
+        {thumbnailUrl && (
+            <div className='w-full h-64 md:h-80 lg:h-96 overflow-hidden group container  mx-auto'> {/* Fixed height, overflow hidden, group for hover effects */}
+                <Image
+                    blurDataURL={thumbnailUrl ? `https:${thumbnailUrl}?fm=webp&q=1&w-20` : undefined} // Smaller blur, increased quality slightly for better preview
+                    placeholder={thumbnailUrl ? 'blur' : 'empty'}
+                    src={`https:${thumbnailUrl}?fm=webp&w=1280&q=80`} // Slightly increased requested width and quality for sharpness on larger screens, but constrained by parent
+                    width={imageWidth || 1280} // Adjusted default width, but will be constrained by parent
+                    height={imageHeight || 540} // Adjusted default height, but will be constrained by parent
+                    layout="responsive" // Ensures the image scales within the parent container
+                    objectFit="cover" // Ensures the image covers the area, might crop
+                    className='w-full h-full object-cover rounded-2xl transform transition-transform duration-500 ease-in-out group-hover:scale-100' // Cover, transition for hover effect
+                    alt={imageTitle || title || 'Blog post thumbnail'}
+                />
+                {/* Optional: Add a subtle overlay for text readability if text is placed on top */}
+                {/* <div className='absolute inset-0 bg-black opacity-20'></div> */}
+            </div>
+        )}
 
-				{/* Conditionally render ShareButtons if needed and URL exists */}
-				{/* {shareURL && <ShareButtons shareURL={shareURL} />} */}
-			</div>
+        <div className='max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8'> {/* Content container */}
+            <div className='py-8 md:py-12'> {/* Adjusted padding */}
+                <h1 className='font-sans text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight'> {/* Changed to h1, updated font, size, weight, leading */}
+                    {title ?? 'Untitled Blog Post'}
+                </h1>
+
+                {/* Render photo credit only if it exists - subtle and clean */}
+                {thumbnailUrl && photoCredit && (
+                    <p className='mt-4 text-sm text-gray-500'>
+                        Photo credit: {photoCredit}
+                    </p>
+                )}
+            </div>
+        </div>
+    </div>
+
+    {/* ShareButtons could go here or further down, depending on desired prominence */}
+    {/* {shareURL && (
+        <div className='max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 mt-6 mb-8'>
+            <ShareButtons shareURL={shareURL} />
+        </div>
+    )} */}
+</div>
 
 			<div className='px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-lg mx-auto text-lg leading-relaxed prose lg:prose-lg'>
 				{/* Render rich text only if it exists */}

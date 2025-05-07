@@ -42,7 +42,7 @@ export const renderOptions = {
 			}
 		},
 		[BLOCKS.PARAGRAPH]: (node, children) => (
-			<p className=' text-sm lg:text-base max-w-base text-gray-500/90 my-4 '>
+			<p className=' text-sm lg:text-base max-w-base text-gray-800/90 my-4 '>
 				{children}
 			</p>
 		),
@@ -87,22 +87,52 @@ export const renderOptions = {
 		[BLOCKS.HR]: (node, children) => <hr className='  my-8 ' />,
 
 		[BLOCKS.EMBEDDED_ASSET]: (node, children) => {
-			// console.log("TEST ", node.data.target.fields.title);
-			// render the EMBEDDED_ASSET as you need
+			// Safely access the image URL, description, and title
+			const file = node.data?.target?.fields?.file;
+			const imageUrl = file?.url;
+			const imageDetails = file?.details?.image;
+			const description = node.data?.target?.fields?.description;
+			const title = node.data?.target?.fields?.title;
+		
+			// If there's no image URL, don't render anything or render a placeholder
+			if (!imageUrl) {
+				// console.warn("Embedded asset missing URL:", node.data.target);
+				return null; // Or return a placeholder component/message
+			}
+		
+			// Construct the full image URL if it doesn't include the protocol
+			const fullImageUrl = imageUrl.startsWith('http') ? imageUrl : `https:${imageUrl}`;
+		
+			const imageAlt = description || title || 'Embedded asset image';
+		
 			return (
-				<div className='inline-flex justify-between flex-row '>
-					<div className=' flex flex-col items-center'>
+				// This outer div provides vertical spacing for the block.
+				// Adjust 'my-8' (margin top and bottom) as needed for your page flow.
+				<div className='my-8'>
+					{/* This div centers the image and its caption and restricts maximum width */}
+					<div className='flex flex-col items-center max-w-md mx-auto'> {/* You can adjust max-w-xl (e.g., max-w-lg, max-w-2xl) */}
 						<img
-							src={`https://${node.data.target.fields.file.url}`}
-							className={
-								" my-8 mb-5 mr-4 max-w-lg border  inline-flex object-cover h-40 w-96  md:h-24 md:w-full  p-8  "
-							}
-							height={node.data.target.fields.file.details.image.height}
-							width={node.data.target.fields.file.details.image.width}
-							alt={node.data.target.fields.description}
+							src={fullImageUrl}
+							alt={imageAlt}
+							// HTML width/height attributes help prevent layout shift if dimensions are known
+							// These values are for the intrinsic size; CSS will control the display size.
+							width={imageDetails?.width}
+							height={imageDetails?.height}
+							// Tailwind CSS classes for styling:
+							// - w-full: image takes the full width of its parent (up to max-w-xl)
+							// - h-auto: height adjusts automatically to maintain the aspect ratio
+							// - border: adds a default border
+							// - rounded-md: adds slightly rounded corners
+							// - shadow-sm: adds a subtle shadow for depth
+							// - bg-gray-50: a light background color, useful if images might have transparency or to give a slight frame
+							className="w-full h-auto rounded-md bg-gray-50"
 						/>
-
-						<p>{node.data.target.fields.title}</p>
+						{/* Display the title as a caption if it exists */}
+						{title && (
+							<p className="mt-3 text-sm text-gray-700 text-center"> {/* Adjusted margin-top, text color, and alignment */}
+								{title}
+							</p>
+						)}
 					</div>
 				</div>
 			);

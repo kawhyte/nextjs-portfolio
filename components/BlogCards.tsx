@@ -9,7 +9,7 @@ const Cards = ({ items, hideLastItemOnMobile = false }) => {
   return (
     <div className=" pt-6 ">
     
-      <div className="grid md:grid-cols-2 ">
+      <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-6 ">
         {items.map(item => (
           <div
             className=""
