@@ -44,7 +44,7 @@ const TechStack = ({languages, sectionHeadtext, description, header}:TechStackPr
 				<div className='h-[35px] my-3  bg-orange-500 w-[4px] hidden '></div> {/* This div seems unused based on 'hidden' class */}
 
 				{/* Consider using grid for better layout control instead of flex-wrap */}
-				<div className='flex align-middle items-center justify-center gap-x-3 md:gap-x-11 gap-y-8 flex-wrap border'>
+				<div className='flex align-middle items-center justify-center gap-x-3 md:gap-x-11 gap-y-8 flex-wrap'>
 					{languages.map((itemKey, index) => {
 						const techData = typedTechIcons[itemKey]; // Get the data for the current key
 						const key = techData?.name || `${itemKey}-${index}`; // Use name or key+index for React key

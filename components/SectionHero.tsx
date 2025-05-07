@@ -14,6 +14,8 @@ interface SectionHeroProps {
 	description: string;
 }
 
+
+
 const SectionHero: React.FC<SectionHeroProps> = ({ title, description }) => {
 	return (
 		<div className="overflow-hidden">
@@ -34,9 +36,9 @@ const SectionHero: React.FC<SectionHeroProps> = ({ title, description }) => {
 			</div>
 
 					{/* HeroOrbit components - unchanged */}
-					<div className="hidden lg:block absolute inset-0 " style={{ clipPath: 'inset(0 0 0 0)' }}> {/* Replace overflow-hidden with clip-path */}
+					<div className=" absolute inset-0 " style={{ clipPath: 'inset(0 0 0 0)' }}> {/* Replace overflow-hidden with clip-path */}
 					<HeroOrbit
-						size={430}
+						size={130}
 						rotation={-14}
 						shouldOrbit
 						orbitDuration={"30s"}
@@ -45,7 +47,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ title, description }) => {
 						<SparkleIcon className='size-8 text-orange-300/70 ' />
 					</HeroOrbit>
 					<HeroOrbit
-						size={440}
+						size={140}
 						rotation={90}
 						shouldOrbit
 						orbitDuration={"32s"}
@@ -54,7 +56,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ title, description }) => {
 						<SparkleIcon className='size-5 text-orange-300/70 ' />
 					</HeroOrbit>
 					<HeroOrbit
-						size={520}
+						size={220}
 						rotation={-41}
 						shouldOrbit
 						orbitDuration={"34s"}
@@ -63,7 +65,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ title, description }) => {
 						<div className='size-2 rounded-full bg-green-300/50'></div>
 					</HeroOrbit>
 					<HeroOrbit
-						size={530}
+						size={230}
 						rotation={178}
 						shouldOrbit
 						orbitDuration={"36s"}
@@ -72,7 +74,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ title, description }) => {
 						<SparkleIcon className='size-10 text-orange-300/70 ' />
 					</HeroOrbit>
 					<HeroOrbit
-						size={550}
+						size={250}
 						rotation={10}
 						shouldOrbit
 						orbitDuration={"38s"}
@@ -81,7 +83,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ title, description }) => {
 						<StarIcon className='size-12 text-green-300 ' />
 					</HeroOrbit>
 					<HeroOrbit
-						size={600}
+						size={300}
 						rotation={109}
 						shouldOrbit
 						orbitDuration={"40s"}

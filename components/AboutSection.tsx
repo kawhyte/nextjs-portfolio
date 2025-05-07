@@ -4,9 +4,10 @@ import SectionTitle from "./SectionTitle"; // Assuming typed
 // import { IoGameController } from "react-icons/io5"; // Unused directly in JSX
 import Card from "./Card"; // Assuming typed
 // import StarIcon from "/public/assets/icons/star.svg"; // Unused directly in JSX
-import bookImage from "/public/assets/images/book-cover.png"; // Type: StaticImageData
-import mapImage from "/public/assets/images/map.png"; // Type: StaticImageData
-import smileMemoji from "/public/assets/images/memoji-smile.png"; // Type: StaticImageData
+import bookImage from "/public/assets/images/cover2.webp"; // Type: StaticImageData
+import bookImage2 from "/public/assets/images/cover.webp"; // Type: StaticImageData
+import mapImage from "/public/assets/images/map.webp"; // Type: StaticImageData
+import smileMemoji from "/public/assets/images/avatar_mr.png"; // Type: StaticImageData
 import { IconType } from "react-icons"; // Import IconType
 import { FaHtml5 } from "react-icons/fa6";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
@@ -16,6 +17,8 @@ import { BiLogoGraphql } from "react-icons/bi";
 import { IoLogoCss3 } from "react-icons/io";
 import CardHeader from "./CardHeader"; // Assuming typed
 import ToolBoxItems from "./ToolBoxItems"; // Assuming typed
+import Countries from "./Countries";
+import { Country } from "../types/contentful";
 
 // --- Define Interfaces ---
 
@@ -74,18 +77,37 @@ const about: AboutItem[] = [
 
 const imageSize = "size-12 "; // Keep as string for className
 
-const places: PlaceItem[] = [
-	{ title: "Negril, Jamaica", icon: "🇯🇲" },
-	{ title: "Washington D.C., USA", icon: "🇺🇸" },
-	{ title: "Copenhagen, Denmark", icon: "🇩🇰" },
-	{ title: "Hawaii, USA", icon: "🇺🇸" },
-	{ title: "Malmö, Sweden", icon: "🇸🇪" },
-	{ title: "Jakarta, Indonesia", icon: "🇮🇩" }, // Corrected typo
-	{ title: "Paris, France", icon: "🇫🇷" },
-	{ title: "London, England", icon: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
-	{ title: "Tokyo, Japan", icon: "🇯🇵" },
-	{ title: "Toronto, Canada", icon: "🇨🇦" },
-	{ title: "San Juan, Puerto Rico", icon: "🇺🇸" }, // Assuming PR is US territory context
+// const places: PlaceItem[] = [
+// 	{ title: "Jamaica", icon: "🇯🇲" },
+// 	// { title: "USA", icon: "🇺🇸" },
+// 	{ title: "Denmark", icon: "🇩🇰" },
+// 	{ title: "Sweden", icon: "🇸🇪" },
+// 	{ title: "Indonesia", icon: "🇮🇩" }, // Corrected typo
+// 	{ title: "France", icon: "🇫🇷" },
+// 	{ title: "England", icon: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
+// 	{ title: "Japan", icon: "🇯🇵" },
+// 	{ title: "Canada", icon: "🇨🇦" },
+// ];
+
+const countries: Country[] = [
+	{ code: "HK", name: "Hong Kong" },
+	{ code: "TW", name: "Taiwan" },
+	{ code: "VN", name: "Vietnam" },
+	{ code: "SG", name: "Singapore" },
+	{ code: "CA", name: "Canada" },
+	{ code: "DK", name: "Denmark" },
+	{ code: "FI", name: "Finland" },
+	{ code: "FR", name: "France" },
+	{ code: "ID", name: "Indonesia" },
+	{ code: "JM", name: "Jamaica" },
+	{ code: "JP", name: "Japan" },
+	{ code: "MX", name: "Mexico" },
+	{ code: "NL", name: "Netherlands" },
+	{ code: "PR", name: "Puerto Rico" },
+	{ code: "SE", name: "Sweden" },
+	{ code: "BS", name: "The Bahamas" },
+	{ code: "GB", name: "United Kingdom" },
+	{ code: "US", name: "United States" },
 ];
 
 // Note: This array contains JSX elements directly.
@@ -154,13 +176,14 @@ const languages: LanguageItem[] = [
 
 const hobbies: HobbyItem[] = [
 	{ title: "Weightlifting", emoji: "🏋🏾", left: "5%", top: "5%" },
-	{ title: "Retro Nintendo Games", emoji: "🎮", left: "50%", top: "5%" },
+	{ title: "Electric Vehicles", emoji: "⚡️", left: "32%", top: "5%" },
+	{ title: "Retro Nintendo Games", emoji: "🎮", left: "62%", top: "5%" },
 	{ title: "Reading", emoji: "📙", left: "5%", top: "35%" },
-	{ title: "Astronomy", emoji: "🪐", left: "50%", top: "30%" },
-	{ title: "Traveling", emoji: "✈️", left: "40%", top: "50%" },
+	{ title: "Astronomy", emoji: "🪐", left: "70%", top: "35%" },
+	{ title: "Traveling", emoji: "✈️", left: "34%", top: "40%" },
 	{ title: "Watching Bad Movies", emoji: "🍿", left: "5%", top: "65%" },
-	{ title: "Music", emoji: "🎵", left: "60%", top: "70%" },
-	{ title: "Sneakers", emoji: "👟", left: "60%", top: "70%" }, // Note: Same position as Music, intentional?
+	{ title: "Music", emoji: "🎵", left: "75%", top: "70%" },
+	{ title: "Sneakers", emoji: "👟", left: "45%", top: "70%" }, 
 ];
 
 // --- Component Definition ---
@@ -190,14 +213,41 @@ const AboutSection: React.FC = () => {
 						<Card className='h-[320px] md:col-span-2 lg:col-span-1 '>
 							{/* Assuming CardHeader props are optional strings */}
 							<CardHeader
-								title={"Bookworm Corner"}
-								description={"A book that challenged my thinking:"}
+								title={"Reading List"}
+								description={"Books that I'm currently reading:"}
 								className={undefined}
 							/>
 
-							<div className='w-40 mx-auto '>
-								{/* Image props seem okay for static import */}
+							{/* <div className='w-40 mx-auto '>
+							
 								<Image src={bookImage} alt='book cover' />{" "}
+							</div> */}
+
+							<div className='relative w-60 h-80 mx-auto'>
+								<div className='absolute top-0 -left-6 z-20 transition-transform duration-300 hover:scale-110 hover:z-50 hover:shadow-2xl perspective-1000'>
+									<div className='transform-gpu rotate-y-[-5deg] hover:rotate-y-[-10deg] transition-transform duration-300'>
+										<Image
+											src={bookImage}
+											alt='Book'
+											width={150}
+											height={280}
+											className='rounded-lg shadow-2xl border border-gray-200'
+										/>
+									</div>
+								</div>
+
+								{/* Card 2 */}
+								<div className='absolute top-8 left-20 z-40 transition-transform duration-300 hover:scale-110 hover:z-50 hover:shadow-2xl perspective-1000'>
+									<div className='transform-gpu rotate-y-[-5deg] hover:rotate-y-[-10deg] transition-transform duration-300'>
+										<Image
+											src={bookImage2}
+											alt='Book'
+											width={150}
+											height={280}
+											className='rounded-lg shadow-2xl border border-gray-200'
+										/>
+									</div>
+								</div>
 							</div>
 						</Card>
 						<Card className='h-[320px] md:col-span-3 lg:col-span-2 '>
@@ -209,17 +259,9 @@ const AboutSection: React.FC = () => {
 								className='' // Pass empty string if needed
 							/>
 
-							{/* Assuming ToolBoxItems accepts 'languages' prop with PlaceItem[] structure */}
-							<ToolBoxItems
-								languages={places}
-								className=''
-								itemsWrapperClass={undefined}
-							/>
-							<ToolBoxItems
-								languages={places}
-								className='mt-6 '
-								itemsWrapperClass='-translate-x-1/2'
-							/>
+							<Countries countries={countries} />
+
+					
 						</Card>
 					</div>
 
@@ -232,22 +274,21 @@ const AboutSection: React.FC = () => {
 								}
 								className='px-6 py-6'
 							/>
-							<div className='relative flex-1'>
-								{hobbies.map((hobby) => (
-									<div
-										key={hobby.title} // Key prop is present
-										className='inline-flex items-center gap-2 px-6 bg-gradient-to-r from-green-100 to-orange-100 rounded-full py-1.5 absolute'
-										style={{
-											left: hobby.left,
-											top: hobby.top,
-										}}>
-										<span className='font-medium text-gray-950'>
-											{hobby.title}
-										</span>
-										<span>{hobby.emoji}</span>
-									</div>
-								))}
-							</div>
+					<div className='relative flex-1'>
+  {hobbies.map((hobby, index) => (
+    <div
+      key={hobby.title}
+      className='inline-flex items-center gap-2 px-6 bg-gradient-to-r from-green-100 to-orange-100 rounded-full py-1.5 absolute animate-float'
+      style={{
+        left: hobby.left,
+        top: hobby.top,
+        animationDelay: `${index * 0.3}s`,
+      }}>
+      <span className='font-medium text-gray-950'>{hobby.title}</span>
+      <span>{hobby.emoji}</span>
+    </div>
+  ))}
+</div>
 						</Card>
 
 						<Card className='h-[320px] p-0 relative md:col-span-2 lg:col-span-1'>

@@ -200,10 +200,10 @@ const PortfolioDetailPage: NextPage<PortfolioDetailPageProps> = ({ portfolio }) 
 							src={`https:${displayImageUrl}?fm=webp&w=1024&q=75`}
 							blurDataURL={displayImageUrl ? `https:${displayImageUrl}?fm=webp&q=1&w=10` : undefined}
 							placeholder={displayImageUrl ? 'blur' : 'empty'}
-							height={displayImageHeight || 600} // Provide fallback height
-							width={displayImageWidth || 1000} // Provide fallback width
+							height={ 400  } // Provide fallback height
+							width={600} // Provide fallback width
 							quality={75} // Adjust quality
-							className='rounded-t-2xl w-full max-w-xl lg:max-w-2xl mt-8 -mb-7 md:-mb-0 lg:mt-0' // Use max-w for control
+							className='rounded-t-2xl w-full max-w-lg lg:max-w-xl mt-8 -mb-7 md:-mb-0 lg:mt-0' // Use max-w for control
 							alt={displayImageTitle || title || 'Project main image'}
 						/>
 					)}

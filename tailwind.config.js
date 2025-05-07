@@ -27,6 +27,10 @@ module.exports = {
 		},
 		extend: {
 			keyframes: {
+				float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-4px)' },
+        },
 				wave: {
 					"0%": { transform: "rotate(0.0deg)" },
 					"15%": { transform: "rotate(14.0deg)" },
@@ -37,9 +41,17 @@ module.exports = {
 					"70%": { transform: "rotate(0.0deg)" },
 					"100%": { transform: "rotate(0.0deg)" },
 				},
+				// Add marquee keyframes
+				"marquee-infinite": {
+					"0%": { transform: "translateX(0%)" },
+					"100%": { transform: "translateX(-100%)" },
+				},
 			},
 			animation: {
 				wave: "wave 1.5s infinite",
+				float: 'float 3s ease-in-out infinite',
+				// Add marquee animation utility
+				"marquee-infinite": "marquee-infinite 85s linear infinite", // Adjust duration (25s) as needed
 			},
 
 			linearGradientColors: {

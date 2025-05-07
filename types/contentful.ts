@@ -183,4 +183,7 @@ export interface PortfolioPageProps {
 	portfolio: PortfolioItem[]; // This page only needs portfolio items
 }
 
-// You could potentially define other page-specific props here or in separate files
+export interface Country {
+  code: string;
+  name: string;
+}

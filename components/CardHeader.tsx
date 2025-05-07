@@ -1,7 +1,6 @@
 import React from "react"; // Import React for FC type
 import { twMerge } from "tailwind-merge";
-import StarIcon from "/public/assets/icons/star.svg"; // Assuming this SVG import works with your setup
-
+import { Zap } from 'lucide-react';
 // Define the interface for the component's props
 interface CardHeaderProps {
 	title: string; // Title is expected to be a string
@@ -14,8 +13,9 @@ const CardHeader: React.FC<CardHeaderProps> = ({ title, description, className }
 		<div className={twMerge("flex flex-col p-6", className)}> {/* Apply className safely */}
 			<div>
 				<div className='inline-flex items-center gap-2'>
-					{/* Ensure StarIcon is treated as a component */}
-					<StarIcon className='size-9 text-green-300 ' />
+				
+					{/* <StarIcon className='size-9 text-green-300 ' /> */}
+					<Zap className='size-7 text-green-300 mr-2 ' />
 
 					<h3 className='font-serif text-3xl '>{title}</h3>
 				</div>

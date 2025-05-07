@@ -45,6 +45,7 @@ export default function Recipes({ portfolio }) {
 				title={"All Projects"}
 				description={"Take a look at some of the stuff I've built!"}
 			/>
+			
 			<div className='lg:container lg:mx-auto my-20'>
 			
 
