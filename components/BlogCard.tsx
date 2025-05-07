@@ -28,7 +28,7 @@ const BlogCard = ({ blog }: BlogCardProps) => {
     return (
         <div className='flex flex-col max-w-6xl lg:mx-auto mt-10'>
             {/* Ensure the Card component accepts a className prop */}
-            <Card className='flex flex-col lg:h-[280px] lg:flex-row'>
+            <Card className='flex flex-col lg:h-[310px] lg:flex-row'>
                 <Image
                     // Use the safely constructed URL for both blurDataURL and src
                     blurDataURL={imageUrl}
@@ -48,7 +48,7 @@ const BlogCard = ({ blog }: BlogCardProps) => {
                         </p>
                     </div>
 
-                    <div className='flex lg:justify-center flex-col md:flex-row item-start align-top mb-10 pb-10 ml-6 gap-4 w-44 md:w-52'>
+                    <div className='flex lg:justify-center flex-col md:flex-row item-start align-top pb-10 ml-6 gap-4 w-44 md:w-52'>
                         {/* Ensure the Button component accepts these props */}
                         <Button className={"mt-2"} icon={<ImArrowUpRight2 />} text={"Read More"} link={`/blog/${slug}`} />
 

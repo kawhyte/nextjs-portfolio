@@ -2,7 +2,7 @@ import React from 'react'
 
 function Countries({countries}) {
   return (
-    <div className="flex flex-wrap gap-2 ml-4">
+    <div className="flex flex-wrap gap-0.5 md:gap-2 ml-4">
     {countries?.map((country) => (
       <div
         key={country.code}
@@ -13,7 +13,7 @@ function Countries({countries}) {
           alt={`${country.name} flag`}
           className="h-4 w-6 rounded-sm object-cover"
         />
-        <span className="text-sm text-gray-700">{country.name}</span>
+        <span className=" text-xs md:text-sm text-gray-700">{country.name}</span>
       </div>
     ))}
   </div>

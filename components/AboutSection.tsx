@@ -175,14 +175,14 @@ const languages: LanguageItem[] = [
 ];
 
 const hobbies: HobbyItem[] = [
-	{ title: "Weightlifting", emoji: "🏋🏾", left: "5%", top: "5%" },
-	{ title: "Electric Vehicles", emoji: "⚡️", left: "32%", top: "5%" },
-	{ title: "Retro Nintendo Games", emoji: "🎮", left: "62%", top: "5%" },
-	{ title: "Reading", emoji: "📙", left: "5%", top: "35%" },
-	{ title: "Astronomy", emoji: "🪐", left: "70%", top: "35%" },
+	{ title: "Weightlifting", emoji: "🏋🏾", left: "3%", top: "-3%" },
+	{ title: "Electric Vehicles", emoji: "⚡️", left: "32%", top: "12%" },
+	{ title: "Retro Games", emoji: "🎮", left: "62%", top: "-5%" },
+	{ title: "Reading", emoji: "📙", left: "3%", top: "35%" },
+	{ title: "Astronomy", emoji: "🪐", left: "65%", top: "35%" },
 	{ title: "Traveling", emoji: "✈️", left: "34%", top: "40%" },
-	{ title: "Watching Bad Movies", emoji: "🍿", left: "5%", top: "65%" },
-	{ title: "Music", emoji: "🎵", left: "75%", top: "70%" },
+	{ title: "Watching Bad Movies", emoji: "🍿", left: "3%", top: "65%" },
+	{ title: "Music", emoji: "🎵", left: "73%", top: "60%" },
 	{ title: "Sneakers", emoji: "👟", left: "45%", top: "70%" }, 
 ];
 
@@ -268,7 +268,7 @@ const AboutSection: React.FC = () => {
 					<div className='grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3 md:gap-1'>
 						<Card className='h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2'>
 							<CardHeader
-								title={"Other things I like:"}
+								title={"Things I like:"}
 								description={
 									"Beyond the screen, I have a life filled with other passions. "
 								}
@@ -284,7 +284,7 @@ const AboutSection: React.FC = () => {
         top: hobby.top,
         animationDelay: `${index * 0.3}s`,
       }}>
-      <span className='font-medium text-gray-950'>{hobby.title}</span>
+      <span className='font-medium text-gray-950 text-xs md:text-base'>{hobby.title}</span>
       <span>{hobby.emoji}</span>
     </div>
   ))}
