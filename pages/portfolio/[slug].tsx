@@ -124,7 +124,8 @@ const PortfolioDetailPage: NextPage<PortfolioDetailPageProps> = ({ portfolio }) 
 		richTextResult,
 	} = portfolio.fields;
 
-    // Determine image to display, prioritizing caseStudyMainImage
+
+	console.log("portfolio.fields",portfolio.fields)    // Determine image to display, prioritizing caseStudyMainImage
     const displayImage = caseStudyMainImage || thumbnail;
     const displayImageUrl = displayImage?.fields?.file?.url;
     const displayImageWidth = displayImage?.fields?.file?.details?.image?.width;
@@ -191,7 +192,7 @@ const PortfolioDetailPage: NextPage<PortfolioDetailPageProps> = ({ portfolio }) 
 				{/* Main Content */}
 				<div className='md:container md:mx-auto flex flex-col px-5 pt-24 justify-center items-center relative z-10'> {/* Added relative z-10 */}
 					<h1 className='font-serif title-font text-4xl md:text-5xl font-medium md:my-8'>
-						{title ?? 'Project Details'} {/* Use title, provide fallback */}
+						{displayImageTitle ?? 'Project Details'} {/* Use title, provide fallback */}
 					</h1>
 
 					{/* Display Image if URL exists */}
@@ -247,7 +248,7 @@ const PortfolioDetailPage: NextPage<PortfolioDetailPageProps> = ({ portfolio }) 
 							)}
 							{url && ( // Conditionally render button
 								<Button
-                                    text={"View Code"}
+                                    text={"Code"}
                                     link={url}
                                     icon={<BiRightArrow />}
                                 />
@@ -263,7 +264,7 @@ const PortfolioDetailPage: NextPage<PortfolioDetailPageProps> = ({ portfolio }) 
                         languages={tech} // Pass the 'tech' string array
                         sectionHeadtext={"Technology Stack"}
                         description={"Tech used to create this project"}
-                        header={"Languages/Frameworks"}
+                        header={""}
                     />
                 )}
 
