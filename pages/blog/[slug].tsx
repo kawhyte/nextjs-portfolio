@@ -87,103 +87,93 @@ export const getStaticProps: GetStaticProps<BlogPageProps, { slug: string }> = a
 };
 
 // Type the Page Component (Renamed from PortfolioDetails)
-const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog, }) => {
-	// Add initial check for safety, although getStaticProps should handle notFound
-	if (!blog || !blog.fields) return <Skeleton />; // Or return null/error component
+// pages/blog/[slug].tsx
 
-	// Destructure fields - use optional chaining for safety on potentially missing fields
-	const {
-		slug,
-		title,
-		thumbnail, // This is ContentfulImage | undefined
-		photoCredit,
-		richText, // This is RichTextDocument | undefined
-		// description, // Unused
-		// gallery, // Unused
-		// name, // Unused
-		// related, // Unused
-		// summary, // Unused
-		// url, // Unused
-		// demoUrl, // Unused
-		// technology, // Unused
-		// approach, // Unused
-		// problem, // Unused
-		// result, // Unused
-		// richTextProblem, // Unused
-		// richTextApproach, // Unused
-		// richTextResult, // Unused
-	} = blog.fields;
+// ... (imports remain the same)
 
-	// Construct share URL safely
-	const shareURL = slug ? `https://www.kennywhyte.com/blog/${slug}` : undefined;
+const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
+    if (!blog || !blog.fields) return <Skeleton />;
 
-    // Safely access thumbnail URL and details
-    const thumbnailUrl = thumbnail?.fields?.file?.url;
-    const imageWidth = thumbnail?.fields?.file?.details?.image?.width;
-    const imageHeight = thumbnail?.fields?.file?.details?.image?.height;
-    const imageTitle = thumbnail?.fields?.title;
+    const { title, thumbnail, photoCredit, richText } = blog.fields;
+    const publicationDate = blog.sys.createdAt; // Get the creation date from sys
 
-	return (
-		<main className='mt-20'>
-			<Head>
-				{/* Use title safely */}
-				<title>{title ? `${title} | Kenny Portfolio` : 'Blog Post | Kenny Portfolio'}</title>
-				{/* Add a meta description */}
-				<meta name="description" content={`Read the blog post: ${title || 'Untitled'}`} />
-				<link rel='icon' href='/favicon.ico'></link>
-			</Head>
-			<div className='mb-12 w-full'> {/* Removed max-w-(--breakpoint-lg) for a potentially wider, more modern feel. Added more bottom margin. */}
-    <div className='relative'> {/* Added relative positioning for potential absolute positioned elements later (e.g., overlay, parallax effects) */}
+    // A simple function to estimate read time
+    const calculateReadTime = (text: RichTextDocument | undefined): string => {
+        if (!text) return '3 min read'; // Default
+        const plainText = text.content.map(node =>
+            node.content.map(innerNode => (innerNode as any).value || '').join('')
+        ).join('');
+        const wordsPerMinute = 200;
+        const words = plainText.split(/\s+/).length;
+        const minutes = Math.ceil(words / wordsPerMinute);
+        return `${minutes} min read`;
+    };
 
-        {/* Render Image only if thumbnailUrl exists */}
-        {thumbnailUrl && (
-            <div className='w-full h-64 md:h-80 lg:h-96 overflow-hidden group container  mx-auto'> {/* Fixed height, overflow hidden, group for hover effects */}
-                <Image
-                    blurDataURL={thumbnailUrl ? `https:${thumbnailUrl}?fm=webp&q=1&w-20` : undefined} // Smaller blur, increased quality slightly for better preview
-                    // placeholder={thumbnailUrl ? 'blur-sm' : 'empty'}
-                    src={`https:${thumbnailUrl}?fm=webp&w=1280&q=80`} // Slightly increased requested width and quality for sharpness on larger screens, but constrained by parent
-                    width={imageWidth || 1280} // Adjusted default width, but will be constrained by parent
-                    height={imageHeight || 540} // Adjusted default height, but will be constrained by parent
-                    layout="responsive" // Ensures the image scales within the parent container
-                    objectFit="cover" // Ensures the image covers the area, might crop
-                    className='w-full h-full object-cover rounded-2xl transform transition-transform duration-500 ease-in-out group-hover:scale-100' // Cover, transition for hover effect
-                    alt={imageTitle || title || 'Blog post thumbnail'}
-                />
-                {/* Optional: Add a subtle overlay for text readability if text is placed on top */}
-                {/* <div className='absolute inset-0 bg-black opacity-20'></div> */}
-            </div>
-        )}
+    return (
+        // Use a more modern, centered layout container
+        <main className='mt-20 px-4 py-8 md:py-12'>
+            <Head>
+                <title>{`${title} | Kenny Portfolio`}</title>
+                {/* ... other head elements */}
+            </Head>
 
-        <div className='max-w-(--breakpoint-lg) mx-auto px-4 sm:px-6 lg:px-8'> {/* Content container */}
-            <div className='py-8 md:py-12'> {/* Adjusted padding */}
-                <h1 className='font-sans text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight'> {/* Changed to h1, updated font, size, weight, leading */}
-                    {title ?? 'Untitled Blog Post'}
-                </h1>
+            <article className="max-w-3xl mx-auto">
+                {/* 1. REFINED HERO SECTION */}
+                <header className="mb-8 md:mb-12">
+                    <h1 className='text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4'>
+                        {title}
+                    </h1>
 
-                {/* Render photo credit only if it exists - subtle and clean */}
-                {thumbnailUrl && photoCredit && (
-                    <p className='mt-4 text-sm text-gray-500'>
-                        Photo credit: {photoCredit}
-                    </p>
+                    {/* 2. AUTHOR & METADATA SECTION */}
+                    <div className="flex items-center space-x-4 text-gray-500">
+                         {/* You can replace this with a real avatar */}
+                        <div className="flex-shrink-0">
+                            <Image
+                                src="/avatar.png" // Add a professional avatar to your /public folder
+                                alt="Kenny Whyte"
+                                width={40}
+                                height={40}
+                                className="rounded-full"
+                            />
+                        </div>
+                        <div>
+                            <p className="text-sm font-medium text-gray-800">Kenny Whyte</p>
+                            <p className="text-sm">
+                                <span>{new Date(publicationDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                                <span className="mx-1">·</span>
+                                <span>{calculateReadTime(richText)}</span>
+                            </p>
+                        </div>
+                    </div>
+                </header>
+
+                {/* 3. HERO IMAGE */}
+                {thumbnail?.fields?.file?.url && (
+                    <div className='mb-8 md:mb-12'>
+                         <Image
+                            src={`https:${thumbnail.fields.file.url}?fm=webp&w=1280&q=80`}
+                            width={1280}
+                            height={540}
+                            alt={thumbnail.fields.title || title || 'Blog post thumbnail'}
+                            className='w-full h-auto rounded-lg shadow-md'
+                         />
+                         {photoCredit && (
+                            <p className='mt-2 text-xs text-center text-gray-500'>
+                                Photo credit: {photoCredit}
+                            </p>
+                        )}
+                    </div>
                 )}
-            </div>
-        </div>
-    </div>
 
-    {/* ShareButtons could go here or further down, depending on desired prominence */}
-    {/* {shareURL && (
-        <div className='max-w-(--breakpoint-lg) mx-auto px-4 sm:px-6 lg:px-8 mt-6 mb-8'>
-            <ShareButtons shareURL={shareURL} />
-        </div>
-    )} */}
-</div>
-
-			<div className='px-4 lg:px-0 mt-12 text-gray-700 max-w-(--breakpoint-lg) mx-auto text-lg leading-relaxed prose lg:prose-lg'>
-				{/* Render rich text only if it exists */}
-				{richText && documentToReactComponents(richText as RichTextDocument, renderOptions as Options)}
-			</div>
-		</main>
-	);
+                {/* 4. CONTENT WITH PROSE FOR READABILITY */}
+                <div className='prose prose-lg max-w-none'>
+                    {richText && documentToReactComponents(richText as RichTextDocument, renderOptions as Options)}
+                </div>
+            </article>
+        </main>
+    );
 }
 
-export default BlogDetailsPage; // Export with a descriptive name
+export default BlogDetailsPage;
+
+ // Export with a descriptive name

@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import Layout from '../components/Layout'; 
 import type { AppProps } from 'next/app'; 
+import 'highlight.js/styles/github-dark.css';
 
 
 function MyApp({ Component, pageProps }: AppProps) {
