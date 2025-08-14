@@ -200,7 +200,7 @@ const PortfolioDetailPage: NextPage<PortfolioDetailPageProps> = ({ portfolio }) 
 						<Image
 							src={`https:${displayImageUrl}?fm=webp&w=1024&q=75`}
 							blurDataURL={displayImageUrl ? `https:${displayImageUrl}?fm=webp&q=1&w=10` : undefined}
-							placeholder={displayImageUrl ? 'blur-sm' : 'empty'}
+							// placeholder={displayImageUrl ? 'blur-sm' : 'empty'}
 							height={ 400  } // Provide fallback height
 							width={600} // Provide fallback width
 							quality={75} // Adjust quality

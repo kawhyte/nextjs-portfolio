@@ -1,22 +1,22 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image"; // Import StaticImageData
+import Image from "next/image"; // Import StaticImageData
 import SectionTitle from "./SectionTitle"; // Assuming typed
 // import { IoGameController } from "react-icons/io5"; // Unused directly in JSX
 import Card from "./Card"; // Assuming typed
 // import StarIcon from "/public/assets/icons/star.svg"; // Unused directly in JSX
 import bookImage from "/public/assets/images/cover2.webp"; // Type: StaticImageData
 import bookImage2 from "/public/assets/images/cover.webp"; // Type: StaticImageData
-import mapImage from "/public/assets/images/map.webp"; // Type: StaticImageData
-import smileMemoji from "/public/assets/images/avatar_mr.png"; // Type: StaticImageData
-import { IconType } from "react-icons"; // Import IconType
+// import mapImage from "/public/assets/images/map.webp"; // Type: StaticImageData
+// import smileMemoji from "/public/assets/images/avatar_mr.png"; // Type: StaticImageData
+// import { IconType } from "react-icons"; // Import IconType
 import { FaHtml5 } from "react-icons/fa6";
-import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
+import {  RiNextjsFill } from "react-icons/ri";
 import { FaNodeJs, FaReact } from "react-icons/fa";
-import { SiCsharp, SiJavascript } from "react-icons/si";
+import {  SiJavascript } from "react-icons/si";
 import { BiLogoGraphql } from "react-icons/bi";
 import { IoLogoCss3 } from "react-icons/io";
 import CardHeader from "./CardHeader"; // Assuming typed
-import ToolBoxItems from "./ToolBoxItems"; // Assuming typed
+// import ToolBoxItems from "./ToolBoxItems"; // Assuming typed
 import Countries from "./Countries";
 import { Country } from "../types/contentful";
 
@@ -112,12 +112,12 @@ const countries: Country[] = [
 
 // Note: This array contains JSX elements directly.
 const languages: LanguageItem[] = [
-	{
-		title: "C#",
-		icon: (
-			<SiCsharp className={imageSize} style={{ fill: "url(#icon-gradient)" }} />
-		),
-	},
+	// {
+	// 	title: "C#",
+	// 	icon: (
+	// 		<SiCsharp className={imageSize} style={{ fill: "url(#icon-gradient)" }} />
+	// 	),
+	// },
 	{
 		title: "HTML 5",
 		icon: (
@@ -291,19 +291,18 @@ const AboutSection: React.FC = () => {
 </div>
 						</Card>
 
-						<Card className='h-[320px] p-0 relative md:col-span-2 lg:col-span-1'>
+						{/* <Card className='h-[320px] p-0 relative md:col-span-2 lg:col-span-1'>
 							<Image
 								src={mapImage}
 								alt='map'
 								className='h-full w-full object-cover'
-								// Consider adding layout="fill" if parent Card provides dimensions reliably
-								// layout="fill"
+								
 							/>
 
 							<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full bg-linear-to-r from-green-100 to-orange-100 after:content-[''] after:absolute after:inset-0 after:outline-solid after:ouline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
 								<Image src={smileMemoji} alt='smiling memoji' className='' />{" "}
 							</div>
-						</Card>
+						</Card> */}
 					</div>
 				</div>
 			</div>

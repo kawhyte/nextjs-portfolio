@@ -15,10 +15,10 @@ import { ImArrowUpRight2 } from "react-icons/im";
 import { FaHtml5 } from "react-icons/fa6";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { FaNodeJs, FaReact } from "react-icons/fa";
-import { SiCsharp, SiJavascript } from "react-icons/si";
+import { SiJavascript } from "react-icons/si";
 import { BiLogoGraphql } from "react-icons/bi";
 import { IoLogoCss3 } from "react-icons/io";
-import techIcons from "../util/techIcons";
+// import techIcons from "../util/techIcons";
 import { GetStaticProps, NextPage } from "next";
 
 import type {

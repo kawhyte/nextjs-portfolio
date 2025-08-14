@@ -140,7 +140,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog, }) => {
             <div className='w-full h-64 md:h-80 lg:h-96 overflow-hidden group container  mx-auto'> {/* Fixed height, overflow hidden, group for hover effects */}
                 <Image
                     blurDataURL={thumbnailUrl ? `https:${thumbnailUrl}?fm=webp&q=1&w-20` : undefined} // Smaller blur, increased quality slightly for better preview
-                    placeholder={thumbnailUrl ? 'blur-sm' : 'empty'}
+                    // placeholder={thumbnailUrl ? 'blur-sm' : 'empty'}
                     src={`https:${thumbnailUrl}?fm=webp&w=1280&q=80`} // Slightly increased requested width and quality for sharpness on larger screens, but constrained by parent
                     width={imageWidth || 1280} // Adjusted default width, but will be constrained by parent
                     height={imageHeight || 540} // Adjusted default height, but will be constrained by parent

@@ -1,6 +1,6 @@
 // BlogCard.tsx
 
-import Link from "next/link";
+// import Link from "next/link";
 import Image from "next/image";
 import Card from "./Card"; // Assuming Card component exists and accepts className
 // import CardHeader from "./CardHeader"; // This import was present but not used in the original code
