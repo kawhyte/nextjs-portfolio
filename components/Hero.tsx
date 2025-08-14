@@ -133,20 +133,20 @@ const Hero = () => {
 
 					<div className='container mx-auto flex flex-col justify-center items-center w-full z-50 '>
 						<div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center text-white gap-4 rounded-xl'>
-							<div className='hidden md:block rounded-full text-2xl lg:text-3xl animate-wave'>
+							<div className=' rounded-full text-2xl lg:text-3xl animate-wave'>
 								👋🏽
 							</div>
 							<div className='text-sm font-medium'>
-								I'm a Full Stack Software Engineer
+								Hello, I'm Kenny Whyte
 							</div>
 						</div>
 						<div className='max-w-lg lg:max-w-4xl'>
 							<h1 className=' font-serif text-3xl md:text-5xl lg:text-7xl text-center mt-8 leading-tight'>
-								Creating Extraordinary User Friendly Software
+                            Full-Stack Engineer Building Modern Web Experiences.
 							</h1>
 							<p className='mt-4 text-center text-gray-900 md:text-lg lg:text-xl'>
-								Currently focused on developing web applications with C#, .NET
-								Core, Node.js, and React/NextJS.
+							 I specialize in creating fast, intuitive, and user-friendly software using C#, .NET, and React/Next.js.
+
 							</p>
 						</div>
 
