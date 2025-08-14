@@ -10,7 +10,7 @@ interface SectionHeroProps {
 
 export default function SectionHero({ title, description }: SectionHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-green-50 py-12 md:py-20">
+            <section className='py-12 md:py-20 bg-green-100 bg-gradient relative z-0 mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]'>
       {/* Subtle grain */}
       <div
         className="absolute inset-0 opacity-5"

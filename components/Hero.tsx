@@ -5,16 +5,17 @@ import { BiArrowBack, BiRightArrow } from "react-icons/bi";
 import StarIcon from "/public/assets/icons/star.svg";
 import SparkleIcon from "/public/assets/icons/sparkle.svg";
 import HeroOrbit from "./HeroOrbit";
-import Button from "../ui/Button";
 import { Triangle, Plus, Zap } from "lucide-react"; // Import desired icons
+import { Button } from "@/components/ui/button";
+import memojiImage from '/public/assets/images/memoji-avatar.png'
+import Link from "next/link";
 
-// import memojiImage from '@/assets/images/memoji-avatar-1.png'
 
 const Hero = () => {
 	return (
 		<div className='overflow-hidden'>
-			<div className=' py-12 md:py-20 bg-green-100  bg-gradient relative z-0 '>
-				<div className='absolute inset-0 mask-[linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]'>
+            <div className='py-12 md:py-20 bg-green-100 bg-gradient relative z-0 mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]'>
+				<div className='absolute inset-0 '>
 					<div
 						className='absolute   inset-0 -z-30 opacity-5  '
 						style={{
@@ -121,13 +122,13 @@ const Hero = () => {
 
 				<div className='container  flex flex-col  items-center px-3 mx-auto  mt-20 '>
 					<Image
-						src={"/assets/images/portrait.png"}
+						src={memojiImage}
 						blurDataURL='https://res.cloudinary.com/babyhulk/image/upload/e_blur:1058,q_10/v1627169850/hero-image/person-on-computer.webp'
 						placeholder='blur'
-						width='370'
-						height='500'
+						width='270'
+						height='400'
 						alt='man on computer'
-						className=' pr-7'
+						className=' pr-7 -mb-10'
 					/>
 
 					<div className='container mx-auto flex flex-col justify-center items-center w-full z-50 '>
@@ -149,19 +150,16 @@ const Hero = () => {
 							</p>
 						</div>
 
-						<div className='flex flex-col md:flex-row item-center gap-4 z-10'>
-							<Button
-								text={"Check out my Projects"}
-								link={"/projects"}
-								icon={"🚀"}
-							/>
-							<Button
-								className='bg-white text-black z-30'
-								text={"Lets Connect"}
-								link={"/"}
-								icon={<BiRightArrow />}
-							/>
-						</div>
+				   <div className='mt-8 flex flex-col sm:flex-row items-center gap-4'>
+                            {/* Primary CTA */}
+                            <Button asChild size="lg">
+                                <Link href="/projects">View My Work</Link>
+                            </Button>
+                            {/* Secondary CTA */}
+                            <Button asChild variant="outline" size="lg">
+                                <Link href="/contact">Contact Me</Link>
+                            </Button>
+                        </div>
 					</div>
 				</div>
 			</div>
