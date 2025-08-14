@@ -36,12 +36,12 @@ export default function BlogCard({ blog }: BlogCardProps) {
     </div>
 
     {/* Title */}
-    <CardTitle className="text-lg font-semibold leading-tight">
+    <CardTitle className="text-lg font-semibold leading-tight line-clamp-2">
       {title}
     </CardTitle>
 
     {/* Description */}
-    <CardDescription className="text-sm text-gray-600 leading-relaxed">
+    <CardDescription className="text-sm text-gray-600 leading-relaxed line-clamp-3">
       {summary}
     </CardDescription>
 
