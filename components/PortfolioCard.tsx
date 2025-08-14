@@ -88,7 +88,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
 						<div className=' flex flex-wrap justify-start gap-2 w-full mt-2'> {/* Adjusted justify-content and added gap */}
 							{technology.slice(0, 4).map((item) => (
 								<div key={item.sys.id} className='flex flex-col items-center'>
-									<div className='bg-gradient-to-r rounded-xl md:flex-nowrap border px-2 py-1 from-green-500 to-orange-500 font-bold uppercase tracking-widest text-xs md:text-sm text-transparent bg-clip-text'>
+									<div className='bg-linear-to-r rounded-xl md:flex-nowrap border px-2 py-1 from-green-500 to-orange-500 font-bold uppercase tracking-widest text-xs md:text-sm text-transparent bg-clip-text'>
 										{item.fields.title}
 									</div>
 								</div>
@@ -105,7 +105,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
 						{/* Ensure portfolioHighlights exists before mapping */}
 						{portfolioHighlights?.slice(0, 3).map((item) => (
 							<li key={item} className='flex gap-2 text-sm md:text-base border-gray-900/5'>
-								<BiCheckCircle className='w-5 h-6 md:w-6 md:h-7 flex-shrink-0' /> {/* Added flex-shrink-0 */}
+								<BiCheckCircle className='w-5 h-6 md:w-6 md:h-7 shrink-0' /> {/* Added shrink-0 */}
 								<span>{item}</span>
 							</li>
 						))}
@@ -136,7 +136,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
 						height={thumbnail.fields.file.details?.image?.height || 1000}
 						width={thumbnail.fields.file.details?.image?.width || 1000}
 						quality={100}
-						className='md:w-full rounded-t-2xl border-2 mt-8 -mb-7 md:-mb-0 lg:mt-0 lg:absolute lg:w-[45rem] overflow-hidden object-cover' // Added object-cover
+						className='md:w-full rounded-t-2xl border-2 mt-8 -mb-7 md:-mb-0 lg:mt-0 lg:absolute lg:w-180 overflow-hidden object-cover' // Added object-cover
 						alt={imageAltText} // Use defined alt text
 					/>
 				</div>

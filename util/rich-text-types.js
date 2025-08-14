@@ -123,7 +123,7 @@ export const renderOptions = {
 							// - h-auto: height adjusts automatically to maintain the aspect ratio
 							// - border: adds a default border
 							// - rounded-md: adds slightly rounded corners
-							// - shadow-sm: adds a subtle shadow for depth
+							// - shadow-xs: adds a subtle shadow for depth
 							// - bg-gray-50: a light background color, useful if images might have transparency or to give a slight frame
 							className="w-full h-auto rounded-md bg-gray-50"
 						/>

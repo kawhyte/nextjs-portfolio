@@ -33,7 +33,7 @@ const Button: React.FC<ButtonProps> = ({
 					className={twMerge(
 						"absolute inset-0",
 
-						"bg-gradient-to-r from-orange-200 via-orange-300 to-orange-300",
+						"bg-linear-to-r from-orange-200 via-orange-300 to-orange-300",
 
 						"-translate-x-full",
 
@@ -44,8 +44,8 @@ const Button: React.FC<ButtonProps> = ({
 					aria-hidden='true'
 				/>
 
-				<span className='relative z-[1]'>{text}</span>
-				<span className='relative z-[1]'>{icon}</span>
+				<span className='relative z-1'>{text}</span>
+				<span className='relative z-1'>{icon}</span>
 			</button>
 		</Link>
 	);

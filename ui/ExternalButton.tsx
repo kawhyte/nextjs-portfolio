@@ -54,10 +54,10 @@ export default function ExternalButton({ text, link, children }) {
                         before:duration-500
                         after:absolute
                         after:inset-0 after:rounded-[36px]
-                        after:bg-[position:-3em]
+                        after:bg-position-[-3em]
                         after:bg-no-repeat
-                        after:[background-size:auto_100%]
-                        hover:scale-100 hover:bg-orange-200 hover:before:opacity-100 after:hover:[animation-fill-mode:forwards] focus:scale-100 focus:before:opacity-100 motion-reduce:hover:scale-95 motion-reduce:after:hover:animate-none motion-reduce:focus:scale-95 sm:text-xl md:leading-none"
+                        after:bg-size-[auto_100%]
+                        hover:scale-100 hover:bg-orange-200 hover:before:opacity-100 hover:after:[animation-fill-mode:forwards] focus:scale-100 focus:before:opacity-100 motion-reduce:hover:scale-95 motion-reduce:hover:after:animate-none motion-reduce:focus:scale-95 sm:text-xl md:leading-none"
       >
         {text}
         {children}

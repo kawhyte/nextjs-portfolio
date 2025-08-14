@@ -143,7 +143,7 @@ const PortfolioDetailPage: NextPage<PortfolioDetailPageProps> = ({ portfolio }) 
 			{/* Use className instead of class */}
 			<section className='text-gray-600 bg-gradient'>
 				{/* Hero Orbit Background */}
-				<div className='absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]'>
+				<div className='absolute inset-0 mask-[linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]'>
 					<div
 						className='absolute inset-0 -z-30 opacity-5'
 						style={{ backgroundImage: `url(${"/assets/images/grain.jpg"})` }}>
@@ -200,7 +200,7 @@ const PortfolioDetailPage: NextPage<PortfolioDetailPageProps> = ({ portfolio }) 
 						<Image
 							src={`https:${displayImageUrl}?fm=webp&w=1024&q=75`}
 							blurDataURL={displayImageUrl ? `https:${displayImageUrl}?fm=webp&q=1&w=10` : undefined}
-							placeholder={displayImageUrl ? 'blur' : 'empty'}
+							placeholder={displayImageUrl ? 'blur-sm' : 'empty'}
 							height={ 400  } // Provide fallback height
 							width={600} // Provide fallback width
 							quality={75} // Adjust quality

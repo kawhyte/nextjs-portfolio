@@ -16,7 +16,7 @@ export default function NotFound() {
 						<div className='md:flex justify-between items-center'>
 							<div className='flex justify-between items-center'>
 								<div className='md:hidden'>
-									<button className='text-gray-800 focus:outline-none'>
+									<button className='text-gray-800 focus:outline-hidden'>
 										<svg
 											className='h-12 w-12'
 											viewBox='0 0 24 24'
@@ -43,7 +43,7 @@ export default function NotFound() {
 							</h1>
 							<Link
                                 href='/'
-                                className='px-3 py-2 w-32 font-light transition ease-in duration-200 uppercase hover:bg-yellow-100 hover:text-black border-b text-lg border-yellow-600 focus:outline-none'>
+                                className='px-3 py-2 w-32 font-light transition ease-in duration-200 uppercase hover:bg-yellow-100 hover:text-black border-b text-lg border-yellow-600 focus:outline-hidden'>
 								
 									Take me Home
 								

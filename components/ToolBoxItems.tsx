@@ -24,7 +24,7 @@ const ToolBoxItems = ({
 	return (
 		<div
 			className={twMerge(
-				"flex [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]",
+				"flex mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]",
 				className // Apply optional className here
 			)}>
 			<div
@@ -37,7 +37,7 @@ const ToolBoxItems = ({
 					<div
 						// Use a combination of title and index for a more unique key in case of duplicates
 						key={`${item.title}-${index}`}
-						className='inline-flex items-center align-middle justify-between gap-4 py-2 px-3 outline outline-2 outline-gray-500 rounded-lg bg-white/50'>
+						className='inline-flex items-center align-middle justify-between gap-4 py-2 px-3 outline-solid outline-2 outline-gray-500 rounded-lg bg-white/50'>
 						{/* SVG definitions for gradient - this is fine */}
 						<svg className='size-0 absolute'>
 							<defs>

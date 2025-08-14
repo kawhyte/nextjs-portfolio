@@ -3,7 +3,7 @@ import React from "react";
 function Quote() {
 	return (
 		<div className='my-16 md:my-24 lg:my-32'>
-			<figure className='max-w-5xl mx-auto bg-yellow-50 shadow-sm rounded-2xl p-6 sm:p-8 md:p-10'>
+			<figure className='max-w-5xl mx-auto bg-yellow-50 shadow-xs rounded-2xl p-6 sm:p-8 md:p-10'>
 				<blockquote className='text-center'>
 					<svg
 						className='w-8 h-8 text-gray-300 mx-auto mb-3'

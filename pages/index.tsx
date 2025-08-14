@@ -162,7 +162,7 @@ export default function Index({ portfolio, blog }) {
 						<div className='container'>No projects found.</div>
 					)}
 
-					<div className='lg:mt-0 lg:flex-shrink-0 flex justify-center '>
+					<div className='lg:mt-0 lg:shrink-0 flex justify-center '>
 						<div className=' inline-flex '>
 							<Button
 								className={"bg-white text-black"}
@@ -190,7 +190,7 @@ export default function Index({ portfolio, blog }) {
 						<div className='container'>No blog found.</div>
 					)}
 
-					<div className='lg:mt-0 lg:flex-shrink-0 flex justify-center '>
+					<div className='lg:mt-0 lg:shrink-0 flex justify-center '>
 						<div className=' inline-flex mt-10 '>
 							<Button
 								className={"bg-white text-black"}

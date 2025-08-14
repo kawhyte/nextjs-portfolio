@@ -132,7 +132,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog, }) => {
 				<meta name="description" content={`Read the blog post: ${title || 'Untitled'}`} />
 				<link rel='icon' href='/favicon.ico'></link>
 			</Head>
-			<div className='mb-12 w-full'> {/* Removed max-w-screen-lg for a potentially wider, more modern feel. Added more bottom margin. */}
+			<div className='mb-12 w-full'> {/* Removed max-w-(--breakpoint-lg) for a potentially wider, more modern feel. Added more bottom margin. */}
     <div className='relative'> {/* Added relative positioning for potential absolute positioned elements later (e.g., overlay, parallax effects) */}
 
         {/* Render Image only if thumbnailUrl exists */}
@@ -140,7 +140,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog, }) => {
             <div className='w-full h-64 md:h-80 lg:h-96 overflow-hidden group container  mx-auto'> {/* Fixed height, overflow hidden, group for hover effects */}
                 <Image
                     blurDataURL={thumbnailUrl ? `https:${thumbnailUrl}?fm=webp&q=1&w-20` : undefined} // Smaller blur, increased quality slightly for better preview
-                    placeholder={thumbnailUrl ? 'blur' : 'empty'}
+                    placeholder={thumbnailUrl ? 'blur-sm' : 'empty'}
                     src={`https:${thumbnailUrl}?fm=webp&w=1280&q=80`} // Slightly increased requested width and quality for sharpness on larger screens, but constrained by parent
                     width={imageWidth || 1280} // Adjusted default width, but will be constrained by parent
                     height={imageHeight || 540} // Adjusted default height, but will be constrained by parent
@@ -154,7 +154,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog, }) => {
             </div>
         )}
 
-        <div className='max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8'> {/* Content container */}
+        <div className='max-w-(--breakpoint-lg) mx-auto px-4 sm:px-6 lg:px-8'> {/* Content container */}
             <div className='py-8 md:py-12'> {/* Adjusted padding */}
                 <h1 className='font-sans text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight'> {/* Changed to h1, updated font, size, weight, leading */}
                     {title ?? 'Untitled Blog Post'}
@@ -172,13 +172,13 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog, }) => {
 
     {/* ShareButtons could go here or further down, depending on desired prominence */}
     {/* {shareURL && (
-        <div className='max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 mt-6 mb-8'>
+        <div className='max-w-(--breakpoint-lg) mx-auto px-4 sm:px-6 lg:px-8 mt-6 mb-8'>
             <ShareButtons shareURL={shareURL} />
         </div>
     )} */}
 </div>
 
-			<div className='px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-lg mx-auto text-lg leading-relaxed prose lg:prose-lg'>
+			<div className='px-4 lg:px-0 mt-12 text-gray-700 max-w-(--breakpoint-lg) mx-auto text-lg leading-relaxed prose lg:prose-lg'>
 				{/* Render rich text only if it exists */}
 				{richText && documentToReactComponents(richText as RichTextDocument, renderOptions as Options)}
 			</div>

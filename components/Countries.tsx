@@ -11,7 +11,7 @@ function Countries({countries}) {
         <img
           src={`https://flagcdn.com/${country.code.toLowerCase()}.svg`}
           alt={`${country.name} flag`}
-          className="h-4 w-6 rounded-sm object-cover"
+          className="h-4 w-6 rounded-xs object-cover"
         />
         <span className=" text-xs md:text-sm text-gray-700">{country.name}</span>
       </div>

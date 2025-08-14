@@ -29,7 +29,7 @@ const PortfolioCards: React.FC<PortfolioCardsProps> = ({
 				<div className=' flex flex-col mt-10 gap-20  '>
 					{items.map((item, index) => (
 						<div
-							className="bg-gray-100/50 max-w-6xl mx-3 md:mx-9 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0  after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-gray-700/20 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sm:sticky  after:pointer-events-none "
+							className="bg-gray-100/50 max-w-6xl mx-3 md:mx-9 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0  after:outline-2 after:outline-solid after:-outline-offset-2 after:rounded-3xl after:outline-gray-700/20 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sm:sticky  after:pointer-events-none "
 							key={item.sys.id}
 							// The commented out style prop remains unchanged
 							// style={{

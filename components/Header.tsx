@@ -43,7 +43,7 @@ const Header: React.FC = () => {
 
 	return (
 		<header className=' flex  justify-center items-center z-50 absolute container mx-auto inset-1  h-2 '>
-			<nav className='flex   justify-between items-center fixed top-5 border-2 border-gray-100/90 container mx-auto rounded-full max-w-[23rem] lg:max-w-lg bg-white/40 backdrop-blur'>
+			<nav className='flex   justify-between items-center fixed top-5 border-2 border-gray-100/90 container mx-auto rounded-full max-w-92 lg:max-w-lg bg-white/40 backdrop-blur-sm'>
 				<Link href='/' legacyBehavior>
 					{/* Using <a> tag inside legacyBehavior Link for motion.div */}
 					<a>
