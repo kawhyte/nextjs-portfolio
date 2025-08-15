@@ -1,12 +1,9 @@
-import classNames from "classnames"; // Keep if needed for future conditional classes
 import React from "react";
 import PortfolioCard from "./PortfolioCard";
-// Import the type for a single portfolio item
-// import { PortfolioEntry } from "./PortfolioCard"; // Adjust path if type is defined elsewhere
-import { motion, transform } from "framer-motion"; // Keep if framer-motion is used
-import SectionTitle from "./SectionTitle"; // Keep if SectionTitle is used
+import { motion, transform } from "framer-motion";
+import SectionTitle from "./SectionTitle"; 
 
-// Define the props interface for the component
+
 interface PortfolioCardsProps {
 	items: any; // Use the imported type for the items array
 	hideLastItemOnMobile?: boolean; // Optional boolean prop
@@ -17,9 +14,7 @@ const PortfolioCards: React.FC<PortfolioCardsProps> = ({
 	items,
 	hideLastItemOnMobile = false, // Default value is fine
 }) => {
-	// The 'hideLastItemOnMobile' prop isn't currently used in the rendering logic,
-	// but it's typed and available if needed.
-	// The 'classNames' import is also available if you add conditional styling.
+
 
 	return (
 		<section className='pb-10 lg:p md:container md:mx-auto  '>
