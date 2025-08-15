@@ -190,7 +190,7 @@ export default function Index({ portfolio, blog }) {
             </section> */}
 
 			{/* --- 3. NEW CONDENSED ABOUT SECTION --- */}
-            <section id="about" className="py-20">
+            {/* <section id="about" className="py-20">
                  <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
                     <div className="md:col-span-1 flex justify-center">
                          <Image 
@@ -213,7 +213,7 @@ export default function Index({ portfolio, blog }) {
                         </div>
                     </div>
                  </div>
-            </section>
+            </section> */}
 
 
 			{/* --- 4. RECENT BLOG POSTS --- */}
@@ -238,12 +238,12 @@ export default function Index({ portfolio, blog }) {
                 </div>
             </section>
 
-			<div className=''>
+			{/* <div className=''>
 				<SectionTitle
 					sectionHeadtext={"Real-world Results"}
 					header={"Featured Projects"}
 					description={"Take a look at some of the stuff I've built!"}
-				/>
+				/> */}
 
 				{/* <div className='my-20      '>
 					{portfolio && portfolio.length > 0 ? (
@@ -264,9 +264,9 @@ export default function Index({ portfolio, blog }) {
 						</div>
 					</div>
 				</div> */}
-				<Quote />
-				<AboutSection />
-				<div className='my-20'>
+				{/* <Quote /> */}
+				{/* <AboutSection /> */}
+				{/* <div className='my-20'>
 					<SectionTitle
 						header={"Recent Blog Posts"}
 						description={`Explores my journey as a software developer, diving into technical challenges, coding insights, and the latest technologies.`}
@@ -277,7 +277,7 @@ export default function Index({ portfolio, blog }) {
 						<BlogCards items={blog.slice(0, 4)} />
 					) : (
 						<div className='container'>No blog found.</div>
-					)}
+					)} */}
 
 					{/* <div className='lg:mt-0 lg:shrink-0 flex justify-center '>
 						<div className=' inline-flex mt-10 '>
@@ -289,8 +289,8 @@ export default function Index({ portfolio, blog }) {
 							/>
 						</div>
 					</div> */}
-				</div>
-			</div>
+				{/* </div> */}
+			{/* </div> */}
 		</div>
 	);
 }
