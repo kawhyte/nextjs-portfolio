@@ -1,4 +1,5 @@
 import React from "react"; // Import React
+import { ArrowUpRight } from "lucide-react";
 
 import { createClient } from "contentful";
 import PortfolioCards from "../components/PortfolioCards";
@@ -9,8 +10,9 @@ import TechStack from "../components/TechStack";
 import Link from "next/link";
 import Head from "next/head";
 import SectionTitle from "../components/SectionTitle";
-import Button from "../ui/Button";
+// import Button from "../ui/Button";
 import Quote from "../components/Quote";
+import Image from "next/image";
 import { ImArrowUpRight2 } from "react-icons/im";
 import { FaHtml5 } from "react-icons/fa6";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
@@ -18,6 +20,8 @@ import { FaNodeJs, FaReact } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 import { BiLogoGraphql } from "react-icons/bi";
 import { IoLogoCss3 } from "react-icons/io";
+import { Button } from "@/components/ui/button";
+
 // import techIcons from "../util/techIcons";
 import { GetStaticProps, NextPage } from "next";
 
@@ -139,14 +143,100 @@ export default function Index({ portfolio, blog }) {
 			</Head>
 			{/**/}
 			<Hero />
-			<TechStack
+			{/* <TechStack
 				languages={languages}
 				sectionHeadtext={"Technology Stack"}
 				description={
 					"Here are a few of the technologies and tools I've been working with lately: "
 				}
 				header={"My Tech Stack"}
-			/>
+			/> */}
+
+
+			    {/* --- 1. FEATURED PROJECTS (MOVED UP) --- */}
+            <section id="projects" className="py-20">
+                <div className='container mx-auto text-center'>
+                    <h2 className="text-4xl font-serif font-bold">Featured Projects</h2>
+                    <p className="mt-2 text-lg text-muted-foreground">Take a look at some of the stuff I've built!</p>
+                </div>
+                <div className='my-12'>
+                    {portfolio.length > 0 ? (
+                        <PortfolioCards items={portfolio.slice(0, 4)} />
+                    ) : (
+                        <div className='container'>No projects found.</div>
+                    )}
+                    <div className='mt-12 flex justify-center'>
+                        <Button asChild variant="outline" size="lg">
+                            <Link href="/projects">
+                                View All Projects <ArrowUpRight className="ml-2 h-4 w-4" />
+                            </Link>
+                        </Button>
+                    </div>
+                </div>
+            </section>
+
+
+			 {/* --- 2. NEW TESTIMONIALS SECTION --- */}
+            {/* <section id="testimonials" className="py-20 bg-gray-50">
+                <div className="container mx-auto max-w-4xl">
+                     <h2 className="text-4xl font-serif font-bold text-center mb-12">What My Colleagues Say</h2>
+                     <TestimonialCard 
+                        quote="Kenny is a highly skilled and dedicated developer who consistently delivers high-quality work. His problem-solving abilities and positive attitude make him a valuable asset to any team."
+                        author="Jane Doe"
+                        title="Senior Engineer at TechCorp"
+                        avatarUrl="https://github.com/shadcn.png" // Replace with a real image URL
+                     />
+                </div>
+            </section> */}
+
+			{/* --- 3. NEW CONDENSED ABOUT SECTION --- */}
+            <section id="about" className="py-20">
+                 <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+                    <div className="md:col-span-1 flex justify-center">
+                         <Image 
+                            src="/assets/images/memoji-avatar.png" // Your memoji
+                            width={200}
+                            height={200}
+                            alt="Kenny Whyte's Memoji"
+                            className="rounded-full bg-green-200/50 p-3 shadow-lg"
+                         />
+                    </div>
+                    <div className="md:col-span-2 text-center md:text-left">
+                        <h2 className="text-4xl font-serif font-bold">A Little More About Me</h2>
+                        <p className="mt-4 text-lg text-muted-foreground">
+                            I'm a full-stack engineer passionate about building beautiful, user-friendly applications. My core technologies include C#, .NET, React, and Next.js, but I'm always excited to learn something new. When I'm not coding, I enjoy traveling and exploring new coffee shops.
+                        </p>
+                        <div className="mt-6">
+                             <Button asChild size="lg">
+                                <Link href="/about">Learn More About Me</Link>
+                            </Button>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+
+
+			{/* --- 4. RECENT BLOG POSTS --- */}
+            <section id="blog" className="py-20 bg-gray-50">
+                <div className='container mx-auto text-center'>
+                    <h2 className="text-4xl font-serif font-bold">Recent Blog Posts</h2>
+                    <p className="mt-2 text-lg text-muted-foreground">My latest thoughts on technology and development.</p>
+                </div>
+                <div className='my-12'>
+                    {blog && blog.length > 0 ? (
+                        <BlogCards items={blog.slice(0, 3)} /> // Show 3 for a cleaner grid
+                    ) : (
+                        <div className='container'>No blog posts found.</div>
+                    )}
+                    <div className='mt-12 flex justify-center'>
+                        <Button asChild variant="outline" size="lg">
+                            <Link href="/blog">
+                                View All Posts <ArrowUpRight className="ml-2 h-4 w-4" />
+                            </Link>
+                        </Button>
+                    </div>
+                </div>
+            </section>
 
 			<div className=''>
 				<SectionTitle
@@ -155,7 +245,7 @@ export default function Index({ portfolio, blog }) {
 					description={"Take a look at some of the stuff I've built!"}
 				/>
 
-				<div className='my-20      '>
+				{/* <div className='my-20      '>
 					{portfolio && portfolio.length > 0 ? (
 						<PortfolioCards items={portfolio.slice(0, 4)} />
 					) : (
@@ -171,10 +261,9 @@ export default function Index({ portfolio, blog }) {
 								icon={<ImArrowUpRight2 />}
 							/>
 
-							{/*<Button link={"/projects"}>View All Projects</Button>*/}
 						</div>
 					</div>
-				</div>
+				</div> */}
 				<Quote />
 				<AboutSection />
 				<div className='my-20'>
@@ -190,7 +279,7 @@ export default function Index({ portfolio, blog }) {
 						<div className='container'>No blog found.</div>
 					)}
 
-					<div className='lg:mt-0 lg:shrink-0 flex justify-center '>
+					{/* <div className='lg:mt-0 lg:shrink-0 flex justify-center '>
 						<div className=' inline-flex mt-10 '>
 							<Button
 								className={"bg-white text-black"}
@@ -199,7 +288,7 @@ export default function Index({ portfolio, blog }) {
 								link={"/blogs"}
 							/>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>
