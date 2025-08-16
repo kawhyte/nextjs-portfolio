@@ -5,15 +5,32 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX, FiHome, FiUser, FiGrid, FiEdit3, FiMail } from "react-icons/fi";
-import { Button } from "@/components/ui/button"; // --- NEW: Import Shadcn Button ---
+import { Button } from "@/components/ui/button";
 
-// --- UPDATED: Add a Contact link ---
+// --- Data Configuration ---
 const navLinks = [
-  { title: "Home", href: "/", icon: <FiHome /> },
-  { title: "Projects", href: "/projects", icon: <FiGrid /> },
-  { title: "Blog", href: "/blog", icon: <FiEdit3 /> },
-  { title: "About", href: "/about", icon: <FiUser /> },
+  { title: "Home", href: "/", icon: FiHome },
+  { title: "Projects", href: "/projects", icon: FiGrid },
+  { title: "Blog", href: "/blog", icon: FiEdit3 },
+  { title: "About", href: "/about", icon: FiUser },
 ];
+
+// --- NEW: Animated Icon Component ---
+// This component wraps the icon and handles its animation based on the active state.
+const AnimatedIcon = ({ icon: Icon, isActive }) => {
+    return (
+        <motion.div
+            animate={{
+                scale: isActive ? [1, 1.25, 1] : 1,
+                color: isActive ? "#FFFFFF" : "#a1a1aa", // text-white vs text-zinc-400
+            }}
+            transition={{ duration: 0.3, type: "spring", stiffness: 400, damping: 20 }}
+        >
+            <Icon className="h-4 w-4" />
+        </motion.div>
+    );
+};
+
 
 // --- Reusable Hook for Clicking Outside (Unchanged) ---
 const useClickOutside = (ref, handler) => {
@@ -39,12 +56,9 @@ export default function Navbar() {
 
   useClickOutside(navRef, () => setIsOpen(false));
 
-  // --- Styling Constants (Slightly updated) ---
-  const navClasses =
-    "flex items-center justify-between bg-zinc-800/80 backdrop-blur-md border border-zinc-700/80 rounded-full px-4 py-2 shadow-lg shadow-black/20";
+  const navClasses = "flex items-center justify-between bg-zinc-800/80 backdrop-blur-md border border-zinc-700/80 rounded-full px-4 py-2 shadow-lg shadow-black/20";
   const linkClasses = "relative flex items-center gap-x-2 text-gray-300 hover:text-white transition-colors duration-300 px-3 py-1.5";
-  const mobileButtonClasses =
-    "p-2 text-gray-200 rounded-full hover:bg-white/10 transition-colors duration-300";
+  const mobileButtonClasses = "p-2 text-gray-200 rounded-full hover:bg-white/10 transition-colors duration-300";
 
   return (
     <header className="fixed top-4 inset-x-0 z-50 flex justify-center">
@@ -54,7 +68,6 @@ export default function Navbar() {
             KW.
           </Link>
 
-          {/* --- UPDATED: Desktop Nav with Sliding Pill --- */}
           <ul className="hidden md:flex items-center">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -70,8 +83,9 @@ export default function Navbar() {
                       />
                     )}
                     <span className="relative z-10 flex items-center gap-x-2">
-                      {React.cloneElement(link.icon, { className: "h-4 w-4" })}
-                      {link.title}
+                      {/* --- UPDATED: Use the new AnimatedIcon component --- */}
+                      <AnimatedIcon icon={link.icon} isActive={isActive} />
+                      <span>{link.title}</span>
                     </span>
                   </Link>
                 </motion.li>
@@ -79,16 +93,19 @@ export default function Navbar() {
             })}
           </ul>
 
-          {/* --- NEW: Desktop CTA Button --- */}
-          <div className="hidden md:block">
-              <Button className="bg-gray-100" asChild variant="ghost" size="sm">
+             <div className="hidden md:block">
+              <Button 
+                asChild 
+                variant="ghost" 
+                size="sm" 
+                className="text-gray-300 hover:bg-zinc-700 hover:text-white transition-colors"
+              >
                   <Link href="/contact">
                       <FiMail className="mr-2 h-4 w-4"/>
                       Contact
                   </Link>
               </Button>
           </div>
-
           <div className="md:hidden">
             <motion.button
               whileTap={{ scale: 0.95 }}
@@ -112,8 +129,9 @@ export default function Navbar() {
             >
               <div className="bg-zinc-900/90 backdrop-blur-lg border border-white/10 rounded-2xl p-2">
                 <ul className="flex flex-col space-y-1">
-                  {[...navLinks, { title: "Contact", href: "/contact", icon: <FiMail /> }].map((link, i) => {
+                  {[...navLinks, { title: "Contact", href: "/contact", icon: FiMail }].map((link, i) => {
                     const isActive = pathname === link.href;
+                    const Icon = link.icon;
                     return (
                       <motion.li
                         key={link.href}
@@ -132,7 +150,7 @@ export default function Navbar() {
                               : "text-gray-300 hover:bg-zinc-800"
                           }`}
                         >
-                          {React.cloneElement(link.icon, { className: "h-5 w-5" })}
+                          <Icon className="h-5 w-5" />
                           <span>{link.title}</span>
                         </Link>
                       </motion.li>
@@ -149,5 +167,13 @@ export default function Navbar() {
 }
 
 // --- Animation Variants (Unchanged) ---
-const menuVariants = { /* ... */ };
-const menuLinkVariants = { /* ... */ };
+const menuVariants = {
+  initial: { opacity: 0, y: -10 },
+  animate: { opacity: 1, y: 0, transition: { staggerChildren: 0.05 } },
+  exit: { opacity: 0, y: -10 },
+};
+const menuLinkVariants = {
+  initial: { opacity: 0, y: 10 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: 10 },
+};

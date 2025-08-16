@@ -1,111 +1,70 @@
-// /util/rich-text-types.js (or wherever this file is)
+// In your /util/rich-text-types.ts file
 
+import React, { useState } from 'react';
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import Image from "next/image";
-import hljs from 'highlight.js';
-import { useEffect, useRef } from 'react';
+import Link from "next/link";
 
-// --- NEW: A helper component for syntax highlighting ---
-const CodeBlock = ({ code }) => {
-    const codeRef = useRef(null);
+// --- NEW: A dedicated component for rendering images with a blur-in effect ---
+const RichTextImage = ({ asset }) => {
+    const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        if (codeRef.current) {
-            hljs.highlightElement(codeRef.current);
-        }
-    }, [code]);
+    // Safely access asset data
+    const url = asset?.fields?.file?.url;
+    const width = asset?.fields?.file?.details?.image?.width;
+    const height = asset?.fields?.file?.details?.image?.height;
+    const title = asset?.fields?.title;
+    const description = asset?.fields?.description;
+    const imageAlt = description || title || 'Embedded asset';
+
+    if (!url || !width || !height) {
+        return null; // Don't render anything if essential data is missing
+    }
+
+    // Generate a tiny, low-quality placeholder for the blur effect
+    const blurDataURL = `https:${url}?w=10&q=5&fm=webp`;
 
     return (
-        <pre className="my-6 rounded-md">
-            <code ref={codeRef} className="rounded-md">
-                {code}
-            </code>
-        </pre>
+        <figure className='my-8 overflow-hidden rounded-lg shadow-md'>
+            <Image
+                src={`https:${url}?w=1200&q=80&fm=webp`}
+                width={width}
+                height={height}
+                alt={imageAlt}
+                placeholder="blur"
+                blurDataURL={blurDataURL}
+                className={`
+                    w-full h-auto duration-700 ease-in-out
+                    ${isLoading ? 'blur-lg scale-105' : 'blur-0 scale-100'}
+                `}
+                onLoadingComplete={() => setIsLoading(false)}
+            />
+            {title && (
+                <figcaption className="mt-2 text-sm text-center text-muted-foreground">
+                    {title}
+                </figcaption>
+            )}
+        </figure>
     );
 };
 
-// Your existing website URL constant
-const website_url = "https://www.kennywhyte.com";
 
 export const renderOptions = {
-    // NOTE: We've removed PARAGRAPH, LISTS, and HEADINGS.
-    // The `prose` class on the parent element will style them automatically.
-
     renderNode: {
-        // --- UPDATED: Optimized Images with next/image ---
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
-            const { url, details } = node.data.target.fields.file;
-            const { width, height } = details.image;
-            const { title, description } = node.data.target.fields;
-
-            return (
-                <figure className='my-8 flex flex-col items-center'>
-                    <Image
-                        src={`https:${url}`}
-                        width={width}
-                        height={height}
-                        alt={description || title || 'Blog post image'}
-                        className='rounded-lg shadow-lg'
-                    />
-                    {title && (
-                        <figcaption className="mt-2 text-sm text-center text-gray-600">
-                            {title}
-                        </figcaption>
-                    )}
-                </figure>
-            );
-        },
-
-        // --- UPDATED: Professional Code Blocks ---
-        [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
-            const contentType = node.data.target.sys.contentType.sys.id;
-            const fields = node.data.target.fields;
-
-            if (contentType === "codeBlock") {
-                return <CodeBlock code={fields.code} />;
+            // Check if the asset is an image before rendering
+            if (node.data.target?.fields?.file?.contentType.startsWith('image/')) {
+                return <RichTextImage asset={node.data.target} />;
             }
-
-            // --- UPDATED: Responsive Video Embeds ---
-            if (contentType === "videoEmbed") {
-                return (
-                    <div className="my-8 aspect-w-16 aspect-h-9">
-                        <iframe
-                            src={fields.embedUrl}
-                            title={fields.title}
-                            className="w-full h-full"
-                            allowFullScreen
-                        />
-                    </div>
-                );
-            }
+            // You can add handlers for other asset types here (e.g., videos, PDFs)
+            return null;
         },
-
-        // This is great, handles internal/external links perfectly.
-        // prose will style this, but a custom color override is fine if you want it.
-        [INLINES.HYPERLINK]: (node) => {
-            const uri = node.data.uri;
-            const isInternal = uri.startsWith(website_url) || uri.startsWith('/');
-            return (
-                <a
-                    href={uri}
-                    target={isInternal ? "_self" : "_blank"}
-                    rel={isInternal ? "" : "noopener noreferrer"}
-                    // Using prose's link styling is often best, but you can override:
-                    // className='text-blue-600 hover:underline'
-                >
-                    {node.content[0].value}
-                </a>
-            );
-        },
-
-        // Your custom blockquote is well-designed. Let's keep it!
-        [BLOCKS.QUOTE]: (node, children) => (
-            <blockquote className='my-6 border-l-4 border-gray-300 pl-4 italic text-gray-700'>
-                {children}
-            </blockquote>
-        ),
-
-        // A simple HR is fine. prose will style this as well.
-        [BLOCKS.HR]: () => <hr className='my-8' />,
+        // --- IMPORTANT: Add your other renderers here ---
+        // For example, your renderers for quotes, links, etc., should be included
+        // to ensure they continue to function correctly.
+        /*
+        [BLOCKS.QUOTE]: (node, children) => ( ... ),
+        [INLINES.HYPERLINK]: (node) => ( ... ),
+        */
     },
 };

@@ -5,12 +5,13 @@ import { Button } from "@/components/ui/button";
 import HeroOrbit from "./HeroOrbit";
 import { Triangle, Plus, Zap, Github, Linkedin, Twitter } from "lucide-react"; 
 import memojiImage from '/public/assets/images/memoji-avatar.png';
+import { Separator } from "@radix-ui/react-separator";
 const Hero = () => {
     return (
         <div className='overflow-hidden '>
             <div className='py-12 md:py-20 bg-green-100 bg-gradient relative z-0 mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]'>
                 <div className='absolute inset-0 '>
-                    {/* <div
+                    <div
                         className='absolute   inset-0 -z-30 opacity-5  '
                         style={{
                             backgroundImage: `url(${"/assets/images/grain.jpg"})`,
@@ -21,9 +22,9 @@ const Hero = () => {
                         <div className='hidden md:block  md:size-[220px] lg:size-[520px] hero-ring  '></div>
                         <div className='hidden md:block  md:size-[420px]  lg:size-[720px] hero-ring  '></div>
                         <div className='hidden md:block  md:size-[620px] lg:size-[920px] hero-ring  '></div>
-                    </div> */}
+                    </div>
 
-                   {/* <div className=' '>
+                   <div className=' '>
                      
                         <HeroOrbit
                             size={480}
@@ -110,7 +111,7 @@ const Hero = () => {
                             spinDuration={"6s"}>
                             <Triangle className='size-8 text-green-300 ' />
                         </HeroOrbit>
-                    </div>  */}
+                    </div> 
                 </div>
 
                 <div className='container  flex flex-col  items-center px-3 mx-auto  mt-20 '>
@@ -150,7 +151,7 @@ const Hero = () => {
                                 <Link href="/contact">Contact Me</Link>
                             </Button>
                         </div>
-
+ <Separator className="my-4" />
                         {/* --- NEW: Social Links Section --- */}
                         <div className="mt-6 flex justify-center items-center gap-4">
                             <Button asChild variant="ghost" size="icon">
