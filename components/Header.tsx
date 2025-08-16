@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/button"; // --- NEW: Import Shadcn Butto
 // --- UPDATED: Add a Contact link ---
 const navLinks = [
   { title: "Home", href: "/", icon: <FiHome /> },
-  { title: "About", href: "/about", icon: <FiUser /> },
   { title: "Projects", href: "/projects", icon: <FiGrid /> },
   { title: "Blog", href: "/blog", icon: <FiEdit3 /> },
+  { title: "About", href: "/about", icon: <FiUser /> },
 ];
 
 // --- Reusable Hook for Clicking Outside (Unchanged) ---
@@ -81,7 +81,7 @@ export default function Navbar() {
 
           {/* --- NEW: Desktop CTA Button --- */}
           <div className="hidden md:block">
-              <Button asChild variant="ghost" size="sm">
+              <Button className="bg-gray-100" asChild variant="ghost" size="sm">
                   <Link href="/contact">
                       <FiMail className="mr-2 h-4 w-4"/>
                       Contact

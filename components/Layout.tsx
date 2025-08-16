@@ -23,12 +23,12 @@ export default function Layout({ children }) {
             <Header />
 
             {/* --- ADD PADDING HERE --- */}
-            <div className='pt-24 '>
+            <div className='pt- '>
 				
 				
 				{children}</div>
 
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }

@@ -5,27 +5,26 @@ import { Button } from "@/components/ui/button";
 import HeroOrbit from "./HeroOrbit";
 import { Triangle, Plus, Zap, Github, Linkedin, Twitter } from "lucide-react"; 
 import memojiImage from '/public/assets/images/memoji-avatar.png';
-
 const Hero = () => {
     return (
-        <div className='overflow-hidden'>
+        <div className='overflow-hidden '>
             <div className='py-12 md:py-20 bg-green-100 bg-gradient relative z-0 mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]'>
                 <div className='absolute inset-0 '>
-                    <div
+                    {/* <div
                         className='absolute   inset-0 -z-30 opacity-5  '
                         style={{
                             backgroundImage: `url(${"/assets/images/grain.jpg"})`,
                         }}>
-                        {/**/}
+                      
                         <div className='hidden md:block  md:size-[20px]  lg:size-[120px] hero-ring  '></div>
                         <div className='hidden md:block  md:size-[120px] lg:size-[320px] hero-ring  '></div>
                         <div className='hidden md:block  md:size-[220px] lg:size-[520px] hero-ring  '></div>
                         <div className='hidden md:block  md:size-[420px]  lg:size-[720px] hero-ring  '></div>
                         <div className='hidden md:block  md:size-[620px] lg:size-[920px] hero-ring  '></div>
-                    </div>
+                    </div> */}
 
-                    <div className=' '>
-                        {/**/}
+                   {/* <div className=' '>
+                     
                         <HeroOrbit
                             size={480}
                             rotation={30}
@@ -111,7 +110,7 @@ const Hero = () => {
                             spinDuration={"6s"}>
                             <Triangle className='size-8 text-green-300 ' />
                         </HeroOrbit>
-                    </div>
+                    </div>  */}
                 </div>
 
                 <div className='container  flex flex-col  items-center px-3 mx-auto  mt-20 '>
@@ -135,7 +134,7 @@ const Hero = () => {
                             </div>
                         </div>
                         <div className='max-w-lg lg:max-w-4xl'>
-                            <h1 className=' font-serif text-3xl md:text-5xl lg:text-7xl text-center mt-8 leading-tight'>
+                            <h1 className=' font-serif text-3xl md:text-5xl lg:text-6xl text-center mt-8 leading-tight'>
                             Full-Stack Engineer Building Modern Web Experiences.
                             </h1>
                             <p className='mt-4 text-center text-gray-900 md:text-lg lg:text-xl'>
@@ -145,7 +144,7 @@ const Hero = () => {
 
                         <div className='mt-8 flex flex-col sm:flex-row items-center gap-4'>
                             <Button asChild size="lg">
-                                <Link href="/projects">View My Work</Link>
+                                <Link href="/projects">View My Projects</Link>
                             </Button>
                             <Button asChild variant="outline" size="lg">
                                 <Link href="/contact">Contact Me</Link>
