@@ -1,10 +1,11 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Document } from "@contentful/rich-text-types";
-import { renderOptions } from "../util/rich-text-types";
+// import { renderOptions } from "../util/rich-text-types";
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Target, Lightbulb, BarChart } from "lucide-react"; // Icons for each section
+import { proseRenderOptions } from "../util/rich-text-types";
 
 // --- Type Definitions (Updated for clarity) ---
 interface CaseStudyProps {
@@ -26,7 +27,7 @@ const CaseStudySection = ({ title, description, icon: Icon, richText }) => (
         </div>
         {/* Right Column: Rich Text Content */}
         <div className="md:col-span-3 prose prose-lg max-w-none">
-            {documentToReactComponents(richText, renderOptions)}
+            {documentToReactComponents(richText, proseRenderOptions)}
         </div>
     </div>
 );

@@ -45,7 +45,14 @@ export interface ContentfulImage {
 }
 
 
-
+export interface Technology {
+    sys: { id: string };
+    fields: {
+        name: string;
+        lucideIconName?: string;
+        customIcon?: ContentfulImage;
+    };
+}
 
 
 
@@ -61,8 +68,8 @@ export interface PortfolioItemFields {
   summary?: string; // Optional
   url?: string; // Optional (View Code link)
   demoUrl?: string; // Optional (Live Demo link)
-  technology?: ContentfulImage[]; // Optional array of technology logo images
-  tech?: string[]; // Optional array of tech name strings (used by TechStack)
+  // technology?: ContentfulImage[]; // Optional array of technology logo images
+  // tech?: string[]; // Optional array of tech name strings (used by TechStack)
   approach?: string; // Optional
   problem?: string; // Optional
   result?: string; // Optional
@@ -71,6 +78,7 @@ export interface PortfolioItemFields {
   richTextResult?: RichTextDocument; // Optional
   featured?: boolean; // Added from index.tsx usage
   sortByNumber?: number; // Added from index.tsx usage
+  technologies?: Technology[];
 }
 
 

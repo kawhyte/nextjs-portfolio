@@ -56,7 +56,7 @@ const AboutPage = () => {
 
             {/* --- 1. Hero Section --- */}
             <section className="container mx-auto max-w-5xl text-center py-16 md:py-24">
-                <div className="flex justify-center mb-8">
+                {/* <div className="flex justify-center mb-8">
                     <Image
                         src="/assets/images/memoji-avatar.png" // Your memoji
                         width={150}
@@ -64,12 +64,12 @@ const AboutPage = () => {
                         alt="Kenny Whyte's Memoji"
                         className="rounded-full bg-green-200/50 p-3 shadow-lg"
                     />
-                </div>
+                </div> */}
                 <h1 className="font-serif text-4xl md:text-6xl font-bold">Hi, I'm Kenny Whyte.</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
                     I'm a passionate full-stack engineer dedicated to building software that is not only functional but also intuitive and enjoyable to use. I thrive on solving complex problems and turning innovative ideas into reality.
                 </p>
-                <div className="mt-8 flex justify-center items-center gap-4">
+                {/* <div className="mt-8 flex justify-center items-center gap-4">
                     <Button asChild size="lg">
                         <a href="/kenny-whyte-resume.pdf" download>
                             <Download className="mr-2 h-4 w-4" /> Download Resume
@@ -80,7 +80,7 @@ const AboutPage = () => {
                             <Mail className="mr-2 h-4 w-4" /> Get in Touch
                         </Link>
                     </Button>
-                </div>
+                </div> */}
             </section>
 
             {/* --- 2. My Journey Section --- */}
