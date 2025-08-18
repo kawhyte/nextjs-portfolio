@@ -4,18 +4,94 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import * as LucideIcons from "lucide-react";
 import { ArrowUpRight } from "lucide-react";
+import { twMerge } from "tailwind-merge";
 
-// --- Type Definitions (Unchanged) ---
-interface ThumbnailFile { /* ... */ }
-// ... (rest of your types are perfect)
-interface PortfolioCardProps { portfolio: any; }
+// --- Type Definitions ---
+// It's best practice to define these in a separate types file (e.g., /types/contentful.ts)
+interface Highlight {
+    sys: { id: string };
+    fields: {
+        name: string;
+        isMetric?: boolean;
+        iconName?: string;
+        link?: {
+            sys: { contentType: { sys: { id: string } } };
+            fields: { slug: string };
+        };
+    };
+}
 
-const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
+interface Technology {
+    sys: { id: string };
+    fields: { title: string };
+}
+
+interface PortfolioItem {
+    fields: {
+        name: string;
+        slug: string;
+        summary: string;
+        thumbnail: any; // Replace 'any' with a proper ContentfulImage type
+        highlights?: Highlight[];
+        technology?: Technology[];
+        projectHighlights?:Highlight[]
+    };
+}
+
+interface PortfolioCardProps {
+    portfolio: PortfolioItem;
+}
+
+// ---A dedicated component to render each highlight with advanced logic ---
+const HighlightItem = ({ highlight }: { highlight: Highlight }) => {
+    const { name, isMetric, iconName, link } = highlight.fields;
+ console.log("HIGH", highlight.fields)
+    // Determine which icon to use
+    const IconComponent = iconName && LucideIcons[iconName] ? LucideIcons[iconName] : BiCheckCircle;
     
-    console.log("PPORT",portfolio);
+    // The main content of the highlight (icon and text)
+    const content = (
+        <div className={twMerge(
+            "flex gap-3 items-start text-sm",
+            isMetric && "font-bold text-green-700"
+        )}>
+            <IconComponent className={twMerge(
+                "w-5 h-5 shrink-0 mt-0.5",
+                isMetric ? "text-green-600" : "text-green-500"
+            )} />
+            <span>{name}</span>
+        </div>
+    );
 
-    const { name, slug, summary, thumbnail, projectHighlights, portfolioHighlights, technology } = portfolio.fields;
+    // If there's a link, wrap the content in a Next.js Link component
+    if (link?.fields?.slug) {
+        const contentType = link.sys.contentType.sys.id;
+        const href = `/${contentType === 'portfolio' ? 'portfolio' : 'blog'}/${link.fields.slug}`;
+
+        return (
+            <li key={highlight.sys.id}>
+                <Link href={href} className="hover:opacity-70 transition-opacity">
+                    {content}
+                </Link>
+            </li>
+        );
+    }
+
+    // Otherwise, just render the content in a list item
+    return (
+        <li key={highlight.sys.id}>
+            {content}
+        </li>
+    );
+};
+
+
+// --- Main Portfolio Card Component ---
+const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
+    // Destructure the new 'highlights' field
+    const { name, slug, summary, thumbnail, projectHighlights, technology } = portfolio.fields;
     const imageAltText = thumbnail.fields.title || name || 'Portfolio project thumbnail';
 
     return (
@@ -34,32 +110,16 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
                         )}
                        <h3 className='font-serif text-2xl md:text-3xl font-bold'>{name}</h3>
                         
-                        {/* --- 1. Summary is now hidden on small screens (below md) --- */}
                         <p className='text-muted-foreground mt-2 text-sm md:text-base hidden md:block'>{summary}</p>
 
                         <hr className='my-5' />
 
+                        {/* --- UPDATED: Use the new highlights logic --- */}
                         <ul className='text-muted-foreground flex flex-col gap-3'>
-                            {/* --- 2. Show fewer highlights on small screens --- */}
-                            {portfolioHighlights?.slice(0, 3).map((item, index) => (
-                                <li key={item} className={`flex gap-3 items-start text-sm ${index > 0 ? 'hidden md:flex' : 'flex'}`}>
-                                    <BiCheckCircle className='w-5 h-5 text-green-500 shrink-0 mt-0.5' />
-                                    <span>{item}</span>
-                                </li>
+                            {projectHighlights?.slice(0, 3).map((highlight) => (
+                                <HighlightItem key={highlight.sys.id} highlight={highlight} />
                             ))}
                         </ul>
-
-                        <ul className='text-muted-foreground flex flex-col gap-3'>
-    {/* Map over the new 'highlights' array of objects */}
-    {projectHighlights?.slice(0, 3).map((highlight) => (
-        // Use the highlight's sys.id for the key
-        <li key={highlight.sys.id} className='flex gap-3 items-start text-sm'>
-            <BiCheckCircle className='w-5 h-5 text-green-500 shrink-0 mt-0.5' />
-            {/* Access the text from the 'fields' object */}
-            <span className="">{highlight.fields.name}</span>
-        </li>
-    ))}
-</ul>
                     </div>
 
                     <div className="flex-grow" />

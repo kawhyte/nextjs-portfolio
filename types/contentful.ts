@@ -1,4 +1,3 @@
-import { Highlight } from './contentful';
 // /Users/Kenny/Nextjs_Portfolio/nextjs-portfolio/types/contentful.ts
 
 // You might want to import types from the contentful package if you have it installed
