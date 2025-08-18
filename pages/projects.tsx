@@ -39,6 +39,8 @@ export const getStaticProps: GetStaticProps<PortfolioPageProps> = async () => {
 }
 
 export default function Recipes({ portfolio }) {
+
+	console.log("PORTFOLIO", portfolio)
 	return (
 		<>
 			<SectionHero

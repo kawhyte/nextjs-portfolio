@@ -1,3 +1,4 @@
+import { Highlight } from './contentful';
 // /Users/Kenny/Nextjs_Portfolio/nextjs-portfolio/types/contentful.ts
 
 // You might want to import types from the contentful package if you have it installed
@@ -54,6 +55,13 @@ export interface Technology {
     };
 }
 
+export interface Highlight {
+    sys: { id: string };
+    fields: {
+        text: string; // Or whatever you named the field in Contentful
+    };
+}
+
 
 
 // Add/Update PortfolioItemFields to include all fields used
@@ -79,6 +87,8 @@ export interface PortfolioItemFields {
   featured?: boolean; // Added from index.tsx usage
   sortByNumber?: number; // Added from index.tsx usage
   technologies?: Technology[];
+  projectHighlights?: Highlight[]
+  // portfolioHighlights?:Highlight[]
 }
 
 

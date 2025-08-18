@@ -9,10 +9,13 @@ import { ArrowUpRight } from "lucide-react";
 // --- Type Definitions (Unchanged) ---
 interface ThumbnailFile { /* ... */ }
 // ... (rest of your types are perfect)
-interface PortfolioCardProps { portfolio: PortfolioEntry; }
+interface PortfolioCardProps { portfolio: any; }
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
-    const { name, slug, summary, thumbnail, portfolioHighlights, technology } = portfolio.fields;
+    
+    console.log("PPORT",portfolio);
+
+    const { name, slug, summary, thumbnail, projectHighlights, portfolioHighlights, technology } = portfolio.fields;
     const imageAltText = thumbnail.fields.title || name || 'Portfolio project thumbnail';
 
     return (
@@ -45,6 +48,18 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
                                 </li>
                             ))}
                         </ul>
+
+                        <ul className='text-muted-foreground flex flex-col gap-3'>
+    {/* Map over the new 'highlights' array of objects */}
+    {projectHighlights?.slice(0, 3).map((highlight) => (
+        // Use the highlight's sys.id for the key
+        <li key={highlight.sys.id} className='flex gap-3 items-start text-sm'>
+            <BiCheckCircle className='w-5 h-5 text-green-500 shrink-0 mt-0.5' />
+            {/* Access the text from the 'fields' object */}
+            <span className="">{highlight.fields.name}</span>
+        </li>
+    ))}
+</ul>
                     </div>
 
                     <div className="flex-grow" />
