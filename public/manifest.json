@@ -13,7 +13,7 @@
 			"type": "image/x-icon"
 		},
 		{
-			"src": "/public/assets/icons/star.svg",
+			"src": "/assets/icons/star.svg",
 			"sizes": "any",
 			"type": "image/svg+xml"
 		}
