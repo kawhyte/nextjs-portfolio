@@ -6,7 +6,6 @@ export default {
 		"./components/**/*.{js,ts,jsx,tsx}",
 		"./ui/**/*.{js,ts,jsx,tsx}",
 		"./assets/**/*.{js,ts,jsx,tsx,png,svg}",
-		"./components/**/*.{js,ts,jsx,tsx}",
 		"./src/**/*.{js,ts,jsx,tsx,mdx}",
 		"./intro-template/**/*.{js,ts,jsx,tsx}",
 		"./pages/**/*.{js,ts,jsx,tsx}",
@@ -14,12 +13,7 @@ export default {
 		"./public/**/*.html",
 	],
   theme: {
-    lineClamp: [
-      '1',
-      '2',
-      '3',
-    ],
-		screens: {
+    screens: {
 			sm: "375px",
 			md: "768px",
 			lg: "1200px",
@@ -32,7 +26,13 @@ export default {
 			},
 		},
 		extend: {
-			keyframes: {
+      lineClamp: {
+        '1': '1',
+        '2': '2',
+        '3': '3',
+      },
+
+	  keyframes: {
 				float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-4px)' },
