@@ -169,7 +169,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
 
                 {/* 3. HERO IMAGE */}
                 {thumbnail?.fields?.file?.url && (
-                    <div className='mb-8 md:mb-12'>
+                    <div className='mb-8 max-w-5xl mx-auto md:mb-12'>
                          <Image
                             src={`https:${thumbnail.fields.file.url}?fm=webp&w=1280&q=80`}
                             width={1280}
