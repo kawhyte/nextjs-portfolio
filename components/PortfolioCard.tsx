@@ -16,8 +16,8 @@ interface PortfolioCardProps {
 // --- Main Portfolio Card Component ---
 const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
     // Destructure the new 'highlights' field
-    const { title, slug, summary, thumbnail, projectHighlights, technologies } = portfolio.fields;
-    const imageAltText = thumbnail.fields.title || title || 'Portfolio project thumbnail';
+    const { name, slug, summary, thumbnail, projectHighlights, technologies } = portfolio.fields;
+    const imageAltText = thumbnail.fields.title || name || 'Portfolio project thumbnail';
 
     return (
         <div className="bg-gray-100/50 rounded-2xl p-8 h-full flex flex-col">
@@ -42,7 +42,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
                                 ))}
                             </div>
                         )} */}
-                       <h3 className='font-serif text-2xl md:text-3xl font-bold'>{title}</h3>
+                       <h3 className='font-serif text-2xl md:text-3xl font-bold'>{name}</h3>
                         
                         <p className='text-muted-foreground mt-2 text-sm md:text-base hidden md:block'>{summary}</p>
 
@@ -50,7 +50,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
 
                         {/* --- UPDATED: Use the new highlights logic --- */}
                         <ul className='text-muted-foreground flex flex-col gap-3'>
-                            {projectHighlights?.slice(0, 3).map((highlight) => (
+                            {projectHighlights?.slice(0, 4).map((highlight) => (
                                 <HighlightItem key={highlight.sys.id} highlight={highlight} />
                             ))}
                         </ul>
