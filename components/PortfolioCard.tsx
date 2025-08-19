@@ -5,23 +5,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import HighlightItem from "./HighlightItem";
-import { Highlight } from "../types/contentful";
-
-interface Technology {
-    sys: { id: string };
-    fields: { title: string };
-}
-
-interface PortfolioItem {
-    fields: {
-        name: string;
-        slug: string;
-        summary: string;
-        thumbnail: any; // Replace 'any' with a proper ContentfulImage type
-        technology?: Technology[];
-        projectHighlights?: Highlight[];
-    };
-}
+import { Highlight, PortfolioItem, Technology } from "../types/contentful";
 
 interface PortfolioCardProps {
     portfolio: PortfolioItem;
@@ -30,24 +14,24 @@ interface PortfolioCardProps {
 // --- Main Portfolio Card Component ---
 const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
     // Destructure the new 'highlights' field
-    const { name, slug, summary, thumbnail, projectHighlights, technology } = portfolio.fields;
-    const imageAltText = thumbnail.fields.title || name || 'Portfolio project thumbnail';
+    const { title, slug, summary, thumbnail, projectHighlights, technologies } = portfolio.fields;
+    const imageAltText = thumbnail.fields.title || title || 'Portfolio project thumbnail';
 
     return (
         <div className="bg-gray-100/50 rounded-2xl p-8 h-full flex flex-col">
             <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12'>
                 <div className="flex flex-col">
                     <div>
-                        {technology && technology.length > 0 && (
+                        {technologies && technologies.length > 0 && (
                             <div className='flex flex-wrap gap-2 mb-4'>
-                                {technology.slice(0, 4).map((item) => (
+                                {technologies.slice(0, 4).map((item) => (
                                     <Badge key={item.sys.id} variant="outline" className="bg-background">
-                                        {item.fields.title}
+                                        {item.fields.name}
                                     </Badge>
                                 ))}
                             </div>
                         )}
-                       <h3 className='font-serif text-2xl md:text-3xl font-bold'>{name}</h3>
+                       <h3 className='font-serif text-2xl md:text-3xl font-bold'>{title}</h3>
                         
                         <p className='text-muted-foreground mt-2 text-sm md:text-base hidden md:block'>{summary}</p>
 
