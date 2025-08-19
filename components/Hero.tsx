@@ -150,29 +150,29 @@ const Hero = () => {
                                 <Link href="/projects">View My Projects</Link>
                             </Button>
                             <Button asChild variant="outline" size="lg">
-                                <Link href="/contact">Contact Me</Link>
+                                <a href="https://linkedin.com/in/kawhyte" target="_blank" rel="noopener noreferrer">Contact Me</a>
                             </Button>
                         </div>
  <Separator className="my-4" />
                         {/* --- NEW: Social Links Section --- */}
                         <div className="mt-6 flex justify-center items-center gap-4">
                             <Button asChild variant="ghost" size="icon">
-                                <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <a href="https://github.com/kawhyte" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                                     <FaGithub className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                                 </a>
                             </Button>
                             <Button asChild variant="ghost" size="icon">
-                                <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <a href="https://linkedin.com/in/kawhyte" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                                     <FaLinkedin className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                                 </a>
                             </Button>
                             <Button asChild variant="ghost" size="icon">
-                                <a href="https://codepen.io/your-username" target="_blank" rel="noopener noreferrer" aria-label="Codepen">
+                                <a href="https://codepen.io/kawhyte" target="_blank" rel="noopener noreferrer" aria-label="Codepen">
                                     <FaCodepen className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                                 </a>
                             </Button>
                             <Button asChild variant="ghost" size="icon">
-                                <a href="https://bsky.app/profile/your-username.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
+                                <a href="https://bsky.app/profile/kawhyte.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
                                     <FaBluesky className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                                 </a>
                             </Button>

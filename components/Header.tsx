@@ -100,10 +100,10 @@ export default function Navbar() {
                 size="sm" 
                 className="text-gray-300 hover:bg-zinc-700 hover:text-white transition-colors"
               >
-                  <Link href="/contact">
+                  <a href="https://linkedin.com/in/kawhyte" target="_blank" rel="noopener noreferrer">
                       <FiMail className="mr-2 h-4 w-4"/>
                       Contact
-                  </Link>
+                  </a>
               </Button>
           </div>
           <div className="md:hidden">
@@ -129,7 +129,7 @@ export default function Navbar() {
             >
               <div className="bg-zinc-900/90 backdrop-blur-lg border border-white/10 rounded-2xl p-2">
                 <ul className="flex flex-col space-y-1">
-                  {[...navLinks, { title: "Contact", href: "/contact", icon: FiMail }].map((link, i) => {
+                  {navLinks.map((link, i) => {
                     const isActive = pathname === link.href;
                     const Icon = link.icon;
                     return (
@@ -156,6 +156,25 @@ export default function Navbar() {
                       </motion.li>
                     );
                   })}
+                  <motion.li
+                    key="contact-mobile"
+                    custom={navLinks.length}
+                    variants={menuLinkVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                  >
+                    <a
+                      href="https://linkedin.com/in/kawhyte"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center gap-x-3 w-full p-3 rounded-lg text-lg transition-colors text-gray-300 hover:bg-zinc-800"
+                    >
+                      <FiMail className="h-5 w-5" />
+                      <span>Contact</span>
+                    </a>
+                  </motion.li>
                 </ul>
               </div>
             </motion.div>
