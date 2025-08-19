@@ -1,13 +1,30 @@
-// In your /util/rich-text-types.js file
 
 import React, { useState } from 'react';
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES, Block, Inline } from "@contentful/rich-text-types";
 import Image from "next/image";
-import Link from "next/link";
+import { Options } from '@contentful/rich-text-react-renderer';
 
-// --- Reusable Image Component (Unchanged) ---
-const RichTextImage = ({ asset }) => {
-    // ... (your existing RichTextImage component code)
+interface ContentfulAsset {
+    fields: {
+        file: {
+            url: string;
+            details: {
+                image: {
+                    width: number;
+                    height: number;
+                };
+            };
+        };
+        title?: string;
+        description?: string;
+    };
+}
+
+interface RichTextImageProps {
+    asset: ContentfulAsset;
+}
+
+const RichTextImage: React.FC<RichTextImageProps> = ({ asset }) => {
     const [isLoading, setIsLoading] = useState(true);
     const url = asset?.fields?.file?.url;
     const width = asset?.fields?.file?.details?.image?.width;
@@ -40,46 +57,36 @@ const RichTextImage = ({ asset }) => {
     );
 };
 
-// --- 1. Default Render Options (for pages WITHOUT .prose) ---
-// This version includes basic Tailwind classes for lists to ensure they are styled.
-export const defaultRenderOptions = {
+export const defaultRenderOptions: Options = {
     renderNode: {
-        [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline) => {
             if (node.data.target?.fields?.file?.contentType.startsWith('image/')) {
-                return <RichTextImage asset={node.data.target} />;
+                return <RichTextImage asset={node.data.target as unknown as ContentfulAsset} />;
             }
             return null;
         },
-        [BLOCKS.UL_LIST]: (node, children) => (
+        [BLOCKS.UL_LIST]: (node: Block | Inline, children: React.ReactNode) => (
             <ul className="list-disc list-inside space-y-2 my-4">{children}</ul>
         ),
-        [BLOCKS.OL_LIST]: (node, children) => (
+        [BLOCKS.OL_LIST]: (node: Block | Inline, children: React.ReactNode) => (
             <ol className="list-decimal list-inside space-y-2 my-4">{children}</ol>
         ),
-        [BLOCKS.LIST_ITEM]: (node, children) => (
+        [BLOCKS.LIST_ITEM]: (node: Block | Inline, children: React.ReactNode) => (
             <li>{children}</li>
         ),
-        // Add any other default renderers here
     },
 };
 
-
-// --- 2. Prose Render Options (for pages WITH .prose) ---
-// This version has NO classes on lists, allowing the prose styles to take over.
-export const proseRenderOptions = {
+export const proseRenderOptions: Options = {
     renderNode: {
-        [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline) => {
             if (node.data.target?.fields?.file?.contentType.startsWith('image/')) {
-                return <RichTextImage asset={node.data.target} />;
+                return <RichTextImage asset={node.data.target as unknown as ContentfulAsset} />;
             }
             return null;
         },
-        [BLOCKS.UL_LIST]: (node, children) => <ul>{children}</ul>,
-        [BLOCKS.OL_LIST]: (node, children) => <ol>{children}</ol>,
-        [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>,
-        // Add any other prose-specific renderers here
+        [BLOCKS.UL_LIST]: (node: Block | Inline, children: React.ReactNode) => <ul>{children}</ul>,
+        [BLOCKS.OL_LIST]: (node: Block | Inline, children: React.ReactNode) => <ol>{children}</ol>,
+        [BLOCKS.LIST_ITEM]: (node: Block | Inline, children: React.ReactNode) => <li>{children}</li>,
     },
 };
-
-// --- DEPRECATED: You can rename or remove your old 'renderOptions' export ---
-// export const renderOptions = defaultRenderOptions; 

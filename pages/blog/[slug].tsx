@@ -12,7 +12,7 @@ import type { Options } from "@contentful/rich-text-react-renderer"; // Import O
 import type { Document as RichTextDocument } from "@contentful/rich-text-types"; // Import Document type
 // You might need BLOCKS, INLINES, MARKS if customizing renderOptions heavily
 // import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
-import { defaultRenderOptions } from "../../util/rich-text-types"; // Assuming this exports typed Options
+import { defaultRenderOptions } from "../../lib/rich-text-types"; // Assuming this exports typed Options
 import Skeleton from "../../components/Skeleton"; // Assuming Skeleton is typed or will be
 import type { GetStaticPaths, GetStaticProps, GetStaticPropsContext, NextPage } from "next";
 
