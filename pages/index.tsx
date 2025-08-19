@@ -6,12 +6,13 @@ import PortfolioCards from "../components/PortfolioCards";
 import BlogCards from "../components/BlogCards";
 import Hero from "../components/Hero";
 import AboutSection from "../components/AboutSection";
-import TechStack from "../components/TechStack";
+
 import Link from "next/link";
 import SeoHead from "../components/SeoHead";
 import SectionTitle from "../components/SectionTitle";
 // import Button from "../ui/Button";
-import Quote from "../components/Quote";
+
+
 import Image from "next/image";
 import { ImArrowUpRight2 } from "react-icons/im";
 import { FaHtml5 } from "react-icons/fa6";

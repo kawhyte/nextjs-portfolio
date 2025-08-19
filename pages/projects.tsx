@@ -4,7 +4,7 @@ import Hero from "../components/Hero";
 // import Section from "../components/Section";
 import Link from "next/link";
 import SectionTitle from "../components/SectionTitle";
-import ProjectDetailHeader from "../components/ProjectDetailHeader";
+
 import SectionHero from "../components/SectionHero";
 import { GetStaticProps, NextPage } from "next";
 import SeoHead from "../components/SeoHead";
@@ -39,8 +39,6 @@ export const getStaticProps: GetStaticProps<PortfolioPageProps> = async () => {
 }
 
 export default function Recipes({ portfolio }) {
-
-	console.log("PORTFOLIO", portfolio)
 	return (
 		<>
 			<SeoHead 

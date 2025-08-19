@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Button } from "../components/ui/button";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import HighlightItem from "./HighlightItem";
 import { Highlight, PortfolioItem, Technology } from "../types/contentful";
 import TechnologyBadge from "./TechnologyBadge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 
 interface PortfolioCardProps {
     portfolio: PortfolioItem;
