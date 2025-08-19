@@ -1,7 +1,7 @@
 // pages/about.tsx
 
 import React from 'react';
-import Head from 'next/head';
+import SeoHead from '../components/SeoHead';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -48,11 +48,11 @@ const AboutPage = () => {
 
     return (
         <main className="pt-24 bg-gray-50/50">
-            <Head>
-                <title>About Me | Kenny Whyte</title>
-                <meta name="description" content="Learn more about Kenny Whyte, a full-stack software engineer specializing in modern web technologies." />
-                <link rel='icon' href='/favicon.ico' />
-            </Head>
+            <SeoHead 
+                title="About Me"
+                description="Learn more about Kenny Whyte, a full-stack software engineer specializing in modern web technologies, his skills, and his journey into software development."
+                url="/about"
+            />
 
             {/* --- 1. Hero Section --- */}
             <section className="container mx-auto max-w-5xl text-center py-16 md:py-24">

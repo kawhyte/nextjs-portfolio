@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import SeoHead from "../components/SeoHead";
 import Head from "next/head";
+
 
 export default function NotFound() {
 	return (

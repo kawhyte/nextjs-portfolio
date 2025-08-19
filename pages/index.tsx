@@ -8,7 +8,7 @@ import Hero from "../components/Hero";
 import AboutSection from "../components/AboutSection";
 import TechStack from "../components/TechStack";
 import Link from "next/link";
-import Head from "next/head";
+import SeoHead from "../components/SeoHead";
 import SectionTitle from "../components/SectionTitle";
 // import Button from "../ui/Button";
 import Quote from "../components/Quote";
@@ -81,12 +81,10 @@ export default function Index({ portfolio, blog }) {
 	//console.log("new portfolio ", portfolio);
 	return (
 		<div className=''>
-			<Head>
-				<title>Home | Kenny Portfolio</title>
-				<meta></meta>
-				<link rel='icon' href='/favicon.ico'></link>
-			</Head>
-			{/**/}
+			<SeoHead 
+				title="Kenny Whyte - Full-Stack Engineer"
+        		description="The portfolio of Kenny Whyte, a full-stack engineer specializing in C#, .NET, and React/Next.js. View projects, read blog posts, and get in touch."
+			/>
 			<Hero />
 			
 

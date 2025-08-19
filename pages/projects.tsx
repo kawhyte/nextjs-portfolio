@@ -7,7 +7,7 @@ import SectionTitle from "../components/SectionTitle";
 import ProjectDetailHeader from "../components/ProjectDetailHeader";
 import SectionHero from "../components/SectionHero";
 import { GetStaticProps, NextPage } from "next";
-
+import SeoHead from "../components/SeoHead";
 
 import type {
 	PortfolioItem,
@@ -43,6 +43,11 @@ export default function Recipes({ portfolio }) {
 	console.log("PORTFOLIO", portfolio)
 	return (
 		<>
+			<SeoHead 
+				title="Projects"
+				description="Explore a collection of projects by Kenny Whyte, showcasing his skills in full-stack development, from web applications to case studies."
+				url="/projects"
+			/>
 			<SectionHero
 				title={"All Projects"}
 				description={"Take a look at some of the stuff I've built!"}

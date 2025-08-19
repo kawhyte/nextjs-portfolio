@@ -3,7 +3,7 @@
 import React from 'react';
 import { createClient } from "contentful";
 import Image from "next/image";
-import Head from "next/head";
+import SeoHead from "../../components/SeoHead";
 import CaseStudy from "../../components/CaseStudy";
 import Skeleton from "../../components/Skeleton";
 import { Button } from "@/components/ui/button";
@@ -91,6 +91,7 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
     if (!portfolio?.fields) return <Skeleton />;
 //  console.log("Portfoliot",portfolio.fields)
     const {
+        slug,
         name,
         summary,
         caseStudyMainImage,
@@ -106,14 +107,16 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
 
 
     const displayImage = caseStudyMainImage || thumbnail;
+    const coverImageUrl = displayImage?.fields?.file?.url ? `https:${displayImage.fields.file.url}` : undefined;
 
     return (
         <main className='pt-24'>
-            <Head>
-                <title>{`${name} | Kenny Portfolio`}</title>
-                <meta name="description" content={summary || `Details about the project: ${name}`} />
-                <link rel='icon' href='/favicon.ico' />
-            </Head>
+            <SeoHead 
+                title={name}
+                description={summary}
+                imageUrl={coverImageUrl}
+                url={`/portfolio/${slug}`}
+            />
 
             <section className="container mx-auto max-w-4xl text-center mb-16 md:mb-24">
                 <h1 className='font-serif text-4xl md:text-6xl font-bold'>{name}</h1>

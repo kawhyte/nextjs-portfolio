@@ -3,7 +3,7 @@
 import React from 'react'; // Import React
 import { createClient } from "contentful";
 import Image from "next/image";
-import Head from "next/head";
+import SeoHead from "../../components/SeoHead";
 // import Button from "../../components/Button"; // Unused
 // import CaseStudy from "../../components/CaseStudy"; // Unused
 // import ShareButtons from "../../components/ShareButton"; // Unused
@@ -94,8 +94,25 @@ export const getStaticProps: GetStaticProps<BlogPageProps, { slug: string }> = a
 const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
     if (!blog || !blog.fields) return <Skeleton />;
 
-    const { title, thumbnail, photoCredit, richText } = blog.fields;
+    const { slug, title, thumbnail, photoCredit, richText } = blog.fields;
     const publicationDate = blog.sys.createdAt; // Get the creation date from sys
+
+    // Helper to generate a description/excerpt from the first paragraph
+    const generateExcerpt = (document: RichTextDocument | undefined, length = 155): string => {
+        if (!document) return '';
+        const firstParagraph = document.content.find(node => node.nodeType === 'paragraph');
+        if (firstParagraph) {
+            const textContent = firstParagraph.content
+                .filter(node => node.nodeType === 'text' && (node as any).value)
+                .map(node => (node as any).value)
+                .join('');
+            return textContent.length > length ? textContent.slice(0, length) + '...' : textContent;
+        }
+        return ''; // Fallback
+    };
+
+    const excerpt = generateExcerpt(richText);
+    const coverImageUrl = thumbnail?.fields?.file?.url ? `https:${thumbnail.fields.file.url}` : undefined;
 
     // A simple function to estimate read time
     const calculateReadTime = (text: RichTextDocument | undefined): string => {
@@ -112,10 +129,13 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
     return (
         // Use a more modern, centered layout container
         <main className='mt-20 px-4 py-8 md:py-12'>
-            <Head>
-                <title>{`${title} | Kenny Portfolio`}</title>
-                {/* ... other head elements */}
-            </Head>
+            <SeoHead 
+                title={title}
+                description={excerpt}
+                imageUrl={coverImageUrl}
+                url={`/blog/${slug}`}
+                type="article"
+            />
 
             <article className="max-w-3xl mx-auto">
                 {/* 1. REFINED HERO SECTION */}
