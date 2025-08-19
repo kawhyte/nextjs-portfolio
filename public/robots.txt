@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.kennywhyte.com/
+
+# Sitemaps
+Sitemap: https://www.kennywhyte.com/sitemap.xml
