@@ -115,12 +115,21 @@ interface Thumbnail {
   // Add other potential top-level fields from thumbnail if needed, e.g., sys.id
 }
 
+interface Tag {
+    sys: ContentfulSys;
+    fields: {
+      name: string;
+      slug: string;
+    };
+  }
+
 // Describes the structure within blog.fields
 interface BlogFields {
   title: string;
   slug: string;
   summary: string;
   thumbnail: Thumbnail; // Use the nested Thumbnail interface
+tags?: Tag[];
 }
 
 // Describes the main blog object prop
