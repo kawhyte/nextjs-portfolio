@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "start": "next start"
   },
   "dependencies": {
@@ -36,6 +36,7 @@
     "@tailwindcss/postcss": "^4.1.11",
     "@tailwindcss/typography": "^0.5.14",
     "@types/react": "^19.1.2",
+    "next-sitemap": "^4.2.3",
     "postcss": "^8.4.41",
     "source-map": "^0.7.3",
     "tailwindcss": "^4.1.11",
