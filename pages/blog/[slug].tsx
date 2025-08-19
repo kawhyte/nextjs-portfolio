@@ -137,7 +137,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
                 type="article"
             />
 
-            <article className="max-w-3xl mx-auto">
+            <article className="max-w-6xl mx-auto">
                 {/* 1. REFINED HERO SECTION */}
                 <header className="mb-8 md:mb-12">
                     <h1 className='text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4'>

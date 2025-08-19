@@ -82,7 +82,7 @@ const AboutPage = () => {
 				<h1 className='font-serif text-4xl md:text-6xl font-bold'>
 					Hi, I'm Kenny Whyte.
 				</h1>
-				<p className='mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto'>
+				<p className='mt-4 text-lg md:text-xl text-muted-foreground max-w-5xl mx-auto'>
 					I'm a passionate full-stack engineer dedicated to building software
 					that is not only functional but also intuitive and enjoyable to use. I
 					thrive on solving complex problems and turning innovative ideas into
