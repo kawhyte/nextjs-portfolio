@@ -6,6 +6,8 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import HighlightItem from "./HighlightItem";
 import { Highlight, PortfolioItem, Technology } from "../types/contentful";
+import TechnologyBadge from "./TechnologyBadge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface PortfolioCardProps {
     portfolio: PortfolioItem;
@@ -22,7 +24,16 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
             <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12'>
                 <div className="flex flex-col">
                     <div>
-                        {technologies && technologies.length > 0 && (
+                       
+ {technologies && technologies.length > 0 && (
+                            <div className="flex flex-wrap gap-2">
+                                    {technologies.map((tech) => (
+                                        <TechnologyBadge key={tech.sys.id} technology={tech} />
+                                    ))}
+
+                                    
+                                </div>)}
+                        {/* {technologies && technologies.length > 0 && (
                             <div className='flex flex-wrap gap-2 mb-4'>
                                 {technologies.slice(0, 4).map((item) => (
                                     <Badge key={item.sys.id} variant="outline" className="bg-background">
@@ -30,7 +41,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
                                     </Badge>
                                 ))}
                             </div>
-                        )}
+                        )} */}
                        <h3 className='font-serif text-2xl md:text-3xl font-bold'>{title}</h3>
                         
                         <p className='text-muted-foreground mt-2 text-sm md:text-base hidden md:block'>{summary}</p>

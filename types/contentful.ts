@@ -71,7 +71,8 @@ export interface Highlight {
 
 // Add/Update PortfolioItemFields to include all fields used
 export interface PortfolioItemFields {
-  title: string; // Assuming 'name' in JS corresponds to 'title' in Contentful model
+  title?: string; // Assuming 'name' in JS corresponds to 'title' in Contentful model
+  name: string;
   slug: string;
   thumbnail?: ContentfulImage; // Optional
   caseStudyMainImage?: ContentfulImage; // Optional
@@ -90,7 +91,7 @@ export interface PortfolioItemFields {
   richTextApproach?: RichTextDocument; // Optional
   richTextResult?: RichTextDocument; // Optional
   featured?: boolean; // Added from index.tsx usage
-  sortByNumber?: number; // Added from index.tsx usage
+  // sortByNumber?: number; // Added from index.tsx usage
   technologies?: Technology[];
   projectHighlights?: Highlight[]
   // portfolioHighlights?:Highlight[]

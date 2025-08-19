@@ -7,13 +7,13 @@ import Head from "next/head";
 import CaseStudy from "../../components/CaseStudy";
 import Skeleton from "../../components/Skeleton";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import * as LucideIcons from "lucide-react"; // Import all lucide icons
+import { FiHome, FiCode } from "react-icons/fi";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { Document as RichTextDocument } from "@contentful/rich-text-types";
-import type { PortfolioItem, PortfolioDetailPageProps, Technology } from "../../types/contentful";
+import type { PortfolioItem, PortfolioDetailPageProps } from "../../types/contentful";
+import TechnologyBadge from '../../components/TechnologyBadge';
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID || '',
@@ -55,39 +55,43 @@ export const getStaticProps: GetStaticProps<PortfolioDetailPageProps, { slug: st
     };
 };
 
+// const reactIconsMap: { [key: string]: React.ElementType } = {
+//     react: FaReact,
+//     javascript: SiJavascript,
+//     css: SiCss3,
+//     html: SiHtml5,
+// };
 
 // --- NEW: Helper component to render the correct icon ---
-const TechnologyBadge = ({ technology }: { technology: Technology }) => {
-    const { name, lucideIconName, customIcon } = technology.fields;
-    let IconComponent;
-    if (lucideIconName && LucideIcons[lucideIconName]) {
-        IconComponent = LucideIcons[lucideIconName];
-    }
+// const TechnologyBadge = ({ technology }: { technology: Technology }) => {
+//     const { name, lucideIconName, customIcon } = technology.fields;
+    
+//     const IconComponent = lucideIconName ? reactIconsMap[lucideIconName.toLowerCase()] : undefined;
 
-    return (
-        <Badge variant="secondary" className="flex items-center gap-2">
-            {customIcon?.fields?.file?.url ? (
-                <Image 
-                    src={`https:${customIcon.fields.file.url}`}
-                    width={16}
-                    height={16}
-                    alt={`${name} icon`}
-                />
-            ) : IconComponent ? (
-                <IconComponent className="h-4 w-4" />
-            ) : null}
-            <span>{name}</span>
-        </Badge>
-    );
-};
+//     return (
+//         <Badge variant="secondary" className="flex items-center gap-2">
+//             {customIcon?.fields?.file?.url ? (
+//                 <Image 
+//                     src={`https:${customIcon.fields.file.url}`}
+//                     width={16}
+//                     height={16}
+//                     alt={`${name} icon`}
+//                 />
+//             ) : IconComponent ? (
+//                 <IconComponent className="h-4 w-4" />
+//             ) : null}
+//             <span>{name}</span>
+//         </Badge>
+//     );
+// };
 
 
 // --- Main Page Component ---
 const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) => {
     if (!portfolio?.fields) return <Skeleton />;
-
+//  console.log("Portfoliot",portfolio.fields)
     const {
-        title,
+        name,
         summary,
         caseStudyMainImage,
         thumbnail,
@@ -106,13 +110,13 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
     return (
         <main className='pt-24'>
             <Head>
-                <title>{`${title} | Kenny Portfolio`}</title>
-                <meta name="description" content={summary || `Details about the project: ${title}`} />
+                <title>{`${name} | Kenny Portfolio`}</title>
+                <meta name="description" content={summary || `Details about the project: ${name}`} />
                 <link rel='icon' href='/favicon.ico' />
             </Head>
 
             <section className="container mx-auto max-w-4xl text-center mb-16 md:mb-24">
-                <h1 className='font-serif text-4xl md:text-6xl font-bold'>{title}</h1>
+                <h1 className='font-serif text-4xl md:text-6xl font-bold'>{name}</h1>
                 <p className='mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto'>
                     {summary}
                 </p>
@@ -120,14 +124,14 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
                     {demoUrl && (
                         <Button asChild size="lg">
                             <a href={demoUrl} target="_blank" rel="noopener noreferrer">
-                                <LucideIcons.Home className="mr-2 h-4 w-4" /> Live Demo
+                                <FiHome className="mr-2 h-4 w-4" /> Live Demo
                             </a>
                         </Button>
                     )}
                     {url && (
                         <Button asChild size="lg" variant="outline">
                             <a href={url} target="_blank" rel="noopener noreferrer">
-                                <LucideIcons.Code className="mr-2 h-4 w-4" /> View Code
+                                <FiCode className="mr-2 h-4 w-4" /> View Code
                             </a>
                         </Button>
                     )}
@@ -142,7 +146,7 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
                                 src={`https:${displayImage.fields.file.url}?fm=webp&w=1200&q=80`}
                                 width={displayImage.fields.file.details.image.width}
                                 height={displayImage.fields.file.details.image.height}
-                                alt={displayImage.fields.title || title}
+                                alt={displayImage.fields.title || name}
                                 className="w-full h-auto"
                             />
                         </div>

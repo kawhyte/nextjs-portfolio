@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
 	// Fetch entries using the Contentful SDK generics
 	const res = await client.getEntries({
 		content_type: "portfolio",
-		order: ["fields.sortByNumber"],
+		// order: ["fields.sortByNumber"],
 	});
 	const res2 = await client.getEntries({ content_type: "blogPost" });
 
@@ -74,9 +74,9 @@ const languages = [
 ];
 
 export default function Index({ portfolio, blog }) {
-	portfolio = portfolio
-		.filter((item) => item.fields.featured === true)
-		.sort((a, b) => a.sortByNumber - b.sortByNumber);
+	// portfolio = portfolio
+	// 	.filter((item) => item.fields.featured === true)
+	// 	.sort((a, b) => a.sortByNumber - b.sortByNumber);
 
 	//console.log("new portfolio ", portfolio);
 	return (

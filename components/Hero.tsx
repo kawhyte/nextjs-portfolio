@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import HeroOrbit from "./HeroOrbit";
-import { Triangle, Plus, Zap, Github, Linkedin, Twitter } from "lucide-react"; 
+import { FaGithub, FaLinkedin, FaTwitter, FaPlus } from 'react-icons/fa';
+import { FiTriangle, FiZap } from 'react-icons/fi';
 import memojiImage from '/public/assets/images/memoji-avatar.png';
 import { Separator } from "@radix-ui/react-separator";
 const Hero = () => {
@@ -33,14 +34,14 @@ const Hero = () => {
                             orbitDuration={"35s"}
                             shouldSpin
                             spinDuration={"3s"}>
-                            <Triangle className='size-10 text-orange-300/70 ' />
+                            <FiTriangle className='size-10 text-orange-300/70 ' />
                         </HeroOrbit>
                         <HeroOrbit
                             size={580}
                             rotation={-60}
                             shouldOrbit
                             orbitDuration={"37s"}>
-                            <Plus className='size-8 text-green-400/60' />
+                            <FaPlus className='size-8 text-green-400/60' />
                         </HeroOrbit>
                         <HeroOrbit
                             size={650}
@@ -49,7 +50,7 @@ const Hero = () => {
                             orbitDuration={"41s"}
                             shouldSpin
                             spinDuration={"5s"}>
-                            <Zap className='size-6 text-green-300/70' />
+                            <FiZap className='size-6 text-green-300/70' />
                         </HeroOrbit>
 
                         <HeroOrbit
@@ -59,7 +60,7 @@ const Hero = () => {
                             orbitDuration={"36s"}
                             shouldSpin
                             spinDuration={"3s"}>
-                            <Triangle className='size-7 text-green-300/70 ' />
+                            <FiTriangle className='size-7 text-green-300/70 ' />
                         </HeroOrbit>
                         <HeroOrbit
                             size={550}
@@ -68,7 +69,7 @@ const Hero = () => {
                             orbitDuration={"38s"}
                             shouldSpin
                             spinDuration={"6s"}>
-                            <Plus className='size-5 text-green-300 ' />
+                            <FaPlus className='size-5 text-green-300 ' />
                         </HeroOrbit>
                         <HeroOrbit
                             size={600}
@@ -77,7 +78,7 @@ const Hero = () => {
                             orbitDuration={"40s"}
                             shouldSpin
                             spinDuration={"6s"}>
-                            <Zap className='size-6 text-green-300 ' />
+                            <FiZap className='size-6 text-green-300 ' />
                         </HeroOrbit>
                         <HeroOrbit
                             size={620}
@@ -93,7 +94,7 @@ const Hero = () => {
                             orbitDuration={"44s"}
                             shouldSpin
                             spinDuration={"3s"}>
-                            <Plus className='size-4 text-orange-300/70 ' />
+                            <FaPlus className='size-4 text-orange-300/70 ' />
                         </HeroOrbit>
                         <HeroOrbit
                             size={710}
@@ -109,7 +110,7 @@ const Hero = () => {
                             orbitDuration={"48s"}
                             shouldSpin
                             spinDuration={"6s"}>
-                            <Triangle className='size-8 text-green-300 ' />
+                            <FiTriangle className='size-8 text-green-300 ' />
                         </HeroOrbit>
                     </div> 
                 </div>
@@ -156,17 +157,17 @@ const Hero = () => {
                         <div className="mt-6 flex justify-center items-center gap-4">
                             <Button asChild variant="ghost" size="icon">
                                 <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                                    <Github className="h-6 w-6 text-muted-foreground hover:text-foreground" />
+                                    <FaGithub className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                                 </a>
                             </Button>
                             <Button asChild variant="ghost" size="icon">
                                 <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                                    <Linkedin className="h-6 w-6 text-muted-foreground hover:text-foreground" />
+                                    <FaLinkedin className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                                 </a>
                             </Button>
                             <Button asChild variant="ghost" size="icon">
                                 <a href="https://twitter.com/your-username" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                                    <Twitter className="h-6 w-6 text-muted-foreground hover:text-foreground" />
+                                    <FaTwitter className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                                 </a>
                             </Button>
                         </div>

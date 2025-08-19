@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps<PortfolioPageProps> = async () => {
 
 	const res = await client.getEntries({
 		content_type: "portfolio",
-		order: ["fields.sortByNumber"],
+		// order: ["fields.sortByNumber"],
 	});
 
 	const portfolioItems = res.items
