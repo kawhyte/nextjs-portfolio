@@ -10,7 +10,7 @@ import { Separator } from "@radix-ui/react-separator";
 const Hero = () => {
     return (
         <div className='overflow-hidden '>
-            <div className='py-12 md:py-20 bg-green-100 bg-gradient relative z-0 mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]'>
+            <div className='min-h-screen flex items-center justify-center py-12 md:py-20 bg-green-100 bg-gradient relative z-0 mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]'>
                 <div className='absolute inset-0 '>
                     <div
                         className='absolute   inset-0 -z-30 opacity-5  '
