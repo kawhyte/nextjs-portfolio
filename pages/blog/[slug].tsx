@@ -149,7 +149,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
                          {/* You can replace this with a real avatar */}
                         <div className="flex-shrink-0">
                             <Image
-                                src="/avatar.png" // Add a professional avatar to your /public folder
+                                src="/assets/images/memoji-avatar.png"
                                 alt="Kenny Whyte"
                                 width={40}
                                 height={40}
