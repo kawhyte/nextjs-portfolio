@@ -37,7 +37,7 @@ const RichTextImage: React.FC<RichTextImageProps> = ({ asset }) => {
     const blurDataURL = `https:${url}?w=10&q=5&fm=webp`;
 
     return (
-        <figure className='my-8 overflow-hidden rounded-lg shadow-md'>
+        <figure className='my-8 mx-auto max-w-lg overflow-hidden rounded-lg'>
             <Image
                 src={`https:${url}?w=1200&q=80&fm=webp`}
                 width={width}
