@@ -57,7 +57,13 @@ export interface Technology {
 export interface Highlight {
     sys: { id: string };
     fields: {
-        text: string; // Or whatever you named the field in Contentful
+        name: string;
+        isMetric?: boolean;
+        iconName?: string;
+        link?: {
+            sys: { contentType: { sys: { id: string } } };
+            fields: { slug: string };
+        };
     };
 }
 

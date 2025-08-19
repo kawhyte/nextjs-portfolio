@@ -1,27 +1,11 @@
 import Image from "next/image";
-import { BiCheckCircle } from "react-icons/bi";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import * as LucideIcons from "lucide-react";
 import { ArrowUpRight } from "lucide-react";
-import { twMerge } from "tailwind-merge";
-
-// --- Type Definitions ---
-// It's best practice to define these in a separate types file (e.g., /types/contentful.ts)
-interface Highlight {
-    sys: { id: string };
-    fields: {
-        name: string;
-        isMetric?: boolean;
-        iconName?: string;
-        link?: {
-            sys: { contentType: { sys: { id: string } } };
-            fields: { slug: string };
-        };
-    };
-}
+import HighlightItem from "./HighlightItem";
+import { Highlight } from "../types/contentful";
 
 interface Technology {
     sys: { id: string };
@@ -34,59 +18,14 @@ interface PortfolioItem {
         slug: string;
         summary: string;
         thumbnail: any; // Replace 'any' with a proper ContentfulImage type
-        highlights?: Highlight[];
         technology?: Technology[];
-        projectHighlights?:Highlight[]
+        projectHighlights?: Highlight[];
     };
 }
 
 interface PortfolioCardProps {
     portfolio: PortfolioItem;
 }
-
-// ---A dedicated component to render each highlight with advanced logic ---
-const HighlightItem = ({ highlight }: { highlight: Highlight }) => {
-    const { name, isMetric, iconName, link } = highlight.fields;
- console.log("HIGH", highlight.fields)
-    // Determine which icon to use
-    const IconComponent = iconName && LucideIcons[iconName] ? LucideIcons[iconName] : BiCheckCircle;
-    
-    // The main content of the highlight (icon and text)
-    const content = (
-        <div className={twMerge(
-            "flex gap-3 items-start text-sm",
-            isMetric && "font-bold text-green-700"
-        )}>
-            <IconComponent className={twMerge(
-                "w-5 h-5 shrink-0 mt-0.5",
-                isMetric ? "text-green-600" : "text-green-500"
-            )} />
-            <span>{name}</span>
-        </div>
-    );
-
-    // If there's a link, wrap the content in a Next.js Link component
-    if (link?.fields?.slug) {
-        const contentType = link.sys.contentType.sys.id;
-        const href = `/${contentType === 'portfolio' ? 'portfolio' : 'blog'}/${link.fields.slug}`;
-
-        return (
-            <li key={highlight.sys.id}>
-                <Link href={href} className="hover:opacity-70 transition-opacity">
-                    {content}
-                </Link>
-            </li>
-        );
-    }
-
-    // Otherwise, just render the content in a list item
-    return (
-        <li key={highlight.sys.id}>
-            {content}
-        </li>
-    );
-};
-
 
 // --- Main Portfolio Card Component ---
 const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
