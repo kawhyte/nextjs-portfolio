@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import HeroOrbit from "./HeroOrbit";
-import { FaGithub, FaLinkedin, FaTwitter, FaPlus } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaCodepen, FaPlus } from 'react-icons/fa';
+import { FaBluesky } from 'react-icons/fa6';
 import { FiTriangle, FiZap } from 'react-icons/fi';
 import memojiImage from '/public/assets/images/memoji-avatar.png';
 import { Separator } from "@radix-ui/react-separator";
@@ -166,8 +167,13 @@ const Hero = () => {
                                 </a>
                             </Button>
                             <Button asChild variant="ghost" size="icon">
-                                <a href="https://twitter.com/your-username" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                                    <FaTwitter className="h-6 w-6 text-muted-foreground hover:text-foreground" />
+                                <a href="https://codepen.io/your-username" target="_blank" rel="noopener noreferrer" aria-label="Codepen">
+                                    <FaCodepen className="h-6 w-6 text-muted-foreground hover:text-foreground" />
+                                </a>
+                            </Button>
+                            <Button asChild variant="ghost" size="icon">
+                                <a href="https://bsky.app/profile/your-username.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
+                                    <FaBluesky className="h-6 w-6 text-muted-foreground hover:text-foreground" />
                                 </a>
                             </Button>
                         </div>
