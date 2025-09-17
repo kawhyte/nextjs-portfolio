@@ -5,11 +5,11 @@ import BlogCard from "./BlogCard"
 
 const Cards = ({ items, hideLastItemOnMobile = false }) => {
 
-   
+
   return (
-    <div className=" pt-6 ">
-    
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+    <div className="pt-300">
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-300">
         {items.map(item => (
           <div
             className=""

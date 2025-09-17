@@ -89,22 +89,22 @@ export default function Index({ portfolio, blog }) {
 			<Hero />
 			
 
-			    {/* --- 1. FEATURED PROJECTS (MOVED UP) --- */}
-            <section id="projects" className="py-20">
+			    {/* --- 1. FEATURED PROJECTS (8-point spacing) --- */}
+            <section id="projects" className="py-1000">
                 <div className='container mx-auto text-center'>
-                    <h2 className="text-4xl font-serif font-bold">Featured Projects</h2>
-                    <p className="mt-2 text-lg text-muted-foreground">Take a look at some of the stuff I've built!</p>
+                    <h2 className="text-4xl font-serif font-bold leading-extra-8">Featured Projects</h2>
+                    <p className="mt-200 text-lg text-muted-foreground leading-relaxed-8">Take a look at some of the stuff I've built!</p>
                 </div>
-                <div className='my-12'>
+                <div className='my-600'>
                     {portfolio.length > 0 ? (
                         <PortfolioCards items={portfolio.slice(0, 4)} />
                     ) : (
                         <div className='container'>No projects found.</div>
                     )}
-                    <div className='mt-12 flex justify-center'>
+                    <div className='mt-600 flex justify-center'>
                         <Button asChild variant="outline" size="lg">
                             <Link href="/projects">
-                                View All Projects <ArrowUpRight className="ml-2 h-4 w-4" />
+                                View All Projects <ArrowUpRight className="ml-200 h-4 w-4" />
                             </Link>
                         </Button>
                     </div>

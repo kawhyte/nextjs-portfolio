@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import "tw-animate-css";
+@import "./spacing-utilities.css";
 
 /* Prevents layout shift caused by scrollbar appearing/disappearing during page transitions */
 html {

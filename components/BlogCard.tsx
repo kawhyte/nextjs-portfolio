@@ -23,29 +23,29 @@ export default function BlogCard({ blog }: BlogCardProps) {
         />
       </div>
 
-      <div className="bg-amber-50 p-5 space-y-3 flex flex-col flex-1">
-        {/* --- UPDATED: Tags Section --- */}
-        <div className="flex flex-wrap gap-1.5">
+      <div className="bg-amber-50 p-300 space-y-200 flex flex-col flex-1">
+        {/* --- UPDATED: Tags Section with 8-point spacing --- */}
+        <div className="flex flex-wrap gap-100">
           {tags?.map((tag) => (
-            // 2. Use the Badge component and a proper key
+            // Use the Badge component with proper spacing
             <Badge key={tag.sys.id} variant="secondary">
               {tag.fields.name}
             </Badge>
           ))}
         </div>
 
-        <CardTitle className="text-lg font-semibold leading-tight line-clamp-2">
+        <CardTitle className="text-lg font-semibold leading-relaxed-8 line-clamp-2">
           {title}
         </CardTitle>
 
-        <CardDescription className="text-sm text-gray-600 leading-relaxed line-clamp-3">
+        <CardDescription className="text-sm text-gray-600 leading-normal-8 line-clamp-3">
           {summary}
         </CardDescription>
 
-        <CardFooter className="p-0 pt-3 mt-auto">
+        <CardFooter className="p-0 pt-200 mt-auto">
           <Button
             asChild
-            className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg"
+            className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-200 py-150 rounded-lg"
           >
             <Link href={`/blog/${slug}`}>Continue Reading →</Link>
           </Button>

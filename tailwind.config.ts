@@ -32,6 +32,42 @@ export default {
         '3': '3',
       },
 
+      // 8-Point Spacing System - Following Atlassian Design Principles
+      spacing: {
+        // Micro spacing (0.25x to 1x)
+        '025': '2px',   // 0.25 × 8px
+        '050': '4px',   // 0.5 × 8px
+        '100': '8px',   // 1 × 8px
+
+        // Small spacing (1.5x to 2x)
+        '150': '12px',  // 1.5 × 8px
+        '200': '16px',  // 2 × 8px
+
+        // Medium spacing (3x to 4x)
+        '300': '24px',  // 3 × 8px
+        '400': '32px',  // 4 × 8px
+
+        // Large spacing (5x to 8x)
+        '500': '40px',  // 5 × 8px
+        '600': '48px',  // 6 × 8px
+        '800': '64px',  // 8 × 8px
+
+        // Macro spacing (10x+)
+        '1000': '80px', // 10 × 8px
+        '1200': '96px', // 12 × 8px
+        '1600': '128px', // 16 × 8px
+      },
+
+      // Typography Line Heights - 8px Grid Aligned
+      lineHeight: {
+        'tight-8': '16px',   // 2 × 8px - for small text
+        'normal-8': '24px',  // 3 × 8px - for body text
+        'relaxed-8': '32px', // 4 × 8px - for larger text
+        'loose-8': '40px',   // 5 × 8px - for headings
+        'extra-8': '48px',   // 6 × 8px - for large headings
+        'mega-8': '56px',    // 7 × 8px - for hero text
+      },
+
       // Add color classes for our new design system
       colors: {
         'teal': {
@@ -135,28 +171,29 @@ export default {
 			},
 		},
 		fontSize: {
-			tiny: ".675rem",
-			xs: ".75rem",
-			sm: ".86rem",
-			base: "1rem",
-			lg: "1.125rem",
-			xl: "1.25rem",
-			"2xl": "1.70rem",
-			"3xl": "2.10rem",
-			"4xl": "2.3rem",
-			"4.5xl": "2.5rem",
-			"5xl": "3rem",
-			"5.5xl": "3.5rem",
-			"6xl": "4rem",
-			"7xl": "5rem",
-			"7.5xl": "6rem",
-			"8xl": "7rem",
-			"8.5xl": "8rem",
-			"9xl": "9rem",
-			"10xl": "10rem",
-			"11xl": "11rem",
-			"12xl": "12rem",
-			"15xl": "15rem",
+			// Typography with 8-point grid aligned line heights
+			tiny: [".675rem", { lineHeight: "16px" }],    // 2×8px
+			xs: [".75rem", { lineHeight: "16px" }],       // 2×8px
+			sm: [".86rem", { lineHeight: "24px" }],       // 3×8px
+			base: ["1rem", { lineHeight: "24px" }],       // 3×8px
+			lg: ["1.125rem", { lineHeight: "32px" }],     // 4×8px
+			xl: ["1.25rem", { lineHeight: "32px" }],      // 4×8px
+			"2xl": ["1.70rem", { lineHeight: "40px" }],   // 5×8px
+			"3xl": ["2.10rem", { lineHeight: "48px" }],   // 6×8px
+			"4xl": ["2.3rem", { lineHeight: "48px" }],    // 6×8px
+			"4.5xl": ["2.5rem", { lineHeight: "56px" }],  // 7×8px
+			"5xl": ["3rem", { lineHeight: "56px" }],      // 7×8px
+			"5.5xl": ["3.5rem", { lineHeight: "64px" }],  // 8×8px
+			"6xl": ["4rem", { lineHeight: "64px" }],      // 8×8px
+			"7xl": ["5rem", { lineHeight: "80px" }],      // 10×8px
+			"7.5xl": ["6rem", { lineHeight: "96px" }],    // 12×8px
+			"8xl": ["7rem", { lineHeight: "112px" }],     // 14×8px
+			"8.5xl": ["8rem", { lineHeight: "128px" }],   // 16×8px
+			"9xl": ["9rem", { lineHeight: "144px" }],     // 18×8px
+			"10xl": ["10rem", { lineHeight: "160px" }],   // 20×8px
+			"11xl": ["11rem", { lineHeight: "176px" }],   // 22×8px
+			"12xl": ["12rem", { lineHeight: "192px" }],   // 24×8px
+			"15xl": ["15rem", { lineHeight: "240px" }],   // 30×8px
 		},
 	},
   plugins: [
