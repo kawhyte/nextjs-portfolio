@@ -18,7 +18,7 @@ const Hero = () => {
                         style={{
                             backgroundImage: `url(${"/assets/images/grain.jpg"})`,
                         }}>
-                      
+
                         <div className='hidden md:block  md:size-[20px]  lg:size-[120px] hero-ring  '></div>
                         <div className='hidden md:block  md:size-[120px] lg:size-[320px] hero-ring  '></div>
                         <div className='hidden md:block  md:size-[220px] lg:size-[520px] hero-ring  '></div>
@@ -27,7 +27,7 @@ const Hero = () => {
                     </div>
 
                    <div className=' '>
-                     
+
                         <HeroOrbit
                             size={480}
                             rotation={30}
@@ -35,14 +35,14 @@ const Hero = () => {
                             orbitDuration={"35s"}
                             shouldSpin
                             spinDuration={"3s"}>
-                            <FiTriangle className='size-10 text-orange-300/70 ' />
+                            <FiTriangle className='size-10 text-orange-400/70 ' />
                         </HeroOrbit>
                         <HeroOrbit
                             size={580}
                             rotation={-60}
                             shouldOrbit
                             orbitDuration={"37s"}>
-                            <FaPlus className='size-8 text-green-400/60' />
+                            <FaPlus className='size-8 text-teal-400/60' />
                         </HeroOrbit>
                         <HeroOrbit
                             size={650}
@@ -51,7 +51,7 @@ const Hero = () => {
                             orbitDuration={"41s"}
                             shouldSpin
                             spinDuration={"5s"}>
-                            <FiZap className='size-6 text-green-300/70' />
+                            <FiZap className='size-6 text-blue-400/70' />
                         </HeroOrbit>
 
                         <HeroOrbit
@@ -61,7 +61,7 @@ const Hero = () => {
                             orbitDuration={"36s"}
                             shouldSpin
                             spinDuration={"3s"}>
-                            <FiTriangle className='size-7 text-green-300/70 ' />
+                            <FiTriangle className='size-7 text-purple-400/70 ' />
                         </HeroOrbit>
                         <HeroOrbit
                             size={550}
@@ -70,7 +70,7 @@ const Hero = () => {
                             orbitDuration={"38s"}
                             shouldSpin
                             spinDuration={"6s"}>
-                            <FaPlus className='size-5 text-green-300 ' />
+                            <FaPlus className='size-5 text-teal-400 ' />
                         </HeroOrbit>
                         <HeroOrbit
                             size={600}
@@ -79,14 +79,14 @@ const Hero = () => {
                             orbitDuration={"40s"}
                             shouldSpin
                             spinDuration={"6s"}>
-                            <FiZap className='size-6 text-green-300 ' />
+                            <FiZap className='size-6 text-blue-400 ' />
                         </HeroOrbit>
                         <HeroOrbit
                             size={620}
                             rotation={-5}
                             shouldOrbit
                             orbitDuration={"42s"}>
-                            <div className='size-4 rounded-full bg-orange-300/50'></div>
+                            <div className='size-4 rounded-full bg-orange-400/50'></div>
                         </HeroOrbit>
                         <HeroOrbit
                             size={710}
@@ -95,14 +95,14 @@ const Hero = () => {
                             orbitDuration={"44s"}
                             shouldSpin
                             spinDuration={"3s"}>
-                            <FaPlus className='size-4 text-orange-300/70 ' />
+                            <FaPlus className='size-4 text-orange-400/70 ' />
                         </HeroOrbit>
                         <HeroOrbit
                             size={710}
                             rotation={90}
                             shouldOrbit
                             orbitDuration={"46s"}>
-                            <div className='size-5 rounded-full bg-green-300/50'></div>
+                            <div className='size-5 rounded-full bg-teal-400/50'></div>
                         </HeroOrbit>
                         <HeroOrbit
                             size={800}
@@ -111,7 +111,7 @@ const Hero = () => {
                             orbitDuration={"48s"}
                             shouldSpin
                             spinDuration={"6s"}>
-                            <FiTriangle className='size-8 text-green-300 ' />
+                            <FiTriangle className='size-8 text-purple-400 ' />
                         </HeroOrbit>
                     </div> 
                 </div>

@@ -35,7 +35,7 @@ html {
 
   .hero-ring{
 
-    @apply absolute inset-0  border-4 top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full  border-emerald-300/5 shadow-[0_0_80px_inset] shadow-emerald-300
+    @apply absolute inset-0  border-4 top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full  border-teal-300/5 shadow-[0_0_80px_inset] shadow-teal-300
   }
 }
 
@@ -78,8 +78,7 @@ background: linear-gradient(180deg, rgb(224, 253, 238) 0%, rgba(250,243,221,1) 4
 }
 
 .accent-colors{
-  background-color: #ffa69e;
-
+  background-color: var(--color-accent-orange-subtle);
 }
 
 .color-change-5x {
@@ -101,36 +100,36 @@ background: linear-gradient(180deg, rgb(224, 253, 238) 0%, rgba(250,243,221,1) 4
  */
  @-webkit-keyframes color-change-5x {
   0% {
-    background: #19dcea;
+    background: var(--color-teal-500);
   }
   25% {
-    background: #b22cff;
+    background: var(--color-blue-500);
   }
   50% {
-    background: #ea2222;
+    background: var(--color-purple-500);
   }
   75% {
-    background: #f5be10;
+    background: var(--color-orange-500);
   }
   100% {
-    background: #3bd80d;
+    background: var(--color-teal-500);
   }
 }
 @keyframes color-change-5x {
   0% {
-    background: #19dcea;
+    background: var(--color-teal-500);
   }
   25% {
-    background: #b22cff;
+    background: var(--color-blue-500);
   }
   50% {
-    background: #ea2222;
+    background: var(--color-purple-500);
   }
   75% {
-    background: #f5be10;
+    background: var(--color-orange-500);
   }
   100% {
-    background: #3bd80d;
+    background: var(--color-teal-500);
   }
 }
 
@@ -234,7 +233,7 @@ background: linear-gradient(180deg, rgb(224, 253, 238) 0%, rgba(250,243,221,1) 4
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.68 0.15 180);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -259,6 +258,122 @@ background: linear-gradient(180deg, rgb(224, 253, 238) 0%, rgba(250,243,221,1) 4
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* ===== BRAND & ACCENT COLOR SYSTEM ===== */
+  /* TEAL - Primary Brand Color */
+  --color-teal-50: oklch(0.98 0.02 180);
+  --color-teal-100: oklch(0.92 0.06 180);
+  --color-teal-200: oklch(0.85 0.10 180);
+  --color-teal-300: oklch(0.78 0.12 180);
+  --color-teal-400: oklch(0.72 0.14 180);
+  --color-teal-500: oklch(0.68 0.15 180);
+  --color-teal-600: oklch(0.62 0.14 180);
+  --color-teal-700: oklch(0.55 0.12 180);
+  --color-teal-800: oklch(0.45 0.10 180);
+  --color-teal-900: oklch(0.35 0.08 180);
+  --color-teal-950: oklch(0.25 0.05 180);
+
+  /* BLUE - Professional/Secondary */
+  --color-blue-50: oklch(0.98 0.02 240);
+  --color-blue-100: oklch(0.92 0.06 240);
+  --color-blue-200: oklch(0.85 0.10 240);
+  --color-blue-300: oklch(0.78 0.14 240);
+  --color-blue-400: oklch(0.72 0.16 240);
+  --color-blue-500: oklch(0.65 0.18 240);
+  --color-blue-600: oklch(0.58 0.17 240);
+  --color-blue-700: oklch(0.52 0.15 240);
+  --color-blue-800: oklch(0.42 0.12 240);
+  --color-blue-900: oklch(0.32 0.10 240);
+  --color-blue-950: oklch(0.22 0.06 240);
+
+  /* PURPLE - Premium/Creative */
+  --color-purple-50: oklch(0.98 0.02 300);
+  --color-purple-100: oklch(0.92 0.06 300);
+  --color-purple-200: oklch(0.85 0.10 300);
+  --color-purple-300: oklch(0.78 0.14 300);
+  --color-purple-400: oklch(0.72 0.18 300);
+  --color-purple-500: oklch(0.65 0.20 300);
+  --color-purple-600: oklch(0.58 0.19 300);
+  --color-purple-700: oklch(0.52 0.17 300);
+  --color-purple-800: oklch(0.42 0.14 300);
+  --color-purple-900: oklch(0.32 0.12 300);
+  --color-purple-950: oklch(0.22 0.08 300);
+
+  /* ORANGE - Energy/CTA */
+  --color-orange-50: oklch(0.98 0.02 45);
+  --color-orange-100: oklch(0.92 0.06 45);
+  --color-orange-200: oklch(0.85 0.10 45);
+  --color-orange-300: oklch(0.78 0.12 45);
+  --color-orange-400: oklch(0.72 0.14 45);
+  --color-orange-500: oklch(0.70 0.15 45);
+  --color-orange-600: oklch(0.64 0.14 45);
+  --color-orange-700: oklch(0.58 0.12 45);
+  --color-orange-800: oklch(0.48 0.10 45);
+  --color-orange-900: oklch(0.38 0.08 45);
+  --color-orange-950: oklch(0.28 0.05 45);
+
+  /* ===== ACCENT BACKGROUNDS (Atlassian-inspired) ===== */
+  /* Teal Accent Backgrounds */
+  --color-accent-teal-subtlest: var(--color-teal-50);
+  --color-accent-teal-subtler: var(--color-teal-100);
+  --color-accent-teal-subtle: var(--color-teal-200);
+  --color-accent-teal-bolder: var(--color-teal-500);
+
+  /* Blue Accent Backgrounds */
+  --color-accent-blue-subtlest: var(--color-blue-50);
+  --color-accent-blue-subtler: var(--color-blue-100);
+  --color-accent-blue-subtle: var(--color-blue-200);
+  --color-accent-blue-bolder: var(--color-blue-500);
+
+  /* Purple Accent Backgrounds */
+  --color-accent-purple-subtlest: var(--color-purple-50);
+  --color-accent-purple-subtler: var(--color-purple-100);
+  --color-accent-purple-subtle: var(--color-purple-200);
+  --color-accent-purple-bolder: var(--color-purple-500);
+
+  /* Orange Accent Backgrounds */
+  --color-accent-orange-subtlest: var(--color-orange-50);
+  --color-accent-orange-subtler: var(--color-orange-100);
+  --color-accent-orange-subtle: var(--color-orange-200);
+  --color-accent-orange-bolder: var(--color-orange-500);
+
+  /* ===== ACCENT TEXT & ICONS ===== */
+  /* Teal Text */
+  --color-accent-teal-text: var(--color-teal-700);
+  --color-accent-teal-text-bolder: var(--color-teal-800);
+
+  /* Blue Text */
+  --color-accent-blue-text: var(--color-blue-700);
+  --color-accent-blue-text-bolder: var(--color-blue-800);
+
+  /* Purple Text */
+  --color-accent-purple-text: var(--color-purple-700);
+  --color-accent-purple-text-bolder: var(--color-purple-800);
+
+  /* Orange Text */
+  --color-accent-orange-text: var(--color-orange-700);
+  --color-accent-orange-text-bolder: var(--color-orange-800);
+
+  /* ===== SEMANTIC COLORS ===== */
+  --color-success: var(--color-teal-500);
+  --color-success-bg: var(--color-teal-50);
+  --color-success-border: var(--color-teal-200);
+  --color-success-text: var(--color-teal-700);
+
+  --color-warning: var(--color-orange-500);
+  --color-warning-bg: var(--color-orange-50);
+  --color-warning-border: var(--color-orange-200);
+  --color-warning-text: var(--color-orange-700);
+
+  --color-error: oklch(0.65 0.25 25);
+  --color-error-bg: oklch(0.98 0.02 25);
+  --color-error-border: oklch(0.85 0.10 25);
+  --color-error-text: oklch(0.45 0.18 25);
+
+  --color-info: var(--color-blue-500);
+  --color-info-bg: var(--color-blue-50);
+  --color-info-border: var(--color-blue-200);
+  --color-info-text: var(--color-blue-700);
 }
 /*
   ---break---
@@ -270,7 +385,7 @@ background: linear-gradient(180deg, rgb(224, 253, 238) 0%, rgba(250,243,221,1) 4
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: oklch(0.75 0.16 180);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -295,6 +410,27 @@ background: linear-gradient(180deg, rgb(224, 253, 238) 0%, rgba(250,243,221,1) 4
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* ===== DARK MODE ACCENT OVERRIDES ===== */
+  /* Teal - Brighter for dark mode */
+  --color-teal-500: oklch(0.75 0.16 180);
+  --color-teal-600: oklch(0.68 0.15 180);
+  --color-teal-700: oklch(0.78 0.14 180);
+
+  /* Blue - Brighter for dark mode */
+  --color-blue-500: oklch(0.72 0.19 240);
+  --color-blue-600: oklch(0.65 0.18 240);
+  --color-blue-700: oklch(0.75 0.17 240);
+
+  /* Purple - Brighter for dark mode */
+  --color-purple-500: oklch(0.72 0.21 300);
+  --color-purple-600: oklch(0.65 0.20 300);
+  --color-purple-700: oklch(0.75 0.19 300);
+
+  /* Orange - Brighter for dark mode */
+  --color-orange-500: oklch(0.75 0.16 45);
+  --color-orange-600: oklch(0.68 0.15 45);
+  --color-orange-700: oklch(0.78 0.14 45);
 }
 /*
   ---break---

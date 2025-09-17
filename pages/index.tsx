@@ -90,7 +90,7 @@ export default function Index({ portfolio, blog }) {
 			
 
 			    {/* --- 1. FEATURED PROJECTS (MOVED UP) --- */}
-            {/* <section id="projects" className="py-20">
+            <section id="projects" className="py-20">
                 <div className='container mx-auto text-center'>
                     <h2 className="text-4xl font-serif font-bold">Featured Projects</h2>
                     <p className="mt-2 text-lg text-muted-foreground">Take a look at some of the stuff I've built!</p>
@@ -109,7 +109,7 @@ export default function Index({ portfolio, blog }) {
                         </Button>
                     </div>
                 </div>
-            </section> */}
+            </section>
 
 
 			 
