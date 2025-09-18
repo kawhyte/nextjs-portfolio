@@ -51,7 +51,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
 				)}
 
 				{/* Title */}
-				<h3 className='font-serif text-lg md:text-xl font-bold mb-150'>
+				<h3 className='font-serif text-lg md:text-xl lg:text-2xl font-bold mb-150'>
 					{name}
 				</h3>
 
