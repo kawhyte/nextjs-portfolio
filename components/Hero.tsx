@@ -1,13 +1,14 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import HeroOrbit from "./HeroOrbit";
 import { FaGithub, FaLinkedin, FaCodepen, FaPlus } from "react-icons/fa";
 import { FaBluesky } from "react-icons/fa6";
 import { FiTriangle, FiZap } from "react-icons/fi";
-import memojiImage from "/public/assets/images/memoji-avatar.png";
 import { Separator } from "@radix-ui/react-separator";
+import Lottie from "lottie-react";
+import manOnComputerAnimation from "../public/lottie/man-on-computer.json";
+import { Circle } from "lucide-react";
 const Hero = () => {
 	return (
 		<div className='overflow-hidden '>
@@ -33,14 +34,14 @@ const Hero = () => {
 							orbitDuration={"35s"}
 							shouldSpin
 							spinDuration={"3s"}>
-							<FiTriangle className='size-10 text-orange-400/70 ' />
+							<Circle className='size-10 text-teal-400/70 opacity-20 ' />
 						</HeroOrbit>
 						<HeroOrbit
 							size={580}
 							rotation={-60}
 							shouldOrbit
 							orbitDuration={"37s"}>
-							<FaPlus className='size-8 text-teal-400/60' />
+							<div className='size-4 rounded-full bg-teal-400/50 opacity-20 '></div>
 						</HeroOrbit>
 						<HeroOrbit
 							size={650}
@@ -49,7 +50,7 @@ const Hero = () => {
 							orbitDuration={"41s"}
 							shouldSpin
 							spinDuration={"5s"}>
-							<FiZap className='size-6 text-blue-400/70' />
+							<Circle className='size-6 text-orange-400/70 opacity-20 ' />
 						</HeroOrbit>
 
 						<HeroOrbit
@@ -59,7 +60,7 @@ const Hero = () => {
 							orbitDuration={"36s"}
 							shouldSpin
 							spinDuration={"3s"}>
-							<FiTriangle className='size-7 text-purple-400/70 ' />
+							<div className='size-4 rounded-full bg-teal-400/50 opacity-20 '></div>
 						</HeroOrbit>
 						<HeroOrbit
 							size={550}
@@ -68,7 +69,7 @@ const Hero = () => {
 							orbitDuration={"38s"}
 							shouldSpin
 							spinDuration={"6s"}>
-							<FaPlus className='size-5 text-teal-400 ' />
+							<Circle className='size-10 text-orange-400/70 opacity-20 ' />
 						</HeroOrbit>
 						<HeroOrbit
 							size={600}
@@ -77,63 +78,48 @@ const Hero = () => {
 							orbitDuration={"40s"}
 							shouldSpin
 							spinDuration={"6s"}>
-							<FiZap className='size-6 text-blue-400 ' />
+							<div className='size-4 rounded-full bg-teal-400/50 opacity-20 '></div>
 						</HeroOrbit>
 						<HeroOrbit
 							size={620}
 							rotation={-5}
 							shouldOrbit
 							orbitDuration={"42s"}>
-							<div className='size-4 rounded-full bg-orange-400/50'></div>
+							<div className='size-4 rounded-full bg-orange-400/50 opacity-20 '></div>
 						</HeroOrbit>
-						<HeroOrbit
-							size={710}
-							rotation={140}
-							shouldOrbit
-							orbitDuration={"44s"}
-							shouldSpin
-							spinDuration={"3s"}>
-							<FaPlus className='size-4 text-orange-400/70 ' />
-						</HeroOrbit>
+					
 						<HeroOrbit
 							size={710}
 							rotation={90}
 							shouldOrbit
 							orbitDuration={"46s"}>
-							<div className='size-5 rounded-full bg-teal-400/50'></div>
+							<div className='size-5 rounded-full bg-orange-400/50 opacity-20 '></div>
 						</HeroOrbit>
-						<HeroOrbit
-							size={800}
-							rotation={-72}
-							shouldOrbit
-							orbitDuration={"48s"}
-							shouldSpin
-							spinDuration={"6s"}>
-							<FiTriangle className='size-8 text-purple-400 ' />
-						</HeroOrbit>
+						
 					</div>
 				</div>
 
 				<div className='container  flex flex-col  items-center px-200 mx-auto  mt-500 '>
-					<Image
-						src={memojiImage}
-						blurDataURL='https://res.cloudinary.com/babyhulk/image/upload/e_blur:1058,q_10/v1627169850/hero-image/person-on-computer.webp'
-						placeholder='blur'
-						width='270'
-						height='400'
-						alt='man on computer'
-						className=' pr-300 -mb-300'
-					/>
+					<div className='w-[320px] h-[480px] md:w-[400px] md:h-[600px] lg:w-[450px] lg:h-[675px] pr-300 -mt-32 -mb-300'>
+						<Lottie
+							animationData={manOnComputerAnimation}
+							loop={true}
+							autoplay={true}
+							style={{ width: '100%', height: '100%' }}
+							aria-label="Man working on computer animation"
+							role="img"
+						/>
+					</div>
 
-					<div className='container mx-auto flex flex-col justify-center items-center w-full z-50 '>
-						<div className='bg-gray-950 border border-gray-800 px-200 py-150 inline-flex items-center text-white gap-200 rounded-xl'>
+					<div className='container mx-auto flex flex-col justify-center items-center w-full z-50 -mt-32 '>
+						{/* <div className='bg-gray-950 border border-gray-800 px-200 py-150 inline-flex items-center text-white gap-200 rounded-xl'>
 							<div className=' rounded-full text-2xl lg:text-3xl animate-wave'>
 								👋🏽
 							</div>
 							<div className='text-sm font-medium'>Hello, I'm Kenny Whyte</div>
-						</div>
+						</div> */}
 						<div className='max-w-lg lg:max-w-4xl'>
-							<h1 className=' font-serif text-3xl md:text-5xl lg:text-6xl text-center mt-400 leading-extra-8'>
+							<h1 className=' font-serif text-3xl md:text-5xl lg:text-6xl text-center mt-400 leading-mega-16'>
 								Full-Stack Engineer Building Modern Web Experiences.
 							</h1>
 							<p className='mt-200 text-center text-foreground md:text-lg lg:text-xl leading-relaxed-8'>
