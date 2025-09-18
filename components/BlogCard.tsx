@@ -1,55 +1,79 @@
-import { Card, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge"; // --- 1. Import the Badge component ---
+import { Badge } from "@/components/ui/badge";
 import type { BlogCardProps } from "../types/contentful";
 import Link from "next/link";
-import AnimatedImage from "./ui/AnimatedImage";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 export default function BlogCard({ blog }: BlogCardProps) {
   const { title, slug, summary, thumbnail, tags } = blog.fields;
   const imageUrl = thumbnail?.fields?.file?.url
-    ? `https:${thumbnail.fields.file.url}?fm=webp`
+    ? `https:${thumbnail.fields.file.url}?fm=webp&w=800&q=80`
     : "/placeholder-image.webp";
+  const blurDataURL = thumbnail?.fields?.file?.url
+    ? `https:${thumbnail.fields.file.url}?fm=webp&w=20&q=10`
+    : "/placeholder-image.webp";
+  const imageAltText = title || "Blog post thumbnail";
 
   return (
-    <div className="w-full max-w-sm mx-auto rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg flex flex-col h-full">
-      <div className="w-full h-44 overflow-hidden">
-        <AnimatedImage
-          src={imageUrl}
-          alt={title || "Blog post thumbnail"}
-          width={600}
-          height={400}
-          className="w-full h-full object-cover"
-        />
+    <div className="h-full flex flex-col overflow-hidden">
+      {/* Image Section - Flush to top and sides */}
+      <div className="relative">
+        <Link href={`/blog/${slug}`}>
+          <div className="aspect-[16/9] overflow-hidden">
+            <Image
+              src={imageUrl}
+              blurDataURL={blurDataURL}
+              placeholder="blur"
+              height={500}
+              width={800}
+              className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105 rounded-xl"
+              alt={imageAltText}
+            />
+          </div>
+        </Link>
       </div>
 
-      <div className="bg-gray-100/50 p-300 space-y-200 flex flex-col flex-1">
-        {/* --- UPDATED: Tags Section with 8-point spacing --- */}
-        <div className="flex flex-wrap gap-100">
-          {tags?.map((tag) => (
-            // Use the Badge component with proper spacing
-            <Badge key={tag.sys.id} variant="secondary">
-              {tag.fields.name}
-            </Badge>
-          ))}
-        </div>
+      {/* Content Section */}
+      <div className="flex flex-col flex-grow p-150">
+        {/* Tags */}
+        {tags && tags.length > 0 && (
+          <div className="flex flex-wrap gap-100 mb-200">
+            {tags.map((tag) => (
+              <Badge
+                key={tag.sys.id}
+                variant="secondary"
+                className="bg-teal-500/10 text-teal-700 border-teal-200 hover:bg-teal-500/20"
+              >
+                {tag.fields.name}
+              </Badge>
+            ))}
+          </div>
+        )}
 
-        <CardTitle className="text-lg font-semibold leading-relaxed-8 line-clamp-2">
+        {/* Title */}
+        <h3 className="font-serif text-lg md:text-xl lg:text-2xl font-bold mb-150 line-clamp-2">
           {title}
-        </CardTitle>
+        </h3>
 
-        <CardDescription className="text-sm text-muted-foreground leading-normal-8 line-clamp-3">
+        {/* Summary */}
+        <p className="text-muted-foreground text-sm mb-200 line-clamp-3 flex-grow">
           {summary}
-        </CardDescription>
+        </p>
 
-        <CardFooter className="p-0 pt-200 mt-auto">
+        {/* CTA Button */}
+        <div className="mt-auto mb-200">
           <Button
             asChild
-            className="bg-teal-500 hover:bg-teal-600/90 text-white text-sm px-200 py-150 rounded-lg"
+            size="sm"
+            className="w-full bg-teal-500 hover:bg-teal-600 text-white"
           >
-            <Link href={`/blog/${slug}`}>Continue Reading →</Link>
+            <Link href={`/blog/${slug}`}>
+              Continue Reading
+              <ArrowUpRight className="ml-100 h-4 w-4" />
+            </Link>
           </Button>
-        </CardFooter>
+        </div>
       </div>
     </div>
   );

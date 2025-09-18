@@ -68,7 +68,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
 				</ul>
 
 				{/* CTA Button */}
-				<div className='mt-auto'>
+				<div className='mt-auto mb-200'>
 					<Button asChild size="sm" className='w-full'>
 						<Link href={`/portfolio/${slug}`}>
 							View Details
