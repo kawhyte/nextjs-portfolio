@@ -1,10 +1,8 @@
 import React from "react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import HeroOrbit from "./HeroOrbit";
-import { FaGithub, FaLinkedin, FaCodepen, FaPlus } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaCodepen } from "react-icons/fa";
 import { FaBluesky } from "react-icons/fa6";
-import { FiTriangle, FiZap } from "react-icons/fi";
 import { Separator } from "@radix-ui/react-separator";
 import Lottie from "lottie-react";
 import manOnComputerAnimation from "../public/lottie/man-on-computer.json";
@@ -129,8 +127,16 @@ const Hero = () => {
 						</div>
 
 						<div className='mt-400 flex flex-col sm:flex-row items-center gap-200'>
-							<Button asChild size='lg'>
-								<Link href='/projects'>Featured Projects</Link>
+							<Button
+								size='lg'
+								onClick={() => {
+									document.getElementById('projects')?.scrollIntoView({
+										behavior: 'smooth',
+										block: 'start'
+									});
+								}}
+							>
+								Featured Projects
 							</Button>
 							<Button asChild variant='outline' size='lg'>
 								<a

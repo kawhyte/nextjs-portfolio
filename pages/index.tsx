@@ -102,7 +102,7 @@ export default function Index({ portfolio, blog }) {
                         <div className='container'>No projects found.</div>
                     )}
                     <div className='mt-200 flex justify-center'>
-                        <Button asChild variant="outline" size="lg">
+                        <Button asChild variant="outline" size="lg" className="border-teal-300 text-white bg-teal-400 hover:bg-teal-500 hover:text-white hover:border-teal-400">
                             <Link href="/projects">
                                 View All Projects <ArrowUpRight className="ml-200 h-4 w-4" />
                             </Link>

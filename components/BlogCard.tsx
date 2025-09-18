@@ -12,7 +12,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
     : "/placeholder-image.webp";
 
   return (
-    <div className="w-full max-w-sm mx-auto bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg flex flex-col h-full">
+    <div className="w-full max-w-sm mx-auto rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg flex flex-col h-full">
       <div className="w-full h-44 overflow-hidden">
         <AnimatedImage
           src={imageUrl}
@@ -23,7 +23,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
         />
       </div>
 
-      <div className="bg-accent-orange-subtlest p-300 space-y-200 flex flex-col flex-1">
+      <div className="bg-gray-100/50 p-300 space-y-200 flex flex-col flex-1">
         {/* --- UPDATED: Tags Section with 8-point spacing --- */}
         <div className="flex flex-wrap gap-100">
           {tags?.map((tag) => (

@@ -5,6 +5,7 @@
 /* Prevents layout shift caused by scrollbar appearing/disappearing during page transitions */
 html {
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 /*
