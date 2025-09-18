@@ -21,51 +21,14 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
 		thumbnail.fields.title || name || "Portfolio project thumbnail";
 
 	return (
-		<div className='bg-gray-100/50 rounded-2xl p-400 h-full flex flex-col'>
-			<div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-400 lg:gap-600'>
-				<div className='flex flex-col'>
-					<div>
-						{technologies && technologies.length > 0 && (
-							<div className='flex flex-wrap gap-100'>
-								{technologies.map((tech) => (
-									<TechnologyBadge key={tech.sys.id} technology={tech} />
-								))}
-							</div>
-						)}
-					
-						<h3 className='font-serif text-2xl md:text-3xl font-bold'>
-							{name}
-						</h3>
+		<div className='h-full flex flex-col'>
+			{/* Responsive Layout: Vertical on md+, Side-by-side on lg+ */}
+			<div className='grid grid-cols-1 md:grid-rows-[auto_1fr_auto] lg:grid-cols-2 lg:grid-rows-1 items-start gap-400 lg:gap-600 h-full'>
 
-						<p className='text-muted-foreground mt-100 text-sm md:text-base hidden md:block'>
-							{summary}
-						</p>
-
-						<hr className='my-5' />
-
-						{/* --- UPDATED: Use the new highlights logic --- */}
-						<ul className='text-muted-foreground flex flex-col gap-200'>
-							{projectHighlights?.slice(0, 4).map((highlight) => (
-								<HighlightItem key={highlight.sys.id} highlight={highlight} />
-							))}
-						</ul>
-					</div>
-
-					<div className='flex-grow' />
-
-					<div className='mt-400'>
-						<Button asChild>
-							<Link href={`/portfolio/${slug}`}>
-								View Project Details
-								<ArrowUpRight className='ml-100 h-4 w-4' />
-							</Link>
-						</Button>
-					</div>
-				</div>
-
-				<div className='lg:mt-0'>
+				{/* Image Section - Top on md+, Right on lg+ */}
+				<div className='md:order-first lg:order-last'>
 					<Link href={`/portfolio/${slug}`}>
-						<div className='aspect-[16/10] overflow-hidden rounded-lg border shadow-lg hover:shadow-2xl transition-shadow duration-300'>
+						<div className='aspect-[16/9] md:aspect-[16/10] overflow-hidden rounded-lg border shadow-lg hover:shadow-2xl transition-shadow duration-300'>
 							<Image
 								src={`https:${thumbnail.fields.file.url}?fm=webp&w=800&q=80`}
 								blurDataURL={`https:${thumbnail.fields.file.url}?fm=webp&w=20&q=10`}
@@ -77,6 +40,48 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
 							/>
 						</div>
 					</Link>
+				</div>
+
+				{/* Content Section */}
+				<div className='flex flex-col h-full md:order-last lg:order-first'>
+					<div className='flex-grow'>
+						{/* Technology Badges */}
+						{technologies && technologies.length > 0 && (
+							<div className='flex flex-wrap gap-100 mb-200'>
+								{technologies.map((tech) => (
+									<TechnologyBadge key={tech.sys.id} technology={tech} />
+								))}
+							</div>
+						)}
+
+						{/* Title */}
+						<h3 className='font-serif text-xl md:text-2xl lg:text-3xl font-bold mb-100'>
+							{name}
+						</h3>
+
+						{/* Summary - Hidden on md in 2-column, shown on lg in side-by-side */}
+						<p className='text-muted-foreground text-sm md:text-base mb-300 hidden lg:block'>
+							{summary}
+						</p>
+
+						{/* Highlights - Reduced count for tighter layout */}
+						<ul className='text-muted-foreground flex flex-col gap-150 mb-400'>
+							{projectHighlights?.slice(0, 3).map((highlight) => (
+								<HighlightItem key={highlight.sys.id} highlight={highlight} />
+							))}
+						</ul>
+					</div>
+
+					{/* CTA Button */}
+					<div className='mt-auto'>
+						<Button asChild className='w-full md:w-auto lg:w-full xl:w-auto'>
+							<Link href={`/portfolio/${slug}`}>
+								<span className='hidden lg:inline'>View Project Details</span>
+								<span className='lg:hidden'>View Details</span>
+								<ArrowUpRight className='ml-100 h-4 w-4' />
+							</Link>
+						</Button>
+					</div>
 				</div>
 			</div>
 		</div>
