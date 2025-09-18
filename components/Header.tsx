@@ -56,13 +56,13 @@ export default function Navbar() {
 
   useClickOutside(navRef, () => setIsOpen(false));
 
-  const navClasses = "flex items-center justify-between bg-zinc-800/80 backdrop-blur-md border border-zinc-700/80 rounded-full px-4 py-2 shadow-lg shadow-black/20";
-  const linkClasses = "relative flex items-center gap-x-2 text-gray-300 hover:text-white transition-colors duration-300 px-3 py-1.5";
-  const mobileButtonClasses = "p-2 text-gray-200 rounded-full hover:bg-white/10 transition-colors duration-300";
+  const navClasses = "flex items-center justify-between bg-zinc-800/80 backdrop-blur-md border border-zinc-700/80 rounded-full px-200 py-100 shadow-lg shadow-black/20";
+  const linkClasses = "relative flex items-center gap-x-100 text-gray-300 hover:text-white transition-colors duration-300 px-200 py-150";
+  const mobileButtonClasses = "p-100 text-gray-200 rounded-full hover:bg-white/10 transition-colors duration-300";
 
   return (
-    <header className="fixed top-4 inset-x-0 z-50 flex justify-center">
-      <div ref={navRef} className="relative w-full max-w-xs md:max-w-3xl mx-4">
+    <header className="fixed top-200 inset-x-0 z-50 flex justify-center">
+      <div ref={navRef} className="relative w-full max-w-xs md:max-w-3xl mx-200">
         <nav className={navClasses}>
           <Link href="/" className="font-bold text-white text-xl tracking-wider">
             KW.
@@ -101,7 +101,7 @@ export default function Navbar() {
                 className="text-gray-300 hover:bg-zinc-700 hover:text-white transition-colors"
               >
                   <a href="https://linkedin.com/in/kawhyte" target="_blank" rel="noopener noreferrer">
-                      <FiMail className="mr-2 h-4 w-4"/>
+                      <FiMail className="mr-100 h-4 w-4"/>
                       Contact
                   </a>
               </Button>
@@ -125,10 +125,10 @@ export default function Navbar() {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="absolute top-full mt-2 left-0 right-0 rounded-2xl shadow-xl origin-top md:hidden"
+              className="absolute top-full mt-100 left-0 right-0 rounded-2xl shadow-xl origin-top md:hidden"
             >
-              <div className="bg-zinc-900/90 backdrop-blur-lg border border-white/10 rounded-2xl p-2">
-                <ul className="flex flex-col space-y-1">
+              <div className="bg-zinc-900/90 backdrop-blur-lg border border-white/10 rounded-2xl p-100">
+                <ul className="flex flex-col space-y-100">
                   {navLinks.map((link, i) => {
                     const isActive = pathname === link.href;
                     const Icon = link.icon;
@@ -144,7 +144,7 @@ export default function Navbar() {
                         <Link
                           href={link.href}
                           onClick={() => setIsOpen(false)}
-                          className={`flex items-center gap-x-3 w-full p-3 rounded-lg text-lg transition-colors ${
+                          className={`flex items-center gap-x-200 w-full p-200 rounded-lg text-lg transition-colors ${
                             isActive
                               ? "bg-zinc-700 text-white font-semibold"
                               : "text-gray-300 hover:bg-zinc-800"
@@ -169,7 +169,7 @@ export default function Navbar() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setIsOpen(false)}
-                      className="flex items-center gap-x-3 w-full p-3 rounded-lg text-lg transition-colors text-gray-300 hover:bg-zinc-800"
+                      className="flex items-center gap-x-200 w-full p-200 rounded-lg text-lg transition-colors text-gray-300 hover:bg-zinc-800"
                     >
                       <FiMail className="h-5 w-5" />
                       <span>Contact</span>

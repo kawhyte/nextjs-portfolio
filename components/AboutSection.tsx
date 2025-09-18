@@ -195,7 +195,7 @@ const AboutSection: React.FC = () => {
 		<div className=' lg:container'>
 			{" "}
 			{/* className is correct */}
-			<div className='py-20 lg:py-24 max-w-7xl '>
+			<div className='py-500 lg:py-600 max-w-7xl '>
 				<div className='container'>
 					{/* Assuming SectionTitle props are strings */}
 					<SectionTitle
@@ -207,8 +207,8 @@ const AboutSection: React.FC = () => {
 					/>
 				</div>
 
-				<div className='mt-20 flex flex-col gap-8'>
-					<div className='grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3 md:gap-1'>
+				<div className='mt-500 flex flex-col gap-400'>
+					<div className='grid grid-cols-1 gap-400 md:grid-cols-5 lg:grid-cols-3 md:gap-100'>
 						{/* Assuming Card props are className and children */}
 						<Card className='h-[320px] md:col-span-2 lg:col-span-1 '>
 							{/* Assuming CardHeader props are optional strings */}
@@ -224,7 +224,7 @@ const AboutSection: React.FC = () => {
 							</div> */}
 
 							<div className='relative w-60 h-80 mx-auto'>
-								<div className='absolute top-0 -left-6 z-20 transition-transform duration-300 hover:scale-110 hover:z-50 hover:shadow-2xl perspective-1000'>
+								<div className='absolute top-0 -left-300 z-20 transition-transform duration-300 hover:scale-110 hover:z-50 hover:shadow-2xl perspective-1000'>
 									<div className='transform-gpu rotate-y-[-5deg] hover:rotate-y-[-10deg] transition-transform duration-300'>
 										<Image
 											src={bookImage}
@@ -237,7 +237,7 @@ const AboutSection: React.FC = () => {
 								</div>
 
 								{/* Card 2 */}
-								<div className='absolute top-8 left-20 z-40 transition-transform duration-300 hover:scale-110 hover:z-50 hover:shadow-2xl perspective-1000'>
+								<div className='absolute top-200 left-500 z-40 transition-transform duration-300 hover:scale-110 hover:z-50 hover:shadow-2xl perspective-1000'>
 									<div className='transform-gpu rotate-y-[-5deg] hover:rotate-y-[-10deg] transition-transform duration-300'>
 										<Image
 											src={bookImage2}
@@ -265,26 +265,26 @@ const AboutSection: React.FC = () => {
 						</Card>
 					</div>
 
-					<div className='grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3 md:gap-1'>
+					<div className='grid grid-cols-1 gap-400 md:grid-cols-5 lg:grid-cols-3 md:gap-100'>
 						<Card className='h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2'>
 							<CardHeader
 								title={"Things I like:"}
 								description={
 									"Beyond the screen, I have a life filled with other passions. "
 								}
-								className='px-6 py-6'
+								className='px-300 py-300'
 							/>
 					<div className='relative flex-1'>
   {hobbies.map((hobby, index) => (
     <div
       key={hobby.title}
-      className='inline-flex items-center gap-2 px-6 bg-linear-to-r from-green-100 to-orange-100 rounded-full py-1.5 absolute animate-float'
+      className='inline-flex items-center gap-100 px-300 bg-linear-to-r from-green-100 to-orange-100 rounded-full py-150 absolute animate-float'
       style={{
         left: hobby.left,
         top: hobby.top,
         animationDelay: `${index * 0.3}s`,
       }}>
-      <span className='font-medium text-gray-950 text-xs md:text-base'>{hobby.title}</span>
+      <span className='font-medium text-foreground text-xs md:text-base'>{hobby.title}</span>
       <span>{hobby.emoji}</span>
     </div>
   ))}

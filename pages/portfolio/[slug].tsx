@@ -110,7 +110,7 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
     const coverImageUrl = displayImage?.fields?.file?.url ? `https:${displayImage.fields.file.url}` : undefined;
 
     return (
-        <main className='pt-24'>
+        <main className='pt-600'>
             <SeoHead 
                 title={name}
                 description={summary}
@@ -118,23 +118,23 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
                 url={`/portfolio/${slug}`}
             />
 
-            <section className="container mx-auto max-w-4xl text-center mb-16 md:mb-24">
+            <section className="container mx-auto max-w-4xl text-center mb-400 md:mb-600">
                 <h1 className='font-serif text-4xl md:text-6xl font-bold'>{name}</h1>
-                <p className='mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto'>
+                <p className='mt-200 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto'>
                     {summary}
                 </p>
-                <div className='mt-8 flex justify-center items-center gap-4'>
+                <div className='mt-400 flex justify-center items-center gap-200'>
                     {demoUrl && (
                         <Button asChild size="lg">
                             <a href={demoUrl} target="_blank" rel="noopener noreferrer">
-                                <FiHome className="mr-2 h-4 w-4" /> Live Demo
+                                <FiHome className="mr-100 h-4 w-4" /> Live Demo
                             </a>
                         </Button>
                     )}
                     {url && (
                         <Button asChild size="lg" variant="outline">
                             <a href={url} target="_blank" rel="noopener noreferrer">
-                                <FiCode className="mr-2 h-4 w-4" /> View Code
+                                <FiCode className="mr-100 h-4 w-4" /> View Code
                             </a>
                         </Button>
                     )}
@@ -142,7 +142,7 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
             </section>
 
             <div className="container mx-auto max-w-7xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-400 lg:gap-300 items-start">
                     {displayImage && (
                         <div className="overflow-hidden rounded-lg border shadow-lg">
                             <Image
@@ -162,10 +162,10 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
                                 <CardTitle>Technology Stack</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-muted-foreground mb-4">
+                                <p className="text-muted-foreground mb-200">
                                     The core technologies used to build this project.
                                 </p>
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap gap-100">
                                     {technologies.map((tech) => (
                                         <TechnologyBadge key={tech.sys.id} technology={tech} />
                                     ))}
@@ -175,7 +175,7 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
                     )}
                 </div>
                 
-                <Separator className="my-16 md:my-24" />
+                <Separator className="my-400 md:my-600" />
             </div>
 
             <div className="container mx-auto max-w-6xl">

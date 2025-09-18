@@ -10,16 +10,16 @@ interface CardHeaderProps {
 
 const CardHeader: React.FC<CardHeaderProps> = ({ title, description, className }) => {
 	return (
-		<div className={twMerge("flex flex-col p-6", className)}> {/* Apply className safely */}
+		<div className={twMerge("flex flex-col p-300", className)}> {/* Apply className safely */}
 			<div>
-				<div className='inline-flex items-center gap-2'>
+				<div className='inline-flex items-center gap-100'>
 				
 					{/* <StarIcon className='size-9 text-green-300 ' /> */}
-					<Zap className='size-7 text-green-300 mr-2 ' />
+					<Zap className='size-7 text-green-300 mr-100 ' />
 
 					<h3 className='font-serif text-3xl '>{title}</h3>
 				</div>
-				<p className='text-sm lg:text-base max-w-base text-gray-500/90 mt-2'>{description}</p>
+				<p className='text-sm lg:text-base max-w-base text-muted-foreground/90 mt-100'>{description}</p>
 			</div>
 		</div>
 	);

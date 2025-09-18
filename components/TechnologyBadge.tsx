@@ -29,7 +29,7 @@ const TechnologyBadge = ({ technology }: { technology: Technology }) => {
 		: undefined;
 
 	return (
-		<Badge variant='secondary' className='flex items-center gap-2'>
+		<Badge variant='secondary' className='flex items-center gap-100'>
 			{customIcon?.fields?.file?.url ? (
 				<Image
 					src={`https:${customIcon.fields.file.url}`}

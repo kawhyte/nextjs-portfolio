@@ -61,7 +61,7 @@ const AboutPage = () => {
 	];
 
 	return (
-		<main className='pt-24 bg-gray-50/50'>
+		<main className='pt-600 bg-gray-50/50'>
 			<SeoHead
 				title='About Me'
 				description='Learn more about Kenny Whyte, a full-stack software engineer specializing in modern web technologies, his skills, and his journey into software development.'
@@ -69,7 +69,7 @@ const AboutPage = () => {
 			/>
 
 			{/* --- 1. Hero Section --- */}
-			<section className='container mx-auto max-w-5xl text-center py-16 md:py-24'>
+			<section className='container mx-auto max-w-5xl text-center py-400 md:py-600'>
 				{/* <div className="flex justify-center mb-8">
                     <Image
                         src="/assets/images/memoji-avatar.png" // Your memoji
@@ -79,10 +79,10 @@ const AboutPage = () => {
                         className="rounded-full bg-green-200/50 p-3 shadow-lg"
                     />
                 </div> */}
-				<h1 className='font-serif text-4xl md:text-6xl font-bold'>
+				<h1 className='font-serif text-4xl md:text-6xl font-bold mt-16'>
 					Hi, I'm Kenny Whyte.
 				</h1>
-				<p className='mt-4 text-lg md:text-xl text-muted-foreground max-w-5xl mx-auto'>
+				<p className='mt-200 text-lg md:text-xl text-muted-foreground max-w-5xl mx-auto'>
 					I'm a passionate full-stack engineer dedicated to building software
 					that is not only functional but also intuitive and enjoyable to use. I
 					thrive on solving complex problems and turning innovative ideas into
@@ -103,12 +103,12 @@ const AboutPage = () => {
 			</section>
 
 			{/* --- 2. My Journey Section --- */}
-			<section className='container mx-auto max-w-5xl py-16 md:py-24 border-t'>
-				<div className='grid grid-cols-1 md:grid-cols-3 gap-12'>
+			<section className='container mx-auto max-w-5xl py-400 md:py-600 border-t'>
+				<div className='grid grid-cols-1 md:grid-cols-3 gap-300'>
 					<div className='md:col-span-1'>
 						<h2 className='font-serif text-3xl font-bold'>My Journey</h2>
 					</div>
-					<div className='md:col-span-2 text-muted-foreground text-lg space-y-6'>
+					<div className='md:col-span-2 text-muted-foreground text-lg space-y-300'>
 						<p>
 							My journey into software development began with a fascination for
 							how things work. This curiosity led me to pursue a degree in
@@ -133,26 +133,26 @@ const AboutPage = () => {
 			</section>
 
 			{/* --- 3. Skills & Philosophy Section --- */}
-			<section className='bg-white py-16 md:py-24 border-t'>
+			<section className='bg-white py-400 md:py-600 border-t'>
 				<div className='container mx-auto max-w-5xl'>
-					<div className='text-center mb-12'>
+					<div className='text-center mb-300'>
 						<h2 className='font-serif text-3xl font-bold'>
 							Skills & Philosophy
 						</h2>
-						<p className='mt-2 text-lg text-muted-foreground'>
+						<p className='mt-100 text-lg text-muted-foreground'>
 							My approach to building great software.
 						</p>
 					</div>
-					<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+					<div className='grid grid-cols-1 md:grid-cols-2 gap-400'>
 						<Card>
 							<CardHeader>
 								<CardTitle>Core Technologies</CardTitle>
 							</CardHeader>
 							<CardContent>
-								<p className='text-muted-foreground mb-4'>
+								<p className='text-muted-foreground mb-200'>
 									The primary tools and technologies I work with daily.
 								</p>
-								<div className='flex flex-wrap gap-2'>
+								<div className='flex flex-wrap gap-100'>
 									{coreSkills.map((skill) => (
 										<Badge key={skill} variant='secondary'>
 											{skill}
@@ -165,7 +165,7 @@ const AboutPage = () => {
 							<CardHeader>
 								<CardTitle>My Philosophy</CardTitle>
 							</CardHeader>
-							<CardContent className='space-y-4 text-muted-foreground'>
+							<CardContent className='space-y-200 text-muted-foreground'>
 								<p>
 									<strong>User-Centric Design:</strong> I believe the best
 									applications are built with the end-user in mind.
@@ -188,21 +188,21 @@ const AboutPage = () => {
 			</section>
 
 			{/* --- 4. NEW: Life Beyond Code Section --- */}
-			<section className='py-16 md:py-24 border-t'>
+			<section className='py-400 md:py-600 border-t'>
 				<div className='container mx-auto max-w-5xl'>
-					<div className='text-center mb-12'>
+					<div className='text-center mb-300'>
 						<h2 className='font-serif text-3xl font-bold'>Life Beyond Code</h2>
-						<p className='mt-2 text-lg text-muted-foreground'>
+						<p className='mt-100 text-lg text-muted-foreground'>
 							When I'm not at my keyboard, you can find me...
 						</p>
 					</div>
-					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-400'>
 						<Card className='lg:col-span-2'>
 							<CardHeader>
 								<CardTitle>Places I've Been</CardTitle>
 							</CardHeader>
 							<CardContent>
-								<p className='text-muted-foreground mb-4'>
+								<p className='text-muted-foreground mb-200'>
 									I've been fortunate enough to wander some incredible corners
 									of the world:
 								</p>
@@ -213,9 +213,9 @@ const AboutPage = () => {
 							<CardHeader>
 								<CardTitle>Reading List</CardTitle>
 							</CardHeader>
-							<CardContent className='flex justify-center items-center pt-6'>
+							<CardContent className='flex justify-center items-center pt-300'>
 								<div className='relative w-60 h-60'>
-									<div className='absolute top-0 -left-6 z-20 transition-transform duration-300 hover:scale-110 hover:z-30'>
+									<div className='absolute top-0 -left-300 z-20 transition-transform duration-300 hover:scale-110 hover:z-30'>
 										<Image
 											src={bookImage}
 											alt='Book'
@@ -224,7 +224,7 @@ const AboutPage = () => {
 											className='rounded-lg shadow-xl border'
 										/>
 									</div>
-									<div className='absolute top-4 left-20 z-10 transition-transform duration-300 hover:scale-110 hover:z-30'>
+									<div className='absolute top-200 left-500 z-10 transition-transform duration-300 hover:scale-110 hover:z-30'>
 										<Image
 											src={bookImage2}
 											alt='Book'
@@ -244,9 +244,9 @@ const AboutPage = () => {
 								{hobbies.map((hobby) => (
 									<div
 										key={hobby.title}
-										className='inline-flex items-center gap-2 px-4 py-1.5 bg-white rounded-full absolute shadow-sm border'
+										className='inline-flex items-center gap-100 px-200 py-150 bg-white rounded-full absolute shadow-sm border'
 										style={{ left: hobby.left, top: hobby.top }}>
-										<span className='font-medium text-gray-950 text-sm'>
+										<span className='font-medium text-foreground text-sm'>
 											{hobby.title}
 										</span>
 										<span>{hobby.emoji}</span>

@@ -11,7 +11,7 @@ import { Separator } from "@radix-ui/react-separator";
 const Hero = () => {
 	return (
 		<div className='overflow-hidden '>
-			<div className='min-h-screen flex items-center justify-center py-12 md:py-20 bg-green-100 bg-gradient relative z-0 mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]'>
+			<div className='min-h-screen flex items-center justify-center py-300 md:py-500 bg-accent-teal-subtlest bg-gradient relative z-0 mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]'>
 				<div className='absolute inset-0 '>
 					<div
 						className='absolute   inset-0 -z-30 opacity-5  '
@@ -114,7 +114,7 @@ const Hero = () => {
 					</div>
 				</div>
 
-				<div className='container  flex flex-col  items-center px-3 mx-auto  mt-20 '>
+				<div className='container  flex flex-col  items-center px-200 mx-auto  mt-500 '>
 					<Image
 						src={memojiImage}
 						blurDataURL='https://res.cloudinary.com/babyhulk/image/upload/e_blur:1058,q_10/v1627169850/hero-image/person-on-computer.webp'
@@ -122,27 +122,27 @@ const Hero = () => {
 						width='270'
 						height='400'
 						alt='man on computer'
-						className=' pr-7 -mb-10'
+						className=' pr-300 -mb-300'
 					/>
 
 					<div className='container mx-auto flex flex-col justify-center items-center w-full z-50 '>
-						<div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center text-white gap-4 rounded-xl'>
+						<div className='bg-gray-950 border border-gray-800 px-200 py-150 inline-flex items-center text-white gap-200 rounded-xl'>
 							<div className=' rounded-full text-2xl lg:text-3xl animate-wave'>
 								👋🏽
 							</div>
 							<div className='text-sm font-medium'>Hello, I'm Kenny Whyte</div>
 						</div>
 						<div className='max-w-lg lg:max-w-4xl'>
-							<h1 className=' font-serif text-3xl md:text-5xl lg:text-6xl text-center mt-8 leading-tight'>
+							<h1 className=' font-serif text-3xl md:text-5xl lg:text-6xl text-center mt-400 leading-extra-8'>
 								Full-Stack Engineer Building Modern Web Experiences.
 							</h1>
-							<p className='mt-4 text-center text-gray-900 md:text-lg lg:text-xl'>
+							<p className='mt-200 text-center text-foreground md:text-lg lg:text-xl leading-relaxed-8'>
 								I specialize in creating fast, intuitive, and user-friendly
 								software using C#, .NET, and React/Next.js.
 							</p>
 						</div>
 
-						<div className='mt-8 flex flex-col sm:flex-row items-center gap-4'>
+						<div className='mt-400 flex flex-col sm:flex-row items-center gap-200'>
 							<Button asChild size='lg'>
 								<Link href='/projects'>View My Projects</Link>
 							</Button>
@@ -155,9 +155,9 @@ const Hero = () => {
 								</a>
 							</Button>
 						</div>
-						<Separator className='my-4' />
+						<Separator className='my-200' />
 						{/* --- NEW: Social Links Section --- */}
-						<div className='mt-6 flex justify-center items-center gap-4'>
+						<div className='mt-300 flex justify-center items-center gap-200'>
 							<Button asChild variant='ghost' size='icon'>
 								<a
 									href='https://github.com/kawhyte'

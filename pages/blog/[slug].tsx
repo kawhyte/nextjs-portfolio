@@ -155,7 +155,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
 
 	return (
 		// Use a more modern, centered layout container
-		<main className='mt-20 px-4 py-8 md:py-12'>
+		<main className='mt-500 px-200 py-400 md:py-300'>
 			<SeoHead
 				title={title}
 				description={excerpt}
@@ -164,15 +164,15 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
 				type='article'
 			/>
 
-			<article className='max-w-6xl mx-auto'>
+			<article className='max-w-6xl mx-auto mt-16'>
 				{/* 1. REFINED HERO SECTION */}
-				<header className='mb-8 md:mb-12'>
-					<h1 className='text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4'>
+				<header className='mb-400 md:mb-300'>
+					<h1 className='text-3xl md:text-5xl font-extrabold tracking-tight text-foreground mb-200'>
 						{title}
 					</h1>
 
 					{/* 2. AUTHOR & METADATA SECTION */}
-					<div className='flex items-center space-x-4 text-gray-500'>
+					<div className='flex items-center space-x-200 text-muted-foreground'>
 						{/* You can replace this with a real avatar */}
 						<div className='flex-shrink-0'>
 							<Image
@@ -184,7 +184,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
 							/>
 						</div>
 						<div>
-							<p className='text-sm font-medium text-gray-800'>Kenny Whyte</p>
+							<p className='text-sm font-medium text-foreground'>Kenny Whyte</p>
 							<p className='text-sm'>
 								<span>
 									{new Date(publicationDate).toLocaleDateString("en-US", {
@@ -202,7 +202,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
 
 				{/* 3. HERO IMAGE */}
 				{thumbnail?.fields?.file?.url && (
-					<div className='mb-8 max-w-6xl mx-auto md:mb-12'>
+					<div className='mb-400 max-w-6xl mx-auto md:mb-300'>
 						<Image
 							src={`https:${thumbnail.fields.file.url}?fm=webp&w=1280&q=80`}
 							width={1280}
@@ -212,7 +212,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
 							priority
 						/>
 						{photoCredit && (
-							<p className='mt-2 text-xs text-center text-gray-500'>
+							<p className='mt-100 text-xs text-center text-muted-foreground'>
 								Photo credit: {photoCredit}
 							</p>
 						)}

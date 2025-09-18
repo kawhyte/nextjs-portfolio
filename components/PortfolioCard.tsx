@@ -21,12 +21,12 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
 		thumbnail.fields.title || name || "Portfolio project thumbnail";
 
 	return (
-		<div className='bg-gray-100/50 rounded-2xl p-8 h-full flex flex-col'>
-			<div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12'>
+		<div className='bg-gray-100/50 rounded-2xl p-400 h-full flex flex-col'>
+			<div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-400 lg:gap-600'>
 				<div className='flex flex-col'>
 					<div>
 						{technologies && technologies.length > 0 && (
-							<div className='flex flex-wrap gap-2'>
+							<div className='flex flex-wrap gap-100'>
 								{technologies.map((tech) => (
 									<TechnologyBadge key={tech.sys.id} technology={tech} />
 								))}
@@ -37,14 +37,14 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
 							{name}
 						</h3>
 
-						<p className='text-muted-foreground mt-2 text-sm md:text-base hidden md:block'>
+						<p className='text-muted-foreground mt-100 text-sm md:text-base hidden md:block'>
 							{summary}
 						</p>
 
 						<hr className='my-5' />
 
 						{/* --- UPDATED: Use the new highlights logic --- */}
-						<ul className='text-muted-foreground flex flex-col gap-3'>
+						<ul className='text-muted-foreground flex flex-col gap-200'>
 							{projectHighlights?.slice(0, 4).map((highlight) => (
 								<HighlightItem key={highlight.sys.id} highlight={highlight} />
 							))}
@@ -53,11 +53,11 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
 
 					<div className='flex-grow' />
 
-					<div className='mt-8'>
+					<div className='mt-400'>
 						<Button asChild>
 							<Link href={`/portfolio/${slug}`}>
 								View Project Details
-								<ArrowUpRight className='ml-2 h-4 w-4' />
+								<ArrowUpRight className='ml-100 h-4 w-4' />
 							</Link>
 						</Button>
 					</div>

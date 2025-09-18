@@ -16,14 +16,14 @@ interface CaseStudyProps {
 
 // --- NEW: A reusable section component for the case study ---
 const CaseStudySection = ({ title, description, icon: Icon, richText }) => (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-400">
         {/* Left Column: Title and Icon */}
         <div className="md:col-span-1">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-200">
                 <Icon className="h-6 w-6 text-green-600" />
                 <h3 className="font-serif text-2xl font-bold">{title}</h3>
             </div>
-            <p className="mt-2 text-muted-foreground">{description}</p>
+            <p className="mt-100 text-muted-foreground">{description}</p>
         </div>
         {/* Right Column: Rich Text Content */}
         <div className="md:col-span-3 prose prose-lg max-w-none">
@@ -42,7 +42,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
         // UPDATED: Changed container to be wider on large screens
         <div className='my-20  max-w-8xl'>
             <Card className="bg-white/70 backdrop-blur-sm">
-                <CardContent className="p-8 md:p-12 space-y-12">
+                <CardContent className="p-400 md:p-600 space-y-600">
                     {/* Section 1: The Challenge */}
                     <CaseStudySection 
                         title="The Challenge"

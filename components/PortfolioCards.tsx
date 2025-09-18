@@ -13,12 +13,12 @@ const PortfolioCards: React.FC<PortfolioCardsProps> = ({
 	hideLastItemOnMobile = false, // Default value is fine
 }) => {
 	return (
-		<section className='pb-10 lg:p md:container md:mx-auto  '>
+		<section className='pb-500 lg:p md:container md:mx-auto  '>
 			<div className=''>
-				<div className=' flex flex-col mt-10 gap-20  '>
+				<div className=' flex flex-col mt-300 gap-500  '>
 					{items.map((item, index) => (
 						<div
-							className="bg-gray-100/50  max-w-6xl mx-3 md:mx-9 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0  after:outline-2 after:outline-solid after:-outline-offset-2 after:rounded-3xl after:outline-gray-700/20 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sm:sticky  after:pointer-events-none "
+							className="bg-gray-100/50  max-w-6xl mx-200 md:mx-300 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0  after:outline-2 after:outline-solid after:-outline-offset-2 after:rounded-3xl after:outline-gray-700/20 px-400 pt-400 md:pt-300 md:px-300 lg:pt-400 lg:px-500 sm:sticky  after:pointer-events-none "
 							key={item.sys.id}>
 							<PortfolioCard portfolio={item} />
 						</div>
