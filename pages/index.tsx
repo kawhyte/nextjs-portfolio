@@ -97,7 +97,7 @@ export default function Index({ portfolio, blog }) {
                 </div>
                 <div className='my-600'>
                     {portfolio.length > 0 ? (
-                        <PortfolioCards items={portfolio.slice(0, 4)} />
+                        <PortfolioCards items={portfolio.slice(0, 3)} />
                     ) : (
                         <div className='container'>No projects found.</div>
                     )}

@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 // --- Data Configuration ---
 const navLinks = [
   { title: "Home", href: "/", icon: FiHome },
-  { title: "Projects", href: "/projects", icon: FiGrid },
+  { title: "All Projects", href: "/projects", icon: FiGrid },
   { title: "Blog", href: "/blog", icon: FiEdit3 },
   { title: "About", href: "/about", icon: FiUser },
 ];

@@ -51,7 +51,7 @@ export default function Recipes({ portfolio }) {
 				description={"Take a look at some of the stuff I've built!"}
 			/>
 			
-			<div className='lg:container lg:mx-auto my-20'>
+			<div className=''>
 			
 
 				<PortfolioCards items={portfolio} />

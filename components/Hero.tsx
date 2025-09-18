@@ -130,7 +130,7 @@ const Hero = () => {
 
 						<div className='mt-400 flex flex-col sm:flex-row items-center gap-200'>
 							<Button asChild size='lg'>
-								<Link href='/projects'>View My Projects</Link>
+								<Link href='/projects'>Featured Projects</Link>
 							</Button>
 							<Button asChild variant='outline' size='lg'>
 								<a

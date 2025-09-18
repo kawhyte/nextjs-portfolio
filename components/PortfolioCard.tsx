@@ -32,7 +32,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
 							placeholder='blur'
 							height={thumbnail.fields.file.details?.image?.height || 500}
 							width={thumbnail.fields.file.details?.image?.width || 800}
-							className='w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105'
+							className='w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105 rounded-xl'
 							alt={imageAltText}
 						/>
 					</div>
@@ -40,7 +40,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ portfolio }) => {
 			</div>
 
 			{/* Content Section */}
-			<div className='flex flex-col flex-grow p-400'>
+			<div className='flex flex-col flex-grow p-150'>
 				{/* Technology Badges */}
 				{technologies && technologies.length > 0 && (
 					<div className='flex flex-wrap gap-100 mb-200'>
