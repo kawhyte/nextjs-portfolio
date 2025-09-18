@@ -32,6 +32,14 @@ export default {
         '3': '3',
       },
 
+      // Custom Max Width Utilities
+      maxWidth: {
+        '8xl': '88rem',   // 1408px
+        '9xl': '96rem',   // 1536px
+        '10xl': '104rem', // 1664px
+        '11xl': '112rem', // 1792px
+      },
+
       // 8-Point Spacing System - Following Atlassian Design Principles
       spacing: {
         // Micro spacing (0.25x to 1x)
