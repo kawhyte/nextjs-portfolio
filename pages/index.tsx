@@ -10,6 +10,7 @@ import AboutSection from "../components/AboutSection";
 import Link from "next/link";
 import SeoHead from "../components/SeoHead";
 import SectionTitle from "../components/SectionTitle";
+import SectionHero from "../components/SectionHero";
 // import Button from "../ui/Button";
 
 
@@ -92,7 +93,7 @@ export default function Index({ portfolio, blog }) {
 			    {/* --- 1. FEATURED PROJECTS (8-point spacing) --- */}
             <section id="projects" className="py-1000">
                 <div className='container mx-auto text-center'>
-                    <h2 className="text-4xl font-serif font-bold leading-extra-8">Featured Projects</h2>
+                    <h2 className="text-4xl font-header font-bold leading-extra-8">Featured Projects</h2>
                     <p className="mt-200 text-lg text-muted-foreground leading-relaxed-8">Take a look at some of the stuff I've built!</p>
                 </div>
                 <div className='my-600'>

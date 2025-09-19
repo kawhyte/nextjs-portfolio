@@ -71,13 +71,23 @@ export const defaultRenderOptions: Options = {
 			return null;
 		},
 		[BLOCKS.UL_LIST]: (node: Block | Inline, children: React.ReactNode) => (
-			<ul className='list-disc list-inside space-y-2 my-4'>{children}</ul>
+			<ul className='list-disc list-outside space-y-2 my-4 ml-6'>{children}</ul>
 		),
 		[BLOCKS.OL_LIST]: (node: Block | Inline, children: React.ReactNode) => (
-			<ol className='list-decimal list-inside space-y-2 my-4'>{children}</ol>
+			<ol className='list-decimal list-outside space-y-2 my-4 ml-6'>{children}</ol>
 		),
 		[BLOCKS.LIST_ITEM]: (node: Block | Inline, children: React.ReactNode) => (
-			<li>{children}</li>
+			<li className='pl-2'>{children}</li>
+		),
+		[INLINES.HYPERLINK]: (node: Block | Inline, children: React.ReactNode) => (
+			<a
+				href={node.data.uri}
+				target="_blank"
+				rel="noopener noreferrer"
+				className="text-teal-600 hover:text-teal-700 underline decoration-teal-600/30 hover:decoration-teal-600 underline-offset-2 transition-colors duration-200"
+			>
+				{children}
+			</a>
 		),
 	},
 };
@@ -94,14 +104,27 @@ export const proseRenderOptions: Options = {
 			}
 			return null;
 		},
+		[BLOCKS.PARAGRAPH]: (node: Block | Inline, children: React.ReactNode) => (
+			<p>{children}</p>
+		),
 		[BLOCKS.UL_LIST]: (node: Block | Inline, children: React.ReactNode) => (
-			<ul>{children}</ul>
+			<ul className='my-4'>{children}</ul>
 		),
 		[BLOCKS.OL_LIST]: (node: Block | Inline, children: React.ReactNode) => (
-			<ol>{children}</ol>
+			<ol className='my-4'>{children}</ol>
 		),
 		[BLOCKS.LIST_ITEM]: (node: Block | Inline, children: React.ReactNode) => (
 			<li>{children}</li>
+		),
+		[INLINES.HYPERLINK]: (node: Block | Inline, children: React.ReactNode) => (
+			<a
+				href={node.data.uri}
+				target="_blank"
+				rel="noopener noreferrer"
+				className="text-teal-600 hover:text-teal-700 underline decoration-teal-600/30 hover:decoration-teal-600 underline-offset-2 transition-colors duration-200"
+			>
+				{children}
+			</a>
 		),
 	},
 };

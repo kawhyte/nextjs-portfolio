@@ -43,7 +43,7 @@ export default function BlogPage({ blogs }: BlogPageProps) {
 				description="Explores my journey as a software developer, diving into technical challenges, coding insights, and the latest technologies."
 			/>
 
-			<div className="container mx-auto my-20">
+			<div className=" my-8">
 				<BlogCards items={blogs} />
 			</div>
 		</>

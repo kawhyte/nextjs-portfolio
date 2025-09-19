@@ -1,5 +1,6 @@
 import React from "react";
 import BlogCard from "./BlogCard";
+import type { Document as RichTextDocument } from "@contentful/rich-text-types";
 
 interface BlogCardsProps {
   items: any[];
@@ -10,6 +11,27 @@ const BlogCards: React.FC<BlogCardsProps> = ({
   items,
   hideLastItemOnMobile = false,
 }) => {
+  // Calculate read time based on actual content
+  const calculateReadTime = (richText: RichTextDocument | undefined): string => {
+    if (!richText) return "3 min read";
+
+    const extractTextFromNode = (node: any): string => {
+      if (node.nodeType === "text") {
+        return node.value || "";
+      }
+      if (node.content) {
+        return node.content.map(extractTextFromNode).join("");
+      }
+      return "";
+    };
+
+    const plainText = richText.content.map(extractTextFromNode).join("");
+    const wordsPerMinute = 200;
+    const words = plainText.split(/\s+/).filter(word => word.length > 0).length;
+    const minutes = Math.max(1, Math.ceil(words / wordsPerMinute));
+    return `${minutes} min read`;
+  };
+
   return (
     <section className="pb-500 lg:pb-800">
       {/* Fixed Grid Container */}
@@ -23,7 +45,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({
             >
               <BlogCard
                 blog={item}
-                readTime={`${(index % 4) + 3} min read`}
+                readTime={calculateReadTime(item.fields.richText)}
                 priority={index < 3}
               />
             </div>

@@ -56,8 +56,8 @@ export default function Navbar() {
 
   useClickOutside(navRef, () => setIsOpen(false));
 
-  const navClasses = "flex items-center justify-between bg-slate-900/85 backdrop-blur-md border border-teal-400/25 rounded-full px-200 py-100 shadow-lg shadow-black/25 shadow-teal-500/5";
-  const linkClasses = "relative flex items-center gap-x-100 text-gray-300 hover:text-teal-100 transition-all duration-300 px-200 py-150";
+  const navClasses = "flex items-center justify-between bg-slate-900/85 backdrop-blur-md border border-teal-400/25 rounded-full px-150 py-050 shadow-lg shadow-black/25 shadow-teal-500/5";
+  const linkClasses = "relative flex items-center gap-x-050 text-gray-300 hover:text-teal-100 transition-all duration-300 px-150 py-025";
   const mobileButtonClasses = "p-100 text-gray-200 rounded-full hover:bg-teal-500/20 transition-all duration-300";
 
   return (

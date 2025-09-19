@@ -141,14 +141,21 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
 	// Enhanced read time calculation
 	const calculateReadTime = (text: RichTextDocument | undefined): string => {
 		if (!text) return "3 min read";
-		const plainText = text.content
-			.map((node) =>
-				node.content?.map((innerNode) => (innerNode as any).value || "").join("") || ""
-			)
-			.join("");
+
+		const extractTextFromNode = (node: any): string => {
+			if (node.nodeType === "text") {
+				return node.value || "";
+			}
+			if (node.content) {
+				return node.content.map(extractTextFromNode).join("");
+			}
+			return "";
+		};
+
+		const plainText = text.content.map(extractTextFromNode).join("");
 		const wordsPerMinute = 200;
 		const words = plainText.split(/\s+/).filter(word => word.length > 0).length;
-		const minutes = Math.ceil(words / wordsPerMinute);
+		const minutes = Math.max(1, Math.ceil(words / wordsPerMinute));
 		return `${minutes} min read`;
 	};
 
@@ -247,7 +254,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
 						</nav> */}
 
 						{/* Article Header */}
-						<header className="fade-in-up mt-8">
+						<header className="mt-8">
 							{/* Tags */}
 							{/* {tags && tags.length > 0 && (
 								<div className="flex flex-wrap gap-100 mb-400">
@@ -327,7 +334,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
 
 				{/* Hero Image */}
 				{thumbnail?.fields?.file?.url && (
-					<section className="mb-800 fade-in-up">
+					<section className="mb-800">
 						<div className="max-w-5xl mx-auto px-300 md:px-500">
 							<div className="relative aspect-[16/9] overflow-hidden rounded-2xl shadow-2xl">
 								<Image
@@ -349,7 +356,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
 
 				{/* Article Content */}
 				<article className="max-w-4xl mx-auto px-300 md:px-500 pb-1600">
-					<div className="blog-post-content fade-in-up">
+					<div className="blog-post-content">
 						{richText &&
 							documentToReactComponents(
 								richText as RichTextDocument,
@@ -358,7 +365,7 @@ const BlogDetailsPage: NextPage<BlogPageProps> = ({ blog }) => {
 					</div>
 
 					{/* Article Footer */}
-					<footer className="mt-1200 pt-800 border-t border-gray-200 fade-in-up">
+					<footer className="mt-1200 pt-800 border-t border-gray-200">
 						<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-400">
 							<div className="flex items-center gap-200">
 								<p className="text-gray-600 blog-meta-text">
