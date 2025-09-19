@@ -70,6 +70,29 @@ export interface Highlight {
 
 
 // Add/Update PortfolioItemFields to include all fields used
+// Challenge-Solution Card Interface
+export interface ChallengeCard {
+  sys: { id: string };
+  fields: {
+    title: string;
+    challenge: string;
+    solution: string;
+    result: string;
+    icon?: string; // Lucide icon name
+  };
+}
+
+// Project Metrics Interface
+export interface ProjectMetric {
+  sys: { id: string };
+  fields: {
+    label: string;
+    value: string;
+    description?: string;
+    type: 'performance' | 'business' | 'technical' | 'user_experience';
+  };
+}
+
 export interface PortfolioItemFields {
   title?: string; // Assuming 'name' in JS corresponds to 'title' in Contentful model
   name: string;
@@ -93,8 +116,16 @@ export interface PortfolioItemFields {
   featured?: boolean; // Added from index.tsx usage
   // sortByNumber?: number; // Added from index.tsx usage
   technologies?: Technology[];
-  projectHighlights?: Highlight[]
+  projectHighlights?: Highlight[];
   // portfolioHighlights?:Highlight[]
+
+  // NEW ENHANCED FIELDS
+  challenges?: ChallengeCard[]; // Challenge-solution pairs
+  metrics?: ProjectMetric[]; // Performance/business metrics
+  projectDuration?: string; // "3 months", "6 weeks"
+  teamSize?: string; // "Solo project", "Team of 4"
+  projectStatus?: 'completed' | 'in_progress' | 'archived';
+  clientName?: string; // Optional client/company name
 }
 
 
