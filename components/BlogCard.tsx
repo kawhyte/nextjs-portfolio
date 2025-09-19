@@ -3,9 +3,14 @@ import { Badge } from "@/components/ui/badge";
 import type { BlogCardProps } from "../types/contentful";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Clock } from "lucide-react";
 
-export default function BlogCard({ blog }: BlogCardProps) {
+interface EnhancedBlogCardProps extends BlogCardProps {
+  readTime?: string;
+  priority?: boolean;
+}
+
+export default function BlogCard({ blog, readTime = "3 min read", priority = false }: EnhancedBlogCardProps) {
   const { title, slug, summary, thumbnail, tags } = blog.fields;
   const imageUrl = thumbnail?.fields?.file?.url
     ? `https:${thumbnail.fields.file.url}?fm=webp&w=800&q=80`
@@ -16,10 +21,10 @@ export default function BlogCard({ blog }: BlogCardProps) {
   const imageAltText = title || "Blog post thumbnail";
 
   return (
-    <div className="h-full flex flex-col overflow-hidden">
+    <article className="h-full flex flex-col overflow-hidden relative">
       {/* Image Section - Flush to top and sides */}
       <div className="relative">
-        <Link href={`/blog/${slug}`}>
+        <Link href={`/blog/${slug}`} className="block">
           <div className="aspect-[16/9] overflow-hidden">
             <Image
               src={imageUrl}
@@ -27,8 +32,9 @@ export default function BlogCard({ blog }: BlogCardProps) {
               placeholder="blur"
               height={500}
               width={800}
-              className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105 rounded-xl"
+              className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105 rounded-xl"
               alt={imageAltText}
+              priority={priority}
             />
           </div>
         </Link>
@@ -39,11 +45,11 @@ export default function BlogCard({ blog }: BlogCardProps) {
         {/* Tags */}
         {tags && tags.length > 0 && (
           <div className="flex flex-wrap gap-100 mb-200">
-            {tags.map((tag) => (
+            {tags.slice(0, 2).map((tag) => (
               <Badge
                 key={tag.sys.id}
                 variant="secondary"
-                className="bg-teal-500/10 text-teal-700 border-teal-200 hover:bg-teal-500/20"
+                className="bg-[var(--teal-surface)] text-teal-700 border-[var(--teal-border-subtle)] hover:bg-[var(--teal-surface-hover)] transition-colors duration-200 blog-meta-text"
               >
                 {tag.fields.name}
               </Badge>
@@ -51,30 +57,43 @@ export default function BlogCard({ blog }: BlogCardProps) {
           </div>
         )}
 
+        {/* Read Time */}
+        <div className="flex items-center gap-100 mb-200 text-gray-500">
+          <Clock className="w-4 h-4" />
+          <span className="blog-meta-text">{readTime}</span>
+        </div>
+
         {/* Title */}
-        <h3 className="font-serif text-lg md:text-xl lg:text-2xl font-bold mb-150 line-clamp-2">
-          {title}
-        </h3>
+        <Link href={`/blog/${slug}`} className="group">
+          <h3 className="font-serif font-bold mb-150 line-clamp-2 blog-card-title group-hover:text-teal-600 transition-colors duration-300">
+            {title}
+          </h3>
+        </Link>
 
         {/* Summary */}
-        <p className="text-muted-foreground text-sm mb-200 line-clamp-3 flex-grow">
+        <p className="text-muted-foreground mb-200 line-clamp-3 flex-grow leading-relaxed blog-meta-text">
           {summary}
         </p>
 
-        {/* CTA Button */}
+        {/* CTA Button with Magnetic Effect */}
         <div className="mt-auto mb-200">
-          <Button
-            asChild
-            size="sm"
-            className="w-full bg-teal-500 hover:bg-teal-600 text-white"
-          >
-            <Link href={`/blog/${slug}`}>
-              Continue Reading
-              <ArrowUpRight className="ml-100 h-4 w-4" />
-            </Link>
-          </Button>
+          <div className="magnetic-button">
+            <Button
+              asChild
+              size="sm"
+              className="w-full bg-teal-500 hover:bg-teal-600 text-white shadow-md hover:shadow-lg transition-all duration-300 group"
+            >
+              <Link href={`/blog/${slug}`} className="inline-flex items-center justify-center gap-100">
+                Continue Reading
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Subtle hover border glow */}
+      <div className="absolute inset-0 rounded-xl border border-transparent hover:border-[var(--teal-border-subtle)] transition-colors duration-300 pointer-events-none"></div>
+    </article>
   );
 }

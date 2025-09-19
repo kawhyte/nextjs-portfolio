@@ -1,18 +1,13 @@
 import { createClient } from "contentful";
 import BlogCards from "../components/BlogCards";
-import Hero from "../components/Hero";
-// import Section from "../components/Section";
-import Link from "next/link";
 import SectionHero from "../components/SectionHero";
-import { GetStaticProps, NextPage } from "next";
+import { GetStaticProps } from "next";
 import SeoHead from "../components/SeoHead";
 
 import type {
 	BlogPost,
 	BlogsPageProps,
 } from "../types/contentful";
-
-
 
 export const getStaticProps: GetStaticProps<BlogsPageProps> = async () => {
 	const client = createClient({
@@ -23,7 +18,6 @@ export const getStaticProps: GetStaticProps<BlogsPageProps> = async () => {
 	const res = await client.getEntries({ content_type: "blogPost" });
 	const blogItems = res.items ? (res.items as unknown as BlogPost[]) : [];
 
-	
 	return {
 		props: {
 			blogs: blogItems,
@@ -31,19 +25,27 @@ export const getStaticProps: GetStaticProps<BlogsPageProps> = async () => {
 	};
 }
 
-export default function Recipes({ blogs }) {
-	return (
-		<> 
-		<SeoHead 
-			title="Blog"
-			description="A collection of articles and thoughts on software development, technology, and more from Kenny Whyte."
-			url="/blog"
-		/>
-		<SectionHero title={"All Blog Posts"} description={"Explores my journey as a software developer, diving into technical challenges, coding insights, and the latest technologies."}/>
-		<div className='container mx-auto my-20'>
-		
+interface BlogPageProps {
+	blogs: BlogPost[];
+}
 
-			<BlogCards items={blogs} />
-		</div></>
+export default function BlogPage({ blogs }: BlogPageProps) {
+	return (
+		<>
+			<SeoHead
+				title="Blog"
+				description="A collection of articles and thoughts on software development, technology, and more from Kenny Whyte."
+				url="/blog"
+			/>
+
+			<SectionHero
+				title="All Blog Posts"
+				description="Explores my journey as a software developer, diving into technical challenges, coding insights, and the latest technologies."
+			/>
+
+			<div className="container mx-auto my-20">
+				<BlogCards items={blogs} />
+			</div>
+		</>
 	);
 }

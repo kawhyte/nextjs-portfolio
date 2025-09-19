@@ -182,9 +182,9 @@ export interface BlogPostFields {
   slug: string;
   thumbnail?: ContentfulImage
   photoCredit?: string;
- 
-  richText?: RichTextDocument; 
- 
+  tags?: Tag[];
+  richText?: RichTextDocument;
+
   // Add other fields from your 'blogPost' content type
 }
 
