@@ -37,23 +37,22 @@ class MyDocument extends Document {
           <link
             rel="preload"
             as="style"
-            href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
           />
 
           {/* Load the font stylesheet for print initially, then for all media */}
-          {/* Note: This onLoad technique can sometimes cause hydration issues. Consider Next.js font optimization if possible. */}
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
             media="print"
-            onLoad={(e) => (e.currentTarget.media = 'all')} // Use React's synthetic event handler
+            onLoad={(e) => (e.currentTarget.media = 'all')}
           />
 
           {/* Fallback for users with JavaScript disabled */}
           <noscript>
             <link
               rel="stylesheet"
-              href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap"
+              href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
             />
           </noscript>
         </Head>

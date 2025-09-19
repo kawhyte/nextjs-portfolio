@@ -174,8 +174,10 @@ export default {
 			},
 
 			fontFamily: {
-				sans: "var(--font-sans)",
-				serif: "var(--font-serif)",
+				sans: ['Source Sans 3', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+				serif: ['Space Grotesk', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+				header: ['Space Grotesk', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+				body: ['Source Sans 3', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 			},
 		},
 		fontSize: {

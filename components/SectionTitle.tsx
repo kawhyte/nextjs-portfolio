@@ -8,7 +8,7 @@ function SectionTitle({ header, description, sectionHeadtext }) {
 					{sectionHeadtext}
 				</p>
 			</div>
-			<h2 className=' font-serif text-3xl md:text-5xl text-center mt-300'>
+			<h2 className=' font-header text-3xl md:text-5xl text-center mt-300'>
 				{header}
 			</h2>
 

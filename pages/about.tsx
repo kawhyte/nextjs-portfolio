@@ -79,7 +79,7 @@ const AboutPage = () => {
                         className="rounded-full bg-green-200/50 p-3 shadow-lg"
                     />
                 </div> */}
-				<h1 className='font-serif text-4xl md:text-6xl font-bold mt-16'>
+				<h1 className='font-header text-4xl md:text-6xl font-bold mt-16'>
 					Hi, I'm Kenny Whyte.
 				</h1>
 				<p className='mt-200 text-lg md:text-xl text-muted-foreground max-w-5xl mx-auto'>
@@ -106,7 +106,7 @@ const AboutPage = () => {
 			<section className='container mx-auto max-w-5xl py-400 md:py-600 border-t'>
 				<div className='grid grid-cols-1 md:grid-cols-3 gap-300'>
 					<div className='md:col-span-1'>
-						<h2 className='font-serif text-3xl font-bold'>My Journey</h2>
+						<h2 className='font-header text-3xl font-bold'>My Journey</h2>
 					</div>
 					<div className='md:col-span-2 text-muted-foreground text-lg space-y-300'>
 						<p>
@@ -136,7 +136,7 @@ const AboutPage = () => {
 			<section className='bg-white py-400 md:py-600 border-t'>
 				<div className='container mx-auto max-w-5xl'>
 					<div className='text-center mb-300'>
-						<h2 className='font-serif text-3xl font-bold'>
+						<h2 className='font-header text-3xl font-bold'>
 							Skills & Philosophy
 						</h2>
 						<p className='mt-100 text-lg text-muted-foreground'>
@@ -191,7 +191,7 @@ const AboutPage = () => {
 			<section className='py-400 md:py-600 border-t'>
 				<div className='container mx-auto max-w-5xl'>
 					<div className='text-center mb-300'>
-						<h2 className='font-serif text-3xl font-bold'>Life Beyond Code</h2>
+						<h2 className='font-header text-3xl font-bold'>Life Beyond Code</h2>
 						<p className='mt-100 text-lg text-muted-foreground'>
 							When I'm not at my keyboard, you can find me...
 						</p>

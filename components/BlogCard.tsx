@@ -65,7 +65,7 @@ export default function BlogCard({ blog, readTime = "3 min read", priority = fal
 
         {/* Title */}
         <Link href={`/blog/${slug}`} className="group">
-          <h3 className="font-serif font-bold mb-150 line-clamp-2 blog-card-title group-hover:text-teal-600 transition-colors duration-300">
+          <h3 className="font-header font-bold mb-150 line-clamp-2 blog-card-title group-hover:text-teal-600 transition-colors duration-300">
             {title}
           </h3>
         </Link>

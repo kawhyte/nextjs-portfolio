@@ -117,7 +117,7 @@ const Hero = () => {
 							<div className='text-sm font-medium'>Hello, I'm Kenny Whyte</div>
 						</div> */}
 						<div className='max-w-lg lg:max-w-4xl'>
-							<h1 className=' font-serif text-3xl md:text-5xl lg:text-6xl text-center mt-400 leading-mega-16'>
+							<h1 className=' font-header text-3xl md:text-5xl lg:text-6xl text-center mt-400 leading-mega-16'>
 								Full-Stack Engineer Building Modern Web Experiences.
 							</h1>
 							<p className='mt-200 text-center text-foreground md:text-lg lg:text-xl leading-relaxed-8'>
