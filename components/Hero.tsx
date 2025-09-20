@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import HeroOrbit from "./HeroOrbit";
 import { FaGithub, FaLinkedin, FaCodepen } from "react-icons/fa";
 import { FaBluesky } from "react-icons/fa6";
-import { Separator } from "@radix-ui/react-separator";
+import { Separator } from "@/components/ui/separator";
 import Lottie from "lottie-react";
 import manOnComputerAnimation from "../public/lottie/man-on-computer.json";
 import { Circle } from "lucide-react";

@@ -1,17 +1,11 @@
 import { createClient } from "contentful";
 import PortfolioCards from "../components/PortfolioCards";
-import Hero from "../components/Hero";
-// import Section from "../components/Section";
-import Link from "next/link";
-import SectionTitle from "../components/SectionTitle";
-
 import SectionHero from "../components/SectionHero";
-import { GetStaticProps, NextPage } from "next";
+import { GetStaticProps } from "next";
 import SeoHead from "../components/SeoHead";
 
 import type {
 	PortfolioItem,
-	BlogPost,
 	PortfolioPageProps,
 } from "../types/contentful";
 

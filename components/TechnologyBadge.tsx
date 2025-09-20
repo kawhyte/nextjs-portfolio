@@ -1,16 +1,6 @@
 import Image from "next/image";
 import { Technology } from "../types/contentful";
-import { FaHome, FaCode, FaReact } from "react-icons/fa";
-import {
-	FiMenu,
-	FiX,
-	FiHome,
-	FiCode,
-	FiUser,
-	FiGrid,
-	FiEdit3,
-	FiMail,
-} from "react-icons/fi";
+import { FaReact } from "react-icons/fa";
 import { SiJavascript, SiCss3, SiHtml5 } from "react-icons/si";
 import { Badge } from "./ui/badge";
 

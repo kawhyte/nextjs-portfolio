@@ -1,10 +1,7 @@
 import { createClient } from "contentful";
 import BlogCards from "../components/BlogCards";
-import Hero from "../components/Hero";
-// import Section from "../components/Section";
-import Link from "next/link";
 import SectionHero from "../components/SectionHero";
-import { GetStaticProps, NextPage } from "next";
+import { GetStaticProps } from "next";
 import SeoHead from "../components/SeoHead";
 
 import type {

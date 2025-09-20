@@ -1,31 +1,11 @@
-import React from "react"; // Import React
 import { ArrowUpRight } from "lucide-react";
-
 import { createClient } from "contentful";
 import PortfolioCards from "../components/PortfolioCards";
-import BlogCards from "../components/BlogCards";
 import Hero from "../components/Hero";
-import AboutSection from "../components/AboutSection";
-
 import Link from "next/link";
 import SeoHead from "../components/SeoHead";
-import SectionTitle from "../components/SectionTitle";
-import SectionHero from "../components/SectionHero";
-// import Button from "../ui/Button";
-
-
-import Image from "next/image";
-import { ImArrowUpRight2 } from "react-icons/im";
-import { FaHtml5 } from "react-icons/fa6";
-import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
-import { FaNodeJs, FaReact } from "react-icons/fa";
-import { SiJavascript } from "react-icons/si";
-import { BiLogoGraphql } from "react-icons/bi";
-import { IoLogoCss3 } from "react-icons/io";
 import { Button } from "@/components/ui/button";
-
-import { GetStaticProps, NextPage } from "next";
-
+import { GetStaticProps } from "next";
 import type {
 	PortfolioItem,
 	BlogPost,
@@ -62,24 +42,12 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
 	};
 };
 
-const imageSize = "h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-10 ";
 
-const languages = [
-	"CSharp",
-	"HTML",
-	"NodeJS",
-	"GraphQL",
-	"NextJS",
-	"CSS",
-	"JavaScript",
-	"React",
-];
-
-export default function Index({ portfolio, blog }) {
+export default function Index({ portfolio, blog }: IndexPageProps) {
 	// Filter and sort featured portfolio items for homepage display
 	const featuredPortfolio = portfolio
-		.filter((item) => item.fields.featured === true)
-		.sort((a, b) => (a.fields.displayOrder || 999) - (b.fields.displayOrder || 999));
+		.filter((item: PortfolioItem) => item.fields.featured === true)
+		.sort((a: PortfolioItem, b: PortfolioItem) => (a.fields.displayOrder || 999) - (b.fields.displayOrder || 999));
 
 	//console.log("featured portfolio ", featuredPortfolio);
 	return (
