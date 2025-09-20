@@ -68,35 +68,6 @@ export const getStaticProps: GetStaticProps<PortfolioDetailPageProps, { slug: st
     };
 };
 
-// const reactIconsMap: { [key: string]: React.ElementType } = {
-//     react: FaReact,
-//     javascript: SiJavascript,
-//     css: SiCss3,
-//     html: SiHtml5,
-// };
-
-// --- NEW: Helper component to render the correct icon ---
-// const TechnologyBadge = ({ technology }: { technology: Technology }) => {
-//     const { name, lucideIconName, customIcon } = technology.fields;
-    
-//     const IconComponent = lucideIconName ? reactIconsMap[lucideIconName.toLowerCase()] : undefined;
-
-//     return (
-//         <Badge variant="secondary" className="flex items-center gap-2">
-//             {customIcon?.fields?.file?.url ? (
-//                 <Image 
-//                     src={`https:${customIcon.fields.file.url}`}
-//                     width={16}
-//                     height={16}
-//                     alt={`${name} icon`}
-//                 />
-//             ) : IconComponent ? (
-//                 <IconComponent className="h-4 w-4" />
-//             ) : null}
-//             <span>{name}</span>
-//         </Badge>
-//     );
-// };
 
 
 // --- Main Page Component ---
@@ -189,16 +160,6 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
                 <section className="portfolio-hero relative pt-800 pb-600 md:pt-1000 md:pb-800">
                     <div className="max-w-5xl mx-auto px-300 md:px-500">
 
-                        {/* Navigation Breadcrumb */}
-                        {/* <nav className="mb-600 portfolio-fade-in">
-                            <Link
-                                href="/projects"
-                                className="inline-flex items-center gap-100 text-teal-600 hover:text-teal-700 transition-colors duration-200 text-sm"
-                            >
-                                <ArrowLeft className="w-4 h-4" />
-                                Back to Projects
-                            </Link>
-                        </nav> */}
 
                         {/* Project Header */}
                         <header className="text-center portfolio-fade-in portfolio-stagger-1">
@@ -218,7 +179,7 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
                             </div>
 
                             {/* Title */}
-                            <h1 className="font-serif font-bold text-gray-900 mb-600 portfolio-hero-title">
+                            <h1 className="font-header font-bold text-gray-900 mb-600 portfolio-hero-title">
                                 {name}
                             </h1>
 
@@ -288,7 +249,7 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
                             </div>
 
                             <div className='mt-12'>
-                                <h2 className='font-serif mb-4 font-bold text-gray-900 text-2xl'>Technology Stack</h2>
+                                <h2 className='font-header mb-4 font-bold text-gray-900 text-2xl'>Technology Stack</h2>
                                  
                                     <p className="text-gray-600 mb-4  text-base ">
                                         The core technologies and tools used to bring this project to life.
@@ -305,54 +266,6 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
                     </section>
                 )}
 
-                {/* Technology Stack */}
-                {/* {technologies && technologies.length > 0 && (
-                    <section className="mb-800 portfolio-fade-in portfolio-stagger-3">
-                        <div className="max-w-5xl mx-auto px-300 md:px-500">
-                            <Card className="overflow-hidden border-0 shadow-lg">
-                                <CardContent className="p-600">
-                                    <h2 className="font-serif font-bold text-gray-900 portfolio-section-title mb-400">
-                                        Technology Stack
-                                    </h2>
-                                    <p className="text-gray-600 mb-600 portfolio-content">
-                                        The core technologies and tools used to bring this project to life.
-                                    </p>
-                                    <div className="flex flex-wrap gap-200">
-                                        {technologies.map((tech) => (
-                                            <div key={tech.sys.id} className="tech-badge-enhanced rounded-lg p-200">
-                                                <TechnologyBadge technology={tech} />
-                                            </div>
-                                        ))}
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </section>
-                )} */}
-
-                {/* Project Metrics */}
-                {/* <section className="mb-800">
-                    <div className="max-w-5xl mx-auto px-300 md:px-500">
-                        <SampleMetricsCard />
-                    </div>
-                </section> */}
-
-                {/* Challenge-Solution Cards */}
-                {/* <section className="mb-800">
-                    <div className="max-w-5xl mx-auto px-300 md:px-500">
-                        <div className="mb-600 text-center portfolio-fade-in">
-                            <h2 className="font-serif font-bold text-gray-900 portfolio-section-title mb-300">
-                                Challenges & Solutions
-                            </h2>
-                            <p className="text-gray-600 portfolio-content max-w-2xl mx-auto">
-                                Key challenges encountered during development and the innovative solutions implemented.
-                            </p>
-                        </div>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-600">
-                            <SampleChallengeSolutionCard />
-                        </div>
-                    </div>
-                </section> */}
 
                 {/* Case Study */}
                 <section className="mb-800">
@@ -368,33 +281,6 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ portfolio }) 
                     </div>
                 </section>
 
-                {/* Footer CTA */}
-                {/* <section className="mb-1200">
-                    <div className="max-w-3xl mx-auto px-300 md:px-500 text-center portfolio-fade-in">
-                        <Card className="bg-gradient-to-br from-teal-50 to-green-50 border-teal-200">
-                            <CardContent className="p-800">
-                                <h3 className="font-serif font-bold text-gray-900 portfolio-section-title mb-400">
-                                    Interested in similar work?
-                                </h3>
-                                <p className="text-gray-600 mb-600 portfolio-content">
-                                    Let's discuss how I can help bring your project ideas to life with the same attention to detail and technical excellence.
-                                </p>
-                                <div className="flex flex-wrap justify-center gap-300">
-                                    <Button asChild size="lg" className="magnetic-button bg-teal-500 hover:bg-teal-600">
-                                        <Link href="/projects">
-                                            View More Projects
-                                        </Link>
-                                    </Button>
-                                    <Button asChild size="lg" variant="outline" className="magnetic-button">
-                                        <a href="mailto:hello@kennywhyte.com">
-                                            Get In Touch
-                                        </a>
-                                    </Button>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </div>
-                </section> */}
             </main>
         </>
     );

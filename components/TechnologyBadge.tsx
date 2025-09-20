@@ -23,8 +23,8 @@ const TechnologyBadge = ({ technology }: { technology: Technology }) => {
 			{customIcon?.fields?.file?.url ? (
 				<Image
 					src={`https:${customIcon.fields.file.url}`}
-					width={16}
-					height={16}
+					width={24}
+					height={24}
 					alt={`${name} icon`}
 				/>
 			) : IconComponent ? (
