@@ -76,11 +76,12 @@ const languages = [
 ];
 
 export default function Index({ portfolio, blog }) {
-	// portfolio = portfolio
-	// 	.filter((item) => item.fields.featured === true)
-	// 	.sort((a, b) => a.sortByNumber - b.sortByNumber);
+	// Filter and sort featured portfolio items for homepage display
+	const featuredPortfolio = portfolio
+		.filter((item) => item.fields.featured === true)
+		.sort((a, b) => (a.fields.displayOrder || 999) - (b.fields.displayOrder || 999));
 
-	//console.log("new portfolio ", portfolio);
+	//console.log("featured portfolio ", featuredPortfolio);
 	return (
 		<div className=''>
 			<SeoHead 
@@ -97,10 +98,10 @@ export default function Index({ portfolio, blog }) {
                     <p className="mt-200 text-lg text-muted-foreground leading-relaxed-8">Take a look at some of the stuff I've built!</p>
                 </div>
                 <div className='my-600'>
-                    {portfolio.length > 0 ? (
-                        <PortfolioCards items={portfolio.slice(0, 3)} />
+                    {featuredPortfolio.length > 0 ? (
+                        <PortfolioCards items={featuredPortfolio} />
                     ) : (
-                        <div className='container'>No projects found.</div>
+                        <div className='container'>No featured projects found.</div>
                     )}
                     <div className='mt-200 flex justify-center'>
                         <Button asChild variant="outline" size="lg" className="border-teal-300 text-white bg-teal-400 hover:bg-teal-500 hover:text-white hover:border-teal-400">

@@ -113,8 +113,8 @@ export interface PortfolioItemFields {
   richTextProblem?: RichTextDocument; // Optional
   richTextApproach?: RichTextDocument; // Optional
   richTextResult?: RichTextDocument; // Optional
-  featured?: boolean; // Added from index.tsx usage
-  // sortByNumber?: number; // Added from index.tsx usage
+  featured?: boolean; // Controls if portfolio item appears on homepage
+  displayOrder?: number; // Order for homepage display (1 = first, 2 = second, etc.)
   technologies?: Technology[];
   projectHighlights?: Highlight[];
   // portfolioHighlights?:Highlight[]
@@ -211,6 +211,8 @@ export interface PortfolioItem {
 export interface BlogPostFields {
   title: string;
   slug: string;
+  publishedDate: string;
+  summary: string;
   thumbnail?: ContentfulImage
   photoCredit?: string;
   tags?: Tag[];
