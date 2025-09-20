@@ -58,7 +58,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
 			portfolio: portfolioItems,
 			blog: blogItems,
 		},
-		revalidate: 1,
+		revalidate: 10, // Checks for updates every 10 seconds
 	};
 };
 
